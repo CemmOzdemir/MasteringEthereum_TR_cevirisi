@@ -28,11 +28,32 @@ _Italic_ Yeni terimleri, URL'leri, e-posta adreslerini, dosya adlarını ve dosy
 
 +Constant width+ Değişken veya fonksiyon adları, veritabanları, veri türleri, ortam değişkenleri, ifadeler ve anahtar sözcükler gibi program öğelerine atıfta bulunmak için paragraflar içinde olduğu kadar program listeleri için de kullanılır.
 
-**`Constant width bold`** Kullanıcı tarafından tam anlamıyla yazılması gereken komutları veya diğer metinleri gösterir.
+**`Constant width bold`**:Kullanıcı tarafından tam anlamıyla yazılması gereken komutları veya diğer metinleri gösterir.
 
-_++Constant width italic++_Kullanıcı tarafından sağlanan değerler veya bağlama göre belirlenen değerlerle değiştirilmesi gereken metni gösterir.
+_++Constant width italic++_ Kullanıcı tarafından sağlanan değerler veya bağlama göre belirlenen değerlerle değiştirilmesi gereken metni gösterir.
+
+## [İPUCU] 🔍
+Bu simge bir ipucu veya öneri anlamına gelir.
 
 
+## [NOT] 📝
+Bu simge genel bir notu(bilgilendirme) ifade eder.
 
 
+## [UYARI] ⚠️
 
+Bu simge bir uyarı belirtir.
+
+
+_(Bilgilendirme 📝 :Bu işaretler normalde kitapta yok(GitHub üzerinde yayınlanmış olan).Ancak burada ben emoji ekleyerek sizlerin daha iyi bir şekilde görsel olarak anlamanıza yardımcı olmaya çalışacağım.)_
+
+## Kod Örnekleri
+
+kod örnekleri, elde etme ve kullanımı :Örnekler _Solidity, Vyper ve JavaScript'te ve Unix benzeri_ bir işletim sisteminin komut satırı kullanılarak yapılmıştır. Tüm kod parçacıkları GitHub deposunda _code_ alt dizini altında bulunur. Kitap kodunu çatallayın(Forking), kod örneklerini deneyin veya GitHub aracılığıyla düzeltmeleri gönderin: https://github.com/ethereumbook/ethereumbook.
+
+
+Tüm kod parçacıkları, ilgili diller için minimum derleyici, yorumlayıcı ve kitaplık kurulumuyla çoğu işletim sisteminde çoğaltılabilir. Gerektiğinde, temel kurulum talimatlarını ve bu talimatların çıktılarının adım adım örneklerini sağlıyoruz.
+
+Bazı kod parçacıkları ve kod çıktısı, yazdırma için yeniden biçimlendirilmiştir. Tüm bu durumlarda, satırlar bir ters eğik çizgi (+\+) karakteri ve ardından bir yeni satır karakteri ile bölünmüştür. Örnekleri kopyalarken, bu iki karakteri kaldırın ve satırları tekrar birleştirin ve örneklerde gösterilenlerle aynı sonuçları görmelisiniz.
+
+Tüm kod parçacıkları mümkün olduğunda gerçek değerleri ve hesaplamaları kullanır, böylece örnekten örneğe derleyebilir ve aynı değerleri hesaplamak için yazdığınız herhangi bir kodda aynı sonuçları görebilirsiniz. Örneğin, özel anahtarlar ve karşılık gelen genel anahtarlar ve adreslerin tümü gerçektir. Örnek işlemler, sözleşmeler, bloklar ve blok zinciri referanslarının tümü, gerçek Ethereum blok zincirine tanıtılmıştır ve genel defterin bir parçasıdır, böylece bunları inceleyebilirsiniz.
