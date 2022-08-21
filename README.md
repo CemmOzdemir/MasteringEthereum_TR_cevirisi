@@ -1,14 +1,17 @@
-# Mastering Ethereum
+# Mastering Ethereum :dart:
 
 ![Mastering Ethereum Cover](images/cover_thumb.png)
 
 Mastering Ethereum is a book for developers, offering a guide to the operation and use of the Ethereum, Ethereum Classic, RootStock (RSK) and other compatible EVM-based open blockchains.
 
-## Reading this book
+:tr: :heart: 
+Mastering Ethereum, *geliştiriciler* için bir kitaptır ve Ethereum, Ethereum Classic, RootStock (RSK) ve diğer uyumlu EVM tabanlı açık blokzincirlerinin çalışması ve kullanımı için bir yol göstericilik sunar. 
 
-To read this book, see [book.asciidoc](https://github.com/ethereumbook/ethereumbook/blob/develop/book.asciidoc). Click on each of the chapters to read in your browser. Other parties may choose to release PDFs of the book online.
+## Kitabın bütün içeriğine ve lisans haklarına buradan ulaşabilirsiniz: :bookmark:
+ 
+ [book.asciidoc](https://github.com/ethereumbook/ethereumbook/blob/develop/book.asciidoc).
 
-## Chapters
+## Chapters  /:tr:Bölümler :pushpin:
 + Preface: '[Preface](https://github.com/ethereumbook/ethereumbook/blob/develop/preface.asciidoc)'
 + Önsöz :  '[Önsöz](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Önsöz1.md)' ♥️  🇹🇷 
 + Chapter 1: '[What Is Ethereum](https://github.com/ethereumbook/ethereumbook/blob/develop/01what-is.asciidoc)'
