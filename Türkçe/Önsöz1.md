@@ -1,4 +1,17 @@
-## ÖNSÖZ (Mutlaka okuyun 🃏)
+
+
+_BAŞLAMADAN ÖNCE KISA BİR NOT_
+**Bu kitabı çevirip çevirmemek konusunda kararsız kalsamda bu kitabın İspanyolca,Çekçe,Çince,Uzak doğu dillerinden bazılarına çevrildiğini gördüm.Bu kitabın
+Ethereum ekosisteminin mihenk taşlarından olduğunu belirtmek isterim.Hal böyle olunca Şu sıkıntılı dönemlerden geçen değerli Türk insanımızın hiçbir şeyden 
+geri kalmaması gerektiğini düşündüm.Lisans haklarını inceledikten sonra başlamak istedim.Hem İngilizcemi geliştirip hemde Atamızın bize gösterdiği yolda ilerleyerek bilimsel bir esere bir tuz zerreciğide  olsa bir katkı sağlamak istedim**
+
+
+
+
+
+
+
+# ÖNSÖZ (Mutlaka okuyun! 🃏)
 
 Bu kitap, Andreas M. Antonopoulos ve Dr. Gavin Wood arasında bir işbirliği sonucudur. Bir dizi şanslı tesadüf, bu iki yazarı; _en iyi açık kaynak ruhu ve yaratıcı ortak kültür ruhuyla_ bu kitabı üretmek için yüzlerce katılımcıyı harekete geçiren bir çaba içinde bir araya getirdi.
 
@@ -135,20 +148,63 @@ link:$$https://twitter.com/aantonop$$[]
 +Andreas'ın LinkedIn: :
 link:$$https://linkedin.com/company/aantonop$$[]
 
-Andreas Patreon hesabı üzerinden destekleyebilirsiniz 💸
++Andreas Patreon hesabı üzerinden destekleyebilirsiniz 💸
 link:$$https://patreon.com/aantonop$$[].
 
 
 ## Gavin ile iletişim için: 🔗
 
-You can contact Dr. Gavin Wood on his personal site:
++Dr. Gavin Wood kişisel web sayfası:
 link:$$http://gavwood.com/$$[]
 
-Follow Gavin on Twitter:
++Gavin  Twitter:
 link:$$https://twitter.com/gavofyork$$[]
 
-Gavin generally hangs out in the Polkadot Watercooler on Riot.im:
++Gavin Wood genelde Polkadotdaki iletişimi:
 link:$$http://bit.ly/2xciG68$$[]
+
+## ANDREAS'IN ÖZEL TEŞEKkÜR MESAJI:
+Sözlere ve kitaplara olan sevgimi, beni her duvarı kitaplarla dolu bir evde büyüten annem Theresa'ya borçluyum. Kendi kendini teknofobik olarak tanımlamasına rağmen, annem de 1982'de bana ilk bilgisayarımı aldı. İlk kitabını 80 yaşında yayınlayan inşaat mühendisi babam Menelaos, bana mantıksal ve analitik düşünmeyi, bilim ve mühendislik sevgisini öğreten kişiydi.
+Bu yolculuk boyunca beni desteklediğiniz için hepinize teşekkür ederim. 💙🤍
+
+## GAVIN'İN ÖZEL TEŞEKKÜR MESAJI:
+
+Annem benim için ilk bilgisayarımı 9 yaşımdayken bir komşudan aldı ve bu olay olmadan teknik ilerlemem şüphesiz azalacaktı. Ayrıca ona çocukluk elektrik korkumu da borçluyum. Trevor'ı ve defalarca "fişi prize takmamı izleme" gibi ciddi bir görevi yerine getiren ve bilgisayarın bir işe yaramayacağı söylenen büyükannemi ve büyükbabamı kabul etmeliyim. Ayrıca, (bana ilk bilgisayar programımı öğreten) komşu Sean'dan, ayrıca daha fazla programlama ve daha az tarih, Richard Furlong-Brown gibi benim için daha fazla programlama ve daha az rugby yapmamı sağlayan ortaokul öğretmenlerine kadar herkese teşekkür ederim. 💓
+
+Çocuklarımın annesi Jutta'ya sürekli desteği için ve hayatımdaki birçok insana, yeni ve eski arkadaşlarıma, kısaca konuşursak, aklı başında herkese teşekkür etmeliyim. Son olarak, hayatımın son beş yılının onsuz asla olduğu gibi gelişemeyeceğini;  zamanı, desteği ve rehberliği olmadan bu kitabın bu kadar iyi durumda olmayacağı Aeron Buchanan'a kocaman bir teşekkür borçluyum. 🥰
+
+## kaynaklar 📌
+
+Bu kitap, çeşitli genel ve açık lisanslı kaynaklara atıfta bulunmaktadır.
+
+https://github.com/ethereum/vyper/blob/master/README.md:
+The MIT License (MIT)
+
+
+https://vyper.readthedocs.io/en/latest/::
+The MIT License (MIT)
+
+
+https://solidity.readthedocs.io/en/v0.4.21/common-patterns.html:
+The MIT License (MIT)
+
+https://arxiv.org/pdf/1802.06038.pdf:
+Arxiv Non-Exclusive-Distribution
+
+https://github.com/ethereum/solidity/blob/release/docs/contracts.rst#inheritance:
+The MIT License (MIT)
+
+https://github.com/trailofbits/evm-opcodes:
+Apache 2.0
+
+https://github.com/ethereum/EIPs/:
+Creative Commons CC0
+
+
+https://blog.sigmaprime.io/solidity-security.html:
+Creative Commons CC BY 4.0
+
+
 
 
 
