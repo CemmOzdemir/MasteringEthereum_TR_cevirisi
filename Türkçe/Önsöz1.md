@@ -57,3 +57,26 @@ Tüm kod parçacıkları, ilgili diller için minimum derleyici, yorumlayıcı v
 Bazı kod parçacıkları ve kod çıktısı, yazdırma için yeniden biçimlendirilmiştir. Tüm bu durumlarda, satırlar bir ters eğik çizgi (+\+) karakteri ve ardından bir yeni satır karakteri ile bölünmüştür. Örnekleri kopyalarken, bu iki karakteri kaldırın ve satırları tekrar birleştirin ve örneklerde gösterilenlerle aynı sonuçları görmelisiniz.
 
 Tüm kod parçacıkları mümkün olduğunda gerçek değerleri ve hesaplamaları kullanır, böylece örnekten örneğe derleyebilir ve aynı değerleri hesaplamak için yazdığınız herhangi bir kodda aynı sonuçları görebilirsiniz. Örneğin, özel anahtarlar ve karşılık gelen genel anahtarlar ve adreslerin tümü gerçektir. Örnek işlemler, sözleşmeler, bloklar ve blok zinciri referanslarının tümü, gerçek Ethereum blok zincirine tanıtılmıştır ve genel defterin bir parçasıdır, böylece bunları inceleyebilirsiniz.
+
+
+## Kod Örneklerini Kullanma
+
+Bu kitap işinizi yapmanıza yardımcı olmak için burada. Genel olarak, bu kitapla birlikte örnek kod sunuluyorsa, programlarınızda ve dokümantasyonunuzda kullanabilirsiniz. Kodun önemli bir bölümünü yeniden oluşturmuyorsanız, izin almak için bizimle iletişime geçmeniz **gerekmez**. Örneğin, bu kitaptan birkaç parça kod kullanan bir program yazmak için *izin gerekmez*. O'Reilly kitaplarından örnekler içeren bir CD-ROM'u satmak veya dağıtmak **izin gerektirir**. Bir soruyu bu kitaptan alıntı yaparak ve örnek koddan alıntı yaparak cevaplamak **izin gerektirmez**. Bu kitaptan önemli miktarda örnek kodu ürününüzün belgelerine dahil etmek **izin gerektirir**.
+
+_Mastering Ethereum_  Creative Commons Attribution-Noncommercial-No Derivative Works 4.0 International License (CC BY-NC-ND 4.0) lisansı altında sunulmaktadır.
+©️
+
+Kod örneklerini kullanımınızın adil kullanım veya yukarıda verilen iznin dışında kaldığını düşünüyorsanız, bizimle şu adresten iletişime geçmekten çekinmeyin:
+[<a href="mailto:permissions@oreilly.com">permissions@oreilly.com</a>].
+
+## Firmalara ve Ürünlere Referanslar
+Şirketlere ve ürünlere yapılan tüm referanslar eğitim, tanıtım ve referans amaçlıdır. Kitabın yazarları, belirtilen şirket veya ürünlerin hiçbirini onaylamamaktadır. Bu kitapta gösterilen ürünlerin, projelerin veya kod bölümlerinin hiçbirinin çalışmasını veya güvenliğini test etmedik. Bunları kullanmak sizin sorumluluğuzdadır! ⚠️
+
+Bu Kitaptaki Ethereum Adresleri ve İşlemleri
+Bu kitapta kullanılan _Ethereum adresleri, işlemleri, anahtarları, QR kodları ve blokzincir verileri_ **çoğunlukla gerçektir**. Bu, blok zincirine göz atabileceğiniz, örnek olarak sunulan işlemlere bakabileceğiniz, bunları kendi betikleriniz veya programlarınız vb. ile alabileceğiniz anlamına gelir.
+
+Ancak, bu kitapta basılan adresleri oluşturmak için kullanılan özel anahtarların "**yakıldığını**" 🔴 unutmayın. Bu, bu adreslerden herhangi birine coin veya token gönderirseniz,Paranızın(dijital değer anlamında) ya sonsuza kadar kaybolacağı ya da (daha büyük olasılıkla) 3.kişinin zimetine geçireceği(el koyma) anlamına gelir, çünkü kitabı okuyan herkes burada basılan _özel anahtarları_ kullanarak parayı alabilir.
+
+
+
+
