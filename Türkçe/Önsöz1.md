@@ -3,12 +3,14 @@
 _BAŞLAMADAN ÖNCE KISA BİR NOT_
 
 **Bu kitabı çevirip çevirmemek konusunda kararsız kalsamda bu kitabın İspanyolca,Çekçe,Çince,Uzak doğu dillerinden bazılarına çevrildiğini gördüm.Bu kitabın
-Ethereum ekosisteminin mihenk taşlarından olduğunu belirtmek isterim.Hal böyle olunca İstatistiklere göre günde 10-15 saat çalışan ,Kızgınlık ve Mutsuzlukta başı çeken,ekonomik olarak çok kötü dürumlar geçiren tek başına kalmış Kıymetli Türk hanımefendileri ve beyefendilerin  bu güzel bilgilerden mahrum kalmaması gerektiğini düşündüm.Lisans haklarını inceledikten sonra başlamak istedim.Hem İngilizcemi geliştirip hemde Atamızın bize gösterdiği yolda ilerleyerek teknolojiye,bilime minicikte olsa katkım olsun istedim.Bu yüzden büyük müsadenizle Çevirilerimde((Kötü dahi olsa)) motivasyonum olan, Cephelerde dahi yanından kitaplarını ayırmayan büyük liderimize, 🇹🇷 ❤️_MUSTAFA KEMAL ATATÜRK_'e 🤍 Teşekkürü bir borç bilirim.**
+Ethereum ekosisteminin mihenk taşlarından olduğunu belirtmek isterim.Hal böyle olunca İstatistiklere göre günde 10-15 saat çalışan ,Kızgınlık ve Mutsuzlukta başı çeken,ekonomik olarak çok kötü dürumlar geçiren tek başına kalmış Kıymetli Türk hanımefendileri ve beyefendilerin  bu güzel bilgilerden mahrum kalmaması gerektiğini düşündüm.Lisans haklarını inceledikten sonra başlamak istedim.Hem İngilizcemi geliştirip hemde Atamızın bize gösterdiği yolda ilerleyerek teknolojiye,bilime minicikte olsa katkım olsun istedim.Bu yüzden büyük müsadenizle Çevirilerimde((Kötü dahi olsa)) motivasyonum olan, Cephelerde dahi yanından kitaplarını ayırmayan büyük liderimize, 🇹🇷 ❤️MUSTAFA KEMAL ATATÜRK'e🤍 Teşekkürü bir borç bilirim.**
+_H.Cem Özdemir_
 
 
 _Benim manevi mirasım ilim ve akıldır. Benden sonra, beni benimsemek isteyenler, bu temel mihver üzerinde akıl ve ilmin rehberliğini kabul ederlerse, manevi mirasçılarım olurlar. Bilim ve fen nerede ise oradan alacağız ve her ulus kişisinin kafasına koyacağız. Bilim ve fen için kayıt ve şart yoktur._
+"_Mustafa Kemal Atatürk_"
 
-
+<img title="Atatürk Çankaya Köşkü'nde kitap okurken" alt="Yurtta sulh,cihanda sulh" src="https://isteataturk.com/gorseller/1510514658_ataturk.jpg">
 
 
 
@@ -165,7 +167,7 @@ link:$$https://twitter.com/gavofyork$$[]
 +Gavin Wood genelde Polkadotdaki iletişimi:
 link:$$http://bit.ly/2xciG68$$[]
 
-## ANDREAS'IN ÖZEL TEŞEKkÜR MESAJI:
+## ANDREAS'IN ÖZEL TEŞEKKÜR MESAJI:
 Sözlere ve kitaplara olan sevgimi, beni her duvarı kitaplarla dolu bir evde büyüten annem Theresa'ya borçluyum. Kendi kendini teknofobik olarak tanımlamasına rağmen, annem de 1982'de bana ilk bilgisayarımı aldı. İlk kitabını 80 yaşında yayınlayan inşaat mühendisi babam Menelaos, bana mantıksal ve analitik düşünmeyi, bilim ve mühendislik sevgisini öğreten kişiydi.
 Bu yolculuk boyunca beni desteklediğiniz için hepinize teşekkür ederim. 💙🤍
 
