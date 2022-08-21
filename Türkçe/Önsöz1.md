@@ -73,10 +73,82 @@ Kod örneklerini kullanımınızın adil kullanım veya yukarıda verilen iznin 
 Şirketlere ve ürünlere yapılan tüm referanslar eğitim, tanıtım ve referans amaçlıdır. Kitabın yazarları, belirtilen şirket veya ürünlerin hiçbirini onaylamamaktadır. Bu kitapta gösterilen ürünlerin, projelerin veya kod bölümlerinin hiçbirinin çalışmasını veya güvenliğini test etmedik. Bunları kullanmak sizin sorumluluğuzdadır! ⚠️
 
 Bu Kitaptaki Ethereum Adresleri ve İşlemleri
-Bu kitapta kullanılan _Ethereum adresleri, işlemleri, anahtarları, QR kodları ve blokzincir verileri_ **çoğunlukla gerçektir**. Bu, blok zincirine göz atabileceğiniz, örnek olarak sunulan işlemlere bakabileceğiniz, bunları kendi betikleriniz veya programlarınız vb. ile alabileceğiniz anlamına gelir.
+Bu kitapta kullanılan _Ethereum adresleri, işlemleri, anahtarları, QR kodları ve blokzincir verileri_ **çoğunlukla gerçektir**. Bu, blok zincirine göz atabileceğiniz, örnek olarak sunulan işlemlere bakabileceğiniz, bunları kendi yazılımlarınız veya programlarınız vb. ile alabileceğiniz anlamına gelir.
 
 Ancak, bu kitapta basılan adresleri oluşturmak için kullanılan özel anahtarların "**yakıldığını**" 🔴 unutmayın. Bu, bu adreslerden herhangi birine coin veya token gönderirseniz,Paranızın(dijital değer anlamında) ya sonsuza kadar kaybolacağı ya da (daha büyük olasılıkla) 3.kişinin zimetine geçireceği(el koyma) anlamına gelir, çünkü kitabı okuyan herkes burada basılan _özel anahtarları_ kullanarak parayı alabilir.
 
+**UYARI!** ⚠️
+BU KİTAPTA HİÇBİR ADRESE PARA GÖNDERMEYİN. Paranız başka bir okur(Kitabı okuyan veya adresleri incelen kişi) tarafından alınacak veya sonsuza kadar kaybedilecektir.
+
+## O'Reilly Safari
+📝Safari (eski adıyla Safari Books Online), işletmeler, devlet kurumları, eğitimciler ve bireyler için üyeliğe dayalı bir eğitim ve referans platformudur.
+
+Üyeler: O'Reilly Media, Harvard Business Review, Prentice Hall Professional, Addison-Wesley Professional, Microsoft Press, Sams, Que dahil olmak üzere, 250'den fazla yayıncıdan binlerce kitaba, eğitim videosuna, Öğrenme Yollarına, etkileşimli öğreticilere ve seçilmiş oynatma listelerine erişebilir. , Peachpit Press, Adobe, Focal Press, Cisco Press, John Wiley & Sons, Syngress, Morgan Kaufmann, IBM Redbooks, Packt, Adobe Press, FT Press, Apress, Manning, New Riders, McGraw-Hill, Jones & Bartlett ve Course Teknoloji, diğerleri arasında.
+
+Daha fazla bilgi için,Bu adresi ziyaret ediniz:[<a href="http://oreilly.com/safari" class="orm:hideurl"><em>http://oreilly.com/safari</em></a>].
+
+## Bizimle iletişime geçmek için
+
+kitap hakkkında bilgi için _Mastering Ethereum_ 
+link:$$https://ethereumbook.info/$$[].
+
+Lütfen bu kitapla ilgili yorum ve soruları yayıncıya iletin:
+
+++++
+<ul class="simplelist">
+  <li>O'Reilly Media, Inc.</li>
+  <li>1005 Gravenstein Highway North</li>
+  <li>Sebastopol, CA 95472</li>
+  <li>800-998-9938 (in the United States or Canada)</li>
+  <li>707-829-0515 (international or local)</li>
+  <li>707-829-0104 (fax)</li>
+</ul>
+++++
+
+bu kitapla ilgili yorum veya teknik sorular gönderin:[<a class="email" href="mailto:bookquestions@oreilly.com"><em>bookquestions@oreilly.com</em></a>].
+
+Kitaplarımız, kurslarımız, konferanslarımız ve haberlerimiz hakkında daha fazla bilgi için linkteki web sitemize bakın. :$$https://www.oreilly.com$$[].
+
+Facebook: link:$$https://facebook.com/oreilly$$[]
+
+Twitter: link:$$https://twitter.com/oreillymedia$$[]
+
+YouTube: link:$$https://www.youtube.com/oreillymedia$$[]
+
+
+
+
+**Andreas İle iletişim için ** 🔗
+
++Andreas M. Antonopoulos'un web sitesi:
+link:$$https://antonopoulos.com/$$[]
+ 
++Andreas'ın YouTube kanalı:
+link:$$https://www.youtube.com/aantonop$$[]
+
++Andreas'ın Facebook sayfası:
+link:$$https://www.facebook.com/AndreasMAntonopoulos$$[]
+
++Andreas'ın twitter profili:
+link:$$https://twitter.com/aantonop$$[]
+
++Andreas'ın LinkedIn: :
+link:$$https://linkedin.com/company/aantonop$$[]
+
+Andreas Patreon hesabı üzerinden destekleyebilirsiniz 💸
+link:$$https://patreon.com/aantonop$$[].
+
+
+## Gavin ile iletişim için: 🔗
+
+You can contact Dr. Gavin Wood on his personal site:
+link:$$http://gavwood.com/$$[]
+
+Follow Gavin on Twitter:
+link:$$https://twitter.com/gavofyork$$[]
+
+Gavin generally hangs out in the Polkadot Watercooler on Riot.im:
+link:$$http://bit.ly/2xciG68$$[]
 
 
 
