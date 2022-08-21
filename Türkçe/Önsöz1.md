@@ -1,4 +1,4 @@
-## ÖNSÖZ
+## ÖNSÖZ (Mutlaka okuyun 🃏)
 
 Bu kitap, Andreas M. Antonopoulos ve Dr. Gavin Wood arasında bir işbirliği sonucudur. Bir dizi şanslı tesadüf, bu iki yazarı; _en iyi açık kaynak ruhu ve yaratıcı ortak kültür ruhuyla_ bu kitabı üretmek için yüzlerce katılımcıyı harekete geçiren bir çaba içinde bir araya getirdi.
 
@@ -10,8 +10,29 @@ Andreas kısa süre önce Bitcoin ve kripto para birimleri için hızlı bir şe
 
 Son olarak, Mayıs 2016'da Gavin ve Andreas tesadüfen aynı şehirde aynı anda bulunuyorlardı. Birlikte kitap üzerinde çalışmak hakkında sohbet etmek için ve kahve ☕ içmek için bir araya geldiler. Hem Andreas hem de Gavin, açık kaynak paradigmasına(ortak bir amaç,anlayış dizisi) adanmış olduklarından, ikisi de _Creative Commons lisansı_ altında yayınlanan bunu ortak bir çaba haline getirmeyi taahhüt ettiler(söz verdiler). Neyse ki yayıncı O'Reilly Media bunu kabul etmekten son derece mutluluk duydu ve _Mastering Ethereum_ projesi resmi olarak başlatıldı.
 
-=== Bu kitap nasıl kullanılır ?
+### Bu kitap nasıl kullanılır ?
 
-Kitabın, hem bir referans rehberi hem de Ethereum'un baştan sona keşfedilmesine hizmet etmesi amaçlanmıştır. *İlk iki bölüm*, acemi kullanıcılar için uygun, nazik(ince) bir giriş sunar ve bu bölümlerdeki örnekler, biraz teknik beceriye sahip herkes tarafından tamamlanabilir. Bu iki bölüm size temelleri iyi bir şekilde kavrayıp, Ethereum'un temel araçlarını kullanmanıza izin verecek. 📍:[Ethereum_clients_Bölümü] ve devamı, temel olarak programcılara yöneliktir ve birçok teknik konu ve programlama örnekleri içerir.
+Kitabın, hem bir referans rehberi hem de Ethereum'un baştan sona keşfedilmesine hizmet etmesi amaçlanmıştır. *İlk iki bölüm*, acemi kullanıcılar için uygun, nazik(ince) bir giriş sunar ve bu bölümlerdeki örnekler, biraz teknik beceriye sahip herkes tarafından tamamlanabilir. Bu iki bölüm size temelleri iyi bir şekilde kavrayıp, Ethereum'un temel araçlarını kullanmanıza izin verecek. 📍[Ethereum_clients_Bölümü] ve devamı, temel olarak programcılara yöneliktir ve birçok teknik konu ve programlama örnekleri içerir.
 
-Ethereum hakkında hem bir referans rehberi hem de baştan sona bir anlatı olarak hizmet etmek için kitap,kaçınılmaz olarak bazı tekrarlar içeriyor. _Gaz(GAS)_ 🛢️: gibi bazı konuların, geri kalan konuların anlamlı olması için yeterince erken anlatılması gerekir, ancak aynı zamanda _kendi bölümlerinde_ derinlemesine incelenecektir.
+Ethereum hakkında hem bir referans rehberi hem de baştan sona bir anlatı olarak hizmet etmek için kitap,kaçınılmaz olarak bazı tekrarlar içeriyor. _Gaz(GAS)_ 🛢️ gibi bazı konuların, geri kalan konuların anlamlı olması için yeterince erken anlatılması gerekiyor, ancak aynı zamanda _kendi bölümlerinde_ derinlemesine incelenecektir.
+
+Son olarak, kitabın dizini okuyucuların anahtar kelime ile çok özel konuları ve ilgili bölümleri kolaylıkla bulmasını sağlar.
+
+### Hedef kitlesi 🧑‍🤝‍🧑
+
+Bu kitap çoğunlukla kodlayıcılar(coder,developer,software engineer,geeks olan herkese uygundur) 💻 için tasarlanmıştır. Bir programlama dili kullanabiliyorsanız, bu kitap size akıllı sözleşme ile blokzincirlerinin nasıl çalıştığını, bunların nasıl kullanılacağını ve bunlarla akıllı sözleşmelerin ve merkezi olmayan uygulamaların nasıl geliştirileceğini öğretecektir. _İlk birkaç bölüm_, yazılımıcı olmayanlar için Ethereum'a derinlemesine bir giriş olarak da uygundur.
+
+### Bu kitapta kullanılan Kurallar
+
+_Italic_ Yeni terimleri, URL'leri, e-posta adreslerini, dosya adlarını ve dosya uzantılarını belirtir.
+
++Constant width+ Değişken veya fonksiyon adları, veritabanları, veri türleri, ortam değişkenleri, ifadeler ve anahtar sözcükler gibi program öğelerine atıfta bulunmak için paragraflar içinde olduğu kadar program listeleri için de kullanılır.
+
+**`Constant width bold`** Kullanıcı tarafından tam anlamıyla yazılması gereken komutları veya diğer metinleri gösterir.
+
+_++Constant width italic++_Kullanıcı tarafından sağlanan değerler veya bağlama göre belirlenen değerlerle değiştirilmesi gereken metni gösterir.
+
+
+
+
+
