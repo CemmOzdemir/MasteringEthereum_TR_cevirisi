@@ -5,7 +5,7 @@
 Mastering Ethereum is a book for developers, offering a guide to the operation and use of the Ethereum, Ethereum Classic, RootStock (RSK) and other compatible EVM-based open blockchains.
 
 :tr: :heart: 
-Mastering Ethereum, *geliştiriciler* için bir kitaptır ve Ethereum, Ethereum Classic, RootStock (RSK) ve diğer uyumlu EVM tabanlı açık blokzincirlerinin çalışması ve kullanımı için bir yol göstericilik sunar. 
+Mastering Ethereum, *geliştiriciler* için bir kitaptır ve Ethereum, Ethereum Classic, RootStock (RSK) ve diğer uyumlu EVM tabanlı açık blokzincirlerinin çalışması ve kullanımı için bir kılavuzluk(yol göstericilik) sunar. 
 
 ## Kitabın bütün içeriğine ve lisans haklarına buradan ulaşabilirsiniz: :bookmark:
  
@@ -51,4 +51,4 @@ Bu "Özgür Kültür(Açık kaynak paradigması gibi düşünün)" uyumlu lisans
 
 Eğer bu kitabın çevirisi ile ilgileniyorsanız , Lütfen buradan gönüllü takımıza katılın: https://www.transifex.com/aantonop/ethereumbook**
 
-**Not:pencil: Ben normalde bu site üzerinden çeviri yapacaktım fakat kitabın içinde bazı kodlama örnekleri olduğu için bazı çevirilecek yerlerini yukarıdaki site kötü bir şekilde gösteriyordu.Bende bu yüzden fork işlemi yaptım ve repoyu lisans hakları doğrultusunda çeviriyorum.Çevirimi beğenmezseniz veya kodları kişiselleştirmek isterseniz Repomu Fork yapıp kendiniz geliştirebilrsiniz.**
+**Not:pencil: Ben normalde bu site üzerinden çeviri yapacaktım fakat kitabın içinde bazı kodlama örnekleri olduğu için bazı çevirilecek yerlerini yukarıdaki site kötü bir şekilde gösteriyordu.Bende bu yüzden fork işlemi yaptım ve repoyu lisans hakları doğrultusunda çeviriyorum.Çevirimi beğenmezseniz veya kodları kişiselleştirmek isterseniz Repomu Fork yapıp kendiniz geliştirebilrsiniz.Çeviriyi bütün bir şekilde bitirdiğimde transifex'e ekleme yapabilirim.:pencil:**
