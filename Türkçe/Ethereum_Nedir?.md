@@ -36,7 +36,8 @@ sınırsız karmaşıklıkta kod yürütebilen ve sanal bir makine çalıştıra
 Bitcoin'in Komut Dosyası dili, kasıtlı olarak,  basitçe  doğru/yanlış değerlendirmesiyle sınırlandırıldığında Ethereum'un dili Turing bütünlüğüdür.
 Yani Ethereum'un doğrudan genel amaçlı bir bilgisayar olarak işlev görebileceği anlamına gelir.
 '[Alan Turing Bütünlüğü Wiki](https://en.wikipedia.org/wiki/Turing_completeness)'
-:pencil: Wikiden şimdi kim okuyacak yaaağ :smile: derseniz kısaca :Sistemin diğer veri işleme kural kümelerini tanıyabileceği veya karar verebileceği anlamına gelir.
+:pencil: Wikiden şimdi kim okuyacak yaaağ :smile: derseniz kısaca: 
+_Sistemin diğer veri işleme kural kümelerini tanıyabileceği veya karar verebileceği anlamına gelir._
 
 ## Bitcoin ile
 
