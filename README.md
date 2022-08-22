@@ -15,6 +15,7 @@ Mastering Ethereum, *geliştiriciler* için bir kitaptır ve Ethereum, Ethereum 
 + Preface: '[Preface](https://github.com/ethereumbook/ethereumbook/blob/develop/preface.asciidoc)'
 + Önsöz :  '[Önsöz](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Önsöz1.md)' ♥️  🇹🇷(!Mutlaka Okuyun!)
 + Chapter 1: '[What Is Ethereum](https://github.com/ethereumbook/ethereumbook/blob/develop/01what-is.asciidoc)'
++ Bölüm I  : '[Ethereum Nedir?](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_Nedir%3F.md)' :heart: :tr:
 + Chapter 2: '[Ethereum Basics](https://github.com/ethereumbook/ethereumbook/blob/develop/02intro.asciidoc)'
 + Chapter 3: '[Ethereum Clients](https://github.com/ethereumbook/ethereumbook/blob/develop/03clients.asciidoc)'
 + Chapter 4: '[Cryptography](https://github.com/ethereumbook/ethereumbook/blob/develop/04keys-addresses.asciidoc)'
