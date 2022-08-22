@@ -11,9 +11,9 @@ Mastering Ethereum, *geliştiriciler* için bir kitaptır ve Ethereum, Ethereum 
  
  [book.asciidoc](https://github.com/ethereumbook/ethereumbook/blob/develop/book.asciidoc).
 
-## Chapters  /:tr:Bölümler :pushpin:
+## /Chapter :gb: & :tr: Bölümler :pushpin:
 + Preface: '[Preface](https://github.com/ethereumbook/ethereumbook/blob/develop/preface.asciidoc)'
-+ Önsöz :  '[Önsöz](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Önsöz1.md)' ♥️  🇹🇷 
++ Önsöz :  '[Önsöz](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Önsöz1.md)' ♥️  🇹🇷(!Mutlaka Okuyun!)
 + Chapter 1: '[What Is Ethereum](https://github.com/ethereumbook/ethereumbook/blob/develop/01what-is.asciidoc)'
 + Chapter 2: '[Ethereum Basics](https://github.com/ethereumbook/ethereumbook/blob/develop/02intro.asciidoc)'
 + Chapter 3: '[Ethereum Clients](https://github.com/ethereumbook/ethereumbook/blob/develop/03clients.asciidoc)'
@@ -29,22 +29,26 @@ Mastering Ethereum, *geliştiriciler* için bir kitaptır ve Ethereum, Ethereum 
 + Chapter 13: '[The Ethereum Virtual Machine](https://github.com/ethereumbook/ethereumbook/blob/develop/13evm.asciidoc)'
 + Chapter 14: '[Consensus](https://github.com/ethereumbook/ethereumbook/blob/develop/14consensus.asciidoc)'
 
-## Content
+## İçerik
 
-The content status is "COMPLETE". The first edition of this book was published on December 1st, 2018. That edition is available in print and ebook format at many popular bookstores. It is tagged ["first_edition_first_print"](https://github.com/ethereumbook/ethereumbook/tree/first_edition_first_print) in the develop branch of this repository.
+İçerik durumu "TAMAMLANDI". Bu kitabın ilk baskısı 1 Aralık 2018'de yayınlandı. Bu baskı, birçok popüler kitapçıda basılı ve e-kitap formatında mevcuttur. Bu reponun geliştirme dalında ["first_edition_first_print"](https://github.com/ethereumbook/ethereumbook/tree/first_edition_first_print) olarak etiketlenmiştir.
 
-At this time, **only bug fix requests are accepted**. If you find a bug, start an issue or better yet, fix the problem with a pull request. We will start work on the second edition in late 2019.
+Şu anda **yalnızca hata düzeltme istekleri kabul edilmektedir**. Bir hata bulursanız, bir soru başlatın veya daha iyisi, sorunu bir çekme isteği(pull request) ile düzeltin. 2019'un sonlarında ikinci baskı üzerinde çalışmaya başlayacağız.(çıkartılar bile :smile:)
 
-## Source and license
+:moneybag: Kitabı amazon üzerinden orjinal dili ve fiziksel en güncel haliyle edinmek isterseniz:'[Amazon üzerinden satışı](https://www.amazon.com/Mastering-Ethereum-Building-Smart-Contracts/dp/1491971940)'
 
-The [first edition](https://github.com/ethereumbook/ethereumbook/tree/first_edition_first_print) of this book, as printed and sold by O'Reilly Media, is available in this repository.
+## Kaynak ve Lisans
 
-Mastering Ethereum is released under the *Creative Commons CC-BY-SA license*.
+O'Reilly Media tarafından basılan ve satılan bu kitabın [ilk baskısı(İngilizce hali çıkacaktır)](https://github.com/ethereumbook/ethereumbook/tree/first_edition_first_print) bu depoda mevcuttur.
 
-This "Free Culture" compliant license was approved by our publisher O'Reilly Media (http://oreilly.com), who understands the value of open source. O'Reilly Media is not just the world's best publisher of technical books, but is also a strong supporter of this open culture and the sharing of knowledge.
+Mastering Ethereum kitabı *Creative Commons CC-BY-SA* lisansı altında çıkmıştır.
+
+Bu "Özgür Kültür(Açık kaynak paradigması gibi düşünün)" uyumlu lisans, açık kaynağın değerini anlayan yayıncımız O'Reilly Media (http://oreilly.com) tarafından onaylanmıştır. O'Reilly Media sadece dünyanın en iyi teknik kitap yayıncısı değil, aynı zamanda bu _açık kültürün ve bilgi paylaşımının_ güçlü bir destekçisidir.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Mastering Ethereum</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://ethereumbook.info" property="cc:attributionName" rel="cc:attributionURL">Andreas M. Antonopoulos, Gavin Wood</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/ethereumbook/ethereumbook" rel="dct:source">https://github.com/ethereumbook/ethereumbook</a>.
 
-# Translate This Book!
+# Kitabı Çevirmek için:
 
-If you are interested in translating this book, please join our team of volunteers at: https://www.transifex.com/aantonop/ethereumbook
+Eğer bu kitabın çevirisi ile ilgileniyorsanız , Lütfen buradan gönüllü takımıza katılın: https://www.transifex.com/aantonop/ethereumbook**
+
+**Not:pencil: Ben normalde bu site üzerinden çeviri yapacaktım fakat kitabın içinde bazı kodlama örnekleri olduğu için bazı çevirilecek yerlerini yukarıdaki site kötü bir şekilde gösteriyordu.Bende bu yüzden fork işlemi yaptım ve repoyu lisans hakları doğrultusunda çeviriyorum.Çevirimi beğenmezseniz veya kodları kişiselleştirmek isterseniz Repomu Fork yapıp kendiniz geliştirebilrsiniz.**
