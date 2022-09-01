@@ -28,7 +28,7 @@ Birçok kişi, özellikle _Bitcoin_ olmak üzere, önceden kripto para birimleri
 Yine de birçok yönden, Ethereum'un hem amacı hem de yapısı, Bitcoin de dahil olmak üzere, kendisinden önce gelen açık blok zincirlerinden çarpıcı biçimde farklıdır.
 
 Ethereum'un amacı, öncelikle bir dijital para birimi ödeme ağı olmak değildir. Dijital para birimi ether, **Ethereum'un çalışması için hem ayrılmaz hem de gerekli olsa da, ether, Ethereum platformunun dünya bilgisayarı olarak kullanımı için** ödeme yapmak için bir 
-_yardımcı para birimi_ olarak tasarlanmıştır. :laptop: :moneybag:
+_yardımcı para birimi_ olarak tasarlanmıştır. 💻: :moneybag:
 
 
 Çok sınırlı bir Betik diline sahip olan Bitcoin'den farklı olarak, Ethereum, keyfi ve 
@@ -39,7 +39,16 @@ Yani Ethereum'un doğrudan genel amaçlı bir bilgisayar olarak işlev görebile
 :pencil: Wikiden şimdi kim okuyacak yaaağ :smile: derseniz kısaca: 
 _Sistemin diğer veri işleme kural kümelerini tanıyabileceği veya karar verebileceği anlamına gelir._
 
-## Bitcoin ile
+## Blokzincirin Bileşenleri: ⛓️ 
+-Open ve Public bir blok zincirinin bileşenleri (genel Olarak):
+
+* Standartlaştırılmış bir **Gossip** protokolüne dayalı olarak, katılımcıları birbirine bağlayan,işlemleri ve doğrulanmış işlem bloklarını yayan bir eşler arası (P2P) ağ.(Gossip Protokolü :Bir iletişim protokolüdür, bilginin sosyal ağlarda nasıl paylaşıldığı ile aynı prensipte çalışan bilgisayardan bilgisayara iletişim sürecidir. daha fazla bilgi için GeeksforGeeks ziyaret edebilirsiniz 😻[Gossip Protocol](https://www.geeksforgeeks.org/the-gossip-protocol-in-cloud-computing/)
+* Durum geçişlerini temsil eden işlemler şeklinde mesajlar.
+* Neyin bir işlemi oluşturduğunu ve neyin geçerli bir durum geçişini sağladığını yöneten bir dizi fikir birliği kuralı.
+* Konsensüs kurallarına göre işlemleri işleyen bir [durum makinesi](https://www.techopedia.com/definition/16447/state-machine)---> Ben şimdi bunu okuyamam derseniz **kısaca: Durum makinesi, bilgisayar programları veya dijital mantık tasarlamada kullanılan bir kavramdır. İki tür durum makinesi vardır: sonlu ve sonsuz durum makineleri. İlki, koşullar karşılandığında mantık yolunun tespit edilebildiği,akış grafikleriyle modellenebilen sınırlı sayıda durum, geçiş ve eylemden oluşur. İkincisi pratik olarak kullanılmaz.** 
+* Doğrulanmış ve kabul edilmiş 🟢 tüm durum geçişlerinin bir günlüğü(Distr. Ledger'a atıf) :book: gibi davranan, kriptografik olarak güvenli bir blokzincir.
+* Katılımcıları konsensüs kurallarının uygulanmasında işbirliği yapmaya zorlayarak,blok zinciri üzerindeki kontrolü merkezsizyetsiz hale getiren bir konsensüs algoritması.
+* Durum makinesini açık bir ortamda(open) ekonomik olarak güvenceye almak için [Oyun Teorisine](https://tr.wikipedia.org/wiki/Oyun_teorisi) dayalı olarak sağlam bir teşvik planı (örneğin, çalışma kanıtı maliyetleri-- blok ödülleri) ---> Oyun Teorisi wikiyi kim okyacak yaağ 😄diyorsanız **kısaca : Oyun teorisi, bireyin başarısının diğerlerinin seçimlerine dayalı olduğu seçimler yapması olan bazı stratejik durumların matematiksel olarak davranış biçimlerini yakalamaya çalışır.**
 
 
 
