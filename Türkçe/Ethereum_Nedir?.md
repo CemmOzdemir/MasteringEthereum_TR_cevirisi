@@ -56,7 +56,7 @@ Geçmişte, açıklanan tüm özellikleri kapsayan teknolojilerin kombinasyonuna
 
 Tüm blok zincirleri eşit yaratılmamıştır. Birisi size bir şeyin blok zinciri olduğunu söylediğinde, bir yanıt almamışsınızdır 🔴; bunun yerine, "blockchain" kelimesini kullandıklarında ne anlama geldiklerini netleştirmek için birçok soru sormaya başlamalısınız. 🤔: Önceki listedeki bileşenlerin tanımını sorarak başlayın, ardından bu "blok zincirinin" açık(open), genel(public),Özel(private) vb. özellikler gösterip göstermediğini sorun.
 
-## Ethereum'un Doğumu(başlangıcı):
+## Ethereum'un Doğuşu(başlangıcı):
 
 
 
