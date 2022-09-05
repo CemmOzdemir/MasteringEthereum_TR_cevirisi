@@ -1,4 +1,4 @@
-# Ethereum Nedir?
+# Ethereum Nedir? 🔵 💙
 
 Ethereum genellikle "dünya bilgisayarı" olarak tanımlanır. Ama bu ne anlama geliyor? Bilgisayar
 bilimi bakış açısıyla açıklama ile başlayalım ve ardından bunu, Ethereum'un kapasitesi ve 
@@ -129,13 +129,75 @@ Konstantinopolis / St. Petersburg—Konstantinopolis, Metropolis'in benzer iyile
 * Blok #9,200,000
 Muir Glacier—Buz Devri'nin getirdiği üstel artış nedeniyle tek amacı zorluğu yeniden ayarlamak olan bir hard fork.
 ______
-⚠️ Şimdi kitapta Serenity(ETH 2.0)aşamasına yani 4.aşamaya 🔢 geçeceğini söylemiş buna çok yaklaştık değerli arkadaşlar hatta siz bunu okurken ETH merging(Yani PoS geçmiş) olabilir.Bundan sonra Merging kısmında yapılacak gelişmeler ise şöyle olacak :
+⚠️Güncel UYARI: Şimdi kitapta Serenity(ETH 2.0)aşamasına yani 4.aşamaya 🔢 geçeceğini söylemiş buna çok yaklaştık değerli arkadaşlar hatta siz bunu okurken ETH merging(Yani PoS geçmiş) olabilir.Bundan sonra Merging kısmında yapılacak gelişmeler ise şöyle olacak :
 
 * Merge 
 * Surge  
 * Verge 
 * Purge 
 * Splurge.
+
 ↪️[daha fazla bilgi için](https://news.t-rex.exchange/en/ethereum-after-merge/)
 _____
+
+## Ethereum: Genel Amaçlı Bir Blok Zincir ⛓️
+
+Orijinal blok zincir, yani Bitcoin'in blok zinciri, bitcoin birimlerinin durumunu ve sahipliklerini izler. Bitcoin'i, işlemlerin küresel bir durum geçişine neden olarak bitcoinlerin sahipliğini değiştiren, dağıtık bir konsensüs durum makinesi olarak düşünebilirsiniz. Durum geçişleri, konsensüs kuralları tarafından sınırlandırılır ve tüm katılımcıların (sonunda) birkaç blok çıkarıldıktan sonra sistemin ortak bir (konsensüs) durumu üzerinde birleşmesine izin verir.
+
+Ethereum ayrıca dağıtılmış bir durum makinesidir. Ancak, yalnızca para birimi sahipliği durumunu izlemek yerine, Ethereum genel amaçlı bir veri deposunun, yani bir anahtar-değer(key-value) demeti(tuple ---> Python bilginiz varsa eğer **kısaca içine veri depolamak için kullanılan veri türüdür.List yapısını andırır.
+KAFANIZI KARIŞTIRMAK İSTEMEM 🤯 AMA BURADA TIPKI BİR SOLIDITY MAPPING GİBİ DÜŞÜNMENİZİ İSTİYORUM.[MAPPING HAKKINDA DAHA FAZLA BİLGİ İÇİN 🇹🇷](https://veliuysal.medium.com/solidity-veri-tipi-mapping-bcf39d8b0ef9)**) olarak ifade edilebilen herhangi bir veriyi tutabilen bir deponun durum geçişlerini izler. Bir anahtar-değer veri deposu, her biri bir anahtar tarafından başvurulan rastgele değerleri tutar; örneğin, "Victor Hugo" anahtarı(key) 🔑 tarafından başvurulan "Sefiller" kitabı değeri(value)🔐.Bazı yönlerden bu, çoğu genel amaçlı bilgisayar tarafından kullanılan Rastgele Erişim Belleğinin **(RAM)** veri depolama modeliyle aynı amaca hizmet eder. Ethereum, hem kodu hem de verileri depolayan belleğe sahiptir ve bu belleğin zaman içinde nasıl değiştiğini izlemek için Ethereum blok zincirini kullanır. Genel amaçlı depolanmış programlı bir bilgisayar gibi, Ethereum durum makinesine kod yükleyebilir ve bu kodu çalıştırabilir ve sonuçta ortaya çıkan durum değişikliklerini blok zincirinde saklayabilir.Çoğu genel amaçlı bilgisayardan kritik farklılıklardan ikisi, Ethereum durum değişikliklerinin fikir birliği kurallarına göre yönetilmesi ve durumun küresel olarak dağıtılmasıdır. _Ethereum şu soruyu yanıtlıyor: "Herhangi bir isteğe bağlı olarak durumları izleyebilir ve durum makinesini fikir birliği altında çalışan, dünya çapında bir bilgisayar oluşturmak için programlayabilirsek ne olur?"_
+
+## Ethereum Bileşenleri(Parçaları)
+Ethereum'da, Bir Blok Zincirinin Bileşenleri bölümünde açıklanan bir blok zinciri sisteminin bileşenleri, daha spesifik(özel olarak,derinlemesine) olarak açıklayacak olursak:
+
+
+* P2P ağı / P2P network
+Ethereum, 30303 numaralı TCP bağlantı noktasında adreslenebilen Ethereum ana ağı üzerinde çalışır ve ÐΞVp2p adlı bir protokol çalıştırır.
+
+* fikir birliği kuralları /Consensus rules
+Ethereum'un konsensüs kuralları, referans spesifikasyonu olan Sarı Kitapta tanımlanmıştır (bkz. Daha Fazla Okuma).
+
+* işlemler /Transactions
+Ethereum işlemleri (diğer şeylerin yanı sıra) bir gönderici, alıcı, değer ve veri yükünü içeren ağ mesajlarıdır.
+
+* durum makinesi /state Machine
+Ethereum durum geçişleri, bayt kodunu (makine dili talimatları) yürüten, yığın tabanlı bir sanal makine olan _Ethereum Sanal Makinesi (EVM)_ tarafından işlenir. "Akıllı sözleşmeler" olarak adlandırılan EVM programları, yüksek seviyeli dillerde (örneğin, Solidity) yazılır ve EVM'de yürütülmek üzere bayt koduna derlenir.
+
+* Veri yapıları /Data Structures
+Ethereum'un durumu, Merkle Patricia Ağacı adı verilen serileştirilmiş bir karma veri yapısında işlemleri ve sistem durumunu içeren bir veritabanı (genellikle Google'ın LevelDB'si) olarak her düğümde yerel olarak depolanır.
+
+* fikir birliği algoritması / Consensus algorithm
+Ethereum, en uzun zinciri ve dolayısıyla mevcut durumu belirlemek için önemi PoW tarafından belirlenen sıralı tek imza bloklarını kullanan Bitcoin'in fikir birliği modeli Nakamoto Consensus'u kullanır. Ancak, yakın gelecekte kod adı Casper olan PoS ağırlıklı oylama sistemine geçme planları var.(?)
+
+* Ekonomik güvenlik / Economic security
+Ethereum şu anda _Ethash_ adlı bir PoW algoritması kullanıyor, ancak gelecekte bir noktada PoS'a geçişle bu algoritmadan vazgeçilecek.
+
+* İstemciler /Clients
+Ethereum, en belirginleri Go-Ethereum (Geth) ve Parity olan istemci yazılımının birlikte çalışabilir birkaç uygulamasına sahiptir.
+
+**Daha fazla bu konular hakkında okuma yapmak isterseniz 🇬🇧**
+Aşağıdaki referanslar, burada bahsedilen teknolojiler hakkında ek bilgi sağlar:
+
+Ethereum Sarı Kağıdı(yellow Paper): https://ethereum.github.io/yellowpaper/paper.pdf
+
+Bej Kağıt(beige), Sarı Kağıdın daha geniş bir kitle için _daha az resmi_ bir dilde yeniden yazılmış hali: https://github.com/chronaeon/beigepaper
+
+ÐΞVp2p ağ protokolü: https://github.com/ethereum/devp2p/blob/master/rlpx.md
+
+Ethereum Sanal Makinesi kaynak listesi: https://eth.wiki/en/concepts/evm/ethereum-virtual-machine-(evm)-awesome-list
+
+LevelDB veritabanı (en sık blok zincirinin yerel kopyasını saklamak için kullanılır): https://github.com/google/leveldb
+
+Merkle Patricia ağaçları: https://eth.wiki/en/fundamentals/patricia-tree
+
+Ethash PoW algoritması: https://eth.wiki/en/concepts/ethash/ethash
+
+Casper PoS v1 Uygulama Kılavuzu: http://bit.ly/2DyPr3l
+
+Go-Ethereum (Geth) istemcisi: https://geth.ethereum.org/
+
+Parite Ethereum istemcisi: https://parity.io/
+
+
+
 
