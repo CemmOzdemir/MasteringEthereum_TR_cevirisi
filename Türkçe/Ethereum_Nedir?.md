@@ -245,20 +245,27 @@ Bir DApp en az şunlardan oluşur:
   
   ## İnternetin Üçüncü çağı (web3.0) 🌑
   
-2004'te "Web 2.0" terimi, 🤓 web'in kullanıcı tarafından oluşturulan içeriğe, duyarlı arayüzlere ve etkileşime doğru evrimini tanımlayan ön plana çıktı. Web 2.0 teknik bir özellik değil, web uygulamalarının yeni odağını tanımlayan bir terimdir.
+2004'te "Web 2.0" terimi, 🤓 web'in _kullanıcı tarafından oluşturulan içeriğe, duyarlı arayüzlere ve etkileşimi_, evrimini tanımlayarak ön plana çıktı. Web 2.0 teknik bir özellik değil,❎ web uygulamalarının yeni odağını tanımlayan bir terimdir.
 
 DApps kavramı, bir web uygulamasının her yönüne eşler arası protokollerle merkeziyetsizlik prensibini benimseyen; World Wide Web'i(www) bir sonraki doğal evrim aşamasına taşımayı amaçlamaktadır. **Bu evrimi tanımlamak için kullanılan terim, web'in üçüncü "versiyonu" anlamına gelen web3'tür.** İlk olarak Dr. Gavin Wood tarafından önerilen web3, merkezi olarak sahip olunan ve yönetilen uygulamalardan merkezi olmayan protokoller üzerine kurulu uygulamalara kadar web uygulamaları için yeni bir vizyonu ve odağı temsil ediyor.
 
 Sonraki bölümlerde, tarayıcınızda çalışan _JavaScript_ uygulamaları ile Ethereum blokzinciri arasında köprü kuran **Ethereum web3.js JavaScript kitaplığını** 📖 keşfedeceğiz. web3.js kitaplığı ayrıca _Swarm adlı bir P2P depolama ağına_ ve _Whisper adlı bir P2P mesajlaşma servisine_ bir arayüz içerir. Web tarayıcınızda çalışan bir JavaScript kitaplığında bulunan bu üç bileşenle geliştiriciler, web3 DApp'leri oluşturmalarına olanak tanıyan eksiksiz bir uygulama geliştirme paketine sahip olur.
 
-📝 Not: Eğer Web3 geliştiriçiliğini merak ediyorsanız 32saatlik Patrick Collins'in [Eğitim videosuna](https://www.youtube.com/watch?v=gyMwXuJrbJQ) bakınız. ---> zero to HERO 💪
-
+📝 Not: Eğer Web3 geliştiriçiliğini merak ediyorsanız 32saatlik Patrick Collins'in [Eğitim videosuna](https://www.youtube.com/watch?v=gyMwXuJrbJQ) bakınız. ---> zero to HERO 💪 Bu ingilizce bana türkçe bir şeyler ateşlee derseniz -----> 🇹🇷 
+  💙 [Chainlink Türkiye Kanalı](https://linktr.ee/ChainlinkTurkey)-----> Türkiye'nin en iyi Eğitimlerini sunan kanal olarak sizlerle.Hemde Bedavaa 🤑
+  
+  [ITU Blockchain Klubünün Youtube kanalı ve Eğitimleri](https://www.youtube.com/c/ITUBlockchain) --->Değerli dostlarımızın eğitimleride bedava 🤑
+  
 ## Ethereum'un Geliştirme Kültürü(Geleneği) 💚
   
+Şimdiye kadar, Ethereum'un hedeflerinin ve teknolojisinin, Bitcoin gibi kendisinden önce gelen diğer blok zincirlerinden nasıl farklı olduğundan bahsettik. Ethereum da çok farklı bir geliştirme kültürüne sahip.
+
+Bitcoin'de geliştirme, korumacı ilkeler tarafından yönlendirilir: mevcut sistemlerden hiçbirinin bozulmamasını sağlamak için tüm değişiklikler dikkatlice incelenir. Çoğunlukla, değişiklikler yalnızca geriye dönük uyumluysa uygulanır. Mevcut müşterilerin kaydolmalarına izin verilir, ancak yükseltme yapmamaya karar verirlerse çalışmaya devam edeceklerdir. 
   
+Ethereum'da, karşılaştırmalı olarak, topluluğun geliştirme kültürü geçmişten ziyade geleceğe odaklanır.
+ 🏯 [Mantra felsefesi](https://www.ruhsalyasam.com/mantra-nedir/) "hızlı hareket et ve bir şeyleri hallet" demektir. Bir değişiklik gerekirse, önceki varsayımları geçersiz kılmak, uyumluluğu bozmak veya istemcileri güncellemeye zorlamak anlamına gelse bile uygulanır. Ethereum'un geliştirme kültürü, hızlı inovasyon, hızlı evrim ve geriye dönük uyumluluk pahasına olsa bile ileriye dönük iyileştirmeler yapma istekliliği ile öne çıkar.
   
-  
-  
+ Bunun bir geliştirici olarak sizin için anlamı,**esnek kalmanız ve temel varsayımlardan bazıları değiştikçe altyapınızı yeniden oluşturmaya hazır olmanız gerektiğidir**. Ethereum'daki geliştiricilerin karşılaştığı en büyük zorluklardan biri, değişmez bir sisteme kod dağıtmak ile hala gelişmekte olan bir geliştirme platformu arasındaki doğal çelişkidir. Akıllı sözleşmelerinizi basitçe "yükseltemezsiniz".( ✏️ Not:Bazı akıllı sözleşmlerin upgradeable olanlarıda vardır ama bazı büyük sorunlarıda peşinde getirirler.Çoğu projede Akıllı Sözleşmeler upgradeable değildir.) Yenilerini dağıtmaya, kullanıcıları, uygulamaları ve fonları taşımaya ve **baştan başlamaya** hazır olmalısınız. 
   
 
 
