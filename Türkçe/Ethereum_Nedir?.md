@@ -230,14 +230,36 @@ Sıradaki soru, ⭐ _"Ethereum Dünya Bilgisayarında hesaplama için nasıl gaz
   
 ## Genel Amaçlı Blok Zincirlerden ----> Merkezi Olmayan Uygulamalara (DApps) 🎛️
 
+Ethereum, çeşitli kullanımlar için programlanabilen genel amaçlı bir blok zinciri yapmanın bir yolu olarak başlamıştı. Ancak çok hızlı bir şekilde, Ethereum'un vizyonu, DApp'leri programlamak için bir platform haline geldi. DApp'ler, akıllı sözleşmelerden daha geniş bir perspektifi temsil eder. Bir DApp, en kısa tanımıyla akıllı bir sözleşme ve bir web kullanıcı arayüzüdür. Daha geniş anlamda, bir DApp, açık, merkezi olmayan, eşler arası altyapı hizmetleri üzerine inşa edilmiş bir web uygulamasıdır.
 
+Bir DApp en az şunlardan oluşur:
+  + Blok zincir üzerinde bir akıllı kontrakt
+  + Bir web frontend kullanıcı arayüzü
 
+  Ek olarak, birçok DApp, aşağıdakiler gibi diğer merkezi olmayan bileşenleri içerir:
+  
+  + Merkezi olmayan (P2P) bir depolama protokolü ve platformu
+  + Merkezi olmayan (P2P) bir mesajlaşma protokolü ve platformu
+  
+🔍İPUCU : DApp'lerin ÐApps olarak yazıldığını görebilirsiniz. Ð karakteri, Ethereum'a atıfta bulunan "ETH" adı verilen Latince karakterdir. Bu karakteri görüntülemek için Unicode 0xD0 kod noktasını veya gerekirse HTML karakter varlığı eth'i (veya ondalık varlık #208) kullanın.
+  
+  ## İnternetin Üçüncü çağı (web3.0) 🌑
+  
+2004'te "Web 2.0" terimi, 🤓 web'in kullanıcı tarafından oluşturulan içeriğe, duyarlı arayüzlere ve etkileşime doğru evrimini tanımlayan ön plana çıktı. Web 2.0 teknik bir özellik değil, web uygulamalarının yeni odağını tanımlayan bir terimdir.
 
+DApps kavramı, bir web uygulamasının her yönüne eşler arası protokollerle merkeziyetsizlik prensibini benimseyen; World Wide Web'i(www) bir sonraki doğal evrim aşamasına taşımayı amaçlamaktadır. **Bu evrimi tanımlamak için kullanılan terim, web'in üçüncü "versiyonu" anlamına gelen web3'tür.** İlk olarak Dr. Gavin Wood tarafından önerilen web3, merkezi olarak sahip olunan ve yönetilen uygulamalardan merkezi olmayan protokoller üzerine kurulu uygulamalara kadar web uygulamaları için yeni bir vizyonu ve odağı temsil ediyor.
 
+Sonraki bölümlerde, tarayıcınızda çalışan _JavaScript_ uygulamaları ile Ethereum blokzinciri arasında köprü kuran **Ethereum web3.js JavaScript kitaplığını** 📖 keşfedeceğiz. web3.js kitaplığı ayrıca _Swarm adlı bir P2P depolama ağına_ ve _Whisper adlı bir P2P mesajlaşma servisine_ bir arayüz içerir. Web tarayıcınızda çalışan bir JavaScript kitaplığında bulunan bu üç bileşenle geliştiriciler, web3 DApp'leri oluşturmalarına olanak tanıyan eksiksiz bir uygulama geliştirme paketine sahip olur.
 
+📝 Not: Eğer Web3 geliştiriçiliğini merak ediyorsanız 32saatlik Patrick Collins'in [Eğitim videosuna](https://www.youtube.com/watch?v=gyMwXuJrbJQ) bakınız. ---> zero to HERO 💪
 
-
-
+## Ethereum'un Geliştirme Kültürü(Geleneği) 💚
+  
+  
+  
+  
+  
+  
 
 
 
