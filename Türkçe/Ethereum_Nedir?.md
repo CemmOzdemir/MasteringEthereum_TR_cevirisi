@@ -85,7 +85,57 @@ Kurucular yıllarca çalıştılar, vizyonu inşa ettiler ve geliştirdier ve ni
 📝NOT: Vitalik Buterin'in "A Prehistory of Ethereum" adlı makalesi Eylül 2017'de yayınlandı ve Ethereum'un ilk zamanlarının büyüleyici bir birinci-şahıs bakış açısıyla sunuyor.
 ➡️[buradan](https://vitalik.ca/general/2017/09/14/prehistory.html) okuyabilirsiniz.
 
+## Ethereum'un Dört Gelişim Aşaması
 
+Ethereum'un gelişimi, her aşamada meydana gelen büyük değişikliklerle birlikte dört farklı aşamada planlandı. Bir aşama, işlevselliği geriye dönük uyumlu _olmayacak_ şekilde değiştiren "sert çatallama(Hard Forks)" olarak bilinen alt sürümler içerebilir.
 
+Dört ana geliştirme aşamasının kod adları: 
+* Frontier 
+* Homestead 
+* Metropolis  
+* Serenity
 
+Bugüne kadar ortaya çıkan ara sert çatallar(intermediate hard forks); _Ice Age, DAO, Tangerine Whistle, Spurious Dragon, Byzantium, Constantinople/St. Petersburg, İstanbul ve Muir Glacier_. Hem geliştirme aşamaları hem de ara sert çatallar, blok numarasına göre "tarihli" olan aşağıdaki zaman çizelgesinde gösterilmektedir:
+_____
+* Blok #0
+Frontier —> Ethereum'un 30 Temmuz 2015'ten Mart 2016'ya kadar süren ilk aşaması. 🔢
+_____
+
+* Blok #200.000
+Ice Age—>Hazır olduğunda PoS'a geçişi motive etmek için üstel bir zorluk artışı getiren bir hard fork.
+
+_____
+* Blok #1,150.000
+Homestead—>Ethereum'un ikinci aşaması, Mart 2016'da piyasaya sürüldü. 🔢
+_____
+* Blok #1,192.000
+DAO—Saldırıya uğramış DAO sözleşmesinin kurbanlarını geri ödeyen ve Ethereum ile Ethereum Classic'in iki rakip sisteme bölünmesine neden olan bir hard fork.
+
+* Blok #2,463,000
+Tangerine Whistle—>Belirli I/O ağırlıklı operasyonlar için gaz hesaplamasını değiştirmek ve bu operasyonların düşük gaz maliyetinden yararlanan bir hizmet reddi (DoS) saldırısından birikmiş durumu temizlemek için bir hard fork.
+
+* Blok #2,675,000
+Spurious Dragon—>Daha fazla DoS saldırı vektörüne yönelik bir hard fork ve başka bir durum temizleme. Ayrıca, bir tekrar saldırı koruma mekanizması.
+_______
+* Blok #4.370.000
+Metropolis Byzantium—Metropolis,---> Ethereum'un üçüncü aşamasıdır. Ekim 2017'de piyasaya sürülen Byzantium, Metropolis'in ilk bölümüdür ve düşük seviyeli işlevler ekler ve blok ödülünü ve zorluğunu ayarlar. 🔢
+_______
+* Blok #7.280.000
+Konstantinopolis / St. Petersburg—Konstantinopolis, Metropolis'in benzer iyileştirmelerle ikinci kısmı olarak planlandı. Etkinleştirilmesinden birkaç saat önce kritik bir hata keşfedildi. Bu nedenle hard fork ertelendi ve St. Petersburg olarak yeniden adlandırıldı.
+
+* Blok #9.069.000
+İstanbul—Önceki ikisiyle aynı yaklaşıma ve adlandırma kuralına sahip ek bir hard fork.
+
+* Blok #9,200,000
+Muir Glacier—Buz Devri'nin getirdiği üstel artış nedeniyle tek amacı zorluğu yeniden ayarlamak olan bir hard fork.
+______
+⚠️ Şimdi kitapta Serenity(ETH 2.0)aşamasına yani 4.aşamaya 🔢 geçeceğini söylemiş buna çok yaklaştık değerli arkadaşlar hatta siz bunu okurken ETH merging(Yani PoS geçmiş) olabilir.Bundan sonra Merging kısmında yapılacak gelişmeler ise şöyle olacak :
+
+* Merge 
+* Surge  
+* Verge 
+* Purge 
+* Splurge.
+↪️[daha fazla bilgi için](https://news.t-rex.exchange/en/ethereum-after-merge/)
+_____
 
