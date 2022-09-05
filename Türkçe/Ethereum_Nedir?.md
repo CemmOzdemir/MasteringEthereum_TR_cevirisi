@@ -176,28 +176,28 @@ Ethereum şu anda _Ethash_ adlı bir PoW algoritması kullanıyor, ancak gelecek
 Ethereum, en belirginleri Go-Ethereum (Geth) ve Parity olan istemci yazılımının birlikte çalışabilir birkaç uygulamasına sahiptir.
 
 **Daha fazla bu konular hakkında okuma yapmak isterseniz 🇬🇧**
-Aşağıdaki referanslar, burada bahsedilen teknolojiler hakkında ek bilgi sağlar:
+Aşağıdaki referanslar, burada bahsedilen teknolojiler hakkında ek bilgi sağlar: ⬇️
 
-Ethereum Sarı Kağıdı(yellow Paper): https://ethereum.github.io/yellowpaper/paper.pdf
+* Ethereum Sarı Kağıdı(yellow Paper): https://ethereum.github.io/yellowpaper/paper.pdf
 
-Bej Kağıt(beige), Sarı Kağıdın daha geniş bir kitle için _daha az resmi_ bir dilde yeniden yazılmış hali: https://github.com/chronaeon/beigepaper
+* Bej Kağıt(beige), Sarı Kağıdın daha geniş bir kitle için _daha az resmi_ bir dilde yeniden yazılmış hali: https://github.com/chronaeon/beigepaper
 
-ÐΞVp2p ağ protokolü: https://github.com/ethereum/devp2p/blob/master/rlpx.md
+* ÐΞVp2p ağ protokolü: https://github.com/ethereum/devp2p/blob/master/rlpx.md
 
-Ethereum Sanal Makinesi kaynak listesi: https://eth.wiki/en/concepts/evm/ethereum-virtual-machine-(evm)-awesome-list
+* Ethereum Sanal Makinesi kaynak listesi: https://eth.wiki/en/concepts/evm/ethereum-virtual-machine-(evm)-awesome-list
 
-LevelDB veritabanı (en sık blok zincirinin yerel kopyasını saklamak için kullanılır): https://github.com/google/leveldb
+* LevelDB veritabanı (en sık blok zincirinin yerel kopyasını saklamak için kullanılır): https://github.com/google/leveldb
 
-Merkle Patricia ağaçları: https://eth.wiki/en/fundamentals/patricia-tree
+* Merkle-Patricia ağaçları: https://eth.wiki/en/fundamentals/patricia-tree
 
-Ethash PoW algoritması: https://eth.wiki/en/concepts/ethash/ethash
+* Ethash PoW algoritması: https://eth.wiki/en/concepts/ethash/ethash
 
-Casper PoS v1 Uygulama Kılavuzu: http://bit.ly/2DyPr3l
+* Casper PoS v1 Uygulama Kılavuzu: http://bit.ly/2DyPr3l
 
-Go-Ethereum (Geth) istemcisi: https://geth.ethereum.org/
+* Go-Ethereum (Geth) istemcisi: https://geth.ethereum.org/
 
-Parite Ethereum istemcisi: https://parity.io/
+* Parite Ethereum istemcisi: https://parity.io/
 
-
+## Ethereum ve Turing Bütünlüğü 🤖
 
 
