@@ -222,8 +222,13 @@ Bununla birlikte, daha önce değindiğimiz durma sorunu ⤴️ nedeniyle, özel
 ⭐
 _Bir dünya bilgisayarında, kaynakları kötüye kullanan bir program, dünyanın kaynaklarını kötüye kullanır. Ethereum, kaynak kullanımını önceden tahmin edemiyorsa, akıllı bir sözleşme tarafından kullanılan kaynakları nasıl kısıtlar?_
 
++ Bu zorluğa cevap vermek için Ethereum, gaz(gas) ⛽ adı verilen bir ölçüm mekanizması sunar. EVM akıllı bir sözleşme yürütürken, her talimatı (hesaplama, veri erişimi vb.) dikkatle hesaba katar. Her talimatın gaz birimlerinde önceden belirlenmiş bir maliyeti vardır. Bir işlem bir akıllı sözleşmenin yürütülmesini tetiklediğinde, akıllı sözleşmeyi çalıştırırken tüketilebileceklerin üst sınırını belirleyen bir miktar gaz içermelidir. Hesaplama tarafından tüketilen gaz miktarı işlemde mevcut olan gazı aşarsa EVM yürütmeyi sonlandıracaktır. **Gaz, Ethereum'un herhangi bir programın tüketebileceği kaynakları sınırlarken Turing-tam hesaplamaya izin vermek için kullandığı mekanizmadır.**
 
+Sıradaki soru, ⭐_'Ethereum Dünya Bilgisayarında hesaplama için nasıl gaz alınır?'_ 
 
+ + Yalnızca bir işlemin parçası olarak satın alınabilir ve yalnızca ether(işlem yaparken altbirimleride vardır.Ancak hespi birer etherin parçasıdır.) ile satın alınabilir. Eter'in bir işlemle birlikte gönderilmesi ve kabul edilebilir bir gaz fiyatı ile birlikte gaz alımı için açıkça tahsis edilmesi gerekir. Tıpkı benzinikte olduğu gibi, gazın fiyatı sabit değildir.(Umarız Merge den sonra Gaz fiyatlarında azda olsa düşüş olur.Gözlerimizdeki ışıltı sönmesin!💸 🕴️) 😸 İşlem için gaz satın alınır, hesaplama yapılır ve kullanılmayan gaz işlemi gönderene iade edilir.🔄
+  
+## Genel Amaçlı Blok Zincirlerden ----> Merkezi Olmayan Uygulamalara (DApps) 🎛️
 
 
 
