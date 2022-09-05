@@ -58,6 +58,34 @@ Tüm blok zincirleri eşit yaratılmamıştır. Birisi size bir şeyin blok zinc
 
 ## Ethereum'un Doğuşu(başlangıcı):
 
+Tüm büyük yenilikler gerçek sorunları çözer ve Ethereum bir istisna değildir. Ethereum, insanların Bitcoin modelinin gücünü fark ettiği ve kripto para uygulamalarının ötesine geçmeye çalıştığı bir zamanda tasarlandı. Ancak geliştiriciler bir bilmeceyle karşı karşıya kaldılar: Ya Bitcoin'in üzerine inşa etmeleri(yeni ürünler ortaya koymak) ya da **yeni bir blokzinciri** başlatmaları(kurmak) gerekiyordu. Bitcoin üzerine inşa etmek(chainin yani), ağın kesin kısıtlamaları içinde yaşamak ve geçici çözümler bulmaya çalışmak anlamına geliyordu. Sınırlı işlem türleri, veri türleri ve veri depolama boyutları, doğrudan Bitcoin üzerinde çalışabilecek uygulama türlerini sınırlandırıyor gibiydi; başka herhangi bir şey ek zincir dışı katmanlara ihtiyaç duyuyordu ve bu, halka açık bir blok zinciri kullanmanın birçok avantajını hemen ortadan kaldırdı. Zincirde daha fazla serbestliğe ve esnekliğe ihtiyaç duyan projeler için tek seçenek yeni bir blok zincirdi. Ancak bu çok fazla iş anlamına geliyordu: tüm altyapı öğelerini yeniden başlatmak, kapsamlı testler vb.
+
+2013'ün sonlarına doğru, genç bir programcı ve Bitcoin meraklısı olan **Vitalik Buterin**💙, Bitcoin ve _Mastercoin'in (Bitcoin'i basit akıllı sözleşmeler sunacak şekilde genişleten bir bindirme protokolü)_ özelliklerini daha da genişletmeyi düşünmeye başladı. Aynı yılın Ekim ayında Vitalik, Mastercoin ekibine, Mastercoin'in özel sözleşme dilinin yerine esnek ve yazılabilir (ancak Turing-tamamlanmamış) sözleşmelere izin veren daha genel bir yaklaşım önerdi. Mastercoin ekibi etkilenmiş olsa da, bu teklif geliştirme yol haritalarına uyması için çok radikal bir değişiklikti.
+
+Aralık 2013'te Vitalik, Ethereum'un arkasındaki fikri özetleyen bir teknik incelemeyi(**whitepaper**) paylaşmaya başladı: _Turing-complete halde , genel amaçlı bir blokzincir_. Birkaç düzine insan bu ilk taslağı gördü ve geri bildirimde bulundu ve Vitalik'in teklifi geliştirmesine yardımcı oldular.
+
+Bu kitabın her iki yazarı da teknik incelemenin erken bir taslağını aldı ve üzerinde yorum yaptı. Andreas M. Antonopoulos bu fikirden etkilendi ve Vitalik'e akıllı sözleşme yürütme konusunda fikir birliği kurallarını uygulamak için ayrı bir blok zincirinin kullanımı ve ↗️ [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness) ,diline etkileri hakkında birçok soru sordu. Andreas, Ethereum'un ilerlemesini büyük bir ilgiyle takip etmeye devam etti, ancak Mastering Bitcoin adlı kitabını yazmanın ilk aşamalarındaydı ve çok sonrasına kadar doğrudan Ethereum'a katılmadı. Ancak Dr. Gavin Wood, Vitalik'e ulaşan ve C++ programlama becerileri konusunda yardım teklif eden ilk kişilerden biriydi. Gavin, Ethereum'un kurucu ortağı, ortak tasarımcısı ve CTO'su oldu.
+
+Vitalik'in ["Ethereum Prehistory"](https://vitalik.ca/general/2017/09/14/prehistory.html) yazısında anlattığı gibi:
+
+____
+Bu, Ethereum protokolünün tamamen benim eserim olduğu zamandı. Ancak bu andan itibaren gruba yeni katılımcılar katılmaya başladı. Protokol tarafında açık ara en öne çıkan isim Gavin Wood'du…
+
+Gavin ayrıca, Ethereum'u dijital varlıkları tutabilen ve önceden belirlenmiş kurallara göre bunları genel amaçlı bir bilgi işlem platformuna aktarabilen blok zincir tabanlı sözleşmelerle programlanabilir para oluşturmak için bir platform olarak görmekten tutun ,vizyondaki ince değişiklik için büyük ölçüde kredilendirilebilir(değerlendirilebilmek)... 
+Bu, vurgu ve terminolojideki ince değişikliklerle başladı ve daha sonra bu etki, Ethereum'u merkezi olmayan teknolojilerin bir parçası, diğer ikisi Whisper ve Swarm olarak gören “Web 3” topluluğuna artan vurgu ile daha da güçlendi.
+____
+
+Aralık 2013'ten itibaren Vitalik ve Gavin, Ethereum olan protokol katmanını birlikte oluşturarak fikri yeniledi ve geliştirdi.
+
+Ethereum'un kurucuları, programlanarak çok çeşitli uygulamaları destekleyebilecek belirli bir amacı olmayan bir blok zinciri düşünüyorlardı. Fikir, Ethereum gibi genel amaçlı bir blok zinciri kullanarak, bir geliştiricinin, eşler arası ağların, blok zincirlerin, konsensüs algoritmalarının vb. temel mekanizmalarını uygulamak zorunda kalmadan kendi özel uygulamalarını programlayabilmesiydi. Ethereum platformu soyutlamak için tasarlandı. bu ayrıntılar ve merkezi olmayan blok zinciri uygulamaları için belirleyici ve güvenli bir programlama ortamı sağlayacaktı.
+
+💝**Satoshi gibi, Vitalik ve Gavin da yeni bir teknoloji icat etmediler**; yeni buluşları mevcut teknolojilerle özgün bir şekilde birleştirdiler ve fikirlerini dünyaya kanıtlamak için prototip kodunu yaydılar.
+Kurucular yıllarca çalıştılar, vizyonu inşa ettiler ve geliştirdier ve nihayet 30 Temmuz 2015'te ilk Ethereum bloğu çıkarıldı. _Dünyanın bilgisayarı_, dünyaya hizmet etmeye başladı.
+
+📝NOT: Vitalik Buterin'in "A Prehistory of Ethereum" adlı makalesi Eylül 2017'de yayınlandı ve Ethereum'un ilk zamanlarının büyüleyici bir birinci-şahıs bakış açısıyla sunuyor.
+➡️[buradan](https://vitalik.ca/general/2017/09/14/prehistory.html) okuyabilirsiniz.
+
+
 
 
 
