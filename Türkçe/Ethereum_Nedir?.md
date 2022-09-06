@@ -267,9 +267,22 @@ Ethereum'da, karşılaştırmalı olarak, topluluğun geliştirme kültürü ge�
   
  Bunun bir geliştirici olarak sizin için anlamı,**esnek kalmanız ve temel varsayımlardan bazıları değiştikçe altyapınızı yeniden oluşturmaya hazır olmanız gerektiğidir**. Ethereum'daki geliştiricilerin karşılaştığı en büyük zorluklardan biri, değişmez bir sisteme kod dağıtmak ile hala gelişmekte olan bir geliştirme platformu arasındaki doğal çelişkidir. Akıllı sözleşmelerinizi basitçe "yükseltemezsiniz".( ✏️ Not:Bazı akıllı sözleşmlerin upgradeable olanlarıda vardır ama bazı büyük sorunlarıda peşinde getirirler.Çoğu projede Akıllı Sözleşmeler upgradeable değildir.) Yenilerini dağıtmaya, kullanıcıları, uygulamaları ve fonları taşımaya ve **baştan başlamaya** hazır olmalısınız. 
   
+İronik olarak, bu aynı zamanda daha fazla özerkliğe ve daha az merkezi kontrole sahip sistemler oluşturma hedefinin hala tam olarak gerçekleştirilmediği anlamına gelir. Özerklik ve merkeziyetsizlik, platformda önümüzdeki birkaç yıl içinde Ethereum'da elde edebileceğinizden biraz daha fazla istikrar gerektirir. Platformu "geliştirmek" için akıllı sözleşmelerinizi hurdaya çıkarmaya 🥡 ve yeniden başlatmaya hazır olmalısınız, bu da onlar üzerinde belirli bir derecede kontrol sahibi olmanız gerektiği anlamına gelir.
+  
+ 🤩Ancak olumlu tarafı, Ethereum çok hızlı ilerliyor. Bir nükleer santralin arkasına bisiklet kulübesinin 🚴 nasıl inşa edileceği gibi küçük ayrıntılar üzerinde tartışarak gelişmeyi durdurmak anlamına gelen bir ifade olan "bisikletten kurtulma" için çok az süre var. Bisikletten kurtulmayı kafanıza takarsanız, aniden dikkatiniz dağılmış ve geliştirme ekibinin geri kalanının planı değiştirdiğini ve bisikletleri otonom hovercraft lehine çevirdiğini keşfedebilirsiniz. 😃 Sonunda, Ethereum platformunun gelişimi yavaşlayacak ve arayüzleri sabit hale gelecektir. Ancak bu arada **inovasyon, itici ilkedir**. Devam etsen iyi olur, çünkü kimse senin için yol vermeyecek,durmayacak.🙄.
+  
+  
+## Neden Ethereum Öğrenmelisiniz ?
+  
+ Blokzincirler çok dik bir öğrenme eğrisine sahiptirler, çünkü birden fazla disiplini tek bir etki alanında birleştirirler: _programlama, bilgi güvenliği, kriptografi, ekonomi, dağıtılmış sistemler, eşler arası ağlar, vb_. Ethereum bu **öğrenme eğrisini çok daha az dik hale getirir**, bu yüzden sizler hızlı bir şekilde başlayabilirsiniz.Şunuda unutmamak gerekir ki aldatıcı derecede basit bir ortamın yüzeyinin hemen altında çok daha fazlası yatıyor. Öğrendikçe ve daha derine bakmaya başladıkça, her zaman başka bir karmaşıklık ve merak katmanı vardır.
 
+Ethereum, blokzincirler hakkında bilgi edinmek için harika bir platformdur ve diğer blok zincir platformlarından daha hızlı, büyük bir geliştirici topluluğu oluşturur. **Ethereum, geliştiriciler tarafından geliştiriciler için oluşturulmuş bir geliştiricinin blok zinciridir**. JavaScript uygulamalarına aşina bir geliştirici, Ethereum'a adapte olabilir ve çok hızlı bir şekilde çalışabilir kodlar üretmeye başlayabilir. Ethereum'un ilk birkaç yılında, yalnızca beş satır kodla bir jeton oluşturabileceğinizi duyuran tişörtler 👕 görmek yaygındı. Tabii ki, bu iki ucu keskin bir kılıç.⚔️ **KOD YAZMAK KOLAYDIR, ANCAK İYİ VE GÜVENLİ KOD YAZMAK ÇOK ZORDUR.** 💻
+  
+ ## Bu kitap sana ne öğretecek?
 
+  Bu kitap Ethereum'a derinlemesine iniyor ve her bileşeni inceliyor. Basit bir işlemle başlayacak, nasıl çalıştığını inceleyecek, basit bir sözleşme oluşturacak, daha iyi hale getirecek ve Ethereum sistemindeki yolculuğunu takip edeceksiniz.
 
+Sadece Ethereum'u nasıl kullanacağınızı değil, nasıl çalıştığını da öğreneceksiniz, aynı zamanda neden olduğu gibi tasarlandığını da öğreneceksiniz. Parçaların her birinin nasıl çalıştığını ve nasıl bir araya geldiklerini ve nedenini anlayabileceksiniz.
 
 
 
