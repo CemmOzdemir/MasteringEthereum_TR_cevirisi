@@ -2,7 +2,7 @@
 
 örnek olarak dursun:
 
-<img title="a title" alt="Alt text" src="/images/boo.svg">
+<img title="a title" src="/images/boo.svg">
 
 
 Bu bölümde Ethereum'u keşfetmeye başlayacağız, cüzdanların nasıl kullanılacağını, işlemlerin nasıl oluşturulduğunu ve ayrıca temel bir akıllı sözleşmenin nasıl yürütüleceğini öğreneceğiz.
@@ -91,13 +91,62 @@ Bu sorumluluğu yönetmenize yardımcı olacak birkaç ipucu:
 Anahtar yönetimi ve güvenlik için bazı temel en iyi uygulamaları ele aldığımıza göre, şimdi MetaMask kullanarak çalışmaya başlayalım! 🦊
 
 
-## Metamask ile başlayalım
+## Metamask Ekleme(yükleme) ile başlayalım
 
 Google Chrome tarayıcısını açın ve https://chrome.google.com/webstore/category/extensions adresine gidin.
 
 "MetaMask" arayın ve bir tilki logosuna tıklayın.
 
 <img title="metamask" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/metamask_download.png">
+
+MetaMask Chrome uzantısının ayrıntı sayfası
+Gerçek MetaMask uzantısını indirdiğinizi doğrulamak önemlidir, çünkü bazen insanlar kötü amaçlı uzantıları Google'ın filtrelerinden geçirebilir. Gerçek olanı:
+
+* Adres çubuğunda nkbihfbeogaeaoehlefnkodbefgpgknn kimliğini gösterir
+
+* https://metamask.io tarafından sunulmaktadır
+
+* 1.500'den fazla incelemesi var
+
+* +2.000.000'den fazla kullanıcısı var
+
+* Doğru uzantıya baktığınızı onayladıktan sonra, yüklemek için **"Chrome'a Ekle"** yi tıklayın.
+
+## Cüzdan Oluşturma
+MetaMask yüklendikten sonra, tarayıcınızın araç çubuğunda yeni bir simge (tilki başı) görmelisiniz. 
+Başlamak için üzerine tıklayın. Şartlar ve koşulları kabul etmeniz ve ardından bir şifre girerek yeni Ethereum cüzdanınızı oluşturmanız istenecektir.
+
+<img title="MmaskAnaEkran" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/metamask_password.png">
+
+🔍 Parola MetaMask'e erişimi kontrol eder, böylece tarayıcınıza erişimi olan herkes tarafından kullanılamaz.
+
+Bir parola belirledikten sonra, MetaMask sizin için bir cüzdan oluşturacak ve size 12 İngilizce kelimeden oluşan bir anımsatıcı(mnemonic) gösterecektir. Bu kelimeler, MetaMask'a veya bilgisayarınıza bir şey olursa, fonlarınıza erişimi kurtarmak için herhangi bir uyumlu cüzdanda kullanılabilir.**Bu kurtarma işlemi için parolaya ihtiyacınız yoktur; 12 kelime yeterlidir.**
+
+🔍 Anımsatıcınızı (12 kelime) kağıda iki kez yedekleyin. İki kağıta yazın ve yedeği yangına dayanıklı kasa, kilitli çekmece veya kasa gibi iki ayrı güvenli yerde saklayın. Kağıt yedeklere, Ethereum cüzdanınızda sakladığınız değere eşdeğer nakit (cash para) gibi davranın.**Bu kelimelere erişimi olan herkes erişim kazanabilir ve paranızı çalabilir.**
+
+<img title="mnemonic" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/metamask_mnemonic.png">
+
+Anımsatıcıyı(kısaca 12 veya 24 kelime işte yaa😃) güvenli bir şekilde sakladığınızı onayladığınızda, MetaMask'taki Ethereum hesabınızda gösterildiği gibi Ethereum hesabınızın ayrıntılarını görebileceksiniz.
+
+<img title="account" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/metamask_account.png">
+
+Hesap sayfanız hesabınızın adını (varsayılan olarak "Hesap 1"), bir Ethereum adresini (örnekte 0x9E713...) ve bu hesabı diğer hesaplardan görsel olarak ayırt etmenize yardımcı olacak renkli bir simgeyi gösterir. 
+Hesap sayfasının üst kısmında, şu anda hangi Ethereum ağı üzerinde çalıştığınızı görebilirsiniz *(örnekte "Ana Ağ(main net)").*
+
+Tebrikler! İlk Ethereum cüzdanınızı kurdunuz. 🎆🍾
+
+
+
+## Ağları Değiştirme 🔵----------------> 🟢
+MetaMask hesap sayfasında görebileceğiniz gibi, 
+birden fazla Ethereum ağı arasından seçim yapabilirsiniz. 
+*Varsayılan olarak, MetaMask ana ağa(main net) bağlanmaya çalışacaktır.* Diğer seçenekler, _genel test ağları, seçtiğiniz herhangi bir Ethereum düğümü_ veya kendi bilgisayarınızda (localhost) özel blok zincirleri çalıştıran düğümlerdir: ( ⚠️**Merge sonrası bazı test ağları kapanacak.Rinkby gibi**)
+
+
+
+
+
+
 
 
 
