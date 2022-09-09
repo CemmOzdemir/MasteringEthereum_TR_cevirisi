@@ -140,19 +140,40 @@ Tebrikler! İlk Ethereum cüzdanınızı kurdunuz. 🎆🍾
 ## Ağları Değiştirme 🔵----------------> 🟢
 MetaMask hesap sayfasında görebileceğiniz gibi, 
 birden fazla Ethereum ağı arasından seçim yapabilirsiniz. 
-*Varsayılan olarak, MetaMask ana ağa(main net) bağlanmaya çalışacaktır.* Diğer seçenekler, _genel test ağları, seçtiğiniz herhangi bir Ethereum düğümü_ veya kendi bilgisayarınızda (localhost) özel blok zincirleri çalıştıran düğümlerdir: ( ⚠️**Merge sonrası bazı test ağları kapanacak.Rinkby gibi**)
+*Varsayılan olarak, MetaMask ana ağa(main net) bağlanmaya çalışacaktır.* Diğer seçenekler, _genel test ağları, seçtiğiniz herhangi bir Ethereum düğümü_ veya kendi bilgisayarınızda (localhost) özel blok zincirleri çalıştıran düğümlerdir: ( ⚠️**Merge sonrası bazı test ağları kapanacak.Rinkeby gibi**)
 
 
+## Ana Ethereum Ağı
+Halka açık ana Ethereum blok zinciri. Gerçek ETH, gerçek değer ve gerçek sonuçlar verir.
+
+## Ropsten Test Ağı
+Ethereum genel test blok zinciri ve ağı. Bu ağdaki ETH'nin değeri yok.
+
+## Kovan Test Ağı
+Ethereum, Aura konsensüs protokolünü kullanarak, yetki belgesi (federe imzalama) ile blok zincirini ve ağı herkese açık şekilde test eder. Bu ağdaki ETH'nin değeri yok. Kovan test ağı yalnızca Parity tarafından desteklenir. Diğer Ethereum istemcileri, yetkiye dayalı doğrulamanın kanıtı için daha sonra önerilen Clique fikir birliği protokolünü kullanır.
+
+## Rinkeby Test Ağı
+Ethereum, yetki kanıtı (federe imzalama) ile Clique konsensüs protokolünü kullanarak blok zincirini ve ağını herkese açık test eder. Bu ağdaki ETH'nin değeri yok.
+
+## Yerel bilgisayar ağı ----> 8545
+Tarayıcıyla aynı bilgisayarda çalışan bir düğüme bağlanır. Düğüm, herhangi bir genel blok zincirinin (ana veya test ağı) veya özel bir test ağının parçası olabilir.
+
+## Özel RPC
+MetaMask'i Geth uyumlu bir Uzaktan işleme Çağrısı (RPC) arabirimiyle herhangi bir düğüme bağlamanıza olanak tanır. Düğüm, herhangi bir genel veya özel blok zincirinin parçası olabilir.
+
+🔍  MetaMask cüzdanınız, bağlandığı *tüm ağlarda aynı özel anahtarı ve Ethereum adresini kullanır.* Ancak, her Ethereum ağındaki Ethereum adres bakiyeniz, farklı olacaktır. Anahtarlarınız, örneğin Ropsten'deki etheri ve sözleşmeleri kontrol edebilir, ancak ana ağdakileri değil. 
 
 
+## Test için Ether Alma (Facucet 🚰)
+
+İlk göreviniz olarak cüzdanınıza Ether göndermeniz gerekir. **Bunu ana ağda yapmayacaksınız çünkü gerçek ether paraya mal olur ve onu kullanmak biraz daha fazla deneyim gerektirir. Şimdilik, cüzdanınıza bir miktar testnet ether yükleyeceksiniz.**
 
 
+MetaMask'i Ropsten Test Network'e geçirin. Para Yatırma'ya ve ardından Ropsten Test Musluğu'na(_Faucet -----> size bedava testnet etheri verecek olan yapıya faucet diyoruz._) tıklayın. MetaMask, aşağıda gösterildiği gibi yeni bir web sayfası açacaktır.
 
+<img title="fortestnet" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/metamask_ropsten_faucet.png">
 
-
-
-
-
+📝 Ek olarak [Chainlink Faucetinide](https://faucets.chain.link) kullanabilirsiniz. ◀️
 
 
 
