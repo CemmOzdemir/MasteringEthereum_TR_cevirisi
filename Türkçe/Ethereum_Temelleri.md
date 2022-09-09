@@ -291,7 +291,7 @@ Sözleşmenin bu kısmı musluğumuzun ana mantığıdır. Para çekme işlemler
 
 Ardından  geri çekme tanımı geliyor:
 
-`msg.sender.transfer(withdraw_amount);
+`msg.sender.transfer(withdraw_amount);`
 
 Burada birkaç ilginç şey oluyor. **Msg nesnesi**, tüm sözleşmelerin erişebileceği girdilerden biridir. Bu sözleşmenin yürütülmesini tetikleyen işlemi temsil eder. **Gönderici özelliği, işlemin gönderen adresidir.** transfer ilemi, mevcut sözleşmeden göndericinin adresine **etheri aktaran yerleşik bir işlevdir.**Transfer işlevi, **tek argümanı** olarak **bir miktar alır.** Parametresi olan withdraq_amount değerini birkaç satır önce bildirilen geri çekme işlevine geçiriyoruz.
 
@@ -299,6 +299,41 @@ Bir sonraki satır, geri çekme fonksiyonumuzun tanımının sonunu gösteren ka
 
 Varsayılan işlevimizin hemen altında, sözleşme Musluğu tanımını kapatan son kapanış küme ayracı bulunur. `}` Bu kadar! 🔚
 
+## Musluk sözleşmesinin Derlenmesi (compiling)
+
+Artık ilk örnek sözleşmemize sahip olduğumuza göre, **Solidity kodunu EVM bayt koduna dönüştürmek** için bir Solidity derleyicisi kullanmamız gerekiyor, böylece EVM tarafından blok zincirinin kendisinde yürütülebilir.
+
+Solidity derleyicisi, çeşitli çerçevelerin bir parçası olarak bağımsız bir yürütülebilir dosya olarak gelir ve **Entegre Geliştirme Ortamlarında (IDE'ler)** paketlenmiştir. İşleri basit tutmak için, **Remix** adı verilen daha popüler IDE'lerden birini kullanacağız. 
+🖱️
+https://remix.ethereum.org adresindeki Remix IDE'ye gitmek için Chrome tarayıcınızı (daha önce yüklediğiniz MetaMask cüzdanıyla) kullanın.
+
+⚠️UYARI! :KİTAPTA KULLANILAN GÖRSELLER REMIX IDE'NİN ESKİ SÜRÜMÜNE AİT GÖRSELLER OLUP YENİ SÜRÜMÜNÜ AZ BİRAZ İNCELEDİĞİNİZDE ÇOKTA **KAFA KARIŞTIRICI OLMADIĞINI** GÖRECEKSİNİZ.☑️
+
+Remix'i ilk yüklediğinizde, ballot.sol adlı örnek bir sözleşme ile başlayacaktır. Buna ihtiyacımız yok, bu yüzden Varsayılan örnek sekmesini kapat bölümünde görüldüğü gibi sekmenin köşesindeki x'i tıklayarak kapatın.
+
+<img title="ballot_close" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_close_tab.png">
+
+Şimdi, yeni bir sekme açmak için artı işaretini(+) tıklayın bölümünde görüldüğü gibi, sol üstteki araç çubuğundaki dairesel artı işaretine tıklayarak yeni bir sekme ekleyin. Yeni dosyaya Faucet.sol adını verin 
+
+<img title="new_file" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_toolbar.png">
+
+yazmış olduğunuz kodu Faucet.sol 'a yapıştırın veya git reposundan kop-yapıştır yapın ve açın:
+ 
+<img title="faucet_start" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_faucet_load.png">
+
+ 
+ Faucet.sol sözleşmesini Remix IDE'ye yükledikten sonra, IDE kodu otomatik olarak derleyecektir. Her şey yolunda giderse, Derleme sekmesinin altında sağda görünen ve başarılı derlemeyi onaylayan "Musluk" bulunan yeşil bir kutu göreceksiniz.
+ 
+
+<img title="faucet_success" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_compile.png">
+
+Bir şeyler ters giderse, en olası sorun Remix IDE'nin Solidity derleyicisinin 0.6'dan farklı bir sürümünü kullanmasıdır. 
+Bu durumda **pragma yönergemiz Faucet.sol'ün derlenmesini engelleyecektir**. Derleyici sürümünü değiştirmek için **Ayarlar sekmesine** gidin,
+sürümü ^0.6.0 olarak ayarlayın ve tekrar deneyin.
+
+Solidity derleyicisi şimdi Faucet.sol dosyamızı **EVM bayt kodunda derledi.** Merak ediyorsanız, bayt kodu şöyle görünür:
+
+`PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0xF4 DUP1 PUSH2 0x1F PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH1 0x1F JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x2E1A7D4D EQ PUSH1 0x2A JUMPI PUSH1 0x25 JUMP JUMPDEST CALLDATASIZE PUSH1 0x25 JUMPI STOP JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST CALLVALUE DUP1 ISZERO PUSH1 0x35 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x5F PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x20 DUP2 LT ISZERO PUSH1 0x4A JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP2 ADD SWAP1 DUP1 DUP1 CALLDATALOAD SWAP1 PUSH1 0x20 ADD SWAP1 SWAP3 SWAP2 SWAP1 POP POP POP PUSH1 0x61 JUMP JUMPDEST STOP JUMPDEST PUSH8 0x16345785D8A0000 DUP2 GT ISZERO PUSH1 0x75 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST CALLER PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND PUSH2 0x8FC DUP3 SWAP1 DUP2 ISZERO MUL SWAP1 PUSH1 0x40 MLOAD PUSH1 0x0 PUSH1 0x40 MLOAD DUP1 DUP4 SUB DUP2 DUP6 DUP9 DUP9 CALL SWAP4 POP POP POP POP ISZERO DUP1 ISZERO PUSH1 0xBA JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 STOP CODECOPY 0xDC DUP16 0xD SGT PUSH6 0xD2245039EDD7 RETURN CALLDATALOAD 0xC2 0xE4 SWAP9 0xF6 0x2C 0xF8 0xB3 OR JUMPDEST 0xAC 0xD8 CREATE2 SSTORE 0x4E SIGNEXTEND PUSH4 0x3164736F PUSH13 0x634300060C003300000000000`
 
 
 
