@@ -175,10 +175,21 @@ MetaMask'i Ropsten Test Network'e geçirin. Para Yatırma'ya ve ardından Ropste
 
 📝 Ek olarak [Chainlink Faucetinide](https://faucets.chain.link) kullanabilirsiniz. ◀️
 
+Web sayfasının MetaMask cüzdanınızın Ethereum adresini zaten içerdiğini fark edebilirsiniz. MetaMask, Ethereum özellikli web sayfalarını MetaMask cüzdanınızla bütünleştirir ve web sayfasındaki Ethereum adreslerini "görebilir", örneğin, bir Ethereum adresini gösteren bir çevrimiçi mağazaya ödeme göndermenize olanak tanır. MetaMask ayrıca, web sayfası isterse, alıcı adresi olarak kendi cüzdanınızın adresiyle web sayfasını doldurabilir. Bu sayfada, musluk uygulaması MetaMask'tan test etheri göndermek için bir cüzdan adresi istiyor.
 
+Yeşil butona 🟢 yani "musluktan 1 ether iste"  tıklayın. Sayfanın alt kısmında bir işlem kimliğinin göründüğünü göreceksiniz. Musluk uygulaması bir işlem yarattı. İşlem kimliği şöyle görünür:
 
+| 0x7c7ad5aaea6474adccf6f5c5d6abed11b70a350fbc6f9590109e099568090c57 |
 
+Birkaç saniye içinde, yeni işlem Ropsten madencileri tarafından çıkarılacak ve MetaMask cüzdanınız 1 ETH bakiyesi gösterecektir. İşlem kimliğine tıklayın ve tarayıcınız sizi blokları, adresleri ve işlemleri görselleştirmenize ve keşfetmenize izin veren bir **web sitesi olan bir ▶️ [blok explorer](https://etherscan.io/)götürecektir**. MetaMask, daha popüler Ethereum blok kaşiflerinden biri olan Etherscan blok gezginini kullanır. Ropsten Test Musluğundan yapılan ödemeyi içeren işlem Etherscan Ropsten blok gezgininde gösterilir.
 
+<img title="Blok_Explorer" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/ropsten_block_explorer.png">
+
+İşlem, Ropsten blok zincirine kaydedilmiştir ve herhangi bir zamanda, sadece işlem kimliğini arayarak veya bağlantıyı ziyaret ederek herhangi biri tarafından görüntülenebilir.
+
+## MetaMaskten Ether Gönderme 
+
+Ropsten Test faucetinden ilk test etherinizi aldıktan sonra, musluğa(faucet) azıcıkta olsa geri göndermeye çalışarak ether göndermeyi deneyebilirsiniz. Ropsten Test musluğunun sayfasında da görebileceğiniz gibi, musluğa 1 ETH bağışlama seçeneği var. Bu seçenek, testi tamamladığınızda test etherinizin geri kalanını başka birinin kullanabilmesi için geri gönderebilmeniz için mevcuttur. Test etherinin hiçbir değeri olmamasına rağmen, bazı insanlar onu biriktirir ve diğer herkesin test ağlarını kullanmasını zorlaştırır.😠
 
 
 
