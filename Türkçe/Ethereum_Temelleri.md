@@ -254,27 +254,33 @@ Ethereum, **tümü bir sözleşme yazmak ve EVM bayt kodu üretmek için kullan�
 
 Repoda Yazılmış olan faucet kodlarına  ulaşmak için: 
 
-==code/Solidity/Faucet.sol==
+`code/Solidity/Faucet.sol`
+
 
 Bu çok basit bir sözleşme, yapabileceğimiz kadar basit. Aynı zamanda, bir dizi kötü uygulamayı ve güvenlik açıklarını gösteren kusurlu bir sözleşmedir. İlerleyen bölümlerde tüm kusurlarını inceleyerek öğreneceğiz. Ama şimdilik bu sözleşmenin ne yaptığına ve nasıl işlediğine satır satır bakalım. **Solidity'nin birçok öğesinin JavaScript, Java veya C++** gibi mevcut programlama dillerine benzediğini hemen fark edeceksiniz.
 
 İlk satır bir yorumdur: **Lisans hakları için ** 📋 ⚖️ :
  
-   ===//SPDX-License-Identifier:CC-BY-SA-4.0===
+`//SPDX-License-Identifier:CC-BY-SA-4.0`
 
 Yorumlar(//) insanların okuması içindir ve çalıştırılan **EVM bayt koduna dahil edilmezler.** Bunları genellikle açıklamaya çalıştığımız koddan önceki satıra, bazen de aynı satıra koyarız. Yorumlar iki eğik çizgi ile başlar: //. İlk eğik çizgiden o satırın sonuna kadar her şey boş bir satır olarak kabul edilir ve yok sayılır.
 
 Birkaç satır sonra asıl sözleşmemizin başladığı yer: 🔽
 
-==contract Faucet{==
+`contract Faucet{` 
 
 Bu satır, diğer nesne yönelimli dillerdeki sınıf bildirimine benzer şekilde bir sözleşme nesnesi bildirir. Sözleşme tanımı, diğer birçok programlama dilinde kaşlı ayraçların nasıl kullanıldığına benzer şekilde, bir kapsamı tanımlayan kaşlı ayraçlar ({}) arasındaki tüm satırları içerir.
 
 Ardından, sözleşmenin herhangi bir gelen tutarı kabul etmesini sağlıyoruz: 🔽
 
-== receive()external payable{} ==.
+ `receive()external payable{}`
 
-I need to highlight these ==very important words==.
+
+
+
+
+
+
 
 
 
