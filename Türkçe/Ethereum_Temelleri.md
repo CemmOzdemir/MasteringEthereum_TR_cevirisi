@@ -191,6 +191,60 @@ Birkaç saniye içinde, yeni işlem Ropsten madencileri tarafından çıkarılac
 
 Ropsten Test faucetinden ilk test etherinizi aldıktan sonra, musluğa(faucet) azıcıkta olsa geri göndermeye çalışarak ether göndermeyi deneyebilirsiniz. Ropsten Test musluğunun sayfasında da görebileceğiniz gibi, musluğa 1 ETH bağışlama seçeneği var. Bu seçenek, testi tamamladığınızda test etherinizin geri kalanını başka birinin kullanabilmesi için geri gönderebilmeniz için mevcuttur. Test etherinin hiçbir değeri olmamasına rağmen, bazı insanlar onu biriktirir ve diğer herkesin test ağlarını kullanmasını zorlaştırır.😠
 
+Neyse ki, biz test ether stokçuları 📛 değiliz. MetaMask'e musluğa 1 ether ödeyen bir işlem oluşturmasını söylemek için turuncu 🟠 "1 ether" düğmesini tıklayın. MetaMask, bir işlem hazırlayacak ve musluğa 1 ether gönderme bölümünde gösterildiği gibi, onay içeren bir sekme açacaktır.
+
+<img title="sendEther" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/send_to_faucet.png">
+
+Hay aksiii! Muhtemelen işlemi tamamlayamayacağınızı fark etmişsinizdir--->MetaMask, bakiyenizin yetersiz olduğunu söylüyor. 💸 İlk bakışta bu kafa karıştırıcı görünebilir: 1 ETH'niz var, 1 ETH göndermek istiyorsunuz, peki MetaMask neden **yeterli paranız olmadığını söylüyor?**
+⬇️
+
+Cevap, gazın ⛽ maliyetinden kaynaklanmaktadır. Her Ethereum işlemi, **işlemi doğrulamak için madenciler tarafından toplanan bir ücretin ödenmesini gerektirir.** Ethereum'daki ücretler, gaz adı verilen sanal bir para biriminde tahsil edilir. _İşlemin bir parçası olarak gaz için ether ile ödeme yaparsınız._
+
+📝NOT:
+Test ağlarında da _ücret talep edilmektedir._ Ücretler olmadan, bir test ağı ,ana ağdan farklı davranır ve bu da onu yetersiz bir test platformu haline getirir. **Ücretler, aynı zamanda, ana ağı korudukları gibi, test ağlarını DoS saldırılarından ve kötü yapılandırılmış sözleşmelerden (örneğin, sonsuz döngüler) korur.**🚓
+
+İşlemi gönderdiğinizde MetaMask, son başarılı işlemlerin ortalama gas fiyatını gigawei anlamına gelen 3 gwei olarak hesapladı. Wei, Ether Para Birimi Birimlerinde tartıştığımız gibi, ether para biriminin en küçük alt bölümüdür. Gaz limiti, 21.000 gaz birimi olan temel bir işlem gönderme maliyetine göre belirlenir. Bu nedenle harcayacağınız maksimum ETH miktarı 3 X 21.000 gwei = 63.000 gwei = 0.000063 ETH'dir. **(Ağırlıklı olarak madenciler tarafından belirlendiği için ortalama gaz fiyatlarının değişebileceğini unutmayın.** Gerekirse işleminizin öncelikli olmasını sağlamak için gaz limitinizi nasıl artırabileceğinizi/azaltabileceğinizi daha sonraki bir bölümde göreceğiz.) ⚠️(_Değerli dostlarım unutmayın ki PoW -----> PoS geçişle birlikte bazı şeyler değişebilir ancak felsefesini tam anlamak için pow anlamaya ihtiyacımız var ve unutmamak gerekir ki PoW'u tamamen terk etmiyoruz_)
+
+Tüm bunları söylemek gerekirse: 1 ETH işlemi yapmak 1.000063 ETH'ye mal olur. MetaMask, toplamı gösterirken kafa karıştırıcı bir şekilde 1 ETH'ye yuvarlar, ancak ihtiyacınız olan gerçek miktar 1.000063 ETH'dir ve yalnızca 1 ETH'niz vardır. Bu işlemi iptal etmek için Reddet'e tıklayın.
+
+Hadi biraz daha test etheri alalım! Yeşil "musluktan 1 eter iste" düğmesine tekrar tıklayın ve birkaç saniye bekleyin. Endişelenmeyin, muslukta bol miktarda eter olmalı ve isterseniz size daha fazlasını verecektir.
+
+2 ETH bakiyeniz olduğunda tekrar deneyebilirsiniz. Bu sefer turuncu renkli "1 eter" bağış butonuna tıkladığınızda işlemi tamamlamak için yeterli bakiyeniz oluyor. MetaMask ödeme penceresi açıldığında Gönder'e tıklayın. Tüm bunlardan sonra gazda 0,000063 ETH ile musluğa 1 ETH gönderdiğiniz için 0.999937 ETH bakiyesi görmelisiniz.
+
+## Bir Adresin İşlem Geçmişini bulma 📕
+
+Şimdiye kadar, test eteri göndermek ve almak için MetaMask kullanma konusunda uzmanlaştınız. Cüzdanınız en az iki ödeme almış ve en az birini göndermiş durumda. Tüm bu işlemleri _ropsten.etherscan.io blok gezgini_ kullanarak görüntüleyebilirsiniz. Cüzdan adresinizi kopyalayıp blok gezgininin arama kutusuna yapıştırabilir veya MetaMask'in sayfayı sizin için açmasını sağlayabilirsiniz. MetaMask'teki **hesap simgenizin yanında üç noktayı gösteren bir düğme göreceksiniz.** Hesapla ilgili seçeneklerin bir menüsünü göstermek için üzerine tıklayın.
+
+<img title="metamask_in_History" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/metamask_account_context_menu.png">
+
+Etherscan'da İşlem geçmişi Adresinde gösterildiği gibi, hesabınızın işlem geçmişini gösteren blok gezgininde bir web sayfası açmak için "Etherscan'da hesabı görüntüle"yi seçin.
+
+<img title="etherscan_History" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/block_explorer_account_history.png">
+
+Burada Ethereum adresinizin tüm işlem geçmişini görebilirsiniz. Adresinizin gönderici veya alıcı olduğu Ropsten blok zincirinde kaydedilen tüm işlemleri gösterir. Daha fazla ayrıntı görmek için bu işlemlerden birkaçına tıklayın.
+
+Herhangi bir adresin işlem geçmişini keşfedebilirsiniz. Ropsten Test musluğu adresinin işlem geçmişine bir göz atın. 
+(ek olarak: adresinize yapılan en eski ödemede listelenen "gönderen" adresidir). Musluktan size ve diğer adreslere gönderilen tüm test etherlerini görebilirsiniz. Gördüğünüz her işlem sizi daha fazla adrese ve daha fazla işleme götürebilir. Çok geçmeden birbirine bağlı verilerin labirentinde kaybolacaksınız.💥
+
+------------------------
+## Dünya Bilgisayarına (Ethereum) Giriş 🔷 💙
+------------------------
+
+Artık bir cüzdan oluşturdunuz ve ether gönderip aldınız. Şimdiye kadar, Ethereum'u bir kripto para birimi olarak ele aldık. Ancak Ethereum çok,çok daha fazlası.🤗 Aslında, kripto para birimi durumu, Ethereum'un merkezi olmayan bir dünya bilgisayarı olarak çalışmasına ihtiyaç duyduğundandır. Ether, Ethereum Sanal Makinesi (EVM) adı verilen durum makinesinin _bir bilgisayarda çalışan_-----> bilgisayar programları olan akıllı sözleşmelerin yürütülmesi(çalışabilmesi) için ödeme yapmak için kullanılacaktır.
+
+EVM global bir tekildir(singleton), yani her yerde çalışan küresel, 1️⃣tek örnekli bir bilgisayarmış gibi çalışır. Ethereum ağındaki her düğüm, sözleşmenin yürütülmesini doğrulamak için**EVM'nin yerel bir kopyasını çalıştırırken, Ethereum blok zinciri, işlemleri ve akıllı sözleşmeleri işlerken bu dünya bilgisayarının değişen durumunu kaydeder.** Bunu [evm_chapter](https://github.com/ethereumbook/ethereumbook/blob/develop/02intro.asciidoc#evm_chapter) bölümünde çok daha ayrıntılı olarak tartışacağız.
+
+## Harici Olarak Sahip Olunan Hesaplar (EOA'lar) ve Sözleşmeler
+
+
+
+
+
+
+
+
+
+
 
 
 
