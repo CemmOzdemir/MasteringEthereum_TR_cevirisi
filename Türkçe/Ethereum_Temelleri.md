@@ -227,7 +227,7 @@ Herhangi bir adresin işlem geçmişini keşfedebilirsiniz. Ropsten Test musluğ
 (ek olarak: adresinize yapılan en eski ödemede listelenen "gönderen" adresidir). Musluktan size ve diğer adreslere gönderilen tüm test etherlerini görebilirsiniz. Gördüğünüz her işlem sizi daha fazla adrese ve daha fazla işleme götürebilir. Çok geçmeden birbirine bağlı verilerin labirentinde kaybolacaksınız.💥
 
 ------------------------
-## Dünya Bilgisayarına (Ethereum) Giriş 🔷 💙
+## Dünya Bilgisayarına 🎛️ (Ethereum) Giriş 🔷 💙
 ------------------------
 
 Artık bir cüzdan oluşturdunuz ve ether gönderip aldınız. Şimdiye kadar, Ethereum'u bir kripto para birimi olarak ele aldık. Ancak Ethereum çok,çok daha fazlası.🤗 Aslında, kripto para birimi durumu, Ethereum'un merkezi olmayan bir dünya bilgisayarı olarak çalışmasına ihtiyaç duyduğundandır. Ether, Ethereum Sanal Makinesi (EVM) adı verilen durum makinesinin _bir bilgisayarda çalışan_-----> bilgisayar programları olan akıllı sözleşmelerin yürütülmesi(çalışabilmesi) için ödeme yapmak için kullanılacaktır.
@@ -236,19 +236,45 @@ EVM global bir tekildir(singleton), yani her yerde çalışan küresel, 1️⃣t
 
 ## Harici Olarak Sahip Olunan Hesaplar (EOA'lar) ve Sözleşmeler
 
+MetaMask cüzdanında oluşturduğunuz  1️⃣ hesap türüne _harici olarak sahip olunan hesap (EOA)_ denir. Harici olarak sahip olunan hesaplar, özel anahtarı olanlardır; 🔐 **özel anahtara sahip olmak, fonlara veya sözleşmelere erişim üzerinde kontrol anlamına gelir**. Şimdi, muhtemelen başka bir hesap türü olduğunu tahmin ediyorsunuz. Bu diğer hesap türü bir 2️⃣_sözleşme hesabıdır(S.contract account)._ Bir sözleşme hesabının, basit bir EOA'nın sahip olamayacağı akıllı sözleşme kodu vardır. Ayrıca, bir **sözleşme hesabının özel anahtarı yoktur. Bunun yerine, akıllı sözleşme kodunun mantığı tarafından sahiplenilir (ve kontrol edilir): sözleşme hesabının oluşturulmasında Ethereum blok zincirine kaydedilemesi ve EVM tarafından yürütülmesini sağlayan program yatar.**
+
+Sözleşmelerin tıpkı EOA'lar gibi adresleri vardır. _Sözleşmeler de tıpkı EOA'lar gibi ether gönderip alabilir._ Ancak, **bir işlem hedefi bir sözleşme adresi olduğunda, işlemi ve işlemin verilerini girdi olarak kullanarak bu sözleşmenin EVM'de çalışmasına neden olur.** Ether'e ek olarak, işlemler sözleşmede hangi belirli işlevin çalıştırılacağını ve bu işleve hangi parametrelerin iletileceğini gösteren verileri içerebilir. Bu şekilde, işlemler sözleşmeler içindeki fonksiyonları çağırabilir.
 
 
+Bir sözleşme hesabının özel anahtarı olmadığı için bir işlem başlatamayacağını unutmayın. ⚠️ **İşlemleri yalnızca EOA'lar başlatabilir, ancak sözleşmeler işlemlere diğer sözleşmeleri çağırarak ve karmaşık yürütme yolları oluşturarak tepki verebilir.** Bunun tipik bir kullanımı, 1 ETH'yi başka bir adrese göndermek için çok imzalı bir akıllı sözleşme cüzdanına bir talep işlemi gönderen bir EOA'dır. Tipik bir DApp programlama modeli, Sözleşme A kullanıcıları arasında paylaşılan bir durumu sürdürmek için Sözleşme A'nın Sözleşme B'yi çağırmasıdır.
+
+Sonraki birkaç bölümde ilk sözleşmemizi yazacağız. Daha sonra MetaMask cüzdanınızla bu sözleşmeyi nasıl oluşturacağınızı, fonlayacağınızı ve kullanacağınızı ve Ropsten test ağında etheri nasıl test edeceğinizi öğreneceksiniz.
 
 
+## Basit bir sözleşme : Test ether Musluğu 🚰
 
+Ethereum, **tümü bir sözleşme yazmak ve EVM bayt kodu üretmek için kullanılabilen birçok farklı üst düzey dile sahiptir.** [high_level_languages]'te en belirgin ve ilginç olanlardan birçoğunu okuyabilirsiniz. Akıllı sözleşme programlaması için açık ara en baskın seçim :**Solidity'dir.** Solidity, bu kitabın ortak yazarı Dr. Gavin Wood tarafından oluşturuldu ve Ethereum'da (ve ötesinde) en yaygın kullanılan dil haline geldi. İlk sözleşmemizi yazmak için Solidity kullanacağız.
 
+İlk örneğimiz için bir musluğu kontrol eden bir sözleşme yazacağız. Ropsten test ağında test eteri almak için zaten bir musluk kullandınız. Bir musluk nispeten basit bir şeydir: soran herhangi bir adrese ether verir ve periyodik olarak yeniden doldurulabilir. Bir musluğu, bir insan veya bir web sunucusu tarafından kontrol edilen bir cüzdan olarak uygulayabilirsiniz.
 
+Repoda Yazılmış olan faucet kodlarına  ulaşmak için: 
 
+==code/Solidity/Faucet.sol==
 
+Bu çok basit bir sözleşme, yapabileceğimiz kadar basit. Aynı zamanda, bir dizi kötü uygulamayı ve güvenlik açıklarını gösteren kusurlu bir sözleşmedir. İlerleyen bölümlerde tüm kusurlarını inceleyerek öğreneceğiz. Ama şimdilik bu sözleşmenin ne yaptığına ve nasıl işlediğine satır satır bakalım. **Solidity'nin birçok öğesinin JavaScript, Java veya C++** gibi mevcut programlama dillerine benzediğini hemen fark edeceksiniz.
 
+İlk satır bir yorumdur: **Lisans hakları için ** 📋 ⚖️ :
+ 
+   ===//SPDX-License-Identifier:CC-BY-SA-4.0===
 
+Yorumlar(//) insanların okuması içindir ve çalıştırılan **EVM bayt koduna dahil edilmezler.** Bunları genellikle açıklamaya çalıştığımız koddan önceki satıra, bazen de aynı satıra koyarız. Yorumlar iki eğik çizgi ile başlar: //. İlk eğik çizgiden o satırın sonuna kadar her şey boş bir satır olarak kabul edilir ve yok sayılır.
 
+Birkaç satır sonra asıl sözleşmemizin başladığı yer: 🔽
 
+==contract Faucet{==
+
+Bu satır, diğer nesne yönelimli dillerdeki sınıf bildirimine benzer şekilde bir sözleşme nesnesi bildirir. Sözleşme tanımı, diğer birçok programlama dilinde kaşlı ayraçların nasıl kullanıldığına benzer şekilde, bir kapsamı tanımlayan kaşlı ayraçlar ({}) arasındaki tüm satırları içerir.
+
+Ardından, sözleşmenin herhangi bir gelen tutarı kabul etmesini sağlıyoruz: 🔽
+
+== receive()external payable{} ==.
+
+I need to highlight these ==very important words==.
 
 
 
