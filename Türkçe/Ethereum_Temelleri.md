@@ -269,22 +269,35 @@ Birkaç satır sonra asıl sözleşmemizin başladığı yer: 🔽
 
 `contract Faucet{` 
 
-Bu satır, diğer nesne yönelimli dillerdeki sınıf bildirimine benzer şekilde bir sözleşme nesnesi bildirir. Sözleşme tanımı, diğer birçok programlama dilinde kaşlı ayraçların nasıl kullanıldığına benzer şekilde, bir kapsamı tanımlayan kaşlı ayraçlar ({}) arasındaki tüm satırları içerir.
+Bu satır, diğer nesne yönelimli dillerdeki sınıf bildirimine benzer şekilde bir sözleşme nesnesi bildirir. Sözleşme tanımı, diğer birçok programlama dilinde süslü ayraçların nasıl kullanıldığına benzer şekilde, bir kapsamı tanımlayan süslü ayraçlar ({}) arasındaki tüm satırları içerir.
 
 Ardından, sözleşmenin herhangi bir gelen tutarı kabul etmesini sağlıyoruz: 🔽
 
- `receive()external payable{}`
+ `receive() external payable{}`
 
+**Alma işlevi, sözleşmeyi tetikleyen işlem sözleşmede beyan edilen işlevlerden herhangi birini adlandırmadıysa veya veri içermiyorsa ve bu nedenle düz bir Ether aktarımıysa çağrılır.** Sözleşmelerin böyle bir alma işlevi olabilir (isimsiz) ve ether almak için kullanılır. Bu nedenle, sözleşmeye ether'i kabul edebileceği anlamına gelen harici ve ödenebilir bir işlev olarak tanımlanır. Kıvrımlı parantezlerdeki ({}) boş tanımla belirtildiği gibi. Sözleşme adresine ether gönderen bir işlem yaparsak, sanki bir cüzdanmış gibi bu fonksiyon halledecektir.
 
+Bundan sonra, Musluk sözleşmesinin ilk işlevini belirtiyoruz :
 
+` function withdraw(uint withdraw_amount) public { `
 
+fonksiyon geri çekme(bakiyemizi) olarak adlandırılır ve geri çekme_tutarı adlı bir işaretsiz tamsayı (uint) argümanı alır. Bir açık(public) işlevi olarak ilan edilir, yani diğer sözleşmeler tarafından çağrılabilir. İşlev tanımı, küme parantezleri arasında gelir. Para çekme işlevinin ilk kısmı, para çekme işlemleri için bir sınır belirler:
 
+`require(withdraw_amount <= 100000000000000000);`
 
+çekme_miktarı 100,000,000,000,000,000 wei'den küçük veya buna eşit, ki bu etherin temel birimidir (bkz. Eter değerleri ve birim isimleri) ve 0.1 ether'e eşdeğerdir. Geri çekme işlevi, **bu miktardan daha büyük bir geri çekme_adı ile çağrılırsa, buradaki require işlevi, bir istisna dışında sözleşme yürütmesinin durdurulmasına ve başarısız olmasına neden olur.** Solidity'de ifadelerin noktalı virgülle sonlandırılması gerektiğini unutmayın.
 
+Sözleşmenin bu kısmı musluğumuzun ana mantığıdır. Para çekme işlemlerine bir **sınır koyarak** sözleşmeden fon akışını kontrol eder. Bu çok basit bir kontrol ama size programlanabilir bir blok zincirinin gücü hakkında bir fikir verebilir:*parayı kontrol eden merkezi olmayan yazılım.*
 
+Ardından  geri çekme tanımı geliyor:
 
+`msg.sender.transfer(withdraw_amount);
 
+Burada birkaç ilginç şey oluyor. **Msg nesnesi**, tüm sözleşmelerin erişebileceği girdilerden biridir. Bu sözleşmenin yürütülmesini tetikleyen işlemi temsil eder. **Gönderici özelliği, işlemin gönderen adresidir.** transfer ilemi, mevcut sözleşmeden göndericinin adresine **etheri aktaran yerleşik bir işlevdir.**Transfer işlevi, **tek argümanı** olarak **bir miktar alır.** Parametresi olan withdraq_amount değerini birkaç satır önce bildirilen geri çekme işlevine geçiriyoruz.
 
+Bir sonraki satır, geri çekme fonksiyonumuzun tanımının sonunu gösteren kapanış küme ayracıdır. `}`
+
+Varsayılan işlevimizin hemen altında, sözleşme Musluğu tanımını kapatan son kapanış küme ayracı bulunur. `}` Bu kadar! 🔚
 
 
 
