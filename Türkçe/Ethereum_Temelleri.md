@@ -1,10 +1,5 @@
 # ETHEREUM TEMELLERİ 🏗️
 
-örnek olarak dursun:
-
-<img title="a title" src="/images/boo.svg">
-
-
 Bu bölümde Ethereum'u keşfetmeye başlayacağız, cüzdanların nasıl kullanılacağını, işlemlerin nasıl oluşturulduğunu ve ayrıca temel bir akıllı sözleşmenin nasıl yürütüleceğini öğreneceğiz.
 
 ## Ether Para Birimleri
@@ -363,19 +358,21 @@ Remix IDE, özel "oluşturma"(creation) işlemini oluşturacak ve *MetaMask; sö
 Sözleşme oluşturulduktan sonra **Çalıştır(run) sekmesinin altında** görünür.
 
 
+<img title="conrt_interact" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_contract_interact.png">
 
-https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_contract_interact.png
+Faucet.sol artık kendine ait bir **adresi olduğuna dikkat edin: Remix bunu “Faucet at 0x72e…​c7829” olarak gösteriyor** (ancak sizin yazacağınız sözleşmenin adresi  harfler ve sayılar farklı olacaktır çünkü her adress (_unique_)  yani benzersizdir. Tıpkı insan DNA'sı gibi 🧬). Sağdaki küçük kare simgesi, sözleşme adresini panonuza kopyalamanıza yardımcı olur 🔲. Bunu bir sonraki bölümde kullanacağız.
 
+## Sözleşme ile etkileşime Girme 
+❓
+Etkileşim: TDK'ye göre ----> Birbirini karşılıklı olarak etkileme işi.Bana göre ve buradaki kullanımı kısaca sözelşmeye erişip,onun içeriklerinden yararlanma
 
+Şimdiye kadar öğrendiklerimizi özetleyelim: Ethereum sözleşmeleri, EVM adı verilen sanal bir makinede çalışarak etheri kontrol eden programlardır. **Blok zincirine kaydedilmek üzere bayt kodlarını gönderen özel bir işlemle oluşturulurlar**. Blok zincirinde oluşturulduktan sonra, tıpkı cüzdanlar gibi bir Ethereum adreslerine sahip olurlar. Birisi bir sözleşme adresine bir işlem gönderdiğinde, sözleşmenin girdi olarak işlemle birlikte EVM'de çalışmasına neden olur. Sözleşme adreslerine gönderilen işlemler, _ether veya veri veya her ikisini birden_ içerebilir. Ether içeriyorlarsa, **sözleşme bakiyesine** "biriktirilir". Veri içeriyorlarsa, veriler sözleşmede adlandırılmış bir fonksiyon belirtebilir ve fonksiyonlara argümanlar ileterek onu çağırabilir.
 
+## Bir Blok Gezgini'nde(Explorer /Etherscan gibi) Sözleşme Adresini Görüntüleme
 
+Artık blok zincirinde kayıtlı bir sözleşmemiz var ve bunun bir Ethereum adresi olduğunu görebiliyoruz. Bunu **ropsten.etherscan.io** blok gezgininde kontrol edelim ve bir sözleşmenin nasıl göründüğünü görelim. Remix IDE'de, adının yanındaki kare simgesine tıklayarak sözleşmenin adresini kopyalayın.
 
-
-
-
-
-
-
+<img title="adress_in_etherscan" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_contract_address.png">
 
 
 
