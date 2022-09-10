@@ -335,5 +335,53 @@ Solidity derleyicisi şimdi Faucet.sol dosyamızı **EVM bayt kodunda derledi.**
 
 `PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0xF4 DUP1 PUSH2 0x1F PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH1 0x1F JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x2E1A7D4D EQ PUSH1 0x2A JUMPI PUSH1 0x25 JUMP JUMPDEST CALLDATASIZE PUSH1 0x25 JUMPI STOP JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST CALLVALUE DUP1 ISZERO PUSH1 0x35 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x5F PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x20 DUP2 LT ISZERO PUSH1 0x4A JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP2 ADD SWAP1 DUP1 DUP1 CALLDATALOAD SWAP1 PUSH1 0x20 ADD SWAP1 SWAP3 SWAP2 SWAP1 POP POP POP PUSH1 0x61 JUMP JUMPDEST STOP JUMPDEST PUSH8 0x16345785D8A0000 DUP2 GT ISZERO PUSH1 0x75 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST CALLER PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND PUSH2 0x8FC DUP3 SWAP1 DUP2 ISZERO MUL SWAP1 PUSH1 0x40 MLOAD PUSH1 0x0 PUSH1 0x40 MLOAD DUP1 DUP4 SUB DUP2 DUP6 DUP9 DUP9 CALL SWAP4 POP POP POP POP ISZERO DUP1 ISZERO PUSH1 0xBA JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 STOP CODECOPY 0xDC DUP16 0xD SGT PUSH6 0xD2245039EDD7 RETURN CALLDATALOAD 0xC2 0xE4 SWAP9 0xF6 0x2C 0xF8 0xB3 OR JUMPDEST 0xAC 0xD8 CREATE2 SSTORE 0x4E SIGNEXTEND PUSH4 0x3164736F PUSH13 0x634300060C003300000000000`
 
+Doğrudan EVM bayt kodunda 💥 programlama yapmak yerine *Solidity* gibi bir dil kullandığınızdan memnun olmalısınız. 😸
+
+📝 NOT:Akıllı sözleşme yazabilmek için sadece solidity dili şart değil **Vyper, Rust, Cairo vb. dillerde vardır.**(En yaygını solidity_dir.sol 😺 )
+
+------------
+## Blokzincir üzerinde akıllı sözleşme oluşturma ⛓️
+-----------
+
+Evet elimizde bir sözleşmemiz var._(faucet.sol)_ Bunu bytecode olarak derledik. Şimdi, **Ethereum blok zincirindeki sözleşmeyi "kaydetmemiz" gerekiyor.** Sözleşmemizi test etmek için Ropsten test ağını kullanacağız, bu yüzden onu göndermek istediğimiz blokzincir Ropsten ağıdır.
+
+Blok zincirinde bir sözleşmenin kaydedilmesi, _0x0000000000000000000000000000000000000000_ olan ve **sıfır adres** olarak da bilinen özel bir işlem oluşturmayı içerir.  0️⃣x----> Sıfır adresi, **Ethereum blok zincirine bir sözleşme kaydetmek istediğinizi söyleyen özel bir adrestir.** Neyse ki, Remix IDE hepsini sizin için halledecek ve işlemi MetaMask'a gönderecek.
+
+İlk olarak Çalıştır sekmesine geçin ve üstdeki  kutudan _Injected Web3'ü_ seçin. Bu, **Remix IDE'yi MetaMask cüzdanına ve MetaMask aracılığıyla Ropsten test ağına bağlar.** Hesap seçim kutusunda cüzdanınızın adresini gösterir.
+
+<img title="injected_web3" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_run.png">
+
+
+Az önce onayladığınız Çalıştırma(run) ayarlarının hemen altında, oluşturulmaya hazır olan _faucet.sol_ bulunur(bizim sözleşmemiz). Injected Web3 ortamı seçiliyken Remix IDE Run sekmesinde gösterilen **deploy** düğmesine tıklayın.
+
+Remix IDE, özel "oluşturma"(creation) işlemini oluşturacak ve *MetaMask; sözleşme oluşturma işlemini gösterildiği gibi, sizden bunu onaylamanızı isteyecektir.* Sözleşme oluşturma işleminin içinde ether olmadığını fark edeceksiniz, ancak 275 bayt veriye (derlenmiş sözleşme) sahiptir ve gaz olarak 3 gwei tüketecektir. Onaylamak için Onayla'ya basın.
+
+<img title="confirm_mmask" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_metamask_create.png">
+
+Şimdi biraz sabırlı olmak zorundayız. Sözleşmenin Ropsten'da yayınlanması yaklaşık 15-30 saniye civarı sürecek. Remix pek bir şey yapmıyor gibi görünse de sabırlı olun.
+
+Sözleşme oluşturulduktan sonra **Çalıştır(run) sekmesinin altında** görünür.
+
+
+
+https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_contract_interact.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
