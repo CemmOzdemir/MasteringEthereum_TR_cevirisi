@@ -374,11 +374,14 @@ Artık blok zincirinde kayıtlı bir sözleşmemiz var ve bunun bir Ethereum adr
 
 <img title="adress_in_etherscan" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_contract_address.png">
 
+Remix'i açık tutun; ona daha sonra tekrar döneceğiz. Şimdi tarayıcınızda ropsten.etherscan.io'ya gidin ve adresi arama kutusuna yapıştırın. Etherscan blok gezgininde faucet.sol adresini görüntüleme bölümünde gösterildiği gibi, sözleşmenin **Ethereum adres geçmişini** görmelisiniz.
 
+<img title="etherscan_address" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/etherscan_contract_address.png">
 
+## Sözleşmeye Ether yollama/ finanse Edilmesi(fund me please) 🤑
+Şimdilik sözleşmenin geçmişinde yalnızca bir işlem var: sözleşme **oluşturma işlemi**. Gördüğünüz gibi, sözleşmede ayrıca eter (sıfır bakiye) yoktur. Bunun nedeni, yaratabilmemize rağmen sözleşmeye herhangi bir ether göndermememizdi.
 
-
-
+Musluğumuzun paraya ihtiyacı var! İlk projemiz sözleşmeye ether göndermek için MetaMask kullanmak olacak. Sözleşmenin adresi hala panonuzda olmalıdır (eğer değilse, Remix'ten tekrar kopyalayın). MetaMask'i açın ve tıpkı diğer Ethereum adreslerine yaptığınız gibi ona **1 eter gönderin**
 
 
 
