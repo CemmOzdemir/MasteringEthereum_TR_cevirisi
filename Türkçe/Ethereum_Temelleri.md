@@ -383,5 +383,88 @@ Remix'i açık tutun; ona daha sonra tekrar döneceğiz. Şimdi tarayıcınızda
 
 Musluğumuzun paraya ihtiyacı var! İlk projemiz sözleşmeye ether göndermek için MetaMask kullanmak olacak. Sözleşmenin adresi hala panonuzda olmalıdır (eğer değilse, Remix'ten tekrar kopyalayın). MetaMask'i açın ve tıpkı diğer Ethereum adreslerine yaptığınız gibi ona **1 eter gönderin**
 
+<img title="send_the_contract" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/metamask_send_to_contract.png">
+
+Bir dakika içinde, Etherscan blok gezginini yeniden yüklerseniz, _sözleşme adresine başka bir işlem ve güncellenmiş 1 ether bakiyesi_ gösterecektir.
+
+Faucet.sol kodumuzdaki:
+ 
+`receive () external payable {}` 
+⏬
+
+Hangi fonksiyonun çağrılacağını belirten bir **veri olmadan** sözleşme adresine bir işlem gönderdiğinizde, bu **varsayılan fonksiyonu çağırdı.** Bunu ödenebilir(payable) olarak belirttiğimiz için 1 etheri kabul etti ve sözleşmenin hesap bakiyesine yatırdı. İşleminiz, sözleşmenin bakiyesini güncelleyerek EVM'de çalışmasına neden oldu.sözlemenizi finanse ettiniz!(Yani para yüklediniz) 🍾 🔥
+
+-------
+Sözleşmeden Ether çekme 💸
+-------
+
+Ardından, sözleşmeden biraz para çekelim. Geri çekmek için, _withdraw(geri çekme) fonksiyonu_ çağıran ve ona bir _withdraw_amount(geri çekilecek miktar)_ argümanı ileten bir işlem oluşturmalıyız. Şimdilik işleri basit tutmak için, Remix bu işlemi bizim için yapacak ve MetaMask'te 🦊 bunu onayımıza sunacak.
+
+Remix sekmesine dönün ve Çalıştır sekmesindeki sözleşmeye bakın. **uint256 draw_amount** etiketli bir alan girişi ile geri çekme etiketli turuncu bir kutu 🟧 görmelisiniz.
+
+
+<img title="withdraw_remix" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_contract_interact.png">
+
+Bu, sözleşmenin Remix arayüzüdür. Sözleşmede tanımlanan fonksiyonları çağıran işlemler oluşturmamızı sağlar. Bir withdraw_amount gireceğiz ve işlemi oluşturmak için para çekme düğmesine tıklayacağız.
+
+İlk olarak, withraw_amount bulalım. Sözleşmemizin izin verdiği _maksimum miktar olan 0.1 eter'i denemek ve çekmek istiyoruz._ Ethereum'daki tüm para birimi değerlerinin dahili olarak wei cinsinden ifade edildiğini ve para çekme işlevimizin, çekme_tutarı'nın da wei cinsinden olmasını beklediğini unutmayın. _İstediğimiz miktar 100.000.000.000.000.000 wei (1 ve ardından 17 sıfır) olan 0.1 eterdir._
+
+🔍İPUCU: JavaScript'teki bir sınırlama nedeniyle, 10^17 kadar büyük bir sayı Remix tarafından işlenemez. Bunun yerine, **Remix'in onu bir dize olarak almasına ve bir BigNumber olarak işlemesine izin vermek için onu çift tırnak(" ") içine alırız.** Bunu tırnak içine almazsak, Remix IDE onu işlemez.Hata uyarısı olarak şunu çevirir ------> Assertion failed(Onaylama başarısız!) 🔴✖️
+⬇️
+
+<img title="withdraw_remix" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_withdraw.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
