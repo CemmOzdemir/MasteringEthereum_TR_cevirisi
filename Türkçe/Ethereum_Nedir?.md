@@ -287,8 +287,8 @@ Ethereum, blokzincirler hakkında bilgi edinmek için harika bir platformdur ve 
 
 Sadece Ethereum'u nasıl kullanacağınızı değil, nasıl çalıştığını da öğreneceksiniz, aynı zamanda neden olduğu gibi tasarlandığını da öğreneceksiniz. Parçaların her birinin nasıl çalıştığını ve nasıl bir araya geldiklerini ve nedenini anlayabileceksiniz.
 
+Bölüm SONU 🏁
 
-
-
+**"Bilgisayar, bir insanı, insan olduğuna inanmaya kandırabilirse, akıllı olarak adlandırılmayı hak eder."🗣️Alan Turing**
 
 
