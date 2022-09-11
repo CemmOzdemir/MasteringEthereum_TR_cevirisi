@@ -200,6 +200,9 @@ Aşağıdaki referanslar, burada bahsedilen teknolojiler hakkında ek bilgi sağ
 
 * Parite Ethereum istemcisi: https://parity.io/
 
+<img title="Alan_Turing" alt="Imitation_Game" src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg">
+
+
 ## Ethereum ve Turing Bütünlüğü 🤖
 
 Ethereum hakkında okumaya başlar başlamaz, hemen "Turing complete" terimiyle karşılaşacaksınız. Ethereum, Bitcoin'in aksine "Turing complete" olduğunu söylüyorlar. Bu tam olarak ne anlama geliyor?
