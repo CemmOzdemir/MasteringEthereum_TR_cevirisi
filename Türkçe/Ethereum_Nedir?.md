@@ -289,6 +289,6 @@ Sadece Ethereum'u nasıl kullanacağınızı değil, nasıl çalıştığını d
 
 Bölüm SONU 🏁
 
-**"Bilgisayar, bir insanı, insan olduğuna inanmaya kandırabilirse, akıllı olarak adlandırılmayı hak eder."🗣️Alan Turing**
+**"Bilgisayar, bir insanı insan olduğuna inanmaya ikna edebilirse, akıllı olarak adlandırılmayı hak eder."🗣️Alan Turing**
 
 
