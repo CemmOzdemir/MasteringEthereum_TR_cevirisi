@@ -446,7 +446,9 @@ Ardından, Solidity'de bir musluk sözleşmesi yazdınız. Sözleşmeyi EVM bayt
 ↪️
 [Akıllı Sözleşmeler] 📖 bölümünde çok daha fazla akıllı sözleşme programlaması yapacağız ve [akıllı sözleşme Güvenliği] 🛡️ bölümünde en iyi uygulamaları ve güvenlikle ilgili konuları öğreneceğiz. 💙
 
------------------------------------------SONNN-------------------------------------
+
+_Bölümün SONU_ 🏁
+
 **"Size çok önemli bir soru soracağım. Dünyayı kontrol etmenin en etkili ve verimli yolu nedir? İki kelime: Akıl Kontrolü!" 🗣️GEORGE CARLİN** 
 
 
