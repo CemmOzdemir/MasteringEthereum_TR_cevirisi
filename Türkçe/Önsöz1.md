@@ -18,7 +18,7 @@ _Ek olarak-----------> Kitabı çevirirken hatalarım olabilir.Şimdiden özür 
 * Ek olarak güncel olmayan bilgliler varsa not düşmeye ve açıklamaya çalıştım.
 * Kitabın **Orjinal repoları Github'ın mobil uygulaması ile uyumlu değil**.📵🔴(Özellike _görseller ve kodlar_ .Sebebi dosyanın formatının ascii.doc olması) ANCAK **TÜRKÇE REPOMUZ UYUMLUDUR.** 🟢 (markdown formatı )DİLERSENİZ GİTHUB MOBİL ÜZERİNDEN OKUMA YAPABİLİRSİNİZ. 📱 
 * Bölüm sonlarına ⭐ beğendiğim insanlardan birisin en sevdiğim sözü ile bitirmeye çalıştım.(Sondaki sözler kitapta yok benden size motivasyon ve düşünmerek çıkarımlar yapmanızı sağlamak istedim.👀)
-
+* Bazı yerlerde Film-belgesel vb.kaynakları da tavsiye ettiğim yerlerde vardır.(Kitapta yok benim eklemelerim).🎥 🍿
 
 ------------------------
 # ÖNSÖZ (Mutlaka okuyun! 🃏)
