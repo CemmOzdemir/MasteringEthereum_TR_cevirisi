@@ -52,6 +52,21 @@ Bu "Özgür Kültür(Açık kaynak paradigması gibi düşünün)" uyumlu lisans
 
 # Kitabı Çevirmek için:
 
-Eğer bu kitabın çevirisi ile ilgileniyorsanız , Lütfen buradan gönüllü takımıza katılın: https://www.transifex.com/aantonop/ethereumbook**
+Eğer bu kitabın çevirisi ile ilgileniyorsanız , Lütfen buradan gönüllü takımıza katılın: https://www.transifex.com/aantonop/ethereumbook
 
-**Not:pencil: Ben normalde bu site üzerinden çeviri yapacaktım fakat kitabın içinde bazı kodlama örnekleri olduğu için bazı çevirilecek yerlerini yukarıdaki site kötü bir şekilde gösteriyordu.Bende bu yüzden fork işlemi yaptım ve repoyu lisans hakları doğrultusunda çeviriyorum.Çevirimi beğenmezseniz veya kodları kişiselleştirmek isterseniz Repomu Fork yapıp kendiniz geliştirebilrsiniz.Çeviriyi bütün bir şekilde bitirdiğimde transifex'e ekleme yapabilirim.:pencil:**
+**Not:pencil: Ben normalde bu site üzerinden çeviri yapacaktım fakat kitabın içinde bazı kodlama örnekleri olduğu için bazı çevirilecek yerlerini yukarıdaki site kötü bir şekilde gösteriyordu.Bende bu yüzden fork işlemi yaptım ve repoyu lisans hakları doğrultusunda çeviriyorum.Çevirimi beğenmezseniz veya kodları kişiselleştirmek isterseniz Repomu Fork yapıp kendiniz geliştirebilrsiniz.Çeviriyi bütün bir şekilde bitirdiğimde transifex'e ekleme yapabilirim. :pencil:
+
+
+:checkered_flag:
+
+Bizi yaralarsanız kanamaz mıyız?
+
+Bizi gıdıklarsanız gülmez miyiz?
+
+Bizi zehirlerseniz ölmez miyiz?
+
+Ve bize karşı yanlış davranırsanız,
+intikam almaz mıyız?
+ 
+-William Shakespeare-
+
