@@ -415,21 +415,39 @@ Bu, sözleşmenin Remix arayüzüdür. Sözleşmede tanımlanan fonksiyonları �
 <img title="withdraw_remix" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/remix_withdraw.png">
 
 
+MetaMask, onaylamanız için bir işlem penceresi açacaktır. withdraw çağrınızı sözleşmeye göndermek için Onayla'ya tıklayın.
+
+<img title="withdraw_metamask_confirm" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/metamask_withdraw.png">
+
+Biraz bekleyin ve ardından Faucet sözleşme adres geçmişine(address history) yansıyan işlemi görmek için Etherscan blok gezginini yeniden yükleyin. 
+
+<img title="withdraw_etherscan_confirm" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/etherscan_withdrawal_tx.png">
 
 
+Şimdi hedef olarak sözleşme adresi ve 0 ether değeri ile yeni bir işlem görüyoruz. Sözleşme bakiyesi değişti ve talep edildiği gibi bize 0.1 ether gönderdiği için şimdi 0.9 eter oldu. Ancak sözleşme adresi geçmişinde bir **"OUT"** işlemi görmüyoruz.
 
+çektiğimiz para nerede ? Sözleşmenin adres geçmişi sayfasında _Dahili İşlemler adlı yeni bir sekme belirdi._ 0.1 ether transferi sözleşme kodundan kaynaklandığı için **dahili(internal) bir işlemdir**(mesaj(message) da denir).
 
+Bu "dahili işlem", sözleşme tarafından bu kod satırında gönderilmiştir.(Faucet.sol'deki para çekme işlevinden):
 
+`msg.sender.transfer(withdraw_amount);`
 
+<img title="withdraw_etherscan_internalMessage" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/etherscan_withdrawal_internal.png">
 
+----------
+Sonuç Olarak BU bölümde;
+----------
 
+Bu bölümde MetaMask kullanarak bir cüzdan kurdunuz ve bunu **Ropsten test ağında bir musluk kullanarak finanse ettiniz.** Cüzdanınızın Ethereum adresine ether aldınız, ardından musluğun Ethereum adresine ether gönderdiniz.
 
+Ardından, Solidity'de bir musluk sözleşmesi yazdınız. Sözleşmeyi EVM bayt koduna derlemek için Remix IDE'yi kullandınız, ardından bir işlem oluşturmak için Remix'i kullandınız ve Ropsten blok zincirinde Faucet sözleşmesini oluşturdunuz. Bir kez oluşturulduğunda, faucet sözleşmesinin bir Ethereum adresi vardı ve siz ona bir miktar ether gönderdiniz. Son olarak, withdraw(para çekme) işlevini çağırmak için bir işlem oluşturdunuz ve başarılı bir şekilde 0.1 eter istediniz. Sözleşme talebi kontrol etti ve size **dahili bir işlemle(internal message)** 0.1 ether gönderdi.
 
+Çok fazla görünmeyebilir, ancak merkezi olmayan bir dünya bilgisayarında parayı kontrol eden yazılımla başarılı bir şekilde etkileşime girdiniz.Tebriklerr 🍻
+↪️
+[Akıllı Sözleşmeler] 📖 bölümünde çok daha fazla akıllı sözleşme programlaması yapacağız ve [akıllı sözleşme Güvenliği] 🛡️ bölümünde en iyi uygulamaları ve güvenlikle ilgili konuları öğreneceğiz. 💙
 
-
-
-
-
+-----------------------------------------SONNN-------------------------------------
+**"Size çok önemli bir soru soracağım. Dünyayı kontrol etmenin en etkili ve verimli yolu nedir? İki kelime: Akıl Kontrolü!" 🗣️GEORGE CARLİN** 
 
 
 
