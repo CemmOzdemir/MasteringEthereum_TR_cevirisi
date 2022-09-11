@@ -2,8 +2,7 @@
 
 _BAŞLAMADAN ÖNCE KISA BİR NOT_
 
-**Bu kitabı çevirip çevirmemek konusunda kararsız kalsamda bu kitabın İspanyolca,Çekçe,Çince,Uzak doğu dillerinden bazılarına çevrildiğini gördüm.Bu kitabın
-Ethereum ekosisteminin mihenk taşlarından olduğunu belirtmek isterim.Hal böyle olunca İstatistiklere göre günde 10-15 saat çalışan ,Kızgınlık ve Mutsuzlukta başı çeken,ekonomik olarak çok kötü durumlar geçiren tek başına kalmış Kıymetli Türk hanımefendileri ve beyefendilerin  bu güzel bilgilerden mahrum kalmaması gerektiğini düşündüm.Lisans haklarını inceledikten sonra başlamak istedim.Hem İngilizcemi geliştirip hemde Atamızın bize gösterdiği yolda ilerleyerek teknolojiye,bilime minicikte olsa katkım olsun istedim.Bu yüzden büyük müsadenizle Çevirilerimde((Kötü dahi olsa)) motivasyonum olan, Cephelerde dahi yanından kitaplarını ayırmayan büyük liderimize, 🇹🇷 ❤️MUSTAFA KEMAL ATATÜRK'e🤍 Teşekkürü bir borç bilirim.**
+**Bu kitabı çevirip çevirmemek konusunda kararsız kalsamda bu kitabın İspanyolca,Çince,Çekçe,Uzak doğu dillerinden bazılarına çevrildiğini gördüm.Daha da ilginç olan kısım ise Çinli bir mühendis dostuma şu soruyu sordum :"Nasıl oluyorda her türlü teknolojik gelişimin özelliklede açık kaynaklı uygulamaların dökümanlarını kısa sürede Çince'ye çeviriyorsunuz?" diye sordum.Mühendis arkadaşın cevabı çok netti: "Bu bizde bir paradigma kültürü gibi.Elbette teknoloji ile uğraşan kişi sayısının önemi çok büyük ama burada bu insanları doğru bilgi ile teknolojiye yönlendirmek önemli.Bunuda çıkan yeni teknolojinin resmi dökümanından yapmak çok önemli" demişti.İşte bu yüzden bu kitabın Ethereum ekosisteminin mihenk taşlarından olduğunu belirtmek isterim.Hal böyle olunca İstatistiklere göre günde 10-15 saat çalışan ,Kızgınlık ve mutsuzlukta başı çeken,ekonomik olarak çok kötü durumlar geçiren tek başına kalmış Kıymetli Türk hanımefendileri ve beyefendilerin  bu güzel bilgilerden mahrum kalmaması gerektiğini düşündüm.Lisans haklarını inceledikten sonra başlamak istedim.Hem İngilizcemi geliştirip hemde Atamızın bize gösterdiği yolda ilerleyerek teknolojiye,bilime minicikte olsa katkım olsun istedim.Bu yüzden büyük müsadenizle çevirideki((Yeterli dahi olmasa)) motivasyonum olan, Cephelerde dahi yanından kitaplarını ayırmayan,ömrünün büyük bölümünü cephelerde geçirmesine rağmen "Geometri" üzerine kitap yazacak kadar ilim-irfan sahibi büyük liderimize, 🇹🇷 ❤️MUSTAFA KEMAL ATATÜRK'e ve SİLAH ARKADAŞLARINA🤍 Teşekkürü bir borç bilirim.**
 _H.Cem Özdemir_
 
 
@@ -13,9 +12,17 @@ _Benim manevi mirasım ilim ve akıldır. Benden sonra, beni benimsemek isteyenl
 <img title="Atatürk Çankaya Köşkü'nde kitap okurken" alt="Yurtta sulh,cihanda sulh" src="https://isteataturk.com/gorseller/1510514658_ataturk.jpg">
 
 
+✏️
+_Ek olarak-----------> Kitabı çevirirken hatalarım olabilir.Şimdiden özür dilerim .✋
+* Özellikle emoji kullanıyorum ki görsel yönden de zengin bir içerik olsun. 
+* Ek olarak güncel olmayan bilgliler varsa not düşmeye ve açıklamaya çalıştım.
+* Kitabın **Orjinal repoları Github'ın mobil uygulaması ile uyumlu değil**.📵🔴(Özellike _görseller ve kodlar_ .Sebebi dosyanın formatının ascii.doc olması) ANCAK **TÜRKÇE REPOMUZ UYUMLUDUR.** 🟢 (markdown formatı )DİLERSENİZ GİTHUB MOBİL ÜZERİNDEN OKUMA YAPABİLİRSİNİZ. 📱 
+* Bölüm sonlarına ⭐ beğendiğim insanlardan birisin en sevdiğim sözü ile bitirmeye çalıştım.(Sondaki sözler kitapta yok benden size motivasyon ve düşünmerek çıkarımlar yapmanızı sağlamak istedim.👀)
 
 
+------------------------
 # ÖNSÖZ (Mutlaka okuyun! 🃏)
+------------------------
 
 Bu kitap, Andreas M. Antonopoulos ve Dr. Gavin Wood arasında bir işbirliği sonucudur. Bir dizi şanslı tesadüf, bu iki yazarı; _en iyi açık kaynak ruhu ve yaratıcı ortak kültür ruhuyla_ bu kitabı üretmek için yüzlerce katılımcıyı harekete geçiren bir çaba içinde bir araya getirdi.
 
@@ -209,6 +216,6 @@ https://blog.sigmaprime.io/solidity-security.html:
 Creative Commons CC BY 4.0
 
 
+----Bölüm SONU 🏁--------
 
-
-
+**" Ve insan, karşısına çıkan her engeli aşmış, her düşmanı yenmiş. Yalnız bir tanesinin üstesinden gelememiş. Evet, yalnızca kendisini yenememiş. İnsanlık nasıl da nefret ediyor kendi kendisinden."🗣️John Steinbeck** 
