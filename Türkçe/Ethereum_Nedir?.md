@@ -289,6 +289,6 @@ Sadece Ethereum'u nasıl kullanacağınızı değil, nasıl çalıştığını d
 
 Bölüm SONU 🏁
 
-**"Bilgisayar, bir insanı insan olduğuna inanmaya ikna edebilirse, akıllı olarak adlandırılmayı hak eder."🗣️Alan Turing**
+**"Onun yanında durdum, onu dinledim, güldüm ve _bir kadını sevmenin ve fakir olmanın_ ne kadar korkunç olduğunu düşündüm."🗣️ Erich Maria Remarque**
 
 
