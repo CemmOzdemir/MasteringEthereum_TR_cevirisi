@@ -289,6 +289,6 @@ Sadece Ethereum'u nasıl kullanacağınızı değil, nasıl çalıştığını d
 
 Bölüm SONU 🏁
 
-**"Onun yanında durdum, onu dinledim, güldüm ve _bir kadını sevmenin ve fakir olmanın_ ne kadar korkunç olduğunu düşündüm."🗣️ Erich Maria Remarque**
+**"Hiç kimse bir zamanlar sevdiğiniz kişiden daha yabancı hale gelemez."🗣️ Erich Maria Remarque**
 
 
