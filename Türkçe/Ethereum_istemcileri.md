@@ -285,4 +285,36 @@ Ethereum ve Ethereum Classic'in yanı sıra ERC20 ve ERC223 belirteçlerini dest
 
 Ethereum uygulamaları ve belirteçleri ile entegrasyona izin veren tam özellikli bir Ethereum özellikli mobil DApp tarayıcısı ve cüzdanı. iOS ve Android için kullanılabilir.
 
+## Tarayıcı Cüzdanları
+
+Chrome ,Firefox,Brave gibi web tarayıcılarının eklentileri veya uzantıları olarak çeşitli cüzdanlar ve DApp tarayıcıları mevcuttur. Bunlar, tarayıcınızın içinde çalışan uzak istemcilerdir.
+
+Daha popüler olanlardan bazıları MetaMask, Jaxx, MyEtherWallet ve MyCrypto'dur.
+
+* Metamask 🦊
+
+Önceki bölümlerde de tanıtılan MetaMask, **çok yönlü bir tarayıcı tabanlı cüzdan**, RPC istemcisi ve temel sözleşme gezginidir. Chrome, Firefox, Opera ve Brave Browser'da mevcuttur.(güncel olarak mobil içinde uygun)
+
+Diğer tarayıcı cüzdanlarından farklı olarak MetaMask, **çeşitli Ethereum blok zincirlerine (mainnet, Ropsten testnet, Kovan testnet, yerel RPC düğümü, vb.) bağlanan bir RPC istemcisi olarak hareket ederek tarayıcı JavaScript bağlamına bir web3 örneği enjekte eder.** Bir web3 örneği enjekte etme ve harici RPC hizmetlerine bir ağ geçidi görevi görme yeteneği, MetaMask'ı hem geliştiriciler hem de kullanıcılar için çok güçlü bir araç haline getirir. Örneğin, bu araçlar için bir web3 sağlayıcısı ve RPC ağ geçidi görevi gören MyEtherWallet veya MyCrypto ile birleştirilebilir.
+
+* Jaxx
+Bir önceki bölümde mobil cüzdan olarak tanıtılan Jaxx, Chrome ve Firefox eklentisi ve masaüstü cüzdan olarak da mevcut.
+
+* MyEtherWallet (MEW)
+MyEtherWallet, aşağıdakileri sunan tarayıcı tabanlı bir JavaScript uzaktan(remote) istemcisidir:
+
+* Trezor ve Ledger gibi popüler donanım cüzdanlarına bir köprü hizmeti sunar
+* Başka bir istemci tarafından enjekte edilen bir web3 örneğine bağlanabilen bir web3 arayüzüdür (ör. MetaMask)
+* Bir Ethereum tam istemcisine bağlanabilen bir RPC istemcisidir
+* Bir sözleşmenin adresi ve uygulama ikili arayüzü (ABI) verildiğinde akıllı sözleşmelerle etkileşime girebilen temel bir arayüz sunar
+* Bir donanım cüzdanına benzer şekilde, birinin uyumlu bir Android veya iOS cihazı kullanmasını sağlayan bir mobil uygulama olan MEWConnect.
+* JavaScript'te çalışan bir yazılım cüzdanıdır.
+
+⚠️UYARI: MyEtherWallet ve diğer tarayıcı tabanlı JavaScript cüzdanlarına erişirken çok dikkatli olmalısınız, çünkü bunlar kimlik avı için sık hedeflerdir. Doğru web URL'sine erişmek için her zaman bir _arama motoru veya bağlantı_ değil,🔴 bir yer imi(favoriler-sık kullanılanlar gibi) 🟢 kullanın.📌
+
+
+
+
+
+
 
