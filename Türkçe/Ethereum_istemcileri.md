@@ -173,7 +173,7 @@ Artık "ilk senkronizasyon"un zorluklarını anladığınıza göre, bir Ethereu
 
 🔍İPUCU:Ethereum blok zincirini senkronize etmek, çok fazla RAM içeren çok hızlı bir sistemde yarım gün, daha yavaş bir sistemde birkaç gün sürer.
 
-## JSON-RPC Arayüzü
+## JSON-RPC Arayüzü 🖤
 
 Ethereum istemcileri, bir uygulama programlama arabirimi ve _JavaScript Nesne Gösterimi (JSON)_ olarak kodlanmış bir dizi _Uzaktan Yordam Çağrısı (RPC)_ komutu sunar. Bunun **JSON-RPC API olarak anıldığını göreceksiniz.** Esasen, **JSON-RPC API, bir Ethereum istemcisini bir Ethereum ağına ve blok zincirine ağ geçidi olarak kullanan programlar yazmamıza izin veren bir arayüzdür.**
 
@@ -191,7 +191,7 @@ Bu örnekte, http://localhost:8545 adresine bir HTTP bağlantısı kurmak için 
 
 `{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}`
 
-JSON-RPC isteği, JSON-RPC 2.0 belirtimine göre biçimlendirilir. Her istek dört öğe içerir:
+JSON-RPC isteği, JSON-RPC 2.0 belirtimine göre biçimlendirilir. Her istek dört öğe içerir: 🔢
 
 * jsonrpc:
 JSON-RPC protokolünün sürümü. Bu tam olarak "2.0" OLMALIDIR.
@@ -204,6 +204,43 @@ Yöntemin çağrılması sırasında kullanılacak parametre değerlerini tutan 
 
 * id
 İstemci tarafından oluşturulmuş ve dahil edilmişse; bir dize, Sayı veya NULL değeri içermesi ZORUNLU olan bir tanımlayıcıdır. Sunucu, dahil edilmişse, yanıt nesnesindeki aynı değerle yanıt vermelidir( ZORUNLU.) Bu üye, iki nesne arasındaki bağlamı ilişkilendirmek için kullanılır.
+
+🔍İPUCU :id parametresi, öncelikle tek bir JSON-RPC çağrısında birden çok istekte bulunduğunuzda kullanılır; bu, **toplu işlem(Batching)** adı verilen bir uygulamadır. Her istek için yeni bir HTTP ve TCP bağlantısının **ek yükünü önlemek** için toplu işlem kullanılır. Örneğin, Ethereum bağlamında, tek bir HTTP bağlantısı üzerinden binlerce işlemi almak istiyorsak toplu işleme kullanırdık. Toplu oluştururken, **her istek için farklı bir kimlik belirlersiniz** ve ardından bunu JSON-RPC sunucusundan gelen her yanıttaki kimlikle eşleştirirsiniz. Bunu uygulamanın en kolay yolu, bir **sayaç tutmak ve her istek için değeri artırmaktır**.
+
+
+Aldığımız yanıt şu:
+
+`{"jsonrpc":"2.0","id":1,
+"result":"Geth/v1.9.11-unstable-0b284f6c-20200123/linux-amd64/go1.13.4"}
+`
+Bu bize JSON-RPC API'sinin Geth istemci sürümü 1.9.11 tarafından sunulduğunu söyler.
+
+Biraz daha ilginç bir şey deneyelim. Bir sonraki örnekte, gazın wei'deki mevcut fiyatını JSON-RPC API'sine soruyoruz: ⏬
+
+`$ curl -X POST -H "Content-Type: application/json" --data \
+  '{"jsonrpc":"2.0","method":"eth_gasPrice","params":[],"id":4213}' \
+  http://localhost:8545
+{"jsonrpc":"2.0","id":4213,"result":"0x430e23400"}`
+
+0x430e23400 yanıtı, bize mevcut gaz fiyatının **18 gwei** (gigawei veya milyar wei) olduğunu söylüyor.
+
+Hexadecimal olarak düşünmüyorsanız, komut satırında _bash-fu_ ile ondalık sayıya dönüştürebilirsiniz:
+
+`$ echo $((0x430e23400))`
+
+`18000000000`(output) 
+
+Tam JSON-RPC API'si [Ethereum wikiden](https://github.com/ethereum/wiki/wiki/JSON-RPC) araştırılabilir.🔷
+
+## Parity'nin Geth uyumluluk modu
+Parity, Geth tarafından sunulanla aynı olan bir JSON-RPC API sunduğu özel bir "Geth uyumluluk modu"na sahiptir. Parity'yi bu modda çalıştırmak için --geth anahtarını kullanın:
+
+`$ parity --geth`
+
+
+
+
+
 
 
 
