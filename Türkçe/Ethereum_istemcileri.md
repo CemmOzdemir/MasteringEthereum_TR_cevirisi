@@ -20,7 +20,7 @@ Bu Ethereum tabanlı ağlar arasında Ethereum, Ethereum Classic, Ella, Expanse,
 
 Şu anda, altı farklı dilde yazılmış **Ethereum protokolünün altı ana uygulaması vardır**:
 
-* parite ---> Rust ile yazılmış 
+* parity ---> Rust ile yazılmış 
 
 * Geth ------> Go ile yazılmış
 
@@ -32,7 +32,7 @@ Bu Ethereum tabanlı ağlar arasında Ethereum, Ethereum Classic, Ella, Expanse,
 
 * Harmony -------> Java ile yazılmış
 
- ⭐ Bu bölümde, en yaygın iki istemciye,_Parity ve Geth'e bakacağız._ Her istemciyi kullanarak bir düğümün nasıl kurulacağını göstereceğiz ve bazı komut satırı seçeneklerini ve uygulama programlama arabirimlerini (API'ler) keşfedeceğiz.
+ ⭐ Bu bölümde, en yaygın iki istemciye, _Parity ve Geth'e bakacağız._ Her istemciyi kullanarak bir düğümün nasıl kurulacağını göstereceğiz ve bazı komut satırı seçeneklerini ve uygulama programlama arabirimlerini (API'ler) keşfedeceğiz.
  
  ----------------------
  
@@ -40,7 +40,7 @@ Bu Ethereum tabanlı ağlar arasında Ethereum, Ethereum Classic, Ella, Expanse,
  
  Blok zincirlerinin **kullanımı,esnekliği ve sansür direnci gibi önemli unsurları, bağımsız olarak işletilen ve coğrafi olarak dağılmış birçok tam düğüme sahip olmalarına bağlıdır. Her bir tam düğüm, diğer yeni düğümlerin operasyonlarını başlatmak için blok verilerini almasına yardımcı olabilir ve ayrıca operatöre tüm işlemlerin ve sözleşmelerin yetkili ve bağımsız bir doğrulamasını sunar.**
  
- Ancak, tam bir düğüm çalıştırmak, donanım kaynaklarında ve bant genişliğinde bir maliyete neden olacaktır. Tam bir düğüm 300 GB'a kadar veri indirebilir (istemci yapılandırmasına bağlı olarak Mart 2021'den itibaren) ---->[🗒️NOT: güncel olarak şuanlık EYLÜL2022---->730 GB ] ve yerel bir sabit sürücüde depolayabilir. Bu veri yükü, her geçen gün yeni işlemler ve bloklar eklendikçe oldukça hızlı bir şekilde artmaktadır. Bu konuyu Tam Düğüm için Donanım Gereksinimlerinde daha ayrıntılı olarak anlatacağız.
+ Ancak, tam bir düğüm çalıştırmak, donanım kaynaklarında ve bant genişliğinde bir maliyete neden olacaktır. Tam bir düğüm 300 GB'a kadar veri indirebilir (istemci yapılandırmasına bağlı olarak Mart 2021'den itibaren) ---->[🗒️NOT: güncel olarak şuanlık EYLÜL2022----> ~730 GB ] ve yerel bir sabit sürücüde depolayabilir. Bu veri yükü, her geçen gün yeni işlemler ve bloklar eklendikçe oldukça hızlı bir şekilde artmaktadır. Bu konuyu Tam Düğüm için Donanım Gereksinimlerinde daha ayrıntılı olarak anlatacağız.
  Main net ağında çalışan tam bir düğüm, Ethereum geliştirmesi için gerekli değildir. Bir testnet düğümü (sizi daha küçük genel test blok zincirlerinden birine bağlar), **Ganache gibi yerel bir özel blok zincir** veya **Infura gibi bir hizmet sağlayıcı tarafından sunulan bulut tabanlı bir Ethereum istemcisi** ile yapmanız gereken hemen hemen her şeyi yapabilirsiniz. 
  
  Ayrıca blok zincirinin yerel bir kopyasını **saklamayan veya blokları ve işlemleri doğrulamayan** bir uzak istemci(remote clients) çalıştırma seçeneğiniz de vardır. Bu istemciler bir _cüzdanın işlevselliğini_ sunar ve işlemler oluşturabilir ve yayınlayabilir. Uzak istemciler, kendi tam düğümünüz, public blok zinciri, genel veya izin verilen (PoA) test ağı veya özel-yerel blok zinciri gibi mevcut ağlara bağlanmak için kullanılabilir. Pratikte, **tüm farklı düğüm seçenekleri arasında geçiş yapmanın uygun bir yolu olarak MetaMask, Emerald Wallet, MyEtherWallet veya MyCrypto gibi uzak bir istemci** kullanırsınız.
