@@ -125,7 +125,26 @@ Dezavantajları: 🔴
 
 * Sizden başka madenci olmaması, madenciliğin daha öngörülebilir olduğu anlamına gelir; bu nedenle, halka açık bir blok zincirinde meydana gelen bazı senaryoları test edemezsiniz.
 
-* Mevcut bir Ethereum düğümünü çatallıyorsanız(fork), aksi söz konusu olduğunda **budanmış olabilecek(Prune) bloklardan** durumla etkileşime girebilmeniz için bir arşiv düğümü(archive) olması gerekir. [Daha fazla bilgi için TobbyKitty web sitesinden Node Nedir? yazısı okuyalım.](https://tobbykitty.com/2022/05/28/node-nedir-nodelar-hakkinda-her-sey/)
+* Mevcut bir Ethereum düğümünü çatallıyorsanız(fork), aksi söz konusu olduğunda **budanmış olabilecek(Prune) bloklardan** durumla etkileşime girebilmeniz için bir arşiv düğümü(archive) olması gerekir. [Daha fazla bilgi için TobbyKitty web sitesinden Node Nedir? yazısı okuyalım.](https://tobbykitty.com/2022/05/28/node-nedir-nodelar-hakkinda-her-sey/) 🐱
 
  <img title="budama(pruning)" src="https://pbs.twimg.com/media/E8rdzAMWEAUh4ry.png">
  
+ ## Ethereum İstemcisi Çalıştırma
+
+_Zamanınız ve kaynaklarınız varsa_, yalnızca süreç hakkında daha fazla bilgi edinmek için bile olsa **tam bir düğüm(full node) çalıştırmayı denemelisiniz**. Bu bölümde, Ethereum istemcileri Parity ve Geth'in nasıl indirileceğini, derleneceğini ve çalıştırılacağını ele alıyoruz. Bu, işletim sisteminizde komut satırı arabirimini(**Cmd-Terminal** ) kullanma konusunda biraz bilgi sahibi olmayı gerektirir. İster tam düğümler olarak, ister test ağı düğümleri olarak veya yerel(local) bir özel blok zincirinin istemcileri olarak çalıştırmayı seçseniz de, bu istemcileri yüklemeye değer bulacaksınız.✊
+ 
+-------------- 
+ ⚠️ UYARI: Kitabın basımı ve yazılmış olan gereksinimlere baktığımızda güncel OLMADIĞINA karar verdim. Bu yüzden sizlerin güncel bilgilerden yararlanmanızı sağlamak için bu bölümü link olarak size bırakıyorum: 
+-------------
+⏬ _SİSTEM GEREKSİNİMLERİ_ :
+
+[QuickNode üzerinden(Eylül 2022) Ferhat Kochan'ın yazısını inceleyeblirsiniz.](https://www.quicknode.com/guides/infrastructure/ethereum-full-node-vs-archive-node) 
+ 
+---------------
+⚠️UYARI 1: GO-ethereum'un Github reposu üzerinden _GETH_ güncel kuruluma erişebilirsiniz. 📎[Github reposu](https://github.com/ethereum/go-ethereum)
+ --------------
+
+-------------
+⚠️UYARI 2: _PARITY_'i(Rust dili ile yazılmıştı unutmayın) güncel kurulumu için ise openethereum github reposuna gidiniz: 📎[Github reposu](https://github.com/openethereum/parity-ethereum)  
+-------------
+
