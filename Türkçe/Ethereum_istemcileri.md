@@ -148,3 +148,62 @@ _Zamanınız ve kaynaklarınız varsa_, yalnızca süreç hakkında daha fazla b
 ⚠️UYARI 2: _PARITY_'i(Rust dili ile yazılmıştı unutmayın) güncel kurulumu için ise openethereum github reposuna gidiniz: 📎[Github reposu](https://github.com/openethereum/parity-ethereum)  
 -------------
 
+## Ethereum Tabanlı Blok Zincirlerinin İlk Senkronizasyonu ➿
+
+Geleneksel olarak, bir Ethereum blok zincirini senkronize ederken, istemciniz en başından beri, yani genesis bloğundan her bloğu ve her işlemi indirir ve doğrular.
+
+Blok zincirini bu şekilde **tam olarak senkronize etmek mümkün olsa da,** bu tür senkronizasyon **çok uzun zaman alacak** ve **yüksek kaynak gereksinimlerine sahip olacaktır.** (çok daha fazla RAM'e ihtiyaç duyacaktır ve eğer hızlı bir donanımınız yoksa gerçekten çok uzun zaman alacaktır). 
+
+Birçok Ethereum tabanlı blok zinciri, 2016'nın sonunda DoS saldırılarının kurbanı oldu. Etkilenen blok zincirleri, tam bir senkronizasyon yaparken yavaş yavaş senkronize olma durumnda olacaktırlar.
+
+Örneğin, Ethereum'da yeni bir müşteri 2.283.397 bloğa ulaşana kadar hızlı ilerleme kaydedecektir. Bu blok 18 Eylül 2016'da çıkarıldı ve DoS saldırılarının başlangıcını işaret ediyor. Bu bloktan 2.700.031 bloğa (26 Kasım 2016), işlemlerin doğrulanması son derece yavaş, bellek yoğun ve I/O yoğun hale geliyor. Bu, blok başına 1 dakikayı aşan doğrulama süreleriyle sonuçlanır. Ethereum, DoS saldırılarında kullanılan **temel güvenlik açıklarını gidermek için hard fork🍴 kullanarak bir dizi yükseltme gerçekleştirdi**. Bu yükseltmeler, spam işlemleri tarafından oluşturulan yaklaşık 20 milyon boş hesabı kaldırarak blok zincirini de temizledi.
+
+_Tam doğrulama ile eşitleme yapıyorsanız_, istemciniz yavaşlar ve DoS saldırılarından etkilenen blokları doğrulamak birkaç gün, hatta daha uzun sürebilir.
+
+Neyse ki, çoğu Ethereum istemcisi **varsayılan olarak**  işlemlerin tam doğrulamasını, blok zincirinin ucuyla senkronize olana kadar geçen(atlama yoluyla) ve ardından tam doğrulamaya devam eden **"hızlı"** bir senkronizasyon gerçekleştirir.
+
+Geth, Ethereum için varsayılan olarak hızlı senkronizasyon gerçekleştirir. Seçilen diğer Ethereum zinciri için özel talimatlara başvurmanız gerekebilir.
+
+Parity ayrıca varsayılan olarak hızlı senkronizasyon yapar.
+
+📝NOT :_Geth_, yalnızca **boş bir blok veritabanıyla başlatıldığında hızlı senkronizasyonu çalıştırabilir**. Hızlı mod olmadan zaten senkronizasyona başladıysanız, Geth geçiş yapamaz. Blok zinciri veri dizinini silmek ve baştan hızlı senkronizasyona başlamak, tam doğrulama ile senkronizasyona devam etmekten daha hızlıdır. Blok zinciri verilerini silerken herhangi bir cüzdanı silmemeye dikkat edin!
+
+## Geth veya Parity Çalıştırmak
+Artık "ilk senkronizasyon"un zorluklarını anladığınıza göre, bir Ethereum istemcisi başlatmaya ve blok zincirini senkronize etmeye hazırsınız. Hem Geth hem de Parity için, tüm yapılandırma parametrelerini görmek için **--help** seçeneğini kullanabilirsiniz. Varsayılan ayarlar genellikle mantıklıdır ve çoğu kullanım için uygundur. İsteğe bağlı parametreleri ihtiyaçlarınıza uyacak şekilde nasıl yapılandıracağınızı seçin, ardından **zinciri senkronize etmek için Geth veya Parity'yi başlatın.** Sonra bekleyin…
+
+🔍İPUCU:Ethereum blok zincirini senkronize etmek, çok fazla RAM içeren çok hızlı bir sistemde yarım gün, daha yavaş bir sistemde birkaç gün sürer.
+
+## JSON-RPC Arayüzü
+
+Ethereum istemcileri, bir uygulama programlama arabirimi ve _JavaScript Nesne Gösterimi (JSON)_ olarak kodlanmış bir dizi _Uzaktan Yordam Çağrısı (RPC)_ komutu sunar. Bunun **JSON-RPC API olarak anıldığını göreceksiniz.** Esasen, **JSON-RPC API, bir Ethereum istemcisini bir Ethereum ağına ve blok zincirine ağ geçidi olarak kullanan programlar yazmamıza izin veren bir arayüzdür.**
+
+Genellikle, RPC arabirimi 8545 numaralı bağlantı noktasında bir HTTP hizmeti olarak sunulur. _Güvenlik nedenleriyle_, varsayılan olarak yalnızca yerel(LOCAL) ana bilgisayardan (127.0.0.1 olan kendi bilgisayarınızın IP adresi) gelen bağlantıları kabul etmesi nedeniyle **kısıtlanmıştır.**
+
+JSON-RPC API'sine erişmek için, mevcut her RPC komutuna karşılık gelen "stub" işlev çağrıları sağlayan özel bir kitaplık (seçtiğiniz programlama dilinde yazılmış) kullanabilir veya manuel olarak HTTP istekleri oluşturabilir ve JSON gönderip/alabilirsiniz.(kodlanmış istekler). RPC arabirimini çağırmak için _curl_ gibi genel bir komut satırı HTTP istemcisi bile kullanabilirsiniz. Bunu deneyelim. Öncelikle Geth'in çalışır durumda olduğundan, --rpc ile RPC arabirimine HTTP erişimine izin vermek için yapılandırıldığından emin olun, ardından yeni bir terminal penceresine geçin (örneğin, mevcut bir pencerede Ctrl-Shift-N veya Ctrl-Shift-T ile). terminal penceresi) burada gösterildiği gibi:
+
+`$ curl -X POST -H "Content-Type: application/json" --data \
+'{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}' \
+http://localhost:8545
+{"jsonrpc":"2.0","id":1,
+"result":"Geth/v1.9.11-unstable-0b284f6c-20200123/linux-amd64/go1.13.4"}`
+
+Bu örnekte, http://localhost:8545 adresine bir HTTP bağlantısı kurmak için _curl_ kullanıyoruz. 8545 numaralı bağlantı noktasında bir HTTP hizmeti olarak JSON-RPC API'sini sunan geth'i zaten çalıştırıyoruz. CURL'a HTTP POST komutunu kullanması ve içeriği application/json türü olarak tanımlaması talimatını veriyoruz. Son olarak, HTTP isteğimizin veri bileşeni olarak JSON kodlu bir istek iletiyoruz. Komut satırımızın çoğunu, HTTP bağlantısını doğru yapmak için Curl tarafından ayarlıyor. dikkat  çeken kısım, yayınladığımız gerçek JSON-RPC komutudur:
+
+`{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}`
+
+JSON-RPC isteği, JSON-RPC 2.0 belirtimine göre biçimlendirilir. Her istek dört öğe içerir:
+
+* jsonrpc:
+JSON-RPC protokolünün sürümü. Bu tam olarak "2.0" OLMALIDIR.
+
+* method:
+Çağrılacak yöntemin adı.
+
+* params:
+Yöntemin çağrılması sırasında kullanılacak parametre değerlerini tutan yapılandırılmış bir değer. Bu üye EKLENEBİLİR.
+
+* id
+İstemci tarafından oluşturulmuş ve dahil edilmişse; bir dize, Sayı veya NULL değeri içermesi ZORUNLU olan bir tanımlayıcıdır. Sunucu, dahil edilmişse, yanıt nesnesindeki aynı değerle yanıt vermelidir( ZORUNLU.) Bu üye, iki nesne arasındaki bağlamı ilişkilendirmek için kullanılır.
+
+
+
