@@ -21,6 +21,7 @@ Mastering Ethereum, *geliştiriciler* için bir kitaptır ve Ethereum, Ethereum 
 + Chapter 3: '[Ethereum Clients](https://github.com/ethereumbook/ethereumbook/blob/develop/03clients.asciidoc)'
 + Bölüm III: '[Ethereum İstemcileri](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_istemcileri.md)' ❤️ 🇹🇷
 + Chapter 4: '[Cryptography](https://github.com/ethereumbook/ethereumbook/blob/develop/04keys-addresses.asciidoc)'
++ Bölüm IV : '[Kriptografİ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Kriptografi.md)' :heart: :tr:
 + Chapter 5: '[Wallets](https://github.com/ethereumbook/ethereumbook/blob/develop/05wallets.asciidoc)'
 + Chapter 6: '[Transactions](https://github.com/ethereumbook/ethereumbook/blob/develop/06transactions.asciidoc)'
 + Chapter 7: '[Smart Contracts and Solidity](https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc)'
