@@ -16,7 +16,7 @@ Ethereum'un açık ve resmi spesifikasyonunun bir sonucu olarak, bir _Ethereum i
 
 Ethereum Yellow Paper'da tanımlanan resmi spesifikasyona büyük ölçüde uyan, ancak birbirleriyle birlikte çalışabilen veya çalışamayan çeşitli Ethereum tabanlı ağlar vardır.
 
-Bu Ethereum tabanlı ağlar arasında Ethereum, Ethereum Classic, Ella, Expanse, Ubiq, Musicoin ve diğerleri bulunur. Çoğunlukla protokol düzeyinde uyumlu olsa da, bu ağlar genellikle her bir ağı desteklemek için Ethereum istemci yazılımının bakımcılarının küçük değişiklikler yapmasını gerektiren özelliklere veya özniteliklere sahiptir. Bu nedenle, Ethereum istemci yazılımının her sürümü, her Ethereum tabanlı blok zincirini çalıştırmaz.
+Bu Ethereum tabanlı ağlar arasında Ethereum, Ethereum Classic, Ella, Expanse, Ubiq, Musicoin ve diğerleri bulunur. Çoğunlukla protokol düzeyinde uyumlu olsa da, bu ağlar genellikle her bir ağı desteklemek için Ethereum istemci yazılımının geliştiricilerinin, küçük değişiklikler yapmasını gerektiren özelliklere veya özniteliklere sahiptir. Bu nedenle, Ethereum istemci yazılımının her sürümü, her Ethereum tabanlı blok zincirini çalıştırmaz.
 
 Şu anda, altı farklı dilde yazılmış **Ethereum protokolünün altı ana uygulaması vardır**:
 
@@ -53,9 +53,79 @@ Ethereum'daki uzak cüzdan kavramını _light clients_ ile(Bitcoin'deki Basitle�
 📝NOT+Ekleme :Nodelar hakkında daha fazla bilgi almak için [tobby'nin web sitesini](https://tobbykitty.com/2022/05/28/node-nedir-nodelar-hakkinda-her-sey/)
 ziyaret edebilirsiniz.
 
+## Tam Düğüm Avantajları ve Dezavantajları
+
+Tam bir düğüm çalıştırmayı seçmek,_onu bağladığınız ağların çalışmasına yardımcı olur_, ancak aynı zamanda sizin için düşük ile orta düzeyde maliyetler gerektirir. Bazı avantajlara ve dezavantajlara bakalım:
+
+-------------------
+Avantajlar: 🟢
+-------------------
+* Ethereum tabanlı ağların esnekliğini ve sansür direncini destekler.
+
+* Tüm işlemleri yetkili bir şekilde doğrular.
+
+* Herhangi bir aracı olmadan halka açık blok zincirindeki herhangi bir sözleşmeyle etkileşime girebilir.
+
+* Sözleşmeleri bir aracı olmadan doğrudan halka açık blok zincirine dağıtabilir.
+
+* Blok zinciri durumunu (hesaplar, sözleşmeler vb.) çevrimdışı olarak sorgulayabilir. (salt okunur)
+
+* Okuduğunuz bilgileri üçüncü bir tarafa bildirmeden blok zincirini sorgulayabilir.
+
+----------------
+Dezavantajları: 🔴
+----------------
+* Önemli ve büyüyen donanım ve bant genişliği kaynakları gerektirir.
+
+* İlk başlatıldığında tam senkronizasyon için birkaç gün gerekebilir.
+
+* Senkronize kalmak için bakımı yapılmalı, yükseltilmeli ve çevrimiçi tutulmalıdır.
 
 
- 
- 
- 
+## Public(Herkese Açık) Testnet'in Avantajları ve Dezavantajları
+
+Tam bir düğüm(full Node) çalıştırmayı seçseniz de seçmeseniz de, muhtemelen bir public test ağı düğümü çalıştırmak isteyeceksiniz. Herkese açık bir test ağı kullanmanın bazı avantaj ve dezavantajlarına bakalım:
+
+------------
+Avantajlar: 🟢
+------------
+* Bir test ağı düğümünün, ana ağa kıyasla önemli ölçüde daha az veriyi senkronize etmesi ve depolaması gerekir.
+
+* Bir testnet düğümü, çok daha kısa sürede tamamen eşitlenebilir.
+
+* Sözleşmeleri dağıtmak veya işlem yapmak, hiçbir değeri olmayan ve birkaç "musluktan"(faucet)🚰 *ücretsiz olarak edinilebilen test etherini gerektirir.*
+
+* Test ağları, diğer birçok kullanıcı ve sözleşmeyle birlikte "canlı" çalışan halka açık blok zincirlerdir.
+
+----------
+Dezavantajları: 🔴
+------------
+* Bir test ağında **gerçek** parayı kullanamazsınız; test etherinde çalışır. Sonuç olarak, tehlikede hiçbir şey olmadığı için güvenliği gerçek hackerlara karşı test edemezsiniz.
+
+* Bir test ağında _gerçekçi bir şekilde test edemeyeceğiniz_ bir genel blok zincirinin bazı yönleri vardır. Örneğin, **işlem ücretleri, işlem göndermek için gerekli olmasına rağmen, gaz ücretsiz olduğu için bir test ağında dikkate alınmaz.** Ayrıca, test ağları, genel ana ağın bazen yaptığı gibi ağ tıkanıklığı yaşamaz.
+
+## LOCAL Blok Zinciri Simülasyonu Avantajları ve Dezavantajları: 🍬
+Birçok test amacı için en iyi seçenek, **tek örnekli bir özel blok zinciri başlatmaktır**. _Ganache (eski adıyla testrpc),_ başka hiçbir katılımcı olmadan etkileşime girebileceğiniz en popüler _Local blok zinciri simülasyonlarından biridir._ Genel test ağının birçok avantaj ve dezavantajını paylaşır, ancak bazı farklılıkları da vardır.
+
+-------
+Avantajlar: 🟢
+--------
+* Senkronizasyon yok ve depolamada neredeyse hiç veri tutmaz. 
+
+* Test eteri almaya gerek yok; Ganache,test için zaten ether tutan hesaplarla başlatılır.
+
+* Başka kullanıcı yok,sadece siz varsınız. 🚕
+
+Başka sözleşme yok, yalnızca mevcut bir Ethereum düğümünü devre dışı bırakma seçeneğini **kullanmadığınız** sürece, başlattıktan sonra ağa dağıttığınız sözleşmelerle tek başına çalışır. 
+
+---------
+Dezavantajları: 🔴
+-----------
+* Başka kullanıcıya sahip olmamak,  açık(public) bir blok zinciri gibi davranmadığı anlamına gelir. İşlem alanı veya işlemlerin sıralanması için rekabet yoktur.
+
+* Sizden başka madenci olmaması, madenciliğin daha öngörülebilir olduğu anlamına gelir; bu nedenle, halka açık bir blok zincirinde meydana gelen bazı senaryoları test edemezsiniz.
+
+* Mevcut bir Ethereum düğümünü çatallıyorsanız(fork), aksi söz konusu olduğunda **budanmış olabilecek(Prune) bloklardan** durumla etkileşime girebilmeniz için bir arşiv düğümü(archive) olması gerekir. [Daha fazla bilgi için TobbyKitty web sitesinden Node Nedir? yazısı okuyalım.](https://tobbykitty.com/2022/05/28/node-nedir-nodelar-hakkinda-her-sey/)
+
+ <img title="budama(prune)" src=" https://i0.wp.com/tobbykitty.com/wp-content/uploads/2022/05/image-30.png?resize=648%2C389&ssl=1">
  
