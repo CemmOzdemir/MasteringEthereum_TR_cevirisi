@@ -237,10 +237,52 @@ Parity, Geth tarafından sunulanla aynı olan bir JSON-RPC API sunduğu özel bi
 
 `$ parity --geth`
 
+## Uzak Ethereum İstemcileri(Remote) 🤓
+Uzak istemciler, tam bir(full) istemcinin _işlevlerinin bir alt kümesini sunar_. Tam Ethereum blok zincirini saklamazlar, bu nedenle kurulumları daha hızlıdır ve çok **daha az veri depolama** gerektirir.
 
+Bu istemciler genellikle aşağıdakilerden birini veya birkaçını yapma olanağı sağlar ⬇️ 
 
+* Bir cüzdanda özel anahtarları ve Ethereum adreslerini yönetin.
 
+* İşlemler oluşturun, imzalayın ve yayınlayın.
 
+* Veri yükünü kullanarak akıllı sözleşmelerle etkileşim kurun.
 
+* DApp'lere göz atın ve etkileşim kurun.
+
+* Blok gezgini(explorer) gibi harici hizmetlere bağlantılar sunun.
+
+* Ehter birimlerini dönüştürün ve harici kaynaklardan döviz kurlarını alın.
+
+* Web tarayıcısına bir JavaScript nesnesi olarak bir web3 örneği enjekte edin.
+
+* Başka bir istemci tarafından tarayıcıya sağlanan/enjekte edilen bir web3 örneğini kullanın.
+
+* Yerel veya uzak bir Ethereum düğümünde RPC hizmetlerine erişin.
+
+Bazı uzak istemciler, örneğin mobil (akıllı telefon) cüzdanlar, yalnızca **temel cüzdan işlevselliği sunar.** Diğer uzak istemciler, **tam gelişmiş DApp tarayıcılarıdır**. Uzak istemciler, başka bir yerde, örneğin yerel olarak sizin tarafınızdan makinenizde veya bir web sunucusunda çalıştırılan bir **tam düğüme bağlanarak, Ethereum blok zincirinin yerel bir kopyasını senkronize etmeden,** genellikle _tam düğümlü bir Ethereum istemcisinin bazı işlevlerini_ sunar.
+
+En popüler uzak istemcilerden bazılarına ve sundukları işlevlere bakalım.
+
+## Mobil (Akıllı Telefon) Cüzdanlar
+Tüm mobil cüzdanlar uzak istemcilerdir, çünkü akıllı telefonlar tam bir Ethereum istemcisini çalıştırmak için yeterli _kaynağa sahip değildir_. Hafif istemciler(light clients) geliştirme aşamasındadır ve Ethereum için **genel kullanımda değildir**. Parity, hafif istemci "experimental(deneysel)" olarak işaretlenir ve --light seçeneğiyle, Parity çalıştırılarak kullanılabilir.
+
+Popüler mobil cüzdanlar aşağıdakileri içerir: ( ⚠️bunları yalnızca örnek olarak listeliyoruz; bu, bu cüzdanların güvenliğinin veya işlevselliğinin bir onayı veya göstergesi değildir.)
+
+* [Jaxx](https://jaxx.io/)
+
+Bitcoin, Litecoin, Ethereum, Ethereum Classic, ZCash, çeşitli ERC20 jetonları ve diğer birçok para birimini destekleyen, BIP-39 anımsatıcı tohumlarına dayalı çok para birimli bir mobil cüzdan. Jaxx, Android ve iOS'ta, tarayıcı eklenti cüzdanı ve çeşitli işletim sistemleri için masaüstü cüzdanı olarak mevcuttur.
+
+* [Status](https://status.im/)
+
+Çeşitli jetonları ve popüler DApp'leri destekleyen bir mobil cüzdan ve DApp tarayıcısı. iOS ve Android için kullanılabilir.
+
+* [Trust Wallet](https://trustwalletapp.com/)
+
+Ethereum ve Ethereum Classic'in yanı sıra ERC20 ve ERC223 belirteçlerini destekleyen mobil çoklu para birimi cüzdanı. Trust Wallet, iOS ve Android için kullanılabilir.
+
+* [cipher Browser](https://www.cipherbrowser.com/)
+
+Ethereum uygulamaları ve belirteçleri ile entegrasyona izin veren tam özellikli bir Ethereum özellikli mobil DApp tarayıcısı ve cüzdanı. iOS ve Android için kullanılabilir.
 
 
