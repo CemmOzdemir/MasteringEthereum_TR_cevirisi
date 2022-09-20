@@ -127,5 +127,5 @@ Dezavantajları: 🔴
 
 * Mevcut bir Ethereum düğümünü çatallıyorsanız(fork), aksi söz konusu olduğunda **budanmış olabilecek(Prune) bloklardan** durumla etkileşime girebilmeniz için bir arşiv düğümü(archive) olması gerekir. [Daha fazla bilgi için TobbyKitty web sitesinden Node Nedir? yazısı okuyalım.](https://tobbykitty.com/2022/05/28/node-nedir-nodelar-hakkinda-her-sey/)
 
- <img title="budama(prune)" src=" https://i0.wp.com/tobbykitty.com/wp-content/uploads/2022/05/image-30.png?resize=648%2C389&ssl=1">
+ <img title="budama(pruning)" src="https://pbs.twimg.com/media/E8rdzAMWEAUh4ry.png">
  
