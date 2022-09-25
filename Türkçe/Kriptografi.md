@@ -29,8 +29,35 @@ Açık anahtar şifrelemesi ("asimetrik şifreleme" olarak da adlandırılır.�
 
 Açık anahtar şifrelemesi, bilgilerin güvenliğini sağlamak için _benzersiz anahtarlar_ kullanır. Bunlar, özel bir özelliği olan _matematiksel fonksiyonlara_ dayanmaktadırlar: bunları **hesaplamak kolaydır, ancak tersini hesaplamak zordur.🤕** Bu işlevlere dayalı olarak kriptografi, _matematik yasalarıyla güvence altına alınan dijital sırların ve kırılmaz(hacking anlamında --->Ancak teknoloji sürekli gelişiyor.Bu yüzden ileride ne olacağını kestirmek kolay değil 🧐) dijital imzaların oluşturulmasını sağlar._
 
+Örneğin, iki büyük asal sayıyı birbiriyle çarpmak önemsizdir. Ancak iki büyük asal sayının çarpımı verildiğinde, asal çarpanları bulmak çok zordur (asal çarpanlara ayırma denilen bir problem). Diyelim ki _8,018,009 sayısını_ sunalım ve bunun iki asal sayının çarpımı olduğunu söyleyelim. Bu iki asal sayıyı bulmak sizin için onları çarparak 8,018,009 elde etmekten çok daha zor. ✏️
+_Bazı gizli bilgileri biliyorsanız, bu matematiksel işlevlerden bazıları kolayca tersine_ çevrilebilir. Yukarıdaki örnekte, size asal çarpanlardan birinin _2.003_ olduğunu söylersem, diğerini basit bir bölme ile önemsiz bir şekilde bulabilirsiniz: 8,018,009 ÷ 2,003 = _4,003_ Bu tür işlevlere genellikle 🚪**gizli-kapı(trapdoor) işlevleri/fonksiyonları denir**, çünkü işlevi tersine çevirmek için _kısayol olarak_ kullanılabilecek bir parça gizli bilgi verilmedikçe, tersine çevrilmeleri çok zordur.
 
+------------------------ 
 
+Kriptografide, daha kullanışlı ve gelişmiş bir _matematiksel fonksiyon kategorisi_ ⛓️ **eliptik bir eğri üzerindeki aritmetik işlemlere dayanır**. Eliptik eğri aritmetiğinde, çarpma modulü _a asaldır_,  ⚠️**ancak bölmek(ters) pratik olarak imkansızdır.(YUKARIDAKİ İŞLEMDEKİ GİBİ BÖLEREK BULAMAYIZ.)** Buna 
+🌟 _AYRIK LOGARİTMA PROBLEMİ_ denir ve şu anda bilinen bir gizli kapısı 🚪 yoktur. Eliptik eğri kriptografisi modern bilgisayar sistemlerinde yaygın olarak kullanılmaktadır ve Ethereum'un (ve diğer kripto para birimlerinin) **özel anahtarları ve dijital imzaları** kullanmasının temelidir.
+
+📝NOT:Modern kriptografide kullanılan kriptografi ve matematiksel fonksiyonlar hakkında daha fazla bilgi edinmek istiyorsanız aşağıdaki kaynaklara göz atın: 🇬🇧 (İNGİLİZCE)
+  
+  + [kriptografi-cryptography](http://bit.ly/2DcwNhn)
+  + [Gizli-kapı Fonksiyonları-trapdoor Func.](http://bit.ly/2zeZV3c)
+  + [asal çarpanlara ayırma-Prime factorization](http://bit.ly/2ACJjnV)
+  + [Ayrık logaritma-dicrete Logarithm](http://bit.ly/2Q7mZYI)
+  + [Eliptik eğri kriptografisi-Elliptic curve cryptography](http://bit.ly/2zfeKCP)
+  
+--------------------
+
+Ethereum'da, bu bölümde bahsettiğimiz genel-özel(public-private) anahtar çiftini oluşturmak için açık anahtar şifrelemesini (asimetrik şifreleme olarak da bilinir) kullanırız. _Açık anahtar özel anahtardan türetildiği için "çift" olarak kabul edilirler._ Birlikte, sırasıyla herkese açık bir _hesap gösterimi(adres)_ ve hesaptaki herhangi bir _ethere erişim üzerinde özel kontrolü_ ve  _akıllı sözleşmeleri kullanırken hesabın ihtiyaç duyduğu herhangi bir kimlik doğrulaması_ sağlayarak bir Ethereum hesabını temsil ederler. _Özel anahtar, hesaptaki herhangi bir parayı harcamak için işlemleri imzalamak için gerekli olan dijital imzalar oluşturmak için gereken benzersiz bilgi parçası olarak erişimi kontrol eder._ **Dijital imzalar**, Akıllı sözleşmlere bölümünde göreceğimiz gibi, **sözleşme sahiplerinin veya kullanıcılarının kimliğini doğrulamak için de kullanılır.**
+
+| 
+🔍İPUCU: Çoğu cüzdan uygulamasında, özel ve genel anahtarlar, kolaylık sağlamak için bir anahtar çifti olarak birlikte saklanır. Ancak, genel(açık) anahtar özel anahtarın yardımıyla zor olmayacak şekilde hesaplanabilir, bu nedenle _yalnızca özel anahtarı saklamak da mümkündür._ 
+🔐 🔑 ( 🤓BİR ÖRNEK İLE PEKİŞTİRELİM: Örneğin Bisikletinizi( 1️⃣ **HESABINIZ**) kitlediniz.( 2️⃣**KİLİT----> PUBLIC(AÇIK) KEY**, 3️⃣ **ANAHTAR--->ÖZEL ANAHATARINIZ**). Bir süre başka bir yerde işiniz vardı ve bisikletinizi kitlediğiniz yerden ayrıldınız.Geri döndüğünüzde ise yan taraflarına sizin bisikletinizle ve aynı kilitle bağlamış başka bisikletler gördünüz.(renk-boyut olarak falan).Burada sahip olduğunuz kendi anahtarınız(_özel anahtarınız_) sayesinde kilite ulaşabilirsiniz ve bisikletinizi bulabilrsiniz.🚴 UNUTMAYIN!! Kriptografide her kilitin farklı anahtarı vardır.benzeri diye bir durum yoktur._Unique_ )
+
+|
+
+Herhangi bir mesajı imzalamak için dijital bir imza oluşturulabilir. _Ethereum işlemleri için, **işlemin detayları mesaj olarak** kullanılır._ Kriptografinin matematiği // ⭐ bu durumda eliptik eğri kriptografisi // **mesajın (yani işlem detaylarının) 🧷 özel anahtarla 🔑 +birleştirilmesi ve YALNIZCA özel anahtar bilgisi ile üretilebilecek bir kod oluşturmak için bir yol sağlar. Bu koda DİJİTAL İMZA denir.** 
+⏩ Bir Ethereum işleminin temel olarak belirli bir Ethereum adresiyle belirli bir hesaba erişim talebi olduğunu unutmayın. _Para transferi veya akıllı sözleşmelerle etkileşim için Ethereum ağına bir işlem gönderildiğinde, söz konusu Ethereum adresine karşılık gelen özel anahtarla oluşturulan dijital bir imza ile gönderilmesi gerekir._ 
+ Eliptik eğri matematiği, herkesin dijital imzasının işlem ayrıntılarıyla ve erişim talep edilen Ethereum adresiyle eşleştiğini kontrol ederek bir işlemin geçerli olduğunu doğrulayabileceği anlamına gelir. _Doğrulama, özel anahtarı hiç içermez; bu özel kalır. Ancak doğrulama süreci, işlemin yalnızca Ethereum adresinin arkasındaki açık anahtara karşılık gelen özel anahtara sahip birinden gelmiş olabileceğini şüpheye yer bırakmayacak şekilde belirtir_. Bu, açık anahtar şifrelemesinin  🃏"sihri"dir.
 
 
 
