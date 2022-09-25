@@ -25,9 +25,9 @@ Bu bölümün geri kalanında, önce temel kriptografiyi biraz daha detaylı inc
 
 -----------------
 ## Açık Anahtar Kriptografisi ve Kripto Para Birimi 🔑 🤑
-Açık anahtar şifrelemesi ("asimetrik şifreleme" ile ilgili 📝[türkçe-kısa medium yazısı](https://medium.com/@muhammedkaralar/simetrik-ve-asimetrik-şifreleme-d57673284646) olarak da adlandırılır ), günümüz _bilgi güvenliğinin temel bir parçasıdır_. İlk olarak 1970'lerde _Martin Hellman, Whitfield Diffie ve Ralph Merkle_ tarafından yayınlanan anahtar değişim protokolü, kriptografi alanında ilk büyük halka açık bir şekilde ve ilgisini cezbeden bir atılımdı. 1970'lerden önce, güçlü kriptografik bilgi hükümetler tarafından _gizli_ tutuluyordu.(Büyük bir ihtimal ile soğuk savaştan kaynaklı💣)
+Açık anahtar şifrelemesi ("asimetrik şifreleme" olarak da adlandırılır.📝[Türkçe-kısa medium yazısı](https://medium.com/@muhammedkaralar/simetrik-ve-asimetrik-şifreleme-d57673284646)), günümüz _bilgi güvenliğinin temel bir parçasıdır_. İlk olarak 1970'lerde _Martin Hellman, Whitfield Diffie ve Ralph Merkle_ tarafından yayınlanan anahtar değişim protokolü, kriptografi alanında ilk büyük halka açık bir şekilde ve ilgisini cezbeden bir atılımdı. 1970'lerden önce, güçlü kriptografik bilgi hükümetler tarafından _gizli_ tutuluyordu.(Büyük bir ihtimal ile soğuk savaş döneminden kaynaklı💣 🚀)
 
-
+Açık anahtar şifrelemesi, bilgilerin güvenliğini sağlamak için _benzersiz anahtarlar_ kullanır. Bunlar, özel bir özelliği olan _matematiksel fonksiyonlara_ dayanmaktadırlar: bunları **hesaplamak kolaydır, ancak tersini hesaplamak zordur.🤕** Bu işlevlere dayalı olarak kriptografi, _matematik yasalarıyla güvence altına alınan dijital sırların ve kırılmaz(hacking anlamında --->Ancak teknoloji sürekli gelişiyor.Bu yüzden ileride ne olacağını kestirmek kolay değil 🧐) dijital imzaların oluşturulmasını sağlar._
 
 
 
