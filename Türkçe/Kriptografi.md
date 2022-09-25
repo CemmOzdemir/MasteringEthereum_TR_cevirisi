@@ -59,12 +59,22 @@ Herhangi bir mesajı imzalamak için dijital bir imza oluşturulabilir. _Ethereu
 ⏩ Bir Ethereum işleminin temel olarak belirli bir Ethereum adresiyle belirli bir hesaba erişim talebi olduğunu unutmayın. _Para transferi veya akıllı sözleşmelerle etkileşim için Ethereum ağına bir işlem gönderildiğinde, söz konusu Ethereum adresine karşılık gelen özel anahtarla oluşturulan dijital bir imza ile gönderilmesi gerekir._ 
  Eliptik eğri matematiği, herkesin dijital imzasının işlem ayrıntılarıyla ve erişim talep edilen Ethereum adresiyle eşleştiğini kontrol ederek bir işlemin geçerli olduğunu doğrulayabileceği anlamına gelir. _Doğrulama, özel anahtarı hiç içermez; bu özel kalır. Ancak doğrulama süreci, işlemin yalnızca Ethereum adresinin arkasındaki açık anahtara karşılık gelen özel anahtara sahip birinden gelmiş olabileceğini şüpheye yer bırakmayacak şekilde belirtir_. Bu, açık anahtar şifrelemesinin  🃏"sihri"dir.
 
+|
+🔍İPUCU : Ethereum protokolünün bir parçası olarak şifreleme yoktur. --Ethereum ağının çalışmasının bir parçası olarak gönderilen tüm mesajlar (zorunlu olarak) herkes tarafından okunabilir.(ileride 0️⃣ZKP(sıfır bilgi ispatı) ile bazı şeyler değişeblilir.) Bu nedenle, özel anahtarlar YALNIZCA _işlem kimlik doğrulaması_ yapabilmek için **dijital imzalar oluşturmakta** kullanılır.
+|
+
+## Özel Anahtar (Private Key 🔑)
+Özel anahtar, **rastgele seçilen bir sayıdır.** Özel anahtarın sahipliği ve kontrolü, ilgili Ethereum adresiyle ilişkili tüm fonlar üzerindeki kullanıcı kontrolünün yanı sıra bu adresi, **yetkilendiren sözleşmelere erişimin köküdür(başlangıcı)**. Özel anahtar, bir işlemde kullanılan fonların sahipliğini kanıtlayarak ether harcamak için gereken imzaları oluşturmak için kullanılır. **Özel anahtar her zaman gizli kalmalıdır, çünkü onu üçüncü kişilere ifşa etmek(göstermek), onlara ether ve bu özel anahtar tarafından güvence altına alınan sözleşmeler üzerinde kontrol vermekle eşdeğerdir**. 
+
+⚠️UYARI: 
+Özel anahtar da yedeklenmeli ve kazara kaybolmaya karşı korunmalıdır. Kaybedilirse geri alınamaz ve güvence altına aldığı fonlar da sonsuza kadar kaybolur.
 
 
+🔍İPUCU::Ethereum özel anahtarı sadece bir sayıdır. Özel anahtarlarınızı rastgele seçmenin bir yolu, sadece bir madeni para, kurşun kalem ve kağıt kullanmaktır: **256 kez yazı tura attığınızda, bir Ethereum cüzdanında kullanabileceğiniz rastgele bir özel anahtarın ikili rakamlarına(binary) sahip olursunuz.** .Genel/açık(public) anahtar 👶 ve adres👶 daha sonra _özel anahtardan 👩‍🍼 oluşturulabilir._
 
+## Rastgele Bir Numaradan Özel Anahtar Oluşturma
+Anahtar oluşturmanın _ilk ve en önemli adımı, güvenli bir entropi(Kısaca Entropi: Kapalı bir sistemdeki düzensizliğin bir ölçüsüdür. 📽️[PopularScienceTR'den](https://www.youtube.com/watch?v=xadlBOXtcsg)) veya rastgelelik kaynağı bulmaktır._ Bir Ethereum özel anahtarı oluşturmak, esas olarak 1 ile  2<sup>256</sup> arasında bir sayı seçmeyi içerir. Bu sayıyı seçmek için kullandığınız kesin yöntem, **tahmin edilebilir veya deterministik olmadığı** sürece önemli değildir. Ethereum yazılımı, 256 rasgele bit üretmek için temel işletim sisteminin rasgele sayı üretecini kullanır.
 
-
-
-
-
-
+Daha kesin olarak; bir özel anahtar,  2<sup>256</sup> dan biraz daha küçük, büyük bir sayıya kadar _sıfır olmayan_ herhangi bir sayı olabilir ---78 basamaklı büyük bir sayı----, kabaca 1.158 * 10<sup>77</sup>. Tam sayı,  2<sup>256</sup> ile ilk _38 basamağı paylaşır ve sıra olarak tanımlanır._ 
+Ethereum'da kullanılan eliptik eğrinin (bkz. Eliptik Eğri Kriptografisi Açıklaması). Özel bir anahtar oluşturmak için rastgele 256 bitlik bir sayı seçiyoruz ve geçerli aralıkta olup olmadığını kontrol ediyoruz. 
+🖥️ Programlama terimleriyle, bu genellikle daha büyük bir rastgele bit dizisinin (şifreleme açısından güvenli bir rastgelelik kaynağından toplanan) _Keccak-256 veya SHA-256 gibi 256 bitlik bir karma algoritmaya_ beslenmesiyle elde edilir; her ikisi de uygun bir şekilde üretecektir (256 bitlik bir sayı yani) Sonuç geçerli aralık içindeyse, uygun bir özel anahtarımız vardır. 🟢Aksi takdirde, başka bir rastgele sayı ile tekrar denemek zorundayız.
