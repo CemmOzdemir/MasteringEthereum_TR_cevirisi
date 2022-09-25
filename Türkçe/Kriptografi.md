@@ -156,5 +156,37 @@ Bu eğri, gerçek sayılar yerine **sonlu bir asal hiyerarşi alanı üzerinde t
 (49790390825249384486033144355916864607616083520101638681403973749255924539515,
 59574132161899900045862086493921015780032175291755807399284007721050341297360)`
 
+Python 🐍 kullanarak bunu nasıl kontrol edebileceğinizi görelim. x ve y değişkenleri, önceki örnekte olduğu gibi Q noktasının koordinatlarıdır. p değişkeni, eliptik eğrinin asal durumudur.(tüm modulo(bölümünden kalana) işlemleri için kullanılan asal değer). _Python'un son satırı eliptik eğri denklemidir_ (Python'daki % operatörü modulo(sayının bölümünden kalan) operatörüdür). Eğer x ve y gerçekten de eliptik eğri üzerindeki bir noktanın koordinatlarıysa, denklemi sağlarlar ve sonuç sıfırdır. 0️⃣(0L, sıfır değerine sahip uzun bir tamsayıdır). Bir komut satırına **python** yazıp listedeki her satırı ( >>> işaretinden sonra) kopyalayarak kendiniz deneyin.💻
 
+`Python 3.9.0 (default, Sep 24 2022, 21:28:17)
+[GCC 4.2.1 Toshiba  5.1 (clang-503.0.38)] on Ubuntu
+Type "help", "copyright", "credits" or "license" for more information.`
+
+`>>> p = 115792089237316195423570985008687907853269984665640564039457584007908834 \671663`
+
+`>>> x = 49790390825249384486033144355916864607616083520101638681403973749255924539515`
+
+`>>> y = 59574132161899900045862086493921015780032175291755807399284007721050341297360`
+
+`>>> (x ** 3 + 7 - y**2) % p`
+`0L`
+
+## Eliptik Eğri Aritmetik İşlemleri (`+,*`)
+Pek çok eliptik eğri matematiği okulda öğrendiğimiz **tamsayı aritmetiğine çok benziyor ve çalışıyor**. Spesifik olarak, sayı doğrusu boyunca atlamak yerine eğri üzerindeki diğer noktalara atlayan bir _toplama_ operatörü tanımlayabiliriz. Toplama operatörüne sahip olduğumuzda, **tekrarlanan toplamaya eşdeğer olan bir nokta ile bir tam sayının çarpımını da tanımlayabiliriz.**
+
+Eliptik eğri ekleme, eliptik eğri üzerinde iki nokta P1 ve P2 verildiğinde, yine eliptik eğri üzerinde üçüncü bir P3 = P1 + P2 noktası olacak şekilde tanımlanır.
+
+Geometrik olarak bu üçüncü nokta _P3_, P1 ile P2 arasına bir çizgi çizilerek hesaplanır. Bu çizgi, eliptik eğriyi tam olarak bir yerde (inanılmaz bir şekilde) kesecektir. Bu noktayı **P3' = (x, y) olarak adlandırın. Sonra x eksenine yansıtarak P3 = (x, –y)** elde edin.
+
+P1 ve P2 aynı noktaysa, P1 ve P2 "arasındaki" doğru, bu P1 noktasındaki eğriye **teğet olacak şekilde uzanmalıdır.** Bu teğet, eğriyi tam olarak yeni bir noktada kesecektir. Teğet çizginin eğimini(slope) belirlemek için calculus tekniklerini kullanabilirsiniz. İlginçtir ki, ilgimizi eğri üzerindeki iki tamsayı koordinatıyla sınırlandırmamıza rağmen, bu teknikler işe yarıyor. 🍾
+
+Eliptik eğri matematiğinde, **"sonsuzdaki nokta"(point at infinity)** olarak adlandırılan ve kabaca sıfır 0️⃣ sayısının rolüne ek olarak karşılık gelen bir nokta da vardır. Bilgisayarlarda bazen _x = y = 0 ile temsil edilir_ (bu, eliptik eğri denklemini karşılamaz, ancak kontrol edilebilecek kolay ayrı bir durumdur). Sonsuzdaki noktaya olan ihtiyacı açıklayan birkaç özel durum vardır.
+
+* Bazı durumlarda (örneğin, P1 ve P2 aynı x değerlerine ancak farklı y değerlerine sahipse), çizgi tam olarak dikey olacaktır, bu durumda P3 = sonsuzdaki noktadır.
+
+* P1 sonsuzdaki nokta ise, o zaman P1 + P2 = P2. Benzer şekilde, eğer P2 sonsuzdaki nokta ise, o zaman P1 + P2 = P1.
+
+ * (+)'nın birleştirici olduğu bellidir, yani (A + B) + C = A + (B + C). Bu, A + B + C'yi (parantezsiz) olmadan yazabileceğimiz anlamına gelir.
+
+* Artık toplamayı tanımladığımıza göre, toplamayı genişleten standart yolla çarpmayı tanımlayabiliriz. Eliptik eğri üzerindeki bir P noktası için, k bir tam sayıysa,( k* P = P + P + P + ... + P (k kez).) Bu durumda k'nin bazen (belki de kafa karıştırıcı bir şekilde) "üs" olarak adlandırıldığını unutmayın.
 
