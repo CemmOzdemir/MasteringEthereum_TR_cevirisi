@@ -88,7 +88,7 @@ Ethereum'da kullanılan eliptik eğrinin (bkz. Eliptik Eğri Kriptografisi Açı
 Özel anahtar oluşturma işleminin _çevrimdışı olduğunu unutmayın_; Ethereum ağı ile herhangi bir iletişim veya aslında herhangi biriyle herhangi bir iletişim gerektirmez. Bu nedenle, hiç kimsenin **seçemeyeceği bir sayı seçmek için gerçekten rastgele olması gerekir**. _Numarayı kendiniz seçerseniz,_ 🤯 bir başkasının denemesi (ve sonra etherinizle birlikte kaçması) şansı çok yüksektir. Kötü bir rasgele sayı üreteci (çoğu programlama dilindeki sözde rasgele _rand_ fonksiyonu gibi) kullanmak daha da kötüdür, çünkü daha belirgindir ve çoğaltılması daha da kolaydır. **Tıpkı çevrimiçi hesapların şifrelerinde olduğu gibi, özel anahtarın da tahmin edilemez olması gerekir**. Neyse ki, özel anahtarınızı asla hatırlamanıza gerek kalmaz, böylece onu seçmek için mümkün olan en iyi yaklaşımı uygulayabilirsiniz: yani, [GERÇEK RASTGELELİK.](https://blocking.net/7155/ethereum-2-0-randomness/)
 
 
-⚠️ 
+⚠️ UYARI:
 Rastgele bir sayı oluşturmak için kendi kodunuzu _yazmayın_ veya programlama diliniz tarafından sunulan "basit" bir rastgele _sayı üreteci kullanmayın_. Yeterli entropi kaynağından, kriptografik olarak güvenli bir sözde rastgele sayı üreteci (CSPRNG gibi) kullanmanız çok önemlidir. Şifreleme açısından güvenli olduğundan emin olmak için seçtiğiniz _rasgele sayı üretecinin kitaplığının belgelerini_ inceleyin. _CSPRNG kitaplığının_ doğru uygulanması, anahtarların güvenliği için kritik öneme sahiptir.
 ⚠️
 
@@ -99,5 +99,62 @@ Aşağıdaki anahtar, onaltılık biçimde gösterilen rastgele oluşturulmuş b
 -------------
 
 ## Açık/Genel(Public) Anahtar
+
+Bir Ethereum Public anahtarı, _eliptik bir eğri üzerindeki bir noktadır_, yani eliptik eğri denklemini karşılayan bir _x ve y_ koordinatları kümesidir.
+
+Daha basit bir ifadeyle, bir Ethereum genel(public) anahtarı, **birleştirilmiş iki sayıdır.** Bu sayılar özel anahtardan sadece tek yöne gidebilen bir hesaplama ile üretilir. Bu, _özel anahtarınız varsa, bir genel anahtarı hesaplamanın önemsiz olduğu, ancak özel anahtarı genel anahtardan hesaplayamayacağınız anlamına gelir._
+
+⚠️UYARI: Bunu yapan şey MATEMATİK'tir.💯Panik yapmayın😺. Aşağıdaki paragraflarda herhangi bir noktada kaybolmaya başlarsanız, hemen birkaç bölümü atlayabilirsiniz. Matematiği sizin yerinize yapacak birçok araç ve kitaplık vardır.Unutmayın öğrenmek hep uzun bir süreçtir.Beynimize saygımız olmalı. 
+
+Genel anahtar, pratik olarak geri döndürülemez olan eliptik eğri çarpımı kullanılarak özel anahtardan hesaplanır: **K = k * G** ,burada:
+  
+  + k, özel anahtardır.
+  + G, üretici noktası olarak adlandırılan sabit bir noktadır.
+  + K, elde edilen genel anahtardır. 
+  + `*` özel eliptik eğri _"çarpma"_ operatörüdür.
+**Eliptik eğri çarpmasının normal çarpma gibi olmadığına dikkat edin.** Normal çarpma ile işlevsel nitelikleri paylaşır, ancak bununla ilgili olarak; Örneğin, "ayrık logaritmayı bulma" olarak bilinen ters işlem (normal sayılar için bölme olacaktır) --- yani, _K'yi biliyorsanız k'yi hesaplamak --- k'nin tüm olası değerlerini denemek (kaba kuvvet araması) kadar zordur._ 🔴 Bu muhtemelen bu evrenin izin vereceğinden daha fazla zaman alacaktır.( 😜 Benden sizlere küçük bir araştırma konusu bırakıyorum : Kuantum Bilgisayarlar ⚛️+💻)
+
+Daha basit bir ifadeyle: eliptik eğri üzerindeki aritmetik, "normal" tamsayı aritmetiğinden farklıdır. Bir (G) noktası, başka bir nokta (K) üretmek için bir tam sayı (k) ile çarpılabilir. **Ancak bölme diye bir şey yoktur, bu nedenle özel anahtar k'yi hesaplamak için K genel anahtarını G noktasına basitçe "bölmek" mümkün değildir.** Bu, Açık Anahtar Şifreleme ve Kripto Para Birimi'nde açıklanan _tek yönlü matematiksel işlevdir._ 🤓 
+
+📝NOT:
+Eliptik eğri çarpması, kriptografların **"tek yönlü"** işlev dediği bir işlev türüdür: _tek yönde (çarpma) yapmak kolaydır ve ters yönde (bölme) yapmak imkansızdır._ Özel anahtarın sahibi, herkesin işlevi tersine çeviremeyeceğini ve açık anahtardan özel anahtarı hesaplayamayacağını bilerek, genel anahtarı kolayca oluşturabilir ve daha sonra dünya ile paylaşabilir. **Bu matematiksel numara, Ethereum fonlarının sahipliğini ve sözleşmelerin kontrolünü kanıtlayan, kırılmaz(hacking anlamında) ve güvenli dijital imzaların temeli haline gelir.**💻
+
+Özel bir anahtardan nasıl açık anahtar oluşturulacağını göstermeden önce, eliptik eğri şifrelemesine biraz daha detaylı bakalım.
+
+-----------------------
+
+## Eliptik Eğri Kriptografisinin Açıklaması
+Eliptik eğri kriptografisi, bir eliptik eğrinin noktalarında toplama ve çarpma ile ifade edilen ayrık logaritma problemine dayanan bir asimetrik veya açık anahtar şifreleme türüdür.
+
+Eliptik bir eğrinin görselleştirilmesi⬇️,Ethereum tarafından kullanılana benzer bir eliptik eğri örneğidir.
+
+📝NOT:Ethereum, Bitcoin ile tam olarak secp256k1 adı verilen eliptik eğriyi kullanır. Bu, Bitcoin'deki birçok eliptik eğri kitaplığını ve aracını yeniden kullanmayı mümkün kılar. 📝
+
+<img title="eliptic curve" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/simple_elliptic_curve.png">
+
+⬆️ Eliptik bir eğrinin görselleştirilmesi
+
+Ethereum, ABD Ulusal Standartlar ve Teknoloji Enstitüsü (NIST) tarafından kurulan _secp256k1 adlı bir standartta tanımlandığı gibi belirli bir eliptik eğri ve matematiksel sabitler kümesi kullanır._ secp256k1 eğrisi, eliptik bir eğri oluşturan aşağıdaki fonksiyonla tanımlanır:
+
+y 2 = ( x 3 + 7 ) over ( 𝔽 p )
+veya
+y 2 mod p = ( x 3 + 7 ) mod p
+
+p modu (module asal sayı p), bu eğrinin, aynı zamanda \(\( \mathbb{F}_p \)\ olarak da yazılan, p asal dereceli sonlu bir alan üzerinde olduğunu gösterir), burada
+p = 2<sup>256</sup> - 2<sup>32</sup> - 2<sup>9</sup> - 2<sup>8</sup> - 2<sup>7</sup> - 2<sup>6</sup> - 2<sup>4</sup> -1 çok büyük bir asal sayıdır_ 
+
+-------------------------
+
+Bu eğri, gerçek sayılar yerine **sonlu bir asal hiyerarşi alanı üzerinde tanımlandığından, iki boyutta dağılmış bir nokta düzenine benziyor ve bu da görselleştirmeyi zorlaştırıyor**. Bununla birlikte, matematik, gerçek sayılar üzerindeki eliptik bir eğrininkiyle aynıdır. Örnek olarak, Eliptik eğri kriptografisi: F(p) üzerinde bir eliptik eğrinin p=17 ile görselleştirilmesi, aynı eliptik eğriyi çok daha küçük bir asal derece 17 alanı üzerinde gösterir ve bir ızgara üzerinde bir nokta deseni gösterir. _secp256k1 Ethereum eliptik eğrisi, akıl almaz derecede büyük bir ızgara üzerinde çok daha karmaşık bir nokta modeli olarak düşünülebilir_.
+
+<img title="grid_eliptic_curve" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/ec_over_small_prime_field.png">
+
+⬆️ Eliptik eğri kriptografisi: p=17 ile F(p) üzerinde bir eliptik eğrinin görselleştirilmesi
+Örneğin, secp256k1 eğrisi üzerinde bir nokta olan koordinatları (x,y) olan bir Q noktası aşağıdadır:
+
+`Q =
+(49790390825249384486033144355916864607616083520101638681403973749255924539515,
+59574132161899900045862086493921015780032175291755807399284007721050341297360)`
+
 
 
