@@ -78,3 +78,12 @@ Anahtar oluşturmanın _ilk ve en önemli adımı, güvenli bir entropi(Kısaca 
 Daha kesin olarak; bir özel anahtar,  2<sup>256</sup> dan biraz daha küçük, büyük bir sayıya kadar _sıfır olmayan_ herhangi bir sayı olabilir ---78 basamaklı büyük bir sayı----, kabaca 1.158 * 10<sup>77</sup>. Tam sayı,  2<sup>256</sup> ile ilk _38 basamağı paylaşır ve sıra olarak tanımlanır._ 
 Ethereum'da kullanılan eliptik eğrinin (bkz. Eliptik Eğri Kriptografisi Açıklaması). Özel bir anahtar oluşturmak için rastgele 256 bitlik bir sayı seçiyoruz ve geçerli aralıkta olup olmadığını kontrol ediyoruz. 
 🖥️ Programlama terimleriyle, bu genellikle daha büyük bir rastgele bit dizisinin (şifreleme açısından güvenli bir rastgelelik kaynağından toplanan) _Keccak-256 veya SHA-256 gibi 256 bitlik bir karma algoritmaya_ beslenmesiyle elde edilir; her ikisi de uygun bir şekilde üretecektir (256 bitlik bir sayı yani) Sonuç geçerli aralık içindeyse, uygun bir özel anahtarımız vardır. 🟢Aksi takdirde, başka bir rastgele sayı ile tekrar denemek zorundayız.
+
+|
+
+🔍İPUCU :2<sup>256</sup> Ethereum'un özel anahtar alanının boyutudur.Akıl almaz derecede _büyük bir sayıdır_. Yaklaşık olarak **77 basamaklı bir sayı.** Karşılaştırmak gerkirse, **Görünür Evrenin(Visible Universe) 10<sup>77</sup> ve 10<sup>80</sup> atom içerdiği tahmin edilmektedir**. Bu nedenle, alt aralıkta, evrendeki her atoma bir Ethereum hesabı vermek için yeterli özel anahtar vardır. Rastgele bir özel anahtar seçerseniz, kimsenin onu tahmin etmesi veya kendisinin seçmesi mümkün değildir.
+
+|
+
+
+
