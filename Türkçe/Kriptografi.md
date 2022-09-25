@@ -24,7 +24,8 @@ Bir Ethereum işleminin _ödeme kısmında_, **hedeflenen alıcı(gönderilmek i
 Bu bölümün geri kalanında, önce temel kriptografiyi biraz daha detaylı inceleyeceğiz ve Ethereum'da kullanılan matematiği açıklayacağız. Ardından anahtarların nasıl oluşturulduğuna, saklandığına ve yönetildiğine bakacağız. Son olarak, özel anahtarları, genel anahtarları ve adresleri temsil etmek için kullanılan çeşitli kodlama biçimlerini gözden geçireceğiz. 👨‍💻 👩‍💻
 
 -----------------
-
+## Açık Anahtar Kriptografisi ve Kripto Para Birimi 🔑 🤑
+Açık anahtar şifrelemesi ("asimetrik şifreleme" ile ilgili 📝[türkçe-kısa medium yazısı](https://medium.com/@muhammedkaralar/simetrik-ve-asimetrik-şifreleme-d57673284646) olarak da adlandırılır ), günümüz _bilgi güvenliğinin temel bir parçasıdır_. İlk olarak 1970'lerde _Martin Hellman, Whitfield Diffie ve Ralph Merkle_ tarafından yayınlanan anahtar değişim protokolü, kriptografi alanında ilk büyük halka açık bir şekilde ve ilgisini cezbeden bir atılımdı. 1970'lerden önce, güçlü kriptografik bilgi hükümetler tarafından _gizli_ tutuluyordu.(Büyük bir ihtimal ile soğuk savaştan kaynaklı💣)
 
 
 
