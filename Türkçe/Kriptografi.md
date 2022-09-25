@@ -73,7 +73,7 @@ Herhangi bir mesajı imzalamak için dijital bir imza oluşturulabilir. _Ethereu
 🔍İPUCU::Ethereum özel anahtarı sadece bir sayıdır. Özel anahtarlarınızı rastgele seçmenin bir yolu, sadece bir madeni para, kurşun kalem ve kağıt kullanmaktır: **256 kez yazı tura attığınızda, bir Ethereum cüzdanında kullanabileceğiniz rastgele bir özel anahtarın ikili rakamlarına(binary) sahip olursunuz.** .Genel/açık(public) anahtar 👶 ve adres👶 daha sonra _özel anahtardan 👩‍🍼 oluşturulabilir._
 
 ## Rastgele Bir Numaradan Özel Anahtar Oluşturma
-Anahtar oluşturmanın _ilk ve en önemli adımı, güvenli bir entropi(-Kısaca Entropi: Bilgisayar biliminde entropi, kriptografide veya rastgele veri gerektiren diğer kullanımlarda kullanılmak üzere bir işletim sistemi veya uygulama tarafından **toplanan rastgeleliktir.** Bu rastgelelik genellikle, fare hareketleri gibi önceden var olan donanım kaynaklarından veya özel olarak sağlanan rastgelelik oluşturuculardan toplanır. 📽️Entropi hakkında daha fazla bilgi için [PopularScienceTR'den](https://www.youtube.com/watch?v=xadlBOXtcsg)-) veya rastgelelik kaynağı bulmaktır._ Bir Ethereum özel anahtarı oluşturmak, esas olarak 1 ile  2<sup>256</sup> arasında bir sayı seçmeyi içerir. Bu sayıyı seçmek için kullandığınız kesin yöntem, **tahmin edilebilir veya deterministik olmadığı** sürece önemli değildir. Ethereum yazılımı, 256 rasgele bit üretmek için temel işletim sisteminin rasgele sayı üretecini kullanır.
+Anahtar oluşturmanın _ilk ve en önemli adımı, ⭐ güvenli bir entropi(Entropi neeeğ yaa 😾 diyorsanız: -Kısaca Entropi: Bilgisayar biliminde entropi, kriptografide veya rastgele veri gerektiren diğer kullanımlarda kullanılmak üzere bir işletim sistemi veya uygulama tarafından **toplanan rastgeleliktir.** Bu rastgelelik genellikle, fare hareketleri gibi önceden var olan donanım kaynaklarından veya özel olarak sağlanan rastgelelik oluşturuculardan toplanır. 📽️Entropi hakkında daha fazla bilgi için [PopularScienceTR'den](https://www.youtube.com/watch?v=xadlBOXtcsg)-) veya ⭐ rastgelelik kaynağı bulmaktır._ Bir Ethereum özel anahtarı oluşturmak, esas olarak 1 ile  2<sup>256</sup> arasında bir sayı seçmeyi içerir. Bu sayıyı seçmek için kullandığınız kesin yöntem, **tahmin edilebilir veya deterministik olmadığı** sürece önemli değildir. Ethereum yazılımı, 256 rasgele bit üretmek için temel işletim sisteminin rasgele sayı üretecini kullanır.
 
 Daha kesin olarak; bir özel anahtar,  2<sup>256</sup> dan biraz daha küçük, büyük bir sayıya kadar _sıfır olmayan_ herhangi bir sayı olabilir ---78 basamaklı büyük bir sayı----, kabaca 1.158 * 10<sup>77</sup>. Tam sayı,  2<sup>256</sup> ile ilk _38 basamağı paylaşır ve sıra olarak tanımlanır._ 
 Ethereum'da kullanılan eliptik eğrinin (bkz. Eliptik Eğri Kriptografisi Açıklaması). Özel bir anahtar oluşturmak için rastgele 256 bitlik bir sayı seçiyoruz ve geçerli aralıkta olup olmadığını kontrol ediyoruz. 
@@ -97,3 +97,7 @@ Aşağıdaki anahtar, onaltılık biçimde gösterilen rastgele oluşturulmuş b
 `f8f8a2f43c8376ccb0871305060d7b27b0554d2cc72bccf41b2705608452f372`
 
 -------------
+
+## Açık/Genel(Public) Anahtar
+
+
