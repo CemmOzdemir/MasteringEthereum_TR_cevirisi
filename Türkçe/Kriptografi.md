@@ -190,3 +190,57 @@ Eliptik eğri matematiğinde, **"sonsuzdaki nokta"(point at infinity)** olarak a
 
 * Artık toplamayı tanımladığımıza göre, toplamayı genişleten standart yolla çarpmayı tanımlayabiliriz. Eliptik eğri üzerindeki bir P noktası için, k bir tam sayıysa,( k* P = P + P + P + ... + P (k kez).) Bu durumda k'nin bazen (belki de kafa karıştırıcı bir şekilde) "üs" olarak adlandırıldığını unutmayın.
 
+## Public(Genel/Açık) Anahtar Üretimi
+
+Rastgele oluşturulmuş bir k sayısı biçimindeki özel bir anahtarla başlayarak, eğri üzerinde başka bir yerde, karşılık gelen ortak anahtar K olan başka bir nokta üretmek için, bunu eğri üzerinde G (üretici noktası) olarak adlandırılan önceden belirlenmiş bir nokta ile çarparız:
+_K = k * G_
+Üretici noktası,(G) secp256k1 standardının bir parçası olarak belirtilir; 
+secp256k1'in tüm uygulamaları için aynıdır ve bu eğriden türetilen tüm anahtarlar aynı G noktasını kullanır.
+üretici noktası tüm Ethereum kullanıcıları için her zaman aynı olduğundan, G ile çarpılan bir özel anahtar k her zaman aynı genel sonuçla sonuçlanır. anahtar K. k ve K arasındaki ilişki sabittir, ancak k'den K'ye yalnızca bir yönde hesaplanabilir. Bu nedenle bir Ethereum adresi (K'den türetilmiştir) herkesle paylaşılabilir ve kullanıcının özel anahtarını açığa çıkarmaz. (k).
+
+Önceki bölümde açıkladığımız gibi, k * G'nin çarpımı tekrarlanan toplamaya eşdeğerdir, dolayısıyla G + G + G + ... + G, k kez tekrarlanır. Özetle, bir özel anahtar k'den bir ortak anahtar K üretmek için, üretici noktası G'yi kendisine k kez ekleriz.
+
+🔍İPUCU:Özel bir anahtar, bir genel anahtara dönüştürülebilir, ancak bir genel anahtar, matematik yalnızca tek bir şekilde çalıştığı için tekrar özel bir anahtara dönüştürülemez. 
+
+Özel Anahtarlarda size gösterdiğimiz belirli özel anahtarın ortak anahtarını bulmak için bu hesaplamayı uygulayalım: 
+⬇️
+_Genel anahtar hesaplamasına_ olarak örnek özel anahtar
+
+`K = f8f8a2f43c8376ccb0871305060d7b27b0554d2cc72bccf41b2705608452f315 * G`
+
+Bir kriptografik kitaplık, eliptik eğri çarpımını kullanarak K'yi hesaplamamıza yardımcı olabilir. Ortaya çıkan public anahtar K, nokta olarak tanımlanır:
+⬇️
+`K = (x, y)`
+
+Sonuç olarak burada:
+⬇️
+ `x = 6e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b`
+ 
+ `y = 83b5c38e5e2b0c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0`
+
+
+| Prefix(önek)       | Anlamı        | # Uzunluğu(prefix-önek bayt) |
+|--------------------|---------------|------------------------------|
+| 0x00    | Point at infinity     |  1                        |
+| ⭐ 0x04    | Uncompressed point    | 65                        |
+| 0x02    | Compressed point with even(çift) y      | 33            |
+| 0x03    | Compressed point with odd(tek) y      | 33             |
+
+
+Ethereum yalnızca sıkıştırılmamış genel(public) anahtarlar kullanır; 
+bu nedenle ilgili tek önek (hex) 04'tür. Serileştirme ile, genel anahtarın x ve y koordinatlarını birleştirir:
+
+`04 + x-coordinate (32 bytes/64 hex) + y-coordinate (32 bytes/64 hex)`
+
+Bu nedenle, daha önce hesapladığımız ortak anahtar şu şekilde serileştirilir:
+
+`046e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b83b5c38e5e2b0 \
+c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0`
+
+## Eliptic Eğri Kütüphaneleri 📑 
+
+
+
+
+
+
