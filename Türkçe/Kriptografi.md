@@ -239,6 +239,38 @@ c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0`
 
 ## Eliptic Eğri Kütüphaneleri 📑 
 
+Kripto para birimiyle ilgili projelerde kullanılan _secp256k1_ eliptik eğrinin birkaç uygulaması vardır:
+
++ [_OpenSSL_](https://www.openssl.org/)
+
+OpenSSL kitaplığı, tam bir secp256k1 uygulaması da dahil olmak üzere kapsamlı bir şifreleme ilkelleri seti sunar. Örneğin, genel anahtarı türetmek için EC_POINT_mul işlevi kullanılabilir.
+
++ [_libsecp256k1_](https://github.com/bitcoin-core/secp256k1)
+
+Bitcoin Core'un libsecp256k1, secp256k1 eliptik eğrinin ve diğer kriptografik ilkellerin bir C dili uygulamasıdır. Bitcoin Core yazılımındaki OpenSSL'yi değiştirmek için sıfırdan yazılmıştır ve hem performans hem de güvenlik açısından üstün olarak kabul edilir.
+
+
+## Kriptografik HASH fonksiyonu ⛔
+
+Ethereum genelinde _kriptografik hash fonksiyonları kullanılır._ Aslında, hash fonksiyonları neredeyse tüm kriptografik sistemlerde yaygın olarak kullanılmaktadırlar. bu durum, **"Şifreleme algoritmalarından çok daha fazlası olan, tek yönlü hash fonksiyonları modern kriptografinin beygir gücüdür"** diyen kriptograf _Bruce Schneier[(Kendisinin makalesine ulaşmak isterseniz)](http://bit.ly/2Q79qZp)_ tarafından muazzam tespit edilmiştir.🤓
+
+Bu bölümde, hash fonksiyonlarını tartışacağız, temel özelliklerini keşfedeceğiz ve bu özelliklerin onları modern kriptografinin pek çok alanında nasıl bu kadar faydalı hale getirdiğini göreceğiz. Burada hash fonksiyonlarını ele alıyoruz çünkü bunlar Ethereum public anahtarlarının -----> adreslere dönüşümünün bir parçası. Verilerin doğrulanmasına yardımcı olan **dijital parmak izleri** oluşturmak için de kullanılabilirler.
+
+Basit bir ifadeyle, bir [Hash Fonksiyonu](http://bit.ly/2CR26gD) "rastgele boyuttaki verileri sabit boyutlu verilere dönüştürmek için kullanılabilecek herhangi bir fonksiyondur".( ❗Burada çok soyut kalmış olabilir bu yüzden ben sizlere özel olarak ▶️ [bu kaynağı sunuyorum.Lütfen deneyin.](https://andersbrownworth.com/blockchain/hash)) **Bir hash fonksiyonu:
++ girdi 
++ ön görüntü 
++ mesaj veya girdi verileri 
+olarak adlandırılır. **Çıktıya hash denir.** Kriptografik hash fonskiyon, Ethereum gibi platformları güvenli hale getirmek için yararlı olan belirli özelliklere sahip özel bir alt kategoridir.
+
+
+Bir _kriptografik hash fonksiyonu_, rastgele boyuttaki verileri sabit boyutlu bir bit dizisine çeviren _tek yönlü bir hash fonksiyonudur._  🌟 **"Tek yönlü" yani yalnızca çıktı değeri bilinyorsa, girdi verilerini yeniden oluşturmanın hesaplama açısından mümkün olmadığı anlamına gelir.** 🌟 
+
+Olası bir girdiyi çözmeninin tek yolu, her bölümde eşleşen bir çıktı için  tek tek kontrol ederek, (kısaca)kaba kuvvet araştırması(brute-force search) yapmaktır.
+Bir hash'ı oluşturan bazı **girdi(input data) verileri bulsanız bile, bunlar orijinal girdi verileri olmayabilir:** _hash fonksiyonları "birden çok" fonksiyonlardır._ **Aynı çıktıda -iki girdi veri setinin bulunmasına hash çakışması(hash collision) denir. Kabaca konuşursak, hash fonksiyonu ne kadar iyi olursa, hash çarpışmaları o kadar nadir olur. Ethereum için bunlar fiilen imkansızdır.**💪
+
+_Kriptografik hash fonksiyonlarının temel özelliklerine daha yakından bakalım. Bunların arasında şunları sayabiliriz_:
+
+
 
 
 
