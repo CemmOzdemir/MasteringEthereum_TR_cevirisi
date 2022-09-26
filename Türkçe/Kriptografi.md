@@ -266,9 +266,71 @@ olarak adlandırılır. **Çıktıya hash denir.** Kriptografik hash fonskiyon, 
 Bir _kriptografik hash fonksiyonu_, rastgele boyuttaki verileri sabit boyutlu bir bit dizisine çeviren _tek yönlü bir hash fonksiyonudur._  🌟 **"Tek yönlü" yani yalnızca çıktı değeri bilinyorsa, girdi verilerini yeniden oluşturmanın hesaplama açısından mümkün olmadığı anlamına gelir.** 🌟 
 
 Olası bir girdiyi çözmeninin tek yolu, her bölümde eşleşen bir çıktı için  tek tek kontrol ederek, (kısaca)kaba kuvvet araştırması(brute-force search) yapmaktır.
-Bir hash'ı oluşturan bazı **girdi(input data) verileri bulsanız bile, bunlar orijinal girdi verileri olmayabilir:** _hash fonksiyonları "birden çok" fonksiyonlardır._ **Aynı çıktıda -iki girdi veri setinin bulunmasına hash çakışması(hash collision) denir. Kabaca konuşursak, hash fonksiyonu ne kadar iyi olursa, hash çarpışmaları o kadar nadir olur. Ethereum için bunlar fiilen imkansızdır.**💪
+Bir hash'ı oluşturan bazı **girdi(input data) verileri bulsanız bile, bunlar orijinal girdi verileri olmayabilir:** _hash fonksiyonları "birden çok" fonksiyonlardır._  **Aynı çıktıda -iki girdi veri setinin bulunmasına- hash çakışması(hash collision) denir. Yani kabaca,hash fonksiyonu ne kadar iyi olursa, hash çarpışmaları o kadar nadir olur. Ethereum için bunlar fiilen imkansızdır.**💪
 
 _Kriptografik hash fonksiyonlarının temel özelliklerine daha yakından bakalım. Bunların arasında şunları sayabiliriz_:
+
+
+* Deterministik yapı
+
+Belirli bir girdi mesajı her zaman aynı hash çıktıyı üretir.
+
+* Doğrulanabilir
+
+Bir mesajın hashı doğrulabilir olmalıdır.(doğrusal karmaşıklık).
+
+* Korelasyonsuzluk
+
+Mesajdaki küçük bir değişiklik (örneğin, 1 bitlik bir değişiklik), özet çıktısını, orijinal mesajın özet değeriyle ilişkilendirilemeyecek kadar kapsamlı bir şekilde değiştirmelidir.
+
+* tersinden çıkarım yapamamak
+
+Mesajı hash'inden hesaplamak mümkün değildir, tüm olası mesajlar arasında kaba kuvvet aramasına eşdeğerdir.
+
+* Çakışmadan korunma (Collision protection)
+
+Aynı hash çıktısını üreten iki farklı mesajı hesaplamak mümkün olmamalıdır.
+
+⏫
+Bu özelliklerin birleşimi, aşağıdakiler dahil olmak üzere çok çeşitli güvenlik uygulamaları için kriptografik hash Fonksiyonlarını kullanışlı hale getirir:
+
+* Verisel Parmak izi
+* Mesaj bütünlüğü (hata algılama)
+* PoW (iş ispatı)
+* Kimlik doğrulama (parola hasleri )
+* Sahte rasgele sayı üreteçleri
+* Message commitment (commit–reveal mechanisms)
+* Benzersiz Kullanıcı Kimlikleri
+
+Sistemin çeşitli katmanlarında ilerlerken bunların çoğunu Ethereum'da bulacağız.
+
+-------------------------
+
+## Ethereum'un Kriptografik Hash Fonksiyonu: Keccak-2️⃣5️⃣6️⃣
+Ethereum birçok yerde Keccak-256 kriptografik hash fonksiyonunu kullanır. Keccak-256, 
+Ulusal Standartlar ve Teknoloji Enstitüsü tarafından 2007 yılında düzenlenen **SHA-3 Cryptographic Hash Function Yarışması'na aday olarak tasarlanmıştır.** 
+Keccak, 2015 yılında Federal Bilgi İşleme Standardı (FIPS 202) olarak standart kazanmış bir algoritmaydı.
+
+Ancak Ethereum'un geliştirildiği dönemde NIST standardizasyonu henüz kesinleşmemişti. NIST, iddiaya göre verimliliğini artırmak için standartlar sürecinin tamamlanmasının ardından Keccak'ın bazı parametrelerinde ayarlamalar yaptı. Bu arada, kahraman bir aktivist _Edward Snowden'ın_, -Dual_EC_DRBG- rasgele sayı üreteci standardını kasıtlı olarak zayıflatmak ve standartı rasgele sayı üretecine etkin bir şekilde bir arka kapı(backdoor) yerleştirmek için _Ulusal Güvenlik Ajansı_ tarafından uygun olmayan bir şekilde etkilemiş olabileceğini ima eden belgeleri ifşa etmesiyle aynı zaman dilimine denk geldi.( 🎥 Benden sizlere yine harika bir film geliyor. 🍿 Edward Snowden'ı anlatan müthiş bir film: [SNOWDEN](https://www.imdb.com/title/tt3774114/) ) 
+
+Bu olayların sonucunda, önerilen değişikliklere karşı bir tepki ve SHA-3'ün standardizasyonunda önemli bir gecikmeye sebep oldu.Böylelikle Ethereum Vakfı kararını vermişti: **NIST tarafından değiştirildiği şekliyle SHA-3 standardı yerine, Kendi kriptografları tarafından önerildiği gibi orijinal Keccak algoritmasını uygulamaya karar verdiler.**
+
+⚠️UYARI: Ethereum belgelerinde ve kodunda "SHA-3" den bahsedildiğini görseniz de, bu örneklerin tamamı olmasa da çoğu, FIPS-202 SHA-3 standardına değil, aslında Keccak-256'ya atıfta bulunur.
+
+----------------------------
+
+## Hangi Hash Fonksiyonunu Kullanıyorum? 🧐
+
+Her ikisi de "SHA-3" olarak adlandırılabiliyorsa, kullandığınız yazılım kitaplığının FIPS-202 SHA-3 veya Keccak-256'yı kullanıp kullanmadığını nasıl anlarsınız?
+
+Bunu söylemenin kolay bir yolu, **belirli bir girdi için beklenen bir çıktı olan bir test vektörü kullanmaktır.** Bir hash fonksiyonu için en yaygın olarak kullanılan test, _boş girdidir_. Hash fonksiyonunu girdi olarak boş bir dizeyle çalıştırırsanız, aşağıdaki sonuçları görmelisiniz:
+
+
+`Keccak256("") =
+  c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470`
+
+`SHA3("") =
+  a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a`
 
 
 
