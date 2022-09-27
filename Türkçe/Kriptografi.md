@@ -1,4 +1,4 @@
-# KRİPTOGRAFİ  🔡 🧮
+# KRİPTOGRAFİ(ŞİFRELEME)  🔡 🧮
 
 Ethereum'un temel teknolojilerinden biri, **bilgisayar güvenliğinde yaygın olarak kullanılan bir matematik dalı olan kriptografidir**. Kriptografi, Latince _"gizli yazı"_ anlamına gelir, ancak **kriptografi çalışmaları, şifreleme olarak adlandırılan _gizli yazıdan_ daha fazlasını kapsar**. Örneğin kriptografi, bir gizliliği ifşa etmeden bir gizli bilgiyi kanıtlamak için (örneğin _dijital bir imza_ 🖋️ ile) veya verilerin gerçekliğini kanıtlamak için (örneğin, dijital parmak izleriyle,💻 🖐️ aynı zamanda _"hash"_ olarak da bilinir) kullanılabilir. Bu tür kriptografik kanıtlar, Ethereum platformunun (gerçek anlamda tüm blok zinciri sistemlerinin) çalışması için kritik olan **matematiksel araçlardır ve ayrıca Ethereum uygulamalarında yaygın olarak kullanılmaktadırlar.**
 
