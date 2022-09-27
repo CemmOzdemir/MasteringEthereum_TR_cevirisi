@@ -70,10 +70,10 @@ Herhangi bir mesajı imzalamak için dijital bir imza oluşturulabilir. _Ethereu
 Özel anahtar da yedeklenmeli ve kazara kaybolmaya karşı korunmalıdır. Kaybedilirse geri alınamaz ve güvence altına aldığı fonlar da sonsuza kadar kaybolur.
 
 
-🔍İPUCU::Ethereum özel anahtarı sadece bir sayıdır. Özel anahtarlarınızı rastgele seçmenin bir yolu, sadece bir madeni para, kurşun kalem ve kağıt kullanmaktır: **256 kez yazı tura attığınızda, bir Ethereum cüzdanında kullanabileceğiniz rastgele bir özel anahtarın ikili rakamlarına(binary) sahip olursunuz.** .Genel/açık(public) anahtar 👶 ve adres👶 daha sonra _özel anahtardan 👩‍🍼 oluşturulabilir._
+🔍İPUCU::Ethereum özel anahtarı sadece bir sayıdır. Özel anahtarlarınızı rastgele seçmenin bir yolu, sadece bir madeni para, kurşun kalem ve kağıt kullanmaktır: **256 kez yazı tura attığınızda, bir Ethereum cüzdanında kullanabileceğiniz rastgele bir özel anahtarın ikili rakamlarına(binary) sahip olursunuz.** .Genel/açık(public) anahtar 👶 ve adres👶 daha sonrasında ---->  _özel anahtardan_ 👩‍🍼 oluşturulabilir.
 
 ## Rastgele Bir Numaradan Özel Anahtar Oluşturma
-Anahtar oluşturmanın _ilk ve en önemli adımı, ⭐ güvenli bir entropi(Entropi neeeğ yaa 😾 diyorsanız: -Kısaca Entropi: Bilgisayar biliminde entropi, kriptografide veya rastgele veri gerektiren diğer kullanımlarda kullanılmak üzere bir işletim sistemi veya uygulama tarafından **toplanan rastgeleliktir.** Bu rastgelelik genellikle, fare hareketleri gibi önceden var olan donanım kaynaklarından veya özel olarak sağlanan rastgelelik oluşturuculardan toplanır. 📽️Entropi hakkında daha fazla bilgi için [PopularScienceTR'den](https://www.youtube.com/watch?v=xadlBOXtcsg)-) veya ⭐ rastgelelik kaynağı bulmaktır._ Bir Ethereum özel anahtarı oluşturmak, esas olarak 1 ile  2<sup>256</sup> arasında bir sayı seçmeyi içerir. Bu sayıyı seçmek için kullandığınız kesin yöntem, **tahmin edilebilir veya deterministik olmadığı** sürece önemli değildir. Ethereum yazılımı, 256 rasgele bit üretmek için temel işletim sisteminin rasgele sayı üretecini kullanır.
+Anahtar oluşturmanın _ilk ve en önemli adımı, ⭐ güvenli bir entropi {(Entropi neeeğ yaa 😾 diyorsanız: -Kısaca Entropi: Bilgisayar biliminde entropi, kriptografide veya rastgele veri gerektiren diğer kullanımlarda kullanılmak üzere bir işletim sistemi veya uygulama tarafından **toplanan rastgeleliktir.** Bu rastgelelik genellikle, fare hareketleri gibi önceden var olan donanım kaynaklarından veya özel olarak sağlanan rastgelelik oluşturuculardan toplanır. 📽️Entropi hakkında daha fazla bilgi için [PopularScienceTR'den](https://www.youtube.com/watch?v=xadlBOXtcsg)-)} veya ⭐ rastgelelik kaynağı bulmaktır._ Bir Ethereum özel anahtarı oluşturmak, esas olarak 1 ile  2<sup>256</sup> arasında bir sayı seçmeyi içerir. Bu sayıyı seçmek için kullandığınız kesin yöntem, **tahmin edilebilir veya deterministik olmadığı** sürece önemli değildir. Ethereum yazılımı, 256 rasgele bit üretmek için temel işletim sisteminin rasgele sayı üretecini kullanır.
 
 Daha kesin olarak; bir özel anahtar,  2<sup>256</sup> dan biraz daha küçük, büyük bir sayıya kadar _sıfır olmayan_ herhangi bir sayı olabilir ---78 basamaklı büyük bir sayı----, kabaca 1.158 * 10<sup>77</sup>. Tam sayı,  2<sup>256</sup> ile ilk _38 basamağı paylaşır ve sıra olarak tanımlanır._ 
 Ethereum'da kullanılan eliptik eğrinin (bkz. Eliptik Eğri Kriptografisi Açıklaması). Özel bir anahtar oluşturmak için rastgele 256 bitlik bir sayı seçiyoruz ve geçerli aralıkta olup olmadığını kontrol ediyoruz. 
@@ -227,12 +227,12 @@ Sonuç olarak burada:
 | 0x03    | Compressed point with odd(tek) y      | 33             |
 
 
-Ethereum yalnızca sıkıştırılmamış genel(public) anahtarlar kullanır; 
+Ethereum yalnızca sıkıştırılmamış(Uncompressed) genel(public) anahtarlar kullanır; 
 bu nedenle ilgili tek önek (hex) 04'tür. Serileştirme ile, genel anahtarın x ve y koordinatlarını birleştirir:
 
 `04 + x-coordinate (32 bytes/64 hex) + y-coordinate (32 bytes/64 hex)`
 
-Bu nedenle, daha önce hesapladığımız genel anahtar şu şekilde serileştirilir:
+Bu nedenle, daha önce hesapladığımız genel anahtar şu şekilde seri hale getirilir:
 
 `046e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b83b5c38e5e2b0 \
 c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0`
@@ -247,12 +247,12 @@ OpenSSL kitaplığı, tam bir secp256k1 uygulaması da dahil olmak üzere kapsam
 
 + [_libsecp256k1_](https://github.com/bitcoin-core/secp256k1)
 
-Bitcoin Core'un libsecp256k1, secp256k1 eliptik eğrinin ve diğer kriptografik ilkellerin bir C dili uygulamasıdır. Bitcoin Core yazılımındaki OpenSSL'yi değiştirmek için sıfırdan yazılmıştır ve hem performans hem de güvenlik açısından üstün olarak kabul edilir.
+Bitcoin Core'un libsecp256k1, secp256k1 eliptik eğrinin ve diğer kriptografik unsurların  C dili yazılmış uygulamasıdır. Bitcoin Core yazılımındaki OpenSSL'yi değiştirmek için sıfırdan yazılmıştır ve hem performans hem de güvenlik açısından üstün olarak kabul edilir.
 
 
 ## Kriptografik HASH fonksiyonu #️⃣
 
-Ethereum genelinde _kriptografik hash fonksiyonları kullanılır._ Aslında, hash fonksiyonları neredeyse tüm kriptografik sistemlerde yaygın olarak kullanılmaktadırlar. bu durum, **"Şifreleme algoritmalarından çok daha fazlası olan, tek yönlü hash fonksiyonları modern kriptografinin beygir gücüdür"** diyen kriptograf _Bruce Schneier[(Kendisinin makalesine ulaşmak isterseniz)](http://bit.ly/2Q79qZp)_ tarafından muazzam tespit edilmiştir.🤓
+Ethereum genelinde _kriptografik hash fonksiyonları kullanılır._ Aslında, hash fonksiyonları neredeyse tüm kriptografik sistemlerde yaygın olarak kullanılmaktadırlar. bu durum, **"Şifreleme algoritmalarından çok daha fazlası olan, tek yönlü hash fonksiyonları modern kriptografinin beygir gücüdür"** 🐎 diyen kriptograf _Bruce Schneier[(Kendisinin makalesine ulaşmak isterseniz)](http://bit.ly/2Q79qZp)_ tarafından muazzam tespit edilmiştir.🤓
 
 Bu bölümde, hash fonksiyonlarını tartışacağız, temel özelliklerini keşfedeceğiz ve bu özelliklerin onları modern kriptografinin pek çok alanında nasıl bu kadar faydalı hale getirdiğini göreceğiz. Burada hash fonksiyonlarını ele alıyoruz çünkü bunlar Ethereum public anahtarlarının -----> adreslere dönüşümünün bir parçası. Verilerin doğrulanmasına yardımcı olan **dijital parmak izleri** oluşturmak için de kullanılabilirler.
 
@@ -260,6 +260,7 @@ Basit bir ifadeyle, bir [Hash Fonksiyonu](http://bit.ly/2CR26gD) "rastgele boyut
 + girdi 
 + ön görüntü 
 + mesaj veya girdi verileri 
+
 olarak adlandırılır. **Çıktıya hash denir.** Kriptografik hash fonskiyon, Ethereum gibi platformları güvenli hale getirmek için yararlı olan belirli özelliklere sahip özel bir alt kategoridir.
 
 
@@ -275,7 +276,7 @@ _Kriptografik hash fonksiyonlarının temel özelliklerine daha yakından bakal�
 
 Belirli bir girdi mesajı her zaman aynı hash çıktıyı üretir.
 
-* Doğrulanabilir
+* Doğrulanabilirlik
 
 Bir mesajın hashı doğrulabilir olmalıdır.(doğrusal karmaşıklık).
 
@@ -283,9 +284,9 @@ Bir mesajın hashı doğrulabilir olmalıdır.(doğrusal karmaşıklık).
 
 Mesajdaki küçük bir değişiklik (örneğin, 1 bitlik bir değişiklik), özet çıktısını, orijinal mesajın özet değeriyle ilişkilendirilemeyecek kadar kapsamlı bir şekilde değiştirmelidir.
 
-* tersinden çıkarım yapamamak
+* tersinden çıkarım yapamamak(tek yönlü)
 
-Mesajı hash'inden hesaplamak mümkün değildir, tüm olası mesajlar arasında kaba kuvvet aramasına eşdeğerdir.
+Mesajı hash'inden hesaplamak mümkün değildir, tüm olası mesajlar arasından kaba kuvvet ile aramaya eşdeğerdir.
 
 * Çakışmadan korunma (Collision protection)
 
@@ -294,7 +295,7 @@ Aynı hash çıktısını üreten iki farklı mesajı hesaplamak mümkün olmama
 ⏫
 Bu özelliklerin birleşimi, aşağıdakiler dahil olmak üzere çok çeşitli güvenlik uygulamaları için kriptografik hash Fonksiyonlarını kullanışlı hale getirir:
 
-* Verisel Parmak izi
+* Dijital(Verisel) Parmak izi
 * Mesaj bütünlüğü (hata algılama)
 * PoW (iş ispatı)
 * Kimlik doğrulama (parola hasleri )
@@ -311,9 +312,11 @@ Ethereum birçok yerde Keccak-256 kriptografik hash fonksiyonunu kullanır. Kecc
 Ulusal Standartlar ve Teknoloji Enstitüsü tarafından 2007 yılında düzenlenen **SHA-3 Cryptographic Hash Function Yarışması'na aday olarak tasarlanmıştır.** 
 Keccak, 2015 yılında Federal Bilgi İşleme Standardı (FIPS 202) olarak standart kazanmış bir algoritmaydı.
 
-Ancak Ethereum'un geliştirildiği dönemde NIST standardizasyonu henüz kesinleşmemişti. NIST, iddiaya göre verimliliğini artırmak için standartlar sürecinin tamamlanmasının ardından Keccak'ın bazı parametrelerinde ayarlamalar yaptı. Bu arada, kahraman bir aktivist _Edward Snowden'ın_, -Dual_EC_DRBG- rasgele sayı üreteci standardını kasıtlı olarak zayıflatmak ve standartı rasgele sayı üretecine etkin bir şekilde bir arka kapı(backdoor) yerleştirmek için _Ulusal Güvenlik Ajansı_ tarafından uygun olmayan bir şekilde etkilemiş olabileceğini ima eden belgeleri ifşa etmesiyle aynı zaman dilimine denk geldi.( 🎥 Benden sizlere yine harika bir film geliyor. 🍿 Edward Snowden'ı anlatan müthiş bir film: [SNOWDEN](https://www.imdb.com/title/tt3774114/) ) 
+Ancak Ethereum'un geliştirildiği dönemde NIST standardizasyonu henüz _kesinleşmemişti._ NIST, iddiaya göre verimliliğini artırmak için standartların sürecinin tamamlanmasının ardından Keccak'ın bazı parametrelerinde ayarlamalar yaptı. 
 
-Bu olayların sonucunda, önerilen değişikliklere karşı bir tepki ve SHA-3'ün standardizasyonunda önemli bir gecikmeye sebep oldu.Böylelikle Ethereum Vakfı kararını vermişti: **NIST tarafından değiştirildiği şekliyle SHA-3 standardı yerine, Kendi kriptografları tarafından önerildiği gibi orijinal Keccak algoritmasını uygulamaya karar verdiler.**
+Bütün bunlar olurken, kahraman bir aktivist _Edward Snowden'ın_, {_-Dual_EC_DRBG- rastgele sayı üreteci standardını kasıtlı olarak zayıflatmak ve standartı rastgele sayı üretecine etkin bir şekilde bir **arka kapı(backdoor)🚪** yerleştirmek_ için Ulusal Güvenlik Ajansı(NSA) tarafından hukuki olmayan bir şekilde etkilemiş olabileceğini iifade eden belgeleri ifşa etmesiyle aynı zaman dilimine denk gelmişti.( 🎥 Benden sizlere yine harika bir film geliyor. 🍿 Edward Snowden'ı anlatan müthiş bir film: [SNOWDEN](https://www.imdb.com/title/tt3774114/) ) 
+
+Bu olayların sonucunda, önerilen değişikliklere karşı bir tepki ve SHA-3'ün standartdizasyonunda önemli bir gecikmeye sebep oldu.Böylelikle Ethereum Vakfı kararını vermişti: **NIST tarafından değiştirildiği şekliyle SHA-3 standardı yerine, Kendi kriptografları tarafından önerildiği gibi orijinal Keccak algoritmasını uygulamaya karar verdiler.**
 
 ⚠️UYARI: Ethereum belgelerinde ve kodunda "SHA-3" den bahsedildiğini görseniz de, bu örneklerin tamamı olmasa da çoğu, FIPS-202 SHA-3 standardına değil, aslında Keccak-256'ya atıfta bulunur.
 
