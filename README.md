@@ -11,7 +11,7 @@ Mastering Ethereum, *geliştiriciler* için bir kitaptır ve Ethereum, Ethereum 
  
  [book.asciidoc](https://github.com/ethereumbook/ethereumbook/blob/develop/book.asciidoc). (orjinal hali yani)
 
-## /Chapter :gb: & :tr: Bölümler :pushpin:
+## Chapter :gb: & :tr: Bölümler :pushpin:
 + Preface: '[Preface](https://github.com/ethereumbook/ethereumbook/blob/develop/preface.asciidoc)'
 + Önsöz :  '[Önsöz](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Önsöz1.md)' ♥️  🇹🇷(!Mutlaka Okuyun!)
 + Chapter 1: '[What Is Ethereum](https://github.com/ethereumbook/ethereumbook/blob/develop/01what-is.asciidoc)'
@@ -33,6 +33,15 @@ Mastering Ethereum, *geliştiriciler* için bir kitaptır ve Ethereum, Ethereum 
 + Chapter 13: '[The Ethereum Virtual Machine](https://github.com/ethereumbook/ethereumbook/blob/develop/13evm.asciidoc)'
 + Chapter 14: '[Consensus](https://github.com/ethereumbook/ethereumbook/blob/develop/14consensus.asciidoc)'
 
+
+## Eğitimler ve daha fazlası için :
+
+Değerli dostlarım, buradaki repodan(Kitabı paylaştığım yer) daha fazla blokzincir alanında eğitim ve bilgi almak istiyorsanız size, benimde içinde bulunduğum ve **Mükemmel eğitimler veren**,gerek _yurtdışı gerek yurtiçi online ve fiziksel etkinlikler_ yapan Türkiye'nin en büyük topluluklarının başında gelen :blue_heart: [ChainlinkTürkiye'nin](https://linktr.ee/ChainlinkTurkey) :blue_heart: Telegram kanalına bekliyoruz.
+
+Bizi sosyal medya hesaplarımızdan takip edebilir böylelikle çok kaliteli eğitimlerden haberdar olabilirsiniz.Bu arada eğitimler **_ÜCRETSİZdir_**.   
+
+:warning:UYARI---> Gruba katılacak arkaşların dikkatine!!! Telegram Grubunda herhangi bir coin-token tanıtımı,NFT tanınıtımı,Piyasa grafikleri vb.şeyler **SÖZ KONUSU DEĞİLDİR. _SADECE EĞİTİM İÇERİKLERİ_ VARDIR.** Lütfen ona göre katılım yapınız. Teşekkürler :rose: 
+
 ## İçerik
 
 İçerik durumu "TAMAMLANDI". Bu kitabın ilk baskısı 1 Aralık 2018'de yayınlandı. Bu baskı, birçok popüler kitapçıda basılı ve e-kitap formatında mevcuttur. Bu reponun geliştirme dalında ["first_edition_first_print"](https://github.com/ethereumbook/ethereumbook/tree/first_edition_first_print) olarak etiketlenmiştir.
@@ -51,12 +60,13 @@ Bu "Özgür Kültür(Açık kaynak paradigması gibi düşünün)" uyumlu lisans
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Mastering Ethereum</span> Tarafından yazılmıştır: <a xmlns:cc="http://creativecommons.org/ns#" href="https://ethereumbook.info" property="cc:attributionName" rel="cc:attributionURL">Andreas M. Antonopoulos, Gavin Wood </a> Lisans damgası <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br />Çalışmaya dayalı GitHub addresi <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/ethereumbook/ethereumbook" rel="dct:source">https://github.com/ethereumbook/ethereumbook</a>.
 
-# Kitabı Çevirmek için:
+## Kitabı Çevirmek için:
 
 Eğer bu kitabın çevirisi ile ilgileniyorsanız , Lütfen buradan gönüllü takımıza katılın: https://www.transifex.com/aantonop/ethereumbook
 
 **Not:pencil: Ben normalde bu site üzerinden çeviri yapacaktım fakat kitabın içinde bazı kodlama örnekleri olduğu için bazı çevirilecek yerlerini yukarıdaki site kötü bir şekilde gösteriyordu.Bende bu yüzden fork işlemi yaptım ve repoyu lisans hakları doğrultusunda çeviriyorum.Çevirimi beğenmezseniz veya kodları kişiselleştirmek isterseniz Repomu Fork yapıp kendiniz geliştirebilrsiniz.Çeviriyi bütün bir şekilde bitirdiğimde transifex'e ekleme yapabilirim. :pencil:
 
+  
 
 :checkered_flag:
 
