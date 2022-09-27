@@ -371,18 +371,100 @@ Bu genel anahtarın hash'ini hesaplamak için Keccak-256 kullanıyoruz:
 
 ## Ethereum Adres Formatları(Biçimleri) 🎲
 
-Ethereum adresleri, genel anahtarın Keccak-256 hash'ınin son 20 baytından türetilen [onaltılık(hexadecimal) sayılardır](https://tr.wikipedia.org/wiki/On_altılı_sayı_sistemi).Yanlış yazılan adreslere karşı koruma sağlamak için yerleşik bir [sağlama toplamı(checksum)]() içerecek şekilde tüm istemcilerin kullanıcı arabiriminde kodlanan Bitcoin adreslerinden farklı olarak, Ethereum adresleri herhangi bir sağlama toplamı olmadan ham onaltılı olarak sunulur.
+Ethereum adresleri, genel anahtarın Keccak-256 hash'ınin son 20 baytından türetilen [onaltılık(hexadecimal) sayılardır](https://tr.wikipedia.org/wiki/On_altılı_sayı_sistemi).Yanlış yazılan adreslere karşı koruma sağlamak için yerleşik bir [sağlama toplamı(checksum)](https://hayateli.com/saglama-toplami-nedir/) içerecek şekilde tüm istemcilerin kullanıcı arabiriminde kodlanan _Bitcoin adreslerinden farklı olarak, Ethereum adresleri herhangi bir sağlama toplamı olmadan saf bir halde hexadecimal olarak sunulur_.
+
+Bu kararın arkasındaki mantık, Ethereum adreslerinin sonunda sistemin daha yüksek katmanlarında soyutlamaların ( Name services(İsim hizmetleri gibi): gibi) arkasına gizleneceği ve gerekirse daha yüksek katmanlara sağlama toplamlarının eklenmesi gerektiğiydi.
+
+Gerçekten de, bu üst katmanlar çok yavaş geliştirildiler ve bu tasarım seçimi, ekosistemin ilk günlerinde yanlış yazılan adresler ve giriş doğrulama hataları nedeniyle _fon kaybı da dahil olmak üzere bir dizi soruna yol açtı_. Ayrıca, Ethereum name services({Ethereum Name Service (ENS); kullanıcıların, Ethereum tabanlı ağa daha kolay erişmesini sağlamayı amaçlar.}) başlangıçta beklenenden daha yavaş geliştirildiğinden, alternatif kodlamalar cüzdan geliştiricileri tarafından çok yavaş benimsendiler. Sonraki aşamada kodlama seçeneklerinden birkaçına bakacağız.
+
+📝NOTT:Benden sizlere önemli bir bilgi daha: ⏬
+
+ENS ile .eth uzantılı adresler alınabilmektedir.
+Aşağıdaki örnekte gösterildiği gibi karmaşık bir cüzdan kodu, ENS hizmeti ile daha basit ve anlaşılabilir bir hale dönüştürülebilir.
+
+`12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX --—> satoshi.eth` 
+📝
+
+## Inter Exchange İstemci Adres Protokolü
+Inter exchange Client Address Protocol (ICAP), Uluslararası Banka Hesap Numarası (IBAN) kodlamasıyla kısmen uyumlu olan ve Ethereum adresleri için çok yönlü, sağlama toplamı ve birlikte çalışabilir bir  _kodlama sunan bir Ethereum adres kodlamasıdır._ ICAP adresleri, Ethereum adreslerini veya bir Ethereum ad kaydına kayıtlı ortak adları kodlayabilir. ICAP hakkında daha fazla bilgiyi [Ethereum Wiki'de](https://eth.wiki/en/ideas/inter-exchange-client-address-protocol-icap) okuyabilirsiniz.
+
+IBAN, çoğunlukla banka havaleleri için kullanılan banka hesap numaralarının tanımlanmasına yönelik uluslararası bir standarttır. SEPA ve ötesinde geniş çapta benimsenmiştir. IBAN, merkezileştirilmiş ve sıkı bir şekilde düzenlenmiş bir hizmettir. **ICAP, Ethereum adresleri için merkezi olmayan ancak uyumlu bir uygulamadır**.
+
+**Bir IBAN, bir ülke kodu, sağlama toplamı ve banka hesabı tanımlayıcısı (ülkeye özgü olan) içeren, en fazla 34 alfasayısal karakterden (büyük/küçük harfe duyarlı olmayan) oluşan bir dizeden oluşur.**
+
+ICAP, "Ethereum" anlamına gelen standart olmayan bir ülke kodu olan "XE", ardından iki karakterlik bir sağlama toplamı ve bir hesap tanımlayıcısının _üç olası_ varyasyonunu ekleyerek aynı yapıyı kullanır:
+
+1️⃣ _Direct_
+
+Bir Ethereum adresinin en az anlamlı 155 bitini temsil eden, 30'a kadar alfasayısal karakterden oluşan bir big-endian taban-36 tamsayı. Bu kodlama, genel bir Ethereum adresinin tam 160 bitinden daha azına sığdığından, yalnızca bir veya daha fazla sıfır bayt ile başlayan Ethereum adresleri için çalışır. **Avantajı, alan uzunluğu ve sağlama toplamı açısından IBAN ile uyumlu olmasıdır.---> Örnek: XE60HAMICDXSV5QXVJA7TJW47Q9CHWKJD (33 karakter uzunluğunda).**
+
+2️⃣ _Basic_
+
+31 karakter uzunluğunda olması dışında _Direct'in_ kodlaması ile aynıdır. **Bu, herhangi bir Ethereum adresini kodlamasına izin verir, ancak onu IBAN alan doğrulaması ile uyumsuz hale getirir**. -----> Örnek: XE18CHDJBPLTBCJ03FE9O2NS0BPOJVQCU2P (35 karakter uzunluğunda).
+
+3️⃣ _Indirect_
+?
+Bir ad kayıt sağlayıcısı aracılığıyla bir Ethereum adresine çözümlenen bir tanımlayıcı tarafından kodlanır. bir ad (ör. TIMURLENK) içeren 16 alfasayısal karakter kullanır. Örnek: XE##ETHXREGTIMURLENK (20 karakter uzunluğunda), burada ## iki hesaplanmış olan _sağlama toplamı_ karakteriyle değiştirilmelidir.
+
+---------------------
+
+ICAP adresleri oluşturmak için **helpeth komut satırı aracını kullanabiliriz**. Aşağıdakilerle kurarak helpeth alabilirsiniz: 🏗️
+
+`$ npm install -g helpeth`
+
+Eğer npm'niz yoksa, önce nodeJS'yi kurmanız gerekebilir, bunu [Nodejs](https://nodeJS.org) adresindeki talimatları izleyerek yapabilirsiniz.
+
+Artık helpeth'imiz olduğuna göre, örnek özel anahtarımızla (ön eki 0x olan ve helpeth'e parametre olarak geçirilen) bir ICAP adresi oluşturmayı deneyelim.)
+
+`$ helpeth keyDetails \
+  -p 0xf8f8a2f43c8376ccb0871305060d7b27b0554d2cc72bccf41b2705608452f315`
+
+`Address: 0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9`
+
+`ICAP: XE60 HAMI CDXS V5QX VJA7 TJW4 7Q9C HWKJ D`
+
+`Public key: 0x6e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b...`
+
+_Helpeth komutu_, bizim için bir ICAP adresinin yanı sıra onaltılık  sayı sisteminde(Hex) bir Ethereum adresi oluşturur. Örnek anahtarımız için ICAP adresi:
+
+`XE60HAMICDXSV5QXVJA7TJW47Q9CHWKJD`
 
 
+Örnek Ethereum adresimiz sıfır bayt ile başladığı için, IBAN formatında geçerli olan Doğrudan ICAP kodlama yöntemi kullanılarak kodlanabilir. 33 karakter uzunluğunda olduğu için anlayabilirsiniz.
+
+Adresimiz sıfır ile başlamasaydı, 35 karakter uzunluğunda ve IBAN olarak geçersiz olacak Temel kodlama ile kodlanacaktı.
+
+📝 NOtT:ICAP şeklindeki adreslerimizi destekleyen cüzdanların hangileri olduğu konusuna dikkat ediniz.
+
+## Büyük Harfte Sağlama Toplamı ile Hex Kodlaması (EIP-55) (Hex Encoding with Checksum in Capitalization)
+
+ICAP ve ad hizmetlerinin(ENS) yavaşlığı nedeniyle, Ethereum İyileştirme Önerisi 55 (EIP-55) tarafından bir standart önerildi. EIP-55, onaltılık adresin büyük harf kullanımını değiştirerek Ethereum adresleri için geriye dönük uyumlu bir sağlama toplamı sunar. **Buradaki fikir, Ethereum adreslerinin büyük/küçük harfe duyarlı olmaması ve tüm cüzdanların, içerikte herhangi bir fark olmaksızın büyük veya küçük harflerle ifade edilen Ethereum adreslerini kabul etmesi gerektiğidir**.
+
+Adresteki alfabetik karakterlerin **büyük harflerini değiştirerek, adresin bütünlüğünü yazma veya okuma hatalarına karşı korumak için kullanılabilecek bir sağlama toplamı iletebiliriz.** EIP-55 sağlama toplamlarını desteklemeyen cüzdanlar, adresin karışık büyük harf kullanımı içerdiği gerçeğini görmezden gelir, ancak onu destekleyenler onu doğrulayabilir ve hataları %99.986 doğrulukla tespit edebilir.
+
+Örnek adresimiz:
+
+`0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9`
 
 
+Bir EIP-55 karma büyük harf sağlama toplamı ile şu hale gelir:
 
+`0x001d3F1ef827552Ae1114027BD3ECF1f086bA0F9`
 
+❓
+Farkı söyleyebilir misiniz? 
+Onaltılık kodlama alfabesindeki(Hexadecimal) alfabetik (A–F) karakterlerden bazıları artık büyük, bazıları ise küçük harftir.
 
+EIP-55'in uygulanması oldukça basittir. **Küçük harfli onaltılık adresin Keccak-256 hash'ini alıyoruz. Bu hash, adresin _dijital parmak izi_ görevi görerek bize uygun bir sağlama toplamı verir. Girdideki (adres) herhangi bir küçük değişiklik, ortaya çıkan hash'te (sağlama toplamı) büyük bir değişikliğe neden olmalı ve hataları etkili bir şekilde tespit etmemize izin vermelidir. Adresimizin hash'i daha sonra adresin kendisinin büyük harf kullanımında kodlanır. Adım adım parçalara ayıralım:
 
+a) 0x öneki olmadan küçük harfli adresi hash haline getirin:
 
+`Keccak256("001d3f1ef827552ae1114027bd3ecf1f086ba0f9") =
+23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9695d9a19d8f673ca991deae1`
 
+b) hash'in karşılığında ki onaltılık basamağı 0x8'e eşit veya daha büyükse, her alfabetik adres karakterini _büyük harf yapın._ Adresi ve hash'i sıralarsak bunu göstermek daha kolaydır:
 
+``
 
 
 
