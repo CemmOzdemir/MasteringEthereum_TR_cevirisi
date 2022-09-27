@@ -19,7 +19,7 @@ Ethereum işlemleri, blokzincire dahil edilmek için geçerli bir _dijital imza 
 
 Ethereum tarafından kullanılanlar gibi, _1️⃣ açık(public) anahtar şifreleme tabanlı sistemlerde, anahtarlar 2️⃣ özel (gizli/kapalı) bir anahtar ve bir genel anahtardan oluşan çiftler halinde gelir_ .Açık(genel) anahtarı bir 🏦 banka hesap numarasına(IBAN) ve özel anahtarı da bankacılık şifrenize benzer olarak düşünün; **hesap üzerinde kontrol sağlayan ikincisidir** ve onu diğerlerine **tanımlayan ilkidir.** Özel anahtarlar, Ethereum kullanıcıları tarafından çok nadiren görülür; çoğunlukla özel dosyalarda (şifreli biçimde) saklanırlar ve Ethereum cüzdan yazılımı tarafından yönetilirler.
 
-Bir Ethereum işleminin _ödeme kısmında_, **hedeflenen alıcı(gönderilmek istenen kişi)**, bir banka havalesinde ,hak sahibi olan kişinin _hesap ayrıntılarıyla aynı şekilde kullanılan bir adet Ethereum adresiyle temsil edilir_. Birazdan daha detaylı olarak göreceğimiz gibi, bir *EOA(Externally Owned Accounts -----> Geçtiğimiz kısımlarda anlatıldı.Ama ben sadece bu bölümü okuyorum.Beni bilgilendirmek durumundasın.Pijjjlik 🐱 yapma derseniz. ▶️ [Bakınız](https://ethereum.stackexchange.com/questions/5828/what-is-an-eoa-account#5829) )* için bir Ethereum adresi, bir **anahtar çiftinin ortak anahtar kısmından üretilir**. Ancak, tüm Ethereum adresleri _genel-özel anahtar çiftlerini temsil etmez_. Akıllı sözleşme bölümünde göreceğimiz gibi, özel anahtarlarla desteklenmeyen sözleşmeleri de temsil edebilirler.
+Bir Ethereum işleminin _ödeme kısmında_, **hedeflenen alıcı(gönderilmek istenen kişi)**, bir banka havalesinde ,hak sahibi olan kişinin _hesap ayrıntılarıyla aynı şekilde kullanılan bir adet Ethereum adresiyle temsil edilir_. Birazdan daha detaylı olarak göreceğimiz gibi, bir *EOA(Externally Owned Accounts -----> Geçtiğimiz kısımlarda anlatıldı.Ama ben sadece bu bölümü okuyorum.Beni bilgilendirmek durumundasın.Pijjjlik 🐱 yapma derseniz. ▶️ [Bakınız](https://ethereum.stackexchange.com/questions/5828/what-is-an-eoa-account#5829) )* için bir Ethereum adresi, bir **anahtar çiftinin public anahtar kısmından üretilir**. Ancak, tüm Ethereum adresleri _genel-özel anahtar çiftlerini temsil etmez_. Akıllı sözleşme bölümünde göreceğimiz gibi, özel anahtarlarla desteklenmeyen sözleşmeleri de temsil edebilirler.
 
 Bu bölümün geri kalanında, önce temel kriptografiyi biraz daha detaylı inceleyeceğiz ve Ethereum'da kullanılan matematiği açıklayacağız. Ardından anahtarların nasıl oluşturulduğuna, saklandığına ve yönetildiğine bakacağız. Son olarak, özel anahtarları, genel anahtarları ve adresleri temsil etmek için kullanılan çeşitli kodlama biçimlerini gözden geçireceğiz. 👨‍💻 👩‍💻
 
@@ -192,17 +192,17 @@ Eliptik eğri matematiğinde, **"sonsuzdaki nokta"(point at infinity)** olarak a
 
 ## Public(Genel/Açık) Anahtar Üretimi
 
-Rastgele oluşturulmuş bir k sayısı biçimindeki özel bir anahtarla başlayarak, eğri üzerinde başka bir yerde, karşılık gelen ortak anahtar K olan başka bir nokta üretmek için, bunu eğri üzerinde G (üretici noktası) olarak adlandırılan önceden belirlenmiş bir nokta ile çarparız:
+Rastgele oluşturulmuş bir k sayısı biçimindeki özel bir anahtarla başlayarak, eğri üzerinde başka bir yerde, karşılık gelen public(genel) anahtar K olan başka bir nokta üretmek için, bunu eğri üzerinde G (üretici noktası) olarak adlandırılan önceden belirlenmiş bir nokta ile çarparız:
 _K = k * G_
 Üretici noktası,(G) secp256k1 standardının bir parçası olarak belirtilir; 
 secp256k1'in tüm uygulamaları için aynıdır ve bu eğriden türetilen tüm anahtarlar aynı G noktasını kullanır.
 üretici noktası tüm Ethereum kullanıcıları için her zaman aynı olduğundan, G ile çarpılan bir özel anahtar k her zaman aynı genel sonuçla sonuçlanır. anahtar K. k ve K arasındaki ilişki sabittir, ancak k'den K'ye yalnızca bir yönde hesaplanabilir. Bu nedenle bir Ethereum adresi (K'den türetilmiştir) herkesle paylaşılabilir ve kullanıcının özel anahtarını açığa çıkarmaz. (k).
 
-Önceki bölümde açıkladığımız gibi, k * G'nin çarpımı tekrarlanan toplamaya eşdeğerdir, dolayısıyla G + G + G + ... + G, k kez tekrarlanır. Özetle, bir özel anahtar k'den bir ortak anahtar K üretmek için, üretici noktası G'yi kendisine k kez ekleriz.
+Önceki bölümde açıkladığımız gibi, k * G'nin çarpımı tekrarlanan toplamaya eşdeğerdir, dolayısıyla G + G + G + ... + G, k kez tekrarlanır. Özetle, bir özel anahtar k'den bir public anahtar olan K'yı üretmek için, üretici noktası G'yi kendisine k kez ekleriz.
 
 🔍İPUCU:Özel bir anahtar, bir genel anahtara dönüştürülebilir, ancak bir genel anahtar, matematik yalnızca tek bir şekilde çalıştığı için tekrar özel bir anahtara dönüştürülemez. 
 
-Özel Anahtarlarda size gösterdiğimiz belirli özel anahtarın ortak anahtarını bulmak için bu hesaplamayı uygulayalım: 
+Özel Anahtarlarda size gösterdiğimiz belirli özel anahtarın genel anahtarını bulmak için bu hesaplamayı uygulayalım: 
 ⬇️
 _Genel anahtar hesaplamasına_ olarak örnek özel anahtar
 
@@ -232,7 +232,7 @@ bu nedenle ilgili tek önek (hex) 04'tür. Serileştirme ile, genel anahtarın x
 
 `04 + x-coordinate (32 bytes/64 hex) + y-coordinate (32 bytes/64 hex)`
 
-Bu nedenle, daha önce hesapladığımız ortak anahtar şu şekilde serileştirilir:
+Bu nedenle, daha önce hesapladığımız genel anahtar şu şekilde serileştirilir:
 
 `046e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b83b5c38e5e2b0 \
 c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0`
