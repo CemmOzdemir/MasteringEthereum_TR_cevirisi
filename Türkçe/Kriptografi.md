@@ -250,7 +250,7 @@ OpenSSL kitaplığı, tam bir secp256k1 uygulaması da dahil olmak üzere kapsam
 Bitcoin Core'un libsecp256k1, secp256k1 eliptik eğrinin ve diğer kriptografik ilkellerin bir C dili uygulamasıdır. Bitcoin Core yazılımındaki OpenSSL'yi değiştirmek için sıfırdan yazılmıştır ve hem performans hem de güvenlik açısından üstün olarak kabul edilir.
 
 
-## Kriptografik HASH fonksiyonu ⛔
+## Kriptografik HASH fonksiyonu #️⃣
 
 Ethereum genelinde _kriptografik hash fonksiyonları kullanılır._ Aslında, hash fonksiyonları neredeyse tüm kriptografik sistemlerde yaygın olarak kullanılmaktadırlar. bu durum, **"Şifreleme algoritmalarından çok daha fazlası olan, tek yönlü hash fonksiyonları modern kriptografinin beygir gücüdür"** diyen kriptograf _Bruce Schneier[(Kendisinin makalesine ulaşmak isterseniz)](http://bit.ly/2Q79qZp)_ tarafından muazzam tespit edilmiştir.🤓
 
@@ -385,12 +385,12 @@ Aşağıdaki örnekte gösterildiği gibi karmaşık bir cüzdan kodu, ENS hizme
 `12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX --—> satoshi.eth` 
 📝
 
-## Inter Exchange İstemci Adres Protokolü
+## Karşılıklı İstemci Adres değişim Protokolü(Inter exchange Client Address Protocol)
 Inter exchange Client Address Protocol (ICAP), Uluslararası Banka Hesap Numarası (IBAN) kodlamasıyla kısmen uyumlu olan ve Ethereum adresleri için çok yönlü, sağlama toplamı ve birlikte çalışabilir bir  _kodlama sunan bir Ethereum adres kodlamasıdır._ ICAP adresleri, Ethereum adreslerini veya bir Ethereum ad kaydına kayıtlı ortak adları kodlayabilir. ICAP hakkında daha fazla bilgiyi [Ethereum Wiki'de](https://eth.wiki/en/ideas/inter-exchange-client-address-protocol-icap) okuyabilirsiniz.
 
 IBAN, çoğunlukla banka havaleleri için kullanılan banka hesap numaralarının tanımlanmasına yönelik uluslararası bir standarttır. SEPA ve ötesinde geniş çapta benimsenmiştir. IBAN, merkezileştirilmiş ve sıkı bir şekilde düzenlenmiş bir hizmettir. **ICAP, Ethereum adresleri için merkezi olmayan ancak uyumlu bir uygulamadır**.
 
-**Bir IBAN, bir ülke kodu, sağlama toplamı ve banka hesabı tanımlayıcısı (ülkeye özgü olan) içeren, en fazla 34 alfasayısal karakterden (büyük/küçük harfe duyarlı olmayan) oluşan bir dizeden oluşur.**
+**Bir IBAN, bir ülke kodu, sağlama toplamı ve banka hesabı tanımlayıcısı (ülkeye özgü olan) içeren, en fazla 34 alfa-sayısal karakterden (büyük/küçük harfe duyarlı olmayan) oluşan bir dizeden oluşur.**
 
 ICAP, "Ethereum" anlamına gelen standart olmayan bir ülke kodu olan "XE", ardından iki karakterlik bir sağlama toplamı ve bir hesap tanımlayıcısının _üç olası_ varyasyonunu ekleyerek aynı yapıyı kullanır:
 
@@ -478,8 +478,39 @@ Ortaya çıkan karışık büyük harfleri kendiniz kontrol edin ve hangi karakt
 
 `Hash   : 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9...`
 
+--------------------
+EIP-55 ile kodlanmış bir adreste bir _hata algılama_: ⛔
 
+Şimdi EIP-55 adreslerinin nasıl hata bulmamıza yardımcı olacağına bakalım. EIP-55 kodlu bir Ethereum adresi yazdırdığımızı _varsayalım_: 
 
+`0x001d3F1ef827552Ae1114027BD3ECF1f086bA0F9`
+
+Şimdi bu adresi okurken basit bir hata yapalım. Son karakterden önceki karakter büyük **F**'dir. Bu örnek için bunu büyük **E** olarak yanlış okuduğumuzu ve cüzdanımıza aşağıdaki (yanlış) adresi yazdığımızı varsayalım:
+
+`0x001d3F1ef827552Ae1114027BD3ECF1f086bA0E9`
+
+Neyse ki cüzdanımız EIP-55 uyumlu! 🥳 Küyük harf kullanımını fark eder ve adresi doğrulamaya çalışır. Küçük harfe dönüştürür ve sağlama toplamı hash'ini hesaplar:
+
+`Keccak256("001d3f1ef827552ae1114027bd3ecf1f086ba0e9") =
+5429b5d9460122fb4b11af9cb88b7bb76d8928862e0a57d46dd18dd8e08a6927`
+
+Gördüğünüz gibi, adres yalnızca bir karakter değişse de (aslında, e ve f birbirinden bir bit uzakta olduğundan yalnızca bir bit), adresin hash'i kökten değişti. Bu, onları _sağlama toplamları(checksum)_ için çok kullanışlı hale getiren HASH FONKSİYONLARININ özelliğidir! 💪
+
+Şimdi ikisini sıralayalım ve büyük harf kullanımını kontrol edelim:
+
+`001d3F1ef827552Ae1114027BD3ECF1f086bA0E9`
+
+`5429b5d9460122fb4b11af9cb88b7bb76d892886...`
+
+🔴 İştee Hataa! Alfabetik karakterlerin birçoğu hatalı bir şekilde büyük harfle yazılmış. Büyük harf kullanımının **doğru(correct) sağlama toplamının kodlaması** olduğunu unutmayın.
+
+Girdiğimiz adresin büyük harf kullanımı, az önce hesaplanan _sağlama toplamı ile eşleşmiyor_, 🎯 yani adreste bir şeyler değişti ve bir hata oluştu.
+
+## Sonuç olarak bu bölümde :
+
+Bu bölümde, genel anahtar kriptografisi hakkında kısa bir bilgi edinmenizi sağladık ve Ethereum'da genel ve özel anahtarların kullanımına ve Ethereum adreslerinin oluşturulmasında ve doğrulanmasında _hash fonksiyonları gibi kriptografik araçların kullanımına odaklandık._ Ayrıca _dijital imzalara ve bu özel anahtarı ifşa etmeden(göstermeden), özel bir anahtarın sahipliğini nasıl gösterebileceklerine_ baktık. _Cüzdan(wallet)_ bölümünde bu fikirleri bir araya getireceğiz ve bütün anahtarları yöneterek cüzdanların nasıl kullanılabileceğini inceleyeceğiz.
+
+---------------- 🏁 Bölüm Sonu
 
 
 
