@@ -515,14 +515,15 @@ Bu bölümde, genel anahtar kriptografisi hakkında kısa bir bilgi edinmenizi s
 
 ---------------- 🏁 Bölüm Sonu
 
+"Her sihirbazlık 🎩 numarası üç bölüm ya da perdeden oluşur :
 
+1️⃣ Birincisi **“Vaat”** bölümüdür. Sihirbaz size _sıradan_ bir şey gösterir. İskambil destesi, 🃏 bir kuş 🐦 ya da bir insan👨👩 .Bu şeyi size gösterir. Son derece gerçek, üzerinde oynanmamış, normal bir şey olduğunu görmeniz için nesneyi incelemenizi ister. Fakat gerçek, farklı olabilir.
 
+2️⃣ İkinci perdeye **“Dönüşüm”** denir. Sihirbaz olağan bir nesneyi alır ve onu _olağanüstü_ bir şeye dönüştürür. Hilenin sırrını arıyorsunuz, ama bulamazsınız. Çünkü _dikkatli bakmıyorsunuz_. **Siz sırrı bilmek değil, kandırılmak istiyorsunuz**. Henüz alkışlamazsınız, ✖️👏 çünkü bir şeyi _yok etmek yeterli değildir_. Onu _geri getirmeniz_ gerekir.
 
+3️⃣ İşte bu yüzden her sihirbazlık numarasında üçüncü bir perde bulunur. İçlerinde en zorlusu. Bizlerin deyişiyle **Prestij**.” 🗣️{**Prestij(The Prestige) filminin başlangıcından**}
 
-
-
-
-
+( 🎥Cristopher Nolan'ın yönetmen koltuğunda oturduğu, başrolünde C.Bale ve Hugh Jackman'ın oynadığı ve ayrıca 💙David Bowie'nin Nikola Teslayı canlandırdığı bu muazzam filmi sizlere şiddetle öneriyorum. ➡️[The Prestige](https://www.imdb.com/title/tt0482571/) )
 
 
 
