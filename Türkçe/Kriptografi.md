@@ -332,6 +332,57 @@ Bunu söylemenin kolay bir yolu, **belirli bir girdi için beklenen bir çıktı
 `SHA3("") =
   a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a`
 
+Fonksiyon adı ne olursa olsun, bu basit testi çalıştırarak orijinal Keccak-256 veya son NIST standardı FIPS-202 SHA-3 olup olmadığını test edebilirsiniz. Unutmayın, Ethereum, kodda genellikle SHA-3 olarak adlandırılsa da Keccak-256'yı kullanır.
+
+😻
+Şimdiii, Ethereum adreslerinin -----> genel/açık(public) anahtarlardan üretilmesine yardımcı olan Keccak-256'nın Ethereum'daki ilk uygulamasını inceleyelim.
+
+--------------------
+
+
+## Ethereum Adresleri 🔷
+
+Ethereum adresleri, _genel anahtarlardan veya Keccak-256 tek yönlü hash fonksiyonları kullanan sözleşmelerden_ türetilen benzersiz tanımlayıcılardır.
+Önceki örneklerimizde, özel bir anahtarla başladık ve bir genel anahtar türetmek için eliptik eğri çarpmasını kullandık:
+
+Özel anahtar k:
+
+`k = f8f8a2f43c8376ccb0871305060d7b27b0554d2cc72bccf41b2705608452f315`
+
+Genel anahtar K (x ve y koordinatları birleştirilmiş ve hex olarak gösterilmiştir):
+
+ `K = 6e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b83b5c38e5e...`
+
+📝NOT : Adres hesaplanırken genel anahtarın (hex 04 öneki) ile biçimlendirilmediğine dikkat etmek önemlidir.📝
+
+Bu genel anahtarın hash'ini hesaplamak için Keccak-256 kullanıyoruz:
+
+`Keccak256(K) = 2a5bc342ed616b5ba5732269001d3f1ef827552ae1114027bd3ecf1f086ba0f9`
+
+⭐Ardından, Ethereum adresimiz olan sadece son _20 baytı_ tutarız:
+
+`01d3f1ef827552ae1114027bd3ecf1f086ba0f9`
+
+Çoğu zaman, hex kodlu olduklarını belirten (0x ön ekine) sahip Ethereum adreslerini görürsünüz, şöyle:
+
+`0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9`
+
+----------
+
+## Ethereum Adres Formatları(Biçimleri) 🎲
+
+Ethereum adresleri, genel anahtarın Keccak-256 hash'ınin son 20 baytından türetilen [onaltılık(hexadecimal) sayılardır](https://tr.wikipedia.org/wiki/On_altılı_sayı_sistemi).Yanlış yazılan adreslere karşı koruma sağlamak için yerleşik bir [sağlama toplamı(checksum)]() içerecek şekilde tüm istemcilerin kullanıcı arabiriminde kodlanan Bitcoin adreslerinden farklı olarak, Ethereum adresleri herhangi bir sağlama toplamı olmadan ham onaltılı olarak sunulur.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
