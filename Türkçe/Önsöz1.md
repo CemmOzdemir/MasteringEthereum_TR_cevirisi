@@ -114,7 +114,7 @@ Daha fazla bilgi için,Bu adresi ziyaret ediniz:[<a href="http://oreilly.com/saf
 ## Bizimle iletişime geçmek için
 
 kitap hakkkında bilgi için _Mastering Ethereum_ 
-link:$$https://ethereumbook.info/$$[].
+link:https://ethereumbook.info
 
 Lütfen bu kitapla ilgili yorum ve soruları yayıncıya iletin:
 
@@ -131,13 +131,13 @@ Lütfen bu kitapla ilgili yorum ve soruları yayıncıya iletin:
 
 bu kitapla ilgili yorum veya teknik sorular gönderin:[<a class="email" href="mailto:bookquestions@oreilly.com"><em>bookquestions@oreilly.com</em></a>].
 
-Kitaplarımız, kurslarımız, konferanslarımız ve haberlerimiz hakkında daha fazla bilgi için linkteki web sitemize bakın. :$$https://www.oreilly.com$$[].
+Kitaplarımız, kurslarımız, konferanslarımız ve haberlerimiz hakkında daha fazla bilgi için linkteki web sitemize bakın. :https://www.oreilly.com
 
-Facebook: link:$$https://facebook.com/oreilly$$[]
+Facebook: link:https://facebook.com/oreilly
 
-Twitter: link:$$https://twitter.com/oreillymedia$$[]
+Twitter: link:https://twitter.com/oreillymedia
 
-YouTube: link:$$https://www.youtube.com/oreillymedia$$[]
+YouTube: link:https://www.youtube.com/oreillymedia
 
 
 
@@ -145,34 +145,34 @@ YouTube: link:$$https://www.youtube.com/oreillymedia$$[]
 **Andreas İle iletişim için ** 🔗
 
 +Andreas M. Antonopoulos'un web sitesi:
-link:$$https://antonopoulos.com/$$[]
+link:https://antonopoulos.com
  
 +Andreas'ın YouTube kanalı:
-link:$$https://www.youtube.com/aantonop$$[]
+link:https://www.youtube.com/aantonop
 
 +Andreas'ın Facebook sayfası:
-link:$$https://www.facebook.com/AndreasMAntonopoulos$$[]
+link:https://www.facebook.com/AndreasMAntonopoulos
 
 +Andreas'ın twitter profili:
-link:$$https://twitter.com/aantonop$$[]
+link:https://twitter.com/aantonop
 
 +Andreas'ın LinkedIn: :
-link:$$https://linkedin.com/company/aantonop$$[]
+link:https://linkedin.com/company/aantonop
 
 +Andreas Patreon hesabı üzerinden destekleyebilirsiniz 💸
-link:$$https://patreon.com/aantonop$$[].
+link:https://patreon.com/aantonop
 
 
 ## Gavin ile iletişim için: 🔗
 
 +Dr. Gavin Wood kişisel web sayfası:
-link:$$http://gavwood.com/$$[]
+link:http://gavwood.com
 
 +Gavin  Twitter:
-link:$$https://twitter.com/gavofyork$$[]
+link:https://twitter.com/gavofyork
 
 +Gavin Wood genelde Polkadotdaki iletişimi:
-link:$$http://bit.ly/2xciG68$$[]
+link:http://bit.ly/2xciG68
 
 ## ANDREAS'IN ÖZEL TEŞEKKÜR MESAJI:
 Sözlere ve kitaplara olan sevgimi, beni her duvarı kitaplarla dolu bir evde büyüten annem Theresa'ya borçluyum. Kendi kendini teknofobik olarak tanımlamasına rağmen, annem de 1982'de bana ilk bilgisayarımı aldı. İlk kitabını 80 yaşında yayınlayan inşaat mühendisi babam Menelaos, bana mantıksal ve analitik düşünmeyi, bilim ve mühendislik sevgisini öğreten kişiydi.
@@ -218,4 +218,4 @@ Creative Commons CC BY 4.0
 
 ----Bölüm SONU 🏁--------
 
-**" Ve insan, karşısına çıkan her engeli aşmış, her düşmanı yenmiş. Yalnız bir tanesinin üstesinden gelememiş. Evet, yalnızca kendisini yenememiş. İnsanlık nasıl da nefret ediyor kendi kendisinden."🗣️John Steinbeck** 
+**"Ve insan, karşısına çıkan her engeli aşmış, her düşmanı yenmiş. Yalnız bir tanesinin üstesinden gelememiş. Evet, yalnızca kendisini yenememiş. İnsanlık nasıl da nefret ediyor kendi kendisinden."🗣️John Steinbeck** 
