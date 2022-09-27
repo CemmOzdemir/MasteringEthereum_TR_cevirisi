@@ -464,7 +464,33 @@ a) 0x öneki olmadan küçük harfli adresi hash haline getirin:
 
 b) hash'in karşılığında ki onaltılık basamağı 0x8'e eşit veya daha büyükse, her alfabetik adres karakterini _büyük harf yapın._ Adresi ve hash'i sıralarsak bunu göstermek daha kolaydır:
 
-``
+`Address: 001d3f1ef827552ae1114027bd3ecf1f086ba0f9`
+
+`Hash   : 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9...`
+
+Adresimiz dördüncü konumda alfabetik bir d karakteri içeriyor. 
+Hash'in dördüncü karakteri 8'den küçük olan 6'dır. Yani, d'yi küçük bırakıyoruz. Adresimizde bir sonraki alfabetik karakter, altıncı konumda f'dir. Onaltılık hashın altıncı karakteri c'dir 
+ve bu 8'den büyüktür. Bu nedenle, adresteki F'yi büyük harfle yazıyoruz, vb. Gördüğünüz gibi, adreste uygun şekilde büyük harf kullanmak için yalnızca 20 bayt (40 onaltılık karakter) olduğundan, sağlama toplamı olarak karmanın yalnızca ilk 20 baytını (40 onaltılık karakter) kullanıyoruz.
+
+Ortaya çıkan karışık büyük harfleri kendiniz kontrol edin ve hangi karakterlerin büyük harfle yazıldığını ve adres karmasında hangi karakterlere karşılık geldiklerini söyleyebilip anlayamayacağınıza bakın:
+
+`Address: 001d3F1ef827552Ae1114027BD3ECF1f086bA0F9`
+
+`Hash   : 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9...`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
