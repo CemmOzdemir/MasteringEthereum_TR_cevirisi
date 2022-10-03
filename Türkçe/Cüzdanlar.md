@@ -12,9 +12,14 @@ Bu bölümde, cüzdanlarda  bulunan özel anahtarlar için, **bu anahtarları y�
 
 ----------------
 
+## Cüzdan teknolojisine Genel bir Bakış 👀
+
+Bu bölümde, kullanıcı dostu, güvenli ve esnek Ethereum cüzdanları oluşturmak için kullanılan çeşitli teknolojilere değineceğiz.
 
 
-
+Cüzdan tasarımında göz önünde bulundurulması gereken en önemli noktalardan biri, ⭐ **kolaylık ve gizliliği iyi ayarlamaktır.**  En uygun Ethereum cüzdanı, _her şey için yeniden kullandığınız tek bir özel anahtara ve adrese sahip olan cüzdandır._ Ne yazık ki, _herkes tüm işlemlerinizi kolayca takip edip(etherscan vb üzerinden) ilişkilendirebileceğinden, böyle bir çözüm gizlilik için korku dolu bir kabustur_.( 📝NOT---->ZKP(zero knowladge proof) ileriki zamanlarda bu olayı çözebilir📝)  
+_Her işlem için yeni bir anahtar kullanmak gizlilik için en iyisidir_, ancak yönetmesi çok zor hale gelir. 
+Doğru dengeyi sağlamak zordur, ancak bu nedenle iyi cüzdan tasarımı çok önemlidir.💖
 
 
 
