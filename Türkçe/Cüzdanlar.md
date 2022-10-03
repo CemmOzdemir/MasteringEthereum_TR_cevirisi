@@ -1,4 +1,4 @@
-# Cüzdanlar(Wallets) 💰
+# Cüzdanlar(Wallets) 🔑
 
 _"Cüzdan"_ kelimesi, Ethereum'da birkaç farklı şeyi tanımlamak için kullanılır.
 
@@ -21,6 +21,34 @@ Cüzdan tasarımında göz önünde bulundurulması gereken en önemli noktalard
 _Her işlem için yeni bir anahtar kullanmak gizlilik için en iyisidir_, ancak yönetmesi çok zor hale gelir. 
 Doğru dengeyi sağlamak zordur, ancak bu nedenle iyi cüzdan tasarımı çok önemlidir.💖
 
+---------------
+
+Ethereum hakkında yaygın olan bir **yanılgı** ise, **Ethereum cüzdanlarının ether veya jeton içerdiğidir. Aslında, kesin olarak konuşursak, cüzdan sadece anahtarları tutar.** Ether veya diğer belirteçler, _Ethereum blok zincirine_ kaydedilir. Kullanıcılar, cüzdanlarındaki anahtarlarla işlemleri imzalayarak ağdaki token'larını veya etherlerini kontrol eder. **_Daha iyi bir anlamda, Ethereum cüzdanı  bir ANAHTARLIKTIR._** 🔑⛓️🔑 
+
+ Ether veya jetonları başkalarına aktarmak için gereken tek şeyin cüzdan tarafından tutulan anahtarlar olduğu göz önüne alındığında, pratikte bu ayrım oldukça önemsiz durumdadır. 
+ Farkın önemli olduğu yer, kişinin zihniyetini, geleneksel bankacılığın, merkezi sistemle çalışan yapıdan farklı bir şekile değiştirmesidir.🏦
+
+Uygulamada, bir hesabın cüzdanına ihtiyaç duymadan bakiyesini kontrol etmenin bağımsız bir yolu vardır.(etherscan'a girip herhangi bir işlemin üzerine tıklayıp _from-to_ kısmına bakmanız yeterli) Ayrıca, kullanmaya başladığınız cüzdan uygulamasını beğenmezseniz, bakiyenizi mevcut cüzdanınızdan farklı bir cüzdana taşıyabilirsiniz.
+
+📝NOT:Ethereum cüzdanları, ether veya token değil, anahtar içerir. Cüzdanlar, özel ve genel anahtar çiftleri içeren anahtarlık gibidir. Kullanıcılar özel anahtarlarla işlemleri imzalayarak ethere sahip olduklarını kanıtlarlar. Ether blokzincirde depolanır.📝
+
+İçerdikleri anahtarların birbiriyle ilişkili olup olmamasına göre ayırt edilen _iki temel cüzdan türü vardır._ ⬇️
+
+1️⃣ İlk tür, her anahtarın bağımsız olarak _farklı bir rastgele sayıdan üretildiği_, **deterministik olmayan** bir cüzdandır. Anahtarlar birbiriyle ilişkili değildir. Bu cüzdan türü, "Sadece Bir deste Anahtar" yani _JBOK cüzdanı_ olarak da bilinir.
+ 
+2️⃣ İkinci cüzdan türü, tüm anahtarların tohum(seed)🌱 olarak bilinen tek bir ana anahtardan türetildiği **deterministik** bir cüzdandır. Bu cüzdan türündeki tüm anahtarlar birbiriyle ilişkilidir ve _orijinal tohum varsa_ yeniden oluşturulabilir. Deterministik cüzdanlarda kullanılan bazı farklı anahtar türetme yöntemleri vardır. En yaygın olarak kullanılan türetme yöntemi, [Hiyerarşik Deterministik Cüzdan'da(BIP32/44)] açıklandığı gibi(aşşağıda görsel bir şekilde açıklanıyor ⤵️) ağaç benzeri bir yapı kullanılarak yapılır.
+
+Deterministik cüzdanlar, telefonunuzun çalınması 😫📱 veya tuvalete düşmesi 🚽 gibi veri kaybı kazalarına karşı biraz daha güvenli hale getirmek üzere, tohumlar(seeds)  için genellikle _yazmanız ve kullanmanız_ için bir kelime listesi (İngilizce veya başka bir dilde de olabilir) olarak kodlanır. bir kaza durumunda bunu kullanırız.
+Bunlar,cüzdanın **anımsatıcı kelimeleri(mnemonic words)** olarak bilinirler. 
+ 
+ 📝NOT-----> Genelde Nnemonic words(anımsatıcı kelimler) 12 veya 24 kelime arası değişiklik gösterirler.
+
+Tabii ki, birisi 🧔 ,anımsatıcı kelimelerinizi(mnemonic words) ele geçirirse, **cüzdanınızı yeniden oluşturabilir ve böylece ether ve akıllı sözleşmelerinize erişim sağlayabilir.** Bu nedenle, _kurtarma kelime listenize(mnemonic words'den bahsediyor) çok ama çok dikkat edin_ ❗ **Asla elektronik olarak, bir dosyada, bilgisayarınızda veya telefonunuzda saklamayın**.🔴   
+**Kağıda yazın 📕 ve güvenli bir yerde saklayın.✔️
+
+Sonraki birkaç bölüm, bu teknolojilerin her birini ileri seviyede🥶 açıklamaktadır.( ⚠️Eğer zor gelirse moralinizi bozmayın.Kendinize zaman tanıyın.İstediğiniz zaman okuyun.Öfkenizi,üzüntünüzü,pişmanlığınızı ve birçok duyguyu okuyarak unutabilirsiniz) 
+
+------------
 
 
 
