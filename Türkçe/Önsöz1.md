@@ -1,8 +1,8 @@
 
-
 _BAŞLAMADAN ÖNCE KISA BİR NOT_
 
-**Bu kitabı çevirip çevirmemek konusunda kararsız kalsamda bu kitabın İspanyolca,Çince,Çekçe,Uzak doğu dillerinden bazılarına çevrildiğini gördüm.Daha da ilginç olan kısım ise Çinli bir mühendis dostuma şu soruyu sordum :"Nasıl oluyorda her türlü teknolojik gelişimin özelliklede açık kaynaklı uygulamaların dökümanlarını kısa sürede Çince'ye çeviriyorsunuz?" diye sordum.Mühendis arkadaşın cevabı çok netti: "Bu bizde bir paradigma kültürü gibi.Elbette teknoloji ile uğraşan kişi sayısının önemi çok büyük ama burada bu insanları doğru bilgi ile teknolojiye yönlendirmek önemli.Bunuda çıkan yeni teknolojinin resmi dökümanından yapmak çok önemli" demişti.İşte bu yüzden bu kitabın Ethereum ekosisteminin mihenk taşlarından olduğunu belirtmek isterim.Hal böyle olunca İstatistiklere göre günde 10-15 saat çalışan ,Kızgınlık ve mutsuzlukta başı çeken,ekonomik olarak çok kötü durumlar geçiren tek başına kalmış Kıymetli Türk hanımefendileri ve beyefendilerin  bu güzel bilgilerden mahrum kalmaması gerektiğini düşündüm.Lisans haklarını inceledikten sonra başlamak istedim.Hem İngilizcemi geliştirip hemde Atamızın bize gösterdiği yolda ilerleyerek teknolojiye,bilime minicikte olsa katkım olsun istedim.Bu yüzden büyük müsadenizle çevirideki((Yeterli dahi olmasa)) motivasyonum olan, Cephelerde dahi yanından kitaplarını ayırmayan,ömrünün büyük bölümünü cephelerde geçirmesine rağmen "Geometri" üzerine kitap yazacak kadar ilim-irfan sahibi büyük liderimize, 🇹🇷 ❤️MUSTAFA KEMAL ATATÜRK'e ve SİLAH ARKADAŞLARINA🤍 Teşekkürü bir borç bilirim.**
+
+**Bu kitabı çevirip çevirmemek konusunda kararsız kalsamda bu kitabın İspanyolca,Çince,Çekçe,Uzak doğu dillerinden bazılarına çevrildiğini gördüm.Daha da ilginç olan kısım ise Çinli bir mühendis dostuma şu soruyu sordum :"Nasıl oluyorda her türlü teknolojik gelişimin özelliklede açık kaynaklı uygulamaların dökümanlarını kısa sürede Çince'ye çeviriyorsunuz?" diye sordum.Mühendis arkadaşımın cevabı çok netti: "Bu bizde bir paradigma kültürü gibi.Elbette teknoloji ile uğraşan kişi sayısının önemi çok büyük ama burada bu insanları doğru bilgi ile teknolojiye yönlendirmek önemli.Bunu da çıkan yeni teknolojinin orjinal-teknik dökümanından veya önemli eserlerden yapmak çok önemli" demişti.İşte bu yüzden bu kitabın Ethereum ekosisteminin mihenk taşlarından olduğunu belirtmek isterim.Hal böyle olunca İstatistiklere göre günde 10-15 saat çalışan ,Kızgınlık ve mutsuzlukta başı çeken,ekonomik olarak çok kötü durumlar geçiren tek başına kalmış Kıymetli Türk hanımefendileri ve beyefendilerin  bu güzel bilgilerden mahrum kalmaması gerektiğini düşündüm.Lisans haklarını inceledikten sonra başlamak istedim.Hem İngilizcemi geliştirip hemde Atamızın bize gösterdiği yolda ilerleyerek teknolojiye,bilime minicikte olsa katkım olsun istedim.Bu yüzden büyük müsadenizle çevirideki((Yeterli dahi olmasa)) motivasyonum olan, Cephelerde dahi yanından kitaplarını ayırmayan,ömrünün büyük bölümünü cephelerde geçirmesine rağmen "Geometri" üzerine kitap yazacak kadar ilim-irfan sahibi büyük liderimize, 🇹🇷 ❤️MUSTAFA KEMAL ATATÜRK'e ve SİLAH ARKADAŞLARINA🤍 Teşekkürü bir borç bilirim.**
 _H.Cem Özdemir_
 
 
@@ -16,8 +16,8 @@ _Benim manevi mirasım ilim ve akıldır. Benden sonra, beni benimsemek isteyenl
 _Ek olarak-----------> Kitabı çevirirken hatalarım olabilir.Şimdiden özür dilerim .✋
 * Özellikle emoji kullanıyorum ki görsel yönden de zengin bir içerik olsun. 
 * Ek olarak güncel olmayan bilgliler varsa not düşmeye ve açıklamaya çalıştım.
-* Kitabın **Orjinal repoları Github'ın mobil uygulaması ile uyumlu değil**.📵🔴(Özellike _görseller ve kodlar_ .Sebebi dosyanın formatının ascii.doc olması) ANCAK **TÜRKÇE REPOMUZ UYUMLUDUR.** 🟢 (markdown formatı )DİLERSENİZ GİTHUB MOBİL ÜZERİNDEN OKUMA YAPABİLİRSİNİZ. 📱 
-* Bölüm sonlarına ⭐ beğendiğim insanlardan birisin en sevdiğim sözü ile bitirmeye çalıştım.(Sondaki sözler kitapta yok benden size motivasyon ve düşünmerek çıkarımlar yapmanızı sağlamak istedim.👀)
+* Kitabın **Orjinal repoları Github'ın mobil uygulaması ile uyumlu değil**.📵🔴(Özellike _görseller ve kodlar_) Sebebi dosyanın formatının asciidoc olması) ANCAK **TÜRKÇE REPOMUZ UYUMLUDUR.** 🟢 (markdown formatı )DİLERSENİZ GİTHUB MOBİL ÜZERİNDEN OKUMA YAPABİLİRSİNİZ. 📱 
+* Bölüm sonlarına ⭐ beğendiğim insanlardan veya film repliklerinden en sevdiğim sözü veya replik ile bitirmeye çalıştım.(Sondaki sözler kitapta yok benden size motivasyon ve düşünmemize yardımcı olacak çıkarımlar yapmamızı sağlamak istedim.👀)
 * Bazı yerlerde Film-belgesel vb.kaynakları da tavsiye ettiğim yerlerde vardır.(Kitapta yok benim eklemelerim).🎥 🍿
 
 ------------------------
@@ -36,11 +36,13 @@ Son olarak, Mayıs 2016'da Gavin ve Andreas tesadüfen aynı şehirde aynı anda
 
 ### Bu kitap nasıl kullanılır ?
 
-Kitabın, hem bir referans rehberi hem de Ethereum'un baştan sona keşfedilmesine hizmet etmesi amaçlanmıştır. *İlk iki bölüm*, acemi kullanıcılar için uygun, nazik(ince) bir giriş sunar ve bu bölümlerdeki örnekler, biraz teknik beceriye sahip herkes tarafından tamamlanabilir. Bu iki bölüm size temelleri iyi bir şekilde kavrayıp, Ethereum'un temel araçlarını kullanmanıza izin verecek. 📍[Ethereum_clients_Bölümü] ve devamı, temel olarak programcılara yöneliktir ve birçok teknik konu ve programlama örnekleri içerir.
+Kitabın, hem bir referans rehberi hem de Ethereum'un baştan sona keşfedilmesine hizmet etmesi amaçlanmıştır. *İlk iki bölüm*, acemi kullanıcılar için uygun, nazik(ince) bir giriş sunar ve bu bölümlerdeki örnekler, biraz teknik beceriye sahip herkes tarafından tamamlanabilir. Bu iki bölüm size temelleri iyi bir şekilde kavrayıp, Ethereum'un temel araçlarını kullanmanıza izin verecek. 📍[Ethereum_clients(istemciler)_Bölümü] ve devamı, temel olarak programcılara yöneliktir ve birçok teknik konu ve programlama örnekleri içerir.
 
-Ethereum hakkında hem bir referans rehberi hem de baştan sona bir anlatı olarak hizmet etmek için kitap,kaçınılmaz olarak bazı tekrarlar içeriyor. _Gaz(GAS)_ 🛢️ gibi bazı konuların, geri kalan konuların anlamlı olması için yeterince erken anlatılması gerekiyor, ancak aynı zamanda _kendi bölümlerinde_ derinlemesine incelenecektir.
+Ethereum hakkında hem bir referans rehberi hem de baştan sona bir anlatı olarak hizmet etmek için kitap,kaçınılmaz olarak bazı tekrarlar içeriyor. _Gaz(GAS)_ 🛢️ gibi bazı konuların, geri kalan konuların anlamlı olması için yeterince erken anlatılması gerekiyor, ancak aynı zamanda da _kendi bölümlerinde_ derinlemesine inceleniyor  olacaktır.
 
-Son olarak, kitabın dizini okuyucuların anahtar kelime ile çok özel konuları ve ilgili bölümleri kolaylıkla bulmasını sağlar.
+Son olarak, kitabın dizini okuyucuların _anahtar kelime_ ile çok özel konuları ve ilgili bölümleri kolaylıkla bulmasını sağlar.
+
+📝NOT: anahtar kelime araması için **CTRL+F** yaparak arama yapabilirsiniz 
 
 ### Hedef kitlesi 🧑‍🤝‍🧑
 
@@ -73,7 +75,7 @@ _(Bilgilendirme 📝 :Bu işaretler normalde kitapta yok(GitHub üzerinde yayın
 
 ## Kod Örnekleri
 
-kod örnekleri, elde etme ve kullanımı :Örnekler _Solidity, Vyper ve JavaScript'te ve Unix benzeri_ bir işletim sisteminin komut satırı kullanılarak yapılmıştır. Tüm kod parçacıkları GitHub deposunda _code_ alt dizini altında bulunur. Kitap kodunu çatallayın(Forking), kod örneklerini deneyin veya GitHub aracılığıyla düzeltmeleri gönderin: https://github.com/ethereumbook/ethereumbook.
+kod örnekleriNİ, elde etme ve kullanımları :Örnekler _Solidity, Vyper ve JavaScript'te ve Unix benzeri_ bir işletim sisteminin komut satırı kullanılarak yapılmıştır. Tüm kod parçacıkları GitHub deposunda _code_ alt dizini altında bulunur. Kitap kodlarını çatallayın(Forking), kod örneklerini deneyin veya GitHub aracılığıyla düzeltmeleri gönderin: https://github.com/ethereumbook/ethereumbook.
 
 
 Tüm kod parçacıkları, ilgili diller için minimum derleyici, yorumlayıcı ve kitaplık kurulumuyla çoğu işletim sisteminde çoğaltılabilir. Gerektiğinde, temel kurulum talimatlarını ve bu talimatların çıktılarının adım adım örneklerini sağlıyoruz.
@@ -87,7 +89,7 @@ Tüm kod parçacıkları mümkün olduğunda gerçek değerleri ve hesaplamalar�
 
 Bu kitap işinizi yapmanıza yardımcı olmak için burada. Genel olarak, bu kitapla birlikte örnek kod sunuluyorsa, programlarınızda ve dokümantasyonunuzda kullanabilirsiniz. Kodun önemli bir bölümünü yeniden oluşturmuyorsanız, izin almak için bizimle iletişime geçmeniz **gerekmez**. Örneğin, bu kitaptan birkaç parça kod kullanan bir program yazmak için *izin gerekmez*. O'Reilly kitaplarından örnekler içeren bir CD-ROM'u satmak veya dağıtmak **izin gerektirir**. Bir soruyu bu kitaptan alıntı yaparak ve örnek koddan alıntı yaparak cevaplamak **izin gerektirmez**. Bu kitaptan önemli miktarda örnek kodu ürününüzün belgelerine dahil etmek **izin gerektirir**.
 
-_Mastering Ethereum_  Creative Commons Attribution-Noncommercial-No Derivative Works 4.0 International License (CC BY-NC-ND 4.0) lisansı altında sunulmaktadır.
+_Mastering Ethereum_ kitabı Creative Commons Attribution-Noncommercial-No Derivative Works 4.0 International License (CC BY-NC-ND 4.0) lisansı altında sunulmaktadır.
 ©️
 
 Kod örneklerini kullanımınızın adil kullanım veya yukarıda verilen iznin dışında kaldığını düşünüyorsanız, bizimle şu adresten iletişime geçmekten çekinmeyin:
@@ -107,7 +109,7 @@ BU KİTAPTA HİÇBİR ADRESE PARA GÖNDERMEYİN. Paranız başka bir okur(Kitab�
 ## O'Reilly Safari
 📝Safari (eski adıyla Safari Books Online), işletmeler, devlet kurumları, eğitimciler ve bireyler için üyeliğe dayalı bir eğitim ve referans platformudur.
 
-Üyeler: O'Reilly Media, Harvard Business Review, Prentice Hall Professional, Addison-Wesley Professional, Microsoft Press, Sams, Que dahil olmak üzere, 250'den fazla yayıncıdan binlerce kitaba, eğitim videosuna, Öğrenme Yollarına, etkileşimli öğreticilere ve seçilmiş oynatma listelerine erişebilir. , Peachpit Press, Adobe, Focal Press, Cisco Press, John Wiley & Sons, Syngress, Morgan Kaufmann, IBM Redbooks, Packt, Adobe Press, FT Press, Apress, Manning, New Riders, McGraw-Hill, Jones & Bartlett ve Course Teknoloji, diğerleri arasında.
+Üyeler: O'Reilly Media, Harvard Business Review, Prentice Hall Professional, Addison-Wesley Professional, Microsoft Press, Sams, Que dahil olmak üzere, 250'den fazla yayıncıdan binlerce kitaba, eğitim videosuna, Öğrenme Yollarına, etkileşimli öğreticilere ve seçilmiş oynatma listelerine erişebilir. , Peachpit Press, Adobe, Focal Press, Cisco Press, John Wiley & Sons, Syngress, Morgan Kaufmann, IBM Redbooks, Packt, Adobe Press, FT Press, Apress, Manning, New Riders, McGraw-Hill, Jones & Bartlett ve Course Tech, diğerleri arasında.
 
 Daha fazla bilgi için,Bu adresi ziyaret ediniz:[<a href="http://oreilly.com/safari" class="orm:hideurl"><em>http://oreilly.com/safari</em></a>].
 
@@ -180,9 +182,9 @@ Bu yolculuk boyunca beni desteklediğiniz için hepinize teşekkür ederim. 💙
 
 ## GAVIN'İN ÖZEL TEŞEKKÜR MESAJI:
 
-Annem benim için ilk bilgisayarımı 9 yaşımdayken bir komşudan aldı ve bu olay olmadan teknik ilerlemem şüphesiz azalacaktı. Ayrıca ona çocukluk elektrik korkumu da borçluyum. Trevor'ı ve defalarca "fişi prize takmamı izleme" gibi ciddi bir görevi yerine getiren ve bilgisayarın bir işe yaramayacağı söylenen büyükannemi ve büyükbabamı kabul etmeliyim. Ayrıca, (bana ilk bilgisayar programımı öğreten) komşu Sean'dan, ayrıca daha fazla programlama ve daha az tarih, Richard Furlong-Brown gibi benim için daha fazla programlama ve daha az rugby yapmamı sağlayan ortaokul öğretmenlerine kadar herkese teşekkür ederim. 💓
+Annem benim için ilk bilgisayarımı 9 yaşımdayken bir komşudan aldı ve bu olay olmadan teknik ilerlemem şüphesiz azalacaktı. Ayrıca ona çocukluktaki elektrik korkumu da borçluyum. Trevor'ı ve defalarca "fişi prize takmamı izleme" gibi ciddi bir görevi yerine getiren ve bilgisayarın bir işe yaramayacağı söylenen büyükannemi ve büyükbabamı kabul etmeliyim. Ayrıca, (bana ilk bilgisayar programımı öğreten) komşu Sean'dan, ayrıca daha fazla programlama ve daha az tarih, Richard Furlong-Brown gibi benim için daha fazla programlama ve daha az rugby yapmamı sağlayan ortaokul öğretmenlerine kadar herkese teşekkür ederim. 💓
 
-Çocuklarımın annesi Jutta'ya sürekli desteği için ve hayatımdaki birçok insana, yeni ve eski arkadaşlarıma, kısaca konuşursak, aklı başında herkese teşekkür etmeliyim. Son olarak, hayatımın son beş yılının onsuz asla olduğu gibi gelişemeyeceğini;  zamanı, desteği ve rehberliği olmadan bu kitabın bu kadar iyi durumda olmayacağı Aeron Buchanan'a kocaman bir teşekkür borçluyum. 🥰
+Çocuklarımın annesi Jutta'ya sürekli desteği için ve hayatımdaki birçok insana, yeni ve eski arkadaşlarıma, kısaca toparlarsak, aklı başında herkese teşekkür etmeliyim. Son olarak, hayatımın son beş yılının onsuz asla olduğu gibi gelişemeyeceğini;  zamanı, desteği ve rehberliği olmadan bu kitabın bu kadar iyi durumda olmayacağı Aeron Buchanan'a kocaman bir teşekkür borçluyum. 🥰
 
 ## kaynaklar 📌
 
