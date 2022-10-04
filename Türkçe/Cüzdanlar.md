@@ -50,5 +50,18 @@ Sonraki birkaç bölüm, bu teknolojilerin her birini ileri seviyede🥶 açıkl
 
 ------------
 
+## Deterministik Olmayan/Belirsiz(Rastgele) Cüzdanlar 1️⃣
+
+İlk Ethereum cüzdanlarında (_Ethereum ön satışı için üretilmiştir_), her cüzdan dosyası rastgele oluşturulmuş **tek bir özel anahtar** depoladı. Bu tür cüzdanlar **deterministik cüzdanlarla değiştiriliyor** 🔄 çünkü bu _"eski tarz"_ cüzdanlar birçok yönden daha kalitesiz durumdalar. 
+Örneğin, Ethereum kullanırken gizliliğinizi en üst düzeye çıkarmanın bir parçası olarak **Ethereum adresinin yeniden kullanılmasından kaçınmak, yani her para transferimizde yeni bir adres (yeni bir özel anahtar gerektiren yapı) kullanmak iyi bir uygulama olarak kabul edilir.** Daha fazlası,her _işlem_ için yeni bir adres kullanabilirsiniz, ancak **çok fazla token ile işlemler yaparsanız** bu **pahalı** olabilir. Uygulamada(pratikte) bu yapıyı takip ettiğimizde, **_deterministik olmayan bir cüzdanın anahtar listesini düzenli olarak artırması gerekecektir,bu da düzenli yedeklemeler 👜 yapmanız gerekeceği anlamına geliyor._** Cüzdanınızı yedeklemeyi gerçekleştirmeden verilerinizi kaybederseniz (disk arızası💾 ,içecek dökülmesi 🍻, telefonun çalınması 📱), _fonlarınıza ve akıllı sözleşmelerinize erişiminizi_ **kaybedersiniz.** 😵 
+
+"Tip 0(type 0)0️⃣" deterministik olmayan cüzdanlar, **uğraşılması en zor olanlardır**, çünkü her yeni adres için _"tam zamanlı"_ yeni bir cüzdan dosyası oluştururlar.
+
+
+
+
+
+
+
 
 
