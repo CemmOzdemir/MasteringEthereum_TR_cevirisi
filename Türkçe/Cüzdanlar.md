@@ -57,9 +57,45 @@ Sonraki birkaç bölüm, bu teknolojilerin her birini ileri seviyede🥶 açıkl
 
 "Tip 0(type 0)0️⃣" deterministik olmayan cüzdanlar, **uğraşılması en zor olanlardır**, çünkü her yeni adres için _"tam zamanlı"_ yeni bir cüzdan dosyası oluştururlar.
 
+Bununla birlikte, birçok Ethereum istemcisi (geth dahil), ekstra güvenlik için bir **parola ile şifrelenmiş tek bir (rastgele oluşturulmuş) özel anahtar içeren JSON ile kodlanmış bir dosya olan _anahtar deposu dosyasını_ kullanır**. JSON dosyasının içeriği şöyle görünür:
 
 
+```
+{
+    "address": "001d3f1ef827552ae1114027bd3ecf1f086ba0f9",
+    "crypto": {
+        "cipher": "aes-128-ctr",
+        "ciphertext":
+            "233a9f4d236ed0c13394b504b6da5df02587c8bf1ad8946f6f2b58f055507ece",
+        "cipherparams": {
+            "iv": "d10c6ec5bae81b6cb9144de81037fa15"
+        },
+        "kdf": "scrypt",
+        "kdfparams": {    //aşşağıda belirttiği gibi .n aşşağıdaki tur(round) sayısını gösteriyor
+            "dklen": 32,
+            "n": 262144,
+            "p": 1,
+            "r": 8,
+            "salt":
+                "99d37a47c7c9429c66976f643f386a61b78b97f3246adca89abe4245d2788407"
+        },
+        "mac": "594c8df1c8ee0ded8255a50caf07e8c12061fd859f4b7c76ab704b17c957e842"
+    },
+    "id": "4fcb2ba4-ccdb-424f-89d5-26cce304bf9c",
+    "version": 3
+}
 
+```
+
+Anahtar deposu(key store) 🔑 formatı, ↗️[parola genişletme algoritması(password stretching algorithm)](https://miro.medium.com/max/640/1*gqoIas2TgHfFn9u_QqnO9A.png) olarak da bilinen ve 👊[kaba kuvvet saldırsı](https://www.kaspersky.com.tr/resource-center/definitions/brute-force-attack), 📗[sözlük-dictionary](https://bilgisayarkavramlari.com/2009/08/20/sozluk-saldirisi-dictionary-attack/) ve 🌈[rainbow tablosu saldırılarına](https://bilgiguvende.com/rainbow-table-saldirisi-nedir-ve-nasil-uygulanir-onlenmesine-yonelik-yontemler-nelerdir/)  karşı koruma sağlayan bir anahtar türetme fonksiyonu(Key Derivation Funct.) kullanır.
+
+Basit bir ifadeyle, **özel anahtar doğrudan parola tarafından şifrelenmez**. Bunun yerine, parola art arda hash edilerek uzatılır. hash fonksiyonu(karma işlev), JSON anahtar deposundaki _crypto.kdfparams.n_ parametresi olarak görülebilen _262,144_ tur için tekrarlanır. Parolayı kaba kuvvetle zorlamaya çalışan bir saldırganın, denemeye çalıştığı her parola için 262.144 tur karma(hash) uygulaması gerekir; bu, saldırıyı yeterli karmaşıklık ve uzunlukta parolalar için olanaksız hale getirmek için 🐢 yavaşlatır.
+
+
+<img title="KDF" src="https://miro.medium.com/max/640/1*gqoIas2TgHfFn9u_QqnO9A.png">
+
+
+JavaScript kitaplığında [keythereum](https://github.com/ethereumjs/keythereum) gibi anahtar deposu biçimini okuyabilen ve yazmamıza olanak sağlayan bir dizi yazılım kitaplığı vardır.
 
 
 
