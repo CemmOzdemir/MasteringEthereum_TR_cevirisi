@@ -109,10 +109,12 @@ Deterministik veya "tohumlu"🌱cüzdanlar, **tümü tek bir ana anahtardan veya
 
 Deterministik bir cüzdanda, 🌱tohum; _türetilmiş tüm anahtarları kurtarmak için yeterlidir_ ve bu nedenle, oluşturma zamanında yapacağınız _tek bir yedekleme, cüzdandaki tüm fonları ve akıllı sözleşmeleri güvence altına almak için yeterlidir._ Tohum ayrıca, bir cüzdanın dışa veya içe aktarma işlemi için yeterlidir ve tüm anahtarların farklı cüzdan uygulamaları arasında kolayca taşınmasına olanak tanır. 💯
 
+Bu tasarım, tüm cüzdana erişmek için yalnızca tohuma ihtiyaç duyulduğundan, **tohum güvenliğini son derece önemli hale getirir.** 🛡️ _Güvenlik her şeydir_  
+Öte yandan, güvenlik çabalarını _tek bir veri parçasına(tohuma)_ odaklayabilmek bir beyaz şapkalı dostlarımız için bir avantaj olarak görülebilir.✔️
 
+-------------
 
-
-
+## 2️⃣🅰️ Hiyerarşik Deterministik Cüzdanlar(BIP-32/BIP-44) (Hierarchical Deterministic(HD) Wallets ) 👨‍👩‍👧‍👦
 
 
 
