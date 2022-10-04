@@ -50,7 +50,7 @@ Sonraki birkaç bölüm, bu teknolojilerin her birini ileri seviyede🥶 açıkl
 
 ------------
 
-## Deterministik Olmayan/Belirsiz(Rastgele) Cüzdanlar 1️⃣
+## 1️⃣ Deterministik Olmayan --Rastgele-- Cüzdanlar(Nondeterministic (Random) Wallets 
 
 İlk Ethereum cüzdanlarında (_Ethereum ön satışı için üretilmiştir_), her cüzdan dosyası rastgele oluşturulmuş **tek bir özel anahtar** depoladı. Bu tür cüzdanlar **deterministik cüzdanlarla değiştiriliyor** 🔄 çünkü bu _"eski tarz"_ cüzdanlar birçok yönden daha kalitesiz durumdalar. 
 Örneğin, Ethereum kullanırken gizliliğinizi en üst düzeye çıkarmanın bir parçası olarak **Ethereum adresinin yeniden kullanılmasından kaçınmak, yani her para transferimizde yeni bir adres (yeni bir özel anahtar gerektiren yapı) kullanmak iyi bir uygulama olarak kabul edilir.** Daha fazlası,her _işlem_ için yeni bir adres kullanabilirsiniz, ancak **çok fazla token ile işlemler yaparsanız** bu **pahalı** olabilir. Uygulamada(pratikte) bu yapıyı takip ettiğimizde, **_deterministik olmayan bir cüzdanın anahtar listesini düzenli olarak artırması gerekecektir,bu da düzenli yedeklemeler 👜 yapmanız gerekeceği anlamına geliyor._** Cüzdanınızı yedeklemeyi gerçekleştirmeden verilerinizi kaybederseniz (disk arızası💾 ,içecek dökülmesi 🍻, telefonun çalınması 📱), _fonlarınıza ve akıllı sözleşmelerinize erişiminizi_ **kaybedersiniz.** 😵 
@@ -91,11 +91,26 @@ Anahtar deposu(key store) 🔑 formatı, ↗️[parola genişletme algoritması(
 
 Basit bir ifadeyle, **özel anahtar doğrudan parola tarafından şifrelenmez**. Bunun yerine, parola art arda hash edilerek uzatılır. hash fonksiyonu(karma işlev), JSON anahtar deposundaki _crypto.kdfparams.n_ parametresi olarak görülebilen _262,144_ tur için tekrarlanır. Parolayı kaba kuvvetle zorlamaya çalışan bir saldırganın, denemeye çalıştığı her parola için 262.144 tur karma(hash) uygulaması gerekir; bu, saldırıyı yeterli karmaşıklık ve uzunlukta parolalar için olanaksız hale getirmek için 🐢 yavaşlatır.
 
+⬇️ aşağıdaki görseli size yarrdımcı olsun diye bırakıyorum.
 
 <img title="KDF" src="https://miro.medium.com/max/640/1*gqoIas2TgHfFn9u_QqnO9A.png">
 
 
 JavaScript kitaplığında [keythereum](https://github.com/ethereumjs/keythereum) gibi anahtar deposu biçimini okuyabilen ve yazmamıza olanak sağlayan bir dizi yazılım kitaplığı vardır.
+
+🔍İPUCU----> Basit testler dışındaki herhangi bir şey için deterministik olmayan cüzdanların kullanılması **önerilmez**. En temel durumlar dışında herhangi bir şey için yedeklemek ve kullanmak için çok yavaştırlar. Bunun yerine, **yedekleme** için **anımsatıcı bir tohum içeren( mnemonic seed) endüstri standardı tabanlı** bir [HD cüzdan](https://www.investopedia.com/terms/h/hd-wallet-hierarchical-deterministic-wallet.asp) kullanın. 
+(HD cüzdan yazısı uzun geldiyse kısacak sizin için😽---> Hiyerarşik deterministik (HD) cüzdan, Bitcoin ve Ethereum gibi kripto para birimleri sahipleri için dijital anahtarları depolamak için yaygın olarak kullanılan bir dijital cüzdandır. Hem genel(public) hem de parola benzeri özel(private) anahtarın bir kopyasına sahip olan herkes, hesaptaki bakiyeyi kontrol edebilir.Aşağıda daha detaylı açıklanacaktır⬇️)
+
+-------------
+
+## 2️⃣Deterministik -Tohumlu- Cüzdanlar (Deterministic (Seeded) Wallets) 🌱
+
+Deterministik veya "tohumlu"🌱cüzdanlar, **tümü tek bir ana anahtardan veya tohumdan türetilen özel anahtarlar içeren cüzdanlardır.** _Tohum_,🟢 herhangi bir sayıda özel anahtar türetmek için bir _dizin numarası_ veya _"zincir kodu"-chain code_-(Genişletilmiş genel ve özel anahtarlar bölümünde açıklanacak⏬) gibi diğer verilerle **birleştirilen rastgele oluşturulmuş bir sayıdır.**
+
+Deterministik bir cüzdanda, 🌱tohum; _türetilmiş tüm anahtarları kurtarmak için yeterlidir_ ve bu nedenle, oluşturma zamanında yapacağınız _tek bir yedekleme, cüzdandaki tüm fonları ve akıllı sözleşmeleri güvence altına almak için yeterlidir._ Tohum ayrıca, bir cüzdanın dışa veya içe aktarma işlemi için yeterlidir ve tüm anahtarların farklı cüzdan uygulamaları arasında kolayca taşınmasına olanak tanır. 💯
+
+
+
 
 
 
