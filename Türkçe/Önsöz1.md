@@ -13,12 +13,13 @@ _Benim manevi mirasım ilim ve akıldır. Benden sonra, beni benimsemek isteyenl
 
 
 ✏️
-_Ek olarak-----------> Kitabı çevirirken hatalarım olabilir.Şimdiden özür dilerim .✋
+_Ek olarak-----------> Kitabı çevirirken hatalarım olabilir.Şimdiden özür dilerim_.✋
+* Bölümleri tek tek görme engeli dostlarımız veya okumaktan ziyade dinlemeyi seven arkadaşlar için seslendirmeye çalışağım. 🎧
 * Özellikle emoji kullanıyorum ki görsel yönden de zengin bir içerik olsun. 
 * Ek olarak güncel olmayan bilgliler varsa not düşmeye ve açıklamaya çalıştım.
-* Kitabın **Orjinal repoları Github'ın mobil uygulaması ile uyumlu değil**.📵🔴(Özellike _görseller ve kodlar_) Sebebi dosyanın formatının asciidoc olması) ANCAK **TÜRKÇE REPOMUZ UYUMLUDUR.** 🟢 (markdown formatı )DİLERSENİZ GİTHUB MOBİL ÜZERİNDEN OKUMA YAPABİLİRSİNİZ. 📱 
-* Bölüm sonlarına ⭐ beğendiğim insanlardan veya film repliklerinden en sevdiğim sözü veya replik ile bitirmeye çalıştım.(Sondaki sözler kitapta yok benden size motivasyon ve düşünmemize yardımcı olacak çıkarımlar yapmamızı sağlamak istedim.👀)
-* Bazı yerlerde Film-belgesel vb.kaynakları da tavsiye ettiğim yerlerde vardır.(Kitapta yok benim eklemelerim).🎥 🍿
+* Kitabın **Orjinal repoları Github'ın mobil uygulaması ile uyumlu değil**.📵🔴(Özellike _görseller ve kodlar_).Sebebi dosyanın formatının asciidoc olması) ANCAK **TÜRKÇE REPOMUZ UYUMLUDUR.** 🟢 (markdown formatı )DİLERSENİZ GİTHUB MOBİL ÜZERİNDEN OKUMA YAPABİLİRSİNİZ. 📱 
+* Bölüm sonlarına ⭐ beğendiğim insanların sözleri ile veya film replikleriyle bitirmeye çalıştım.(Sondaki sözler kitapta yok.Düşünebilme yetimizi tetiklemeye çalıştım👀)
+* Bazı yerlerde Film-belgesel vb.kaynakları da tavsiye ettiğim yerler vardır.(Kitapta yok benim eklemelerim).🎥 🍿
 
 ------------------------
 # ÖNSÖZ (Mutlaka okuyun! 🃏)
