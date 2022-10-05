@@ -129,7 +129,7 @@ Konstantinopolis / St. Petersburg—Konstantinopolis, Metropolis'in benzer iyile
 * Blok #9,200,000
 Muir Glacier—Buz Devri'nin getirdiği üstel artış nedeniyle tek amacı zorluğu yeniden ayarlamak olan bir hard fork.
 ______
-⚠️Güncel UYARI: Şimdi kitapta Serenity(ETH 2.0)aşamasına yani 4.aşamaya 🔢 geçeceğini söylemiş buna çok yaklaştık değerli arkadaşlar hatta siz bunu okurken ETH merging(Yani PoS geçmiş) olabilir.Bundan sonra Merging kısmında yapılacak gelişmeler ise şöyle olacak :
+⚠️Güncel UYARI: Şimdi kitapta Serenity(ETH 2.0)aşamasına yani 4.aşamaya 🔢 geçeceğini söylemiş buna çok yaklaştık değerli arkadaşlar hatta siz bunu okurken ETH merging(Yani PoS geçmiş) olabilir(oldu bile.Ethereum merge edildi😸).Bundan sonra Merging kısmında yapılacak gelişmeler ise şöyle olacak :
 
 * Merge 
 * Surge  
@@ -138,7 +138,8 @@ ______
 * Splurge.
 
 ↪️[daha fazla bilgi için](https://news.t-rex.exchange/en/ethereum-after-merge/)
-_____
+
+---------
 
 ## Ethereum: Genel Amaçlı Bir Blok Zincir ⛓️
 
@@ -215,13 +216,13 @@ Ethereum'un çığır açan yeniliği, depolanmış programlı bir bilgisayarın
 
 ## Bir "Özellik" Olarak Turing Bütünlüğü:
   
-Ethereum'un _Turing-complete_ olduğunu duyduğunuzda, bunun _Turing-incomplete_ bir sistemde bir şekilde eksik olan bir özellik olduğu sonucuna varabilirsiniz. Aksine, **tam tersi.** _Turing-complete_'e ulaşmak çok kolaydır; aslında, bilinen [en basit Turing-complete durum makinesinin](https://www.sciencedirect.com/science/article/pii/S0304397596000771) 4 durumu vardır ve sadece 22 komut uzunluğunda bir durum tanımıyla 6 sembol kullanır. Gerçekten de, bazen sistemlerin "yanlışlıkla Turing tamamlandı(accidentally Turing complete)" olduğu tespit edilir. Bu tür sistemlerin eğlenceli bir referansı: http://bit.ly/2Og1VgX adresinde bulunabilir.
+Ethereum'un _Turing-complete_ olduğunu duyduğunuzda, bunun _Turing-incomplete_ bir sistemde, bir şekilde eksik olan bir özellik olduğu sonucuna varabilirsiniz. Aksine, **tam tersi.** _Turing-complete_'e ulaşmak çok kolaydır; aslında, bilinen [en basit Turing-complete durum makinesinin](https://www.sciencedirect.com/science/article/pii/S0304397596000771) 4 durumu vardır ve sadece 22 komut uzunluğunda bir durum tanımıyla 6 sembol kullanır. Gerçekten de, bazen sistemlerin "yanlışlıkla Turing tamamlandı(accidentally Turing complete)" olduğu tespit edilir. Bu tür sistemlerin eğlenceli bir referansı: http://bit.ly/2Og1VgX adresinde bulunabilir.
 
 Bununla birlikte, daha önce değindiğimiz durma sorunu ⤴️ nedeniyle, özellikle genel blok zincirleri gibi açık erişim sistemlerinde Turing bütünlüğü çok tehlikelidir. Örneğin, modern yazıcılar(Printers) Turing complete'dir(tamamlanmış) ve onları durağan bir duruma göndererek yazdırılacak dosyalar verilebilir. Ethereum'un Turing'i tamamlaması, herhangi bir karmaşıklıktaki herhangi bir programın Ethereum tarafından hesaplanabileceği anlamına gelir. Ancak bu _esneklik, bazı zorlu güvenlik ve kaynak yönetimi sorunlarını_ da beraberinde getiriyor. Yanıt vermeyen bir yazıcı(printer) kapatılıp tekrar açılabilir. Bu, halka açık bir blok zinciri ile mümkün değildir.
 
  ## Turing Bütünlüğünün Etkileri
   
- Turing, bir programı bilgisayarda simüle ederek sonlandırılıp sonlandırılmayacağını tahmin edemeyeceğinizi kanıtladı.Basit bir ifadeyle, bir programı çalıştırmadan yolunu tahmin edemeyiz. Turing-complete sistemleri, sonlanmayan bir programı tanımlamak için kullanılan (aşırı basitleştirmede) bir terim olan "sonsuz döngülerde" çalışabilir. Hiç bitmeyen bir döngü çalıştıran bir program oluşturmak önemsizdir. Ancak, başlangıç koşulları ve kod arasındaki karmaşık etkileşimler nedeniyle, istenmeyen, hiç bitmeyen döngüler uyarı vermeden ortaya çıkabilir. Ethereum'da bu bir zorluk teşkil eder: katılan her düğüm (istemci), çağırdığı akıllı sözleşmeleri çalıştırarak her işlemi doğrulamalıdır. Ancak Turing'in kanıtladığı gibi, Ethereum akıllı bir sözleşmenin sona erip sonlanmayacağını veya gerçekte çalıştırmadan (muhtemelen sonsuza kadar devam edecek) ne kadar süreceğini tahmin edemez. Kazara veya bilerek, bir düğüm onu doğrulamaya çalıştığında sonsuza kadar çalışacak şekilde akıllı bir sözleşme oluşturulabilir. Bu etkili bir şekilde bir DoS saldırısıdır. Ve elbette, doğrulaması bir milisaniye süren bir program ile sonsuza kadar çalışan bir program arasında, kaynakları boşa harcayan sonsuz sayıda kötü, kaynak tüketen, belleği şişiren, CPU'yu aşırı ısıtan programlar vardır. 
+ Turing, bir programı bilgisayarda simüle ederek sonlandırılıp sonlandırılmayacağını tahmin edemeyeceğinizi kanıtladı.Basit bir ifadeyle, bir programı çalıştırmadan yolunu tahmin edemeyiz. Turing-complete sistemleri, sonlanmayan bir programı tanımlamak için kullanılan (aşırı basitleştirmede) bir terim olan "sonsuz döngülerde" 🔄 çalışabilir. Hiç bitmeyen bir döngü çalıştıran bir program oluşturmak önemsizdir. Ancak, başlangıç koşulları ve kod arasındaki karmaşık etkileşimler nedeniyle, istenmeyen, hiç bitmeyen döngüler uyarı vermeden ortaya çıkabilir. Ethereum'da bu bir zorluk teşkil eder: katılan her düğüm (istemci), çağırdığı akıllı sözleşmeleri çalıştırarak her işlemi doğrulamalıdır. Ancak Turing'in kanıtladığı gibi, Ethereum akıllı bir sözleşmenin sona erip sonlanmayacağını veya gerçekte çalıştırmadan (muhtemelen sonsuza kadar devam edecek) ne kadar süreceğini tahmin edemez. Kazara veya bilerek, bir düğüm onu doğrulamaya çalıştığında sonsuza kadar çalışacak şekilde akıllı bir sözleşme oluşturulabilir. Bu etkili bir şekilde bir DoS saldırısıdır. Ve elbette, doğrulaması bir milisaniye süren bir program ile sonsuza kadar çalışan bir program arasında, kaynakları boşa harcayan sonsuz sayıda kötü, kaynak tüketen, belleği şişiren, CPU'yu aşırı ısıtan programlar vardır. 
 ⭐
 _Bir dünya bilgisayarında, kaynakları kötüye kullanan bir program, dünyanın kaynaklarını kötüye kullanır. Ethereum, kaynak kullanımını önceden tahmin edemiyorsa, akıllı bir sözleşme tarafından kullanılan kaynakları nasıl kısıtlar?_
 
