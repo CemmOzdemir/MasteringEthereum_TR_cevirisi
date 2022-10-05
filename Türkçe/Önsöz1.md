@@ -1,3 +1,8 @@
+_Ses kaydı görme engelli dostlarımız veya dinlemeyi seven dostlarımız için benim tarafımdan seslendirilmiştir._ 
+
+https://user-images.githubusercontent.com/57351242/193952612-d0210437-a03d-492a-8c06-85a93c2e4485.mp4
+
+
 
 _BAŞLAMADAN ÖNCE KISA BİR NOT_
 
