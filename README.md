@@ -7,6 +7,13 @@ Mastering Ethereum is a book for developers, offering a guide to the operation a
 :tr: :heart: 
 Mastering Ethereum, *geliştiriciler* için bir kitaptır ve Ethereum, Ethereum Classic, RootStock (RSK) ve diğer uyumlu EVM tabanlı açık blokzincirlerinin çalışması ve kullanımı için bir kılavuzluk(yol göstericilik) sunar. 
 
+:headphones:
+
+https://user-images.githubusercontent.com/57351242/194078761-68af22f1-b035-44db-bdc8-7f8f267fb1b9.mp4
+
+
+
+
 ## Kitabın bütün içeriğine ve lisans haklarına buradan ulaşabilirsiniz: :bookmark:  
  
 [book.asciidoc](https://github.com/ethereumbook/ethereumbook/blob/develop/book.asciidoc). (orjinal hali yani)
