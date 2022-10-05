@@ -1,4 +1,4 @@
-_Ses kaydı görme engelli dostlarımız veya dinlemeyi seven dostlarımız için benim tarafımdan seslendirilmiştir._ 
+_Ses kaydı görme engelli dostlarımız veya dinlemeyi seven dostlarımız için benim tarafımdan seslendirilmiştir.Telaffuz ve dil sürçmelerinden dolayı şimdiden özür dilerim._ 🎧  NOT:Bu seslendirmede arkadaki fon müziği biraz gürültülü olmuş çok pardon sesi kısmanızı tavsiye ederim. 
 
 https://user-images.githubusercontent.com/57351242/193952612-d0210437-a03d-492a-8c06-85a93c2e4485.mp4
 
