@@ -1,4 +1,5 @@
-_Ses kaydı, görme engelli dostlarımız veya dinlemeyi seven dostlarımız için benim tarafımdan seslendirilmiştir.Telaffuz ve dil sürçmelerinden dolayı şimdiden özür dilerim._ 🎧  NOT:Bu seslendirmede arkadaki fon müziği biraz gürültülü olmuş çok pardon.Diğer bölümler öyle değildir🙏. sesi bu bölümlük kısmanızı tavsiye ederim. ⬇️
+_Ses kaydı, görme engelli dostlarımız veya dinlemeyi seven dostlarımız için benim tarafımdan seslendirilmiştir.Telaffuz ve dil sürçmelerinden dolayı şimdiden özür dilerim._ 🎧  
+NOT:Bu bölümde arkadaki fon müziği biraz fazla olmuş çok pardon.Diğer bölümler öyle değildir🙏. sesi bu bölümlük kısmanızı tavsiye ederim.Süresi ⏲️ **16dk** 
 
 📌
 [Google Drive üzerinden](https://drive.google.com/file/d/1DPfRqMzw03oBzFoLihByxM4S1EFlwtJk/view?usp=sharing) bu bölümünü dinleyebilir 🎧 veya indirebilirsiniz.🔽 
