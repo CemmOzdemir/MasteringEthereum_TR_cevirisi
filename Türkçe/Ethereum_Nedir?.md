@@ -1,5 +1,10 @@
 # Ethereum Nedir? 🔵 💙
 
+🎧Bu bölümü dinlemek isterseniz ⬇️
+
+
+
+
 Ethereum genellikle "dünya bilgisayarı" olarak tanımlanır. Ama bu ne anlama geliyor? Bilgisayar
 bilimi bakış açısıyla açıklama ile başlayalım ve ardından bunu, Ethereum'un kapasitesi ve 
 özelliklerinin daha pratik bir analiziyle, Bitcoin ve diğer merkeziyetsiz, bilgi alışverişi platformlarıyla 
