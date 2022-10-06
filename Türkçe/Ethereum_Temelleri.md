@@ -4,19 +4,19 @@ Bu bölümde Ethereum'u keşfetmeye başlayacağız, cüzdanların nasıl kullan
 
 ## Ether Para Birimleri
 
-Ethereum'un para birimine **ether** denir ve "ETH" olarak veya Ξ sembolleriyle (ikonlaştırılmış bir büyük harfe (E'ye benzeyen Yunanca) "Xi" harfinden) veya daha az sıklıkla ♦: örneğin, 1 eter veya 1 ETH , veya Ξ1, veya ♦1 gösterilir.
+Ethereum'un para birimine **ether** denir ve "ETH" olarak veya Ξ sembolleriyle (ikonlaştırılmış bir büyük harfe (E'ye benzeyen Yunanca) "Xi" harfinden) veya daha az sıklıkla ♦: örneğin, 1 ether veya 1 ETH , veya Ξ1, veya ♦1 gösterilir.
 
 🔍 Ξ için U+039E ve ♦ için U+2666 Unicode karakterini kullanın.
 
-Eter, wei olarak adlandırılan mümkün olan en küçük birime kadar daha küçük birimlere bölünür. Bir eter, 1 kentilyon wei'dir 
-("10^^18 veya 1.000.000.000.000.000.000). İnsanların "Ethereum" para birimine atıfta bulunduğunu da duyabilirsiniz, 
-ancak bu yeni başlayanların yaygın bir hatasıdır. Ethereum _sistemdir_, ether para birimidir.**
+Ether, wei olarak adlandırılan ve  en küçük birime kadar daha küçük birimlere bölünebilir. Bir ether, 1 kentilyon wei'dir 
+("10^^18 veya 1.000.000.000.000.000.000). İnsanların **"Ethereum a " para birimi olarak atıfta bulunduğunu da duyabilirsiniz, 
+ancak bu yeni başlayanların(acemilerin) yaygın bir hatasıdır. Ethereum _sistemdir_, ether para birimidir.**
 
-Eter değeri her zaman dahili olarak, Ethereum'da wei cinsinden işaretsiz bir tamsayı değeri olarak temsil edilir. 1 ether işlemi yaptığınızda, işlem değer olarak 10000000000000000000(18 adet 0) wei kodlar.
+Ether değeri her zaman dahili olarak, Ethereum'da wei cinsinden işaretsiz bir tamsayı değeri olarak temsil edilir. 1 ether işlemi yaptığınızda, işlem değer olarak 10000000000000000000(18 adet 0) wei kodlar.
 
 Ether'in çeşitli isimleri, hem Uluslararası Birimler Sistemini (SI) kullanan bilimsel bir isme hem de birçok büyük bilgi işlem ve kriptografi düşüncesine saygı gösteren günlük konuşma diline ait bir isme sahiptir.
 
-Ether isimleri ve birim adları, çeşitli birimleri, onların konuşma dilindeki (ortak) adlarını ve SI adlarını gösterir. Değerin dahili temsiline uygun olarak, tablo, 7. satırda **10**18(10 üstü 18) wei olarak gösterilen eterle birlikte, wei'deki (birinci sıra) tüm isimlerini gösterir.
+Ether isimleri ve birim adları, çeşitli birimleri, onların konuşma dilindeki (ortak) adlarını ve SI adlarını gösterir. Değerin dahili temsiline uygun olarak, tablo, 7. satırda **10**18(10 üstü 18) wei olarak gösterilen etherle birlikte, wei'deki (birinci sıra) tüm isimlerini gösterir.
 
 
 | DEĞERİ(wei cinsinden)| KAÇ KATI     | KULLANIM ADI | BİRİM ADI(IS NAME) |
@@ -450,41 +450,5 @@ Ardından, Solidity'de bir musluk sözleşmesi yazdınız. Sözleşmeyi EVM bayt
 _Bölümün SONU_ 🏁
 
 **"Size çok önemli bir soru soracağım. Dünyayı kontrol etmenin en etkili ve verimli yolu nedir? İki kelime: Akıl Kontrolü!" 🗣️GEORGE CARLİN** 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
