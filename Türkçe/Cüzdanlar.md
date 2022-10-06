@@ -38,7 +38,7 @@ Uygulamada, bir hesabın cüzdanına ihtiyaç duymadan bakiyesini kontrol etmeni
  
 2️⃣ İkinci cüzdan türü, tüm anahtarların tohum(seed)🌱 olarak bilinen tek bir ana anahtardan türetildiği **deterministik** bir cüzdandır. Bu cüzdan türündeki tüm anahtarlar birbiriyle ilişkilidir ve _orijinal tohum varsa_ yeniden oluşturulabilir. Deterministik cüzdanlarda kullanılan bazı farklı anahtar türetme yöntemleri vardır. En yaygın olarak kullanılan türetme yöntemi, [Hiyerarşik Deterministik Cüzdan'da(BIP32/44)] açıklandığı gibi(aşşağıda görsel bir şekilde açıklanıyor ⤵️) ağaç benzeri bir yapı kullanılarak yapılır.
 
-Deterministik cüzdanlar, telefonunuzun çalınması 😫📱 veya tuvalete düşmesi 🚽 gibi veri kaybı kazalarına karşı biraz daha güvenli hale getirmek üzere, tohumlar(seeds)  için genellikle _yazmanız ve kullanmanız_ için bir kelime listesi (İngilizce veya başka bir dilde de olabilir) olarak kodlanır. bir kaza durumunda bunu kullanırız.
+Deterministik cüzdanlar, telefonunuzun çalınması 😫📱 veya tuvalete düşmesi 🚽 gibi veri kaybı kazalarına karşı biraz daha güvenli hale getirmek üzere, tohumlar(seeds)  için genellikle _yazmanız ve kullanmanız_ için bir kelime listesi (İngilizce veya başka bir dilde de olabilir) olarak kodlanırlar. bir kaza durumunda bunu kullanırız.
 Bunlar,cüzdanın **anımsatıcı kelimeleri(mnemonic words)** olarak bilinirler. 
  
  📝NOT-----> Genelde Nnemonic words(anımsatıcı kelimler) 12 veya 24 kelime arası değişiklik gösterirler.
@@ -115,6 +115,60 @@ Bu tasarım, tüm cüzdana erişmek için yalnızca tohuma ihtiyaç duyulduğund
 -------------
 
 ## 2️⃣🅰️ Hiyerarşik Deterministik Cüzdanlar(BIP-32/BIP-44) (Hierarchical Deterministic(HD) Wallets ) 👨‍👩‍👧‍👦
+
+Deterministik cüzdanlar, tek bir tohumdan birçok anahtarın türetilmesini kolaylaştırmak için geliştirildiler. Şu anda, deterministik cüzdanın en gelişmiş şekli, _Bitcoin'in BIP-32 standardı_ tarafından tanımlanan **hiyerarşik deterministik (HD) cüzdandır**. HD cüzdanlar bir ağaç yapısında türetilmiş anahtarlar içerir, öyle ki bir _ana(parent) anahtar, her biri bir dizi çocuk(child) ve torun anahtarı türetebilen bir dizi **alt anahtar** türetebilir._ 🌴 
+
+⬇️Bu ağaç yapısı, HD cüzdanda gösterilmektedir.----> tek bir tohumdan üretilen bir anahtar ağacı.
+
+<img title="HD cüzdan:tek bir tohumdan üretilen bir anahtar ağacı" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/hd_wallet.png">
+
+HD cüzdanlar, daha basit deterministik cüzdanlara göre birkaç önemli avantaj sunar. 1️⃣ İlk olarak, **ağaç yapısı, gelen ödemeleri almak için 🌲 _belirli bir alt anahtar dalı_ kullanıldığında ve giden ödemelerden kaynaklı değişikliklerin sonucundan 🌳 _farklı bir dal_ kullanıldığında olduğu gibi**, 
+🏢Kurumsal mantıkta düşündüğümüzde;
+Anahtar dalları, kurumsal ortamlarda----> departmanlara, yan kuruluşlara, belirli işlevlere veya muhasebe kategorilerine farklı dallar(anahtar demek istenmiş🔑) tahsis ederek de kullanılabilir.
+
+HD cüzdanların 2️⃣ ikinci avantajı, kullanıcıların **ilgili özel anahtarlara erişmeden bir dizi public(açık) anahtar oluşturabilmeleridir.** Bu, HD cüzdanların güvenli olmayan bir sunucuda veya cüzdanın bakiyesindeki parayı harcayabilecek( _özel anahtarlara sahip olmadığı_ ) ve sadece izleme veya para alma görevlerinde kullanılmasına olanak tanır.
+
+-------------
+
+## Tohumlar ve Anımsatıcı Kodlar/kelimeler (Mnemonic Codes) (BIP-39)  
+_Güvenli yedekleme_ 🛡️ ve _gönderim(alma) işlemleri_ 💸 için **özel anahtarı kodlamanın birçok yolu vardır**. Şu anda tercih edilen yöntem, doğru bir sırayla, özel anahtarı benzersiz bir şekilde yeniden oluşturabilen _bir dizi 📰 sözcük kullanmaktır_. Bu genellikle **anımsatıcı olarak bilinir** ve yaklaşım **BIP-39 tarafından standardize edilmiştir.** Bugün, birçok Ethereum cüzdanı (ve diğer kripto para birimleri için cüzdanlar) bu standardı kullanır ve birlikte çalışabilen anımsatıcıları kullanarak _yedekleme ve kurtarma için tohumları içe ve dışa_ aktarabilirler.
+
+Bu yaklaşımın neden popüler💃 hale geldiğini görmek için bir örneğe bakalım ⬇️
+
+Hex cinsinden yazılan deterministik cüzdanda, tohum şu şekildedir:
+
+`FCCF1AB3329FD5DA3DA9577511F8F137`
+
+deterministik bir cüzdanın tohumunun 12 kelimelik mnemonic kelimleri
+
+```
+wolf juice proud gown wool unfair
+wall cliff insect more detail hub
+
+```
+Uygulamada, Hex cinsinden yazarken bir hata olasılığı aşırı derecede yüksektir. Buna karşılık, bilinen kelimelerin listesinin üstesinden gelmek oldukça kolaydır, çünkü esas olarak kelimelerin (özellikle İngilizce kelimelerin) _yazımında_ daha iyi düzeyde yarar vardır. Eğer **"wolğf"** 🐶 kelimesi kazara kaydedilmiş olsaydı, cüzdan kurtarmaya ihtiyaç duyduğumuzda, _"wolğf_"in geçerli bir İngilizce kelime olmadığını🔴 ve bunun yerine **"wolf**"un 🐺 kullanılması gerektiği çabucak anlardık.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
