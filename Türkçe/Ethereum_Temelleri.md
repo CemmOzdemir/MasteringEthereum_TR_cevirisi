@@ -245,7 +245,7 @@ Sonraki birkaç bölümde ilk sözleşmemizi yazacağız. Daha sonra MetaMask c�
 
 Ethereum, **tümü bir sözleşme yazmak ve EVM bayt kodu üretmek için kullanılabilen birçok farklı üst düzey dile sahiptir.** [high_level_languages]'te en belirgin ve ilginç olanlardan birçoğunu okuyabilirsiniz. Akıllı sözleşme programlaması için açık ara en baskın seçim :**Solidity'dir.** Solidity, bu kitabın ortak yazarı Dr. Gavin Wood tarafından oluşturuldu ve Ethereum'da (ve ötesinde) en yaygın kullanılan dil haline geldi. İlk sözleşmemizi yazmak için Solidity kullanacağız.
 
-İlk örneğimiz için bir musluğu kontrol eden bir sözleşme yazacağız. Ropsten test ağında test eteri almak için zaten bir musluk kullandınız. Bir musluk nispeten basit bir şeydir: soran herhangi bir adrese ether verir ve periyodik olarak yeniden doldurulabilir. Bir musluğu, bir insan veya bir web sunucusu tarafından kontrol edilen bir cüzdan olarak uygulayabilirsiniz.
+İlk örneğimiz için bir musluğu kontrol eden bir sözleşme yazacağız. Ropsten test ağında test etheri almak için zaten bir musluk kullandınız. Bir musluk nispeten basit bir şeydir: soran herhangi bir adrese ether verir ve periyodik olarak yeniden doldurulabilir. Bir musluğu, bir insan veya bir web sunucusu tarafından kontrol edilen bir cüzdan olarak uygulayabilirsiniz.
 
 Repoda Yazılmış olan faucet kodlarına  ulaşmak için: 
 
@@ -254,7 +254,7 @@ Repoda Yazılmış olan faucet kodlarına  ulaşmak için:
 
 Bu çok basit bir sözleşme, yapabileceğimiz kadar basit. Aynı zamanda, bir dizi kötü uygulamayı ve güvenlik açıklarını gösteren kusurlu bir sözleşmedir. İlerleyen bölümlerde tüm kusurlarını inceleyerek öğreneceğiz. Ama şimdilik bu sözleşmenin ne yaptığına ve nasıl işlediğine satır satır bakalım. **Solidity'nin birçok öğesinin JavaScript, Java veya C++** gibi mevcut programlama dillerine benzediğini hemen fark edeceksiniz.
 
-İlk satır bir yorumdur: **Lisans hakları için ** 📋 ⚖️ :
+İlk satır bir yorumdur: **Lisans hakları için** 📋 ⚖️ :
  
 `//SPDX-License-Identifier:CC-BY-SA-4.0`
 
