@@ -16,7 +16,7 @@ Ether değeri her zaman dahili olarak, Ethereum'da wei cinsinden işaretsiz bir 
 
 Ether'in çeşitli isimleri, hem Uluslararası Birimler Sistemini (SI) kullanan bilimsel bir isme hem de birçok büyük bilgi işlem ve kriptografi düşüncesine saygı gösteren günlük konuşma diline ait bir isme sahiptir.
 
-Ether isimleri ve birim adları, çeşitli birimleri, onların konuşma dilindeki (ortak) adlarını ve SI adlarını gösterir. Değerin dahili temsiline uygun olarak, tablo, 7. satırda **10**18(10 üstü 18) wei olarak gösterilen etherle birlikte, wei'deki (birinci sıra) tüm isimlerini gösterir.
+Ether isimleri ve birim adları, çeşitli birimleri, onların konuşma dilindeki (ortak) adlarını ve SI adlarını gösterir. Değerin dahili temsiline uygun olarak, tablo, 7. satırda 10^^18(10 üstü 18) wei olarak gösterilen etherle birlikte, wei'deki (birinci sıra) tüm isimlerini gösterir.
 
 
 | DEĞERİ(wei cinsinden)| KAÇ KATI     | KULLANIM ADI | BİRİM ADI(IS NAME) |
