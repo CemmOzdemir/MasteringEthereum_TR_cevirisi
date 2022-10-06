@@ -332,7 +332,7 @@ Solidity derleyicisi şimdi Faucet.sol dosyamızı **EVM bayt kodunda derledi.**
 
 Doğrudan EVM bayt kodunda 💥 programlama yapmak yerine *Solidity* gibi bir dil kullandığınızdan memnun olmalısınız. 😸
 
-📝 NOT:Akıllı sözleşme yazabilmek için sadece solidity dili şart değil **Vyper, Rust, Cairo vb. dillerde vardır.**(En yaygını solidity_dir.sol 😺 )
+📝 NOT:Akıllı sözleşme yazabilmek için sadece solidity dili şart değil **Vyper, Rust vb. dillerde vardır.**(En yaygını solidity_dir.sol 😺 )
 
 ------------
 ## Blokzincir üzerinde akıllı sözleşme oluşturma ⛓️
