@@ -254,7 +254,7 @@ Repoda Yazılmış olan faucet kodlarına  ulaşmak için:
 
 Bu çok basit bir sözleşme, yapabileceğimiz kadar basit. Aynı zamanda, bir dizi kötü uygulamayı ve güvenlik açıklarını gösteren kusurlu bir sözleşmedir. İlerleyen bölümlerde tüm kusurlarını inceleyerek öğreneceğiz. Ama şimdilik bu sözleşmenin ne yaptığına ve nasıl işlediğine satır satır bakalım. **Solidity'nin birçok öğesinin JavaScript, Java veya C++** gibi mevcut programlama dillerine benzediğini hemen fark edeceksiniz.
 
-İlk satır bir yorumdur: **Lisans hakları için** 📋 ⚖️ :
+İlk satır bir yorum satırıdır.: **Lisans hakları için** 📋 ⚖️ :
  
 `//SPDX-License-Identifier:CC-BY-SA-4.0`
 
@@ -449,6 +449,6 @@ Ardından, Solidity'de bir musluk sözleşmesi yazdınız. Sözleşmeyi EVM bayt
 
 _Bölümün SONU_ 🏁
 
-**"Size çok önemli bir soru soracağım. Dünyayı kontrol etmenin en etkili ve verimli yolu nedir? İki kelime: Akıl Kontrolü!" 🗣️GEORGE CARLİN** 
+**"Size çok önemli bir soru soracağım. Dünyayı kontrol etmenin en etkili ve verimli yolu nedir? İki kelime: Akıl Kontrolü!" 🗣️GEORGE CARLIN** 
 
 
