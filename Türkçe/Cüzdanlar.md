@@ -148,9 +148,9 @@ wall cliff insect more detail hub
 ```
 Uygulamada, Hex cinsinden yazarken bir hata olasılığı aşırı derecede yüksektir. Buna karşılık, bilinen kelimelerin listesinin üstesinden gelmek oldukça kolaydır, çünkü esas olarak kelimelerin (özellikle İngilizce kelimelerin) _yazımında_ daha iyi düzeyde yarar vardır. Eğer **"wolğf"** 🐶 kelimesi kazara kaydedilmiş olsaydı, cüzdan kurtarmaya ihtiyaç duyduğumuzda, _"wolğf_"in geçerli bir İngilizce kelime olmadığını🔴 ve bunun yerine **"wolf**"un 🐺 kullanılması gerektiği çabucak anlardık.
 
+Tohumun bir temsilini yazmaktan bahsediyoruz çünkü bu, HD cüzdanları yönetirken iyi bir uygulamadır: veri kaybı durumunda (kaza veya hırsızlık yoluyla) bir cüzdanı kurtarmak için tohum gereklidir, bu nedenle bir yedekleme tutmak çok ihtiyatlıdır. . Ancak, tohum son derece gizli tutulmalıdır, bu nedenle dijital yedeklemelerden dikkatli bir şekilde kaçınılmalıdır; bu nedenle, kalem ve kağıtla yedeklemek için daha önceki tavsiyeler.
 
-
-
+Bu yaptığımız tohumun bir temsilini yazmaktan ibarettir.(Yani mnemonic-anımsatıcıları- kelimeleri). Bu HD cüzdanlarını yönetirken iyi bir uygulamadır: veri kaybı durumunda (veri sızıntısı veya ransomware gibi) bir cüzdanı **kurtarmak için tohum gereklidir**, bu nedenle bir **yedekleme yapmak çok gereklidir**. Ancak, tohum son derece **gizli tutulmalıdır**, bu nedenle _dijital yedeklemelerden_ 🔴 dikkatli bir şekilde kaçınılmalıdır; bu nedenle, daha önceki tavsiyelerimizinden kağıta yazarak yedeklemek daha uygundur 🟢 📖 .
 
 
 
