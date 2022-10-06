@@ -30,7 +30,7 @@ https://user-images.githubusercontent.com/57351242/194078761-68af22f1-b035-44db-
 + Chapter 1: '[What Is Ethereum](https://github.com/ethereumbook/ethereumbook/blob/develop/01what-is.asciidoc)'
 + Bölüm I  : '[ETHEREUM NEDİR?](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_Nedir%3F.md)' :heart: :headphones:
 + Chapter 2: '[Ethereum Basics](https://github.com/ethereumbook/ethereumbook/blob/develop/02intro.asciidoc)'
-+ Bölüm II : '[ETHEREUM TEMELLERİ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_Temelleri.md)' :heart: 
++ Bölüm II : '[ETHEREUM TEMELLERİ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_Temelleri.md)' :heart: :headphones: 
 + Chapter 3: '[Ethereum Clients](https://github.com/ethereumbook/ethereumbook/blob/develop/03clients.asciidoc)'
 + Bölüm III: '[ETHEREUM İSTEMCİLERİ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_istemcileri.md)' ❤️ 
 + Chapter 4: '[Cryptography](https://github.com/ethereumbook/ethereumbook/blob/develop/04keys-addresses.asciidoc)'
