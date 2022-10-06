@@ -1,6 +1,6 @@
 # ETHEREUM TEMELLERİ 🏗️
 
-🎧Bu bölümü dinlemek isterseniz: ⏲️ **46** dk
+🎧Bu bölümü dinlemek isterseniz: ⏲️ **47** dk
 
 📌 [Google Drive](https://drive.google.com/file/d/1Fm9GAmaMiSoybKu26AhlfAhIq1rADVag/view?usp=sharing) üzerinden bu bölümünü dinleyebilir 🎧 veya indirebilirsiniz.🔽
 
