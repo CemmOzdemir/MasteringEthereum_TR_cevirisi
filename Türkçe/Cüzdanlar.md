@@ -218,7 +218,7 @@ Entropi oluşturmak ve anımsatıcı sözcükler olarak kodlamak, anımsatıcı 
 
 ⏬Aşağıda açıklanmıştır.
 
-Tablo 1. Anımsatıcı kodlar: _Entropi ve kelime uzunluğu_
+Tablo 1. Anımsatıcı kodlar: _Entropi ve kelime uzunluğu_ 📊
 
 | Entropi(bit)| toplam sağlamı(bit) |entropi+toplam sağlamı |Anımsatıcı Kelimesi(sayı olarak) |
 | ----------- | ----------- | ----------| --------|
@@ -257,7 +257,7 @@ Anımsatıcıdan tohuma, bir tohum oluşturmak için bir anımsatıcının nası
 
 Anahtar uzatma işlevi, 2048 tur karma(hashing) ile, anımsatıcı veya parolaya karşı kaba kuvvet saldırılarına karşı bir şekilde etkili bir korumadır. Birkaç binden fazla parola ve anımsatıcı kombinasyonu denemeyi (hesaplamada) maliyetli hale getirirken, olası türetilmiş tohumların sayısı çok büyük (2^^512(^^ sembolü üstü şeklindedir) veya yaklaşık 10^^154) - görünür evrendeki atomların sayısından (yaklaşık olarak 10^^80) çok daha fazladır.)
 
-tablo-2 
+tablo-2  📊
 
 | Entropy input (128 bits)       |0c1e24e5917779d297e14d45f14e1a1a   | 
 |--------------|-----------|
@@ -265,7 +265,7 @@ tablo-2
 | Seed (512 bits)    | 5b56c417303faa3fcba7e57400e120a0ca83ec5a4fc9ffba757fbe63fbd77a89a1a3be4c67196f57c39 a88b76373733891bfaba16ed27a813ceed498804c0570 |
 |Passphrase |(none) |
 
-tablo-3
+tablo-3 📊
 
 | Entropy input (128 bits)       |0c1e24e5917779d297e14d45f14e1a1a   | 
 |--------------|-----------|
@@ -273,7 +273,7 @@ tablo-3
 | Seed (512 bits)    | 3b5df16df2157104cfdd22830162a5e170c0161653e3afe6c88defeefb0818c793dbb28ab3ab091897d0 715861dc8a18358f80b79d49acf64142ae57037d1d54 |
 |Passphrase |SuperDuperSecret |
 
-tablo-4
+tablo-4 📊
 
 | Entropy input (256 bits)       | 2041546864449caff939d32d574753fe684d3c947c3346713dd8423e74abcf8c  | 
 |--------------|-----------|
@@ -285,10 +285,47 @@ tablo-4
 
 ## BIP-39'da İsteğe Bağlı Parola
 
+BIP-39 standardı, tohumun türetilmesinde isteğe bağlı bir parola kullanılmasına izin verir. 
+Parola kullanılmazsa, anımsatıcı, "mnemonic" sabit dizesinden oluşan bir Salt'la genişletilir ve herhangi bir anımsatıcıdan belirli bir 512 bitlik tohum üretilir. Bir parola kullanılırsa, germe işlevi aynı anımsatıcıdan farklı bir tohum üretir. 🌱 Aslında, tek bir anımsatıcı verildiğinde, olası her parola farklı bir tohuma yol açar. Esasen, **"yanlış" bir parola yoktur. Tüm parolalar geçerlidir ve hepsi farklı tohumlara yol açarak çok sayıda başlatılmamış cüzdan kümesi oluşturur.** Muhtemel cüzdanlar grubu o kadar büyüktür (2^^512) ki, parola yeterli karmaşıklığa ve uzunluğa sahip olduğu sürece, kullanımda olanı kaba zorlama veya rastgele tahmin etme olasılığı yoktur.
+
+🔍İPUCU : BIP-39'da "yanlış" parola yoktur. Her parola, daha önce kullanılmadığı sürece boş olacak bir cüzdana yol açar.🔍
+
+İsteğe bağlı parola iki önemli özellik oluşturur:
+
+ + Bir anımsatıcıyı kendi başına işe yaramaz hale getiren ve anımsatıcı yedekleri bir hırsız(hacker) tarafından tehlikeye atılmaya karşı koruyan ikincil bir faktör(ezberlenmiş bir şeyi hırsız tahmin edemez).
+ 
+ + makul bir reddedilebilirlik(Hacker veya hırsız açısından) 
+
+Ancak, bir parola kullanmanın aynı zamanda bazı kayıplarıda beraberinde getirdiğine dikkat etmemiz gerekir:
+ 
+ + Cüzdan sahibi komada veya ölmüşse ve başka kimse parolayı bilmiyorsa, tohum işe yaramaz ve cüzdanda depolanan tüm fonlar sonsuza kadar kaybolur. 💸
+ 
+ +  Tersine, sahibi parolayı tohumla aynı yerde yedeklerse, ikinci bir faktörün amacını bozar.
 
 
+Parolalar çok kullanışlı olsa da, varislerin hayatta kalanların kripto para birimini geri kazanabilme olasılığı göz önünde bulundurularak, yalnızca yedekleme ve kurtarma için dikkatlice planlanmış bir süreçle birlikte kullanılmalıdır.
 
+## Anımsatıcı kodlarla çalışma(Working with mnemonic codes)
 
+BIP-39, birçok farklı programlama dilinde bir kütüphane olarak uygulanmaktadır. Örneğin:
+
+1️⃣ [python-mnemonic](https://github.com/trezor/python-mnemonic)
+
+Python'da BIP-39'u öneren _SatoshiLabs_ ekibi tarafından standartın uygulaması
+
+2️⃣[ConsenSys/eth-lightwallet](https://github.com/ConsenSys/eth-lightwallet)
+
+ JS Ethereum cüzdanı (düğümler ve tarayıcılar için)
+
+3️⃣[npm/bip39](https://www.npmjs.com/package/bip39)
+
+Bitcoin BIP-39'un JavaScript uygulaması: Deterministik anahtarlar oluşturmak için anımsatıcı kod üretme paketi
+
+Ayrıca, bağımsız bir web sayfasında (bağımsız bir web sayfası olarak bir BIP-39 oluşturucu) uygulanan bir **BIP-39 oluşturucu** da vardır ve bu, **test ve deneme için son derece kullanışlıdır**. [Anımsatıcı Kod Dönüştürücü(Mnemonic Code Converter)](https://iancoleman.io/bip39/)sayesinde _anımsatıcılar, tohumlar ve genişletilmiş özel anahtarlar_ üretir. Bir tarayıcıda _çevrimdışı olarak kullanılabilir veya çevrimiçi olarak erişilebilir._
+
+<img title="BIP-39 generator" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/bip39_web.png">
+
+## Tohumdan bir HD Cüzdan Oluşturma 🌱+💰
 
 
 
