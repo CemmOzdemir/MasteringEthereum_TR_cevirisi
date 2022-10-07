@@ -386,8 +386,36 @@ Basit bir ifadeyle, kendinizi _sızdırılmış zincir kodu riskine maruz bırak
 Belirli bir ana anahtardan birden fazla alt anahtar türetebilmek açıkça istenilen bir şeydir. Bunu yönetmek için bir indeks numarası kullanılır. Her indeksin🍞, _özel alt türetme fonksiyonu kullanılarak_ 👩‍🍳 bir üst anahtarla birleştirildiğinde🧀 , farklı bir alt anahtar🍕 verir. BIP-32 üstten(parent) ---> alta(child) türetme fonksiyonunda kullanılan dizin numarası 32 bitlik bir tamsayıdır. **Normal (sertleştirilmemiş) türetme fonsiyonuyla türetilen anahtarlar ile 
 sertleştirilmiş türetme yoluyla türetilen anahtarları kolayca ayırt etmek için _bu dizin numarası iki aralığa 🔪 bölünür._ 
 
-0 ile 2<sup>31</sup>–1 (0x0 ila 0x7FFFFFFF) arasındaki index numaraları yalnızca _normal türetme_ için kullanılır. 2<sup>31</sup> ve 2<sup>32</sup>-1 (0x80000000 ila 0xFFFFFFFF) arasındaki index numaraları yalnızca sertleştirilmiş türetme için kullanılır. Bu nedenle, indeks numarası 231'den küçükse alt anahtarlar normaldir, indeks numarası 2<sup>31</sup> 'e eşit veya daha büyükse alt(child) sertleştirilmiştir.
+0 ile 2<sup>31</sup>–1 (0x0 ila 0x7FFFFFFF) arasındaki index numaraları yalnızca _normal türetme_ için kullanılır. 2<sup>31</sup> ve 2<sup>32</sup>-1 (0x80000000 ila 0xFFFFFFFF) arasındaki index numaraları **yalnızca sertleştirilmiş türetme** için kullanılır. Bu nedenle, indeks numarası 231'den küçükse alt anahtarlar normaldir, indeks numarası 2<sup>31</sup> 'e eşit veya daha büyükse alt(child) sertleştirilmiştir.
 
-2<sup>31</sup>
+Index numaralarının okunmasını ve görüntülenmesini kolaylaştırmak için, sertleştirilmiş alt öğelerin index numaraları, sıfırdan başlayarak, ancak bir **asal sembolle** görüntülenir. Bu nedenle, ilk normal(**sertleştirilmemiş**) alt anahtar 0 olarak görüntülenirken, 
+0️⃣ ilk sertleştirilmiş alt anahtar (dizin 0x80000000) 0&#x27; olarak görüntülenir. 
+Sırayla, 
+1️⃣ikinci sertleştirilmiş anahtarın indeksi 0x80000001 olur ve 1&#x27; olarak görüntülenir ve bu böyle devam eder. 
+Bir HD cüzdan indeksi i&#x27; gördüğünüzde, bu 2<sup>31</sup> + i anlamına gelir.
+
+----------------------
+
+## HD cüzdanı Anahtar Tanımlayıcısı (yol/Path)🚦
+
+Bir HD cüzdandaki anahtarlar, bir "yol" adlandırma kuralı kullanılarak tanımlanır ve ağacın her seviyesi bir eğik çizgi (/) karakteriyle ayrılır (Aşagıdaki tabloda daha net bir şekilde açıklanmıştır⏬tablo-5). **Ana özel anahtardan türetilen özel anahtarlar** ----> **m** ile başlar. Ana genel anahtardan türetilen genel anahtarlar **M** ile başlar. Bu nedenle, ana özel anahtarın ilk alt özel anahtarı **m/0'dır**. İlk alt genel anahtar **M/0'dır**. Birinci alt(child)'ın ikinci alt'ı(grandchild) m/0/1, vb.
+
+
+Bir anahtarın "soyu-kökü(ancestry)", türetildiği ana anahtara ulaşana kadar **sağdan sola** okunur. Örneğin, m/x/y/z tanımlayıcısı, m/x/y anahtarının Z-inci çocuğu(alt soyu) olan anahtarı tanımlar; bu, m/x anahtarının y-inci çocuğu(alt soyu) tanımlar.
+
+ tablo-5 📊 HD cüzdan yolu örnekleri
+ 
+ | HD YOLU      |ANAHTARIN AÇIKLAMASI | 
+|--------------|-----------|
+|m/0 |  Ana özel anahtarın (m) ilk (0) alt özel anahtarı   | 
+| m/0/0   |  ilk çocuğun(alt-child ) özel anahtarı (m/0)   |
+|  m/0'/0  |  İlk sertleştirilmiş alt anahtarın ilk normal alt-soyu (m/0')   |
+| m/1/0   |  İkinci alt anahtarın ilk alt-soyunun özel anahtarı (m/1)   |
+| M/23/17/0/0   | 24. alt(child) anahtarının 18. alt-soyunun(grandchild) ilk alt-soyunun ilk altsoyunun genel anahtarı    |
+
+
+
+
+
 
 
