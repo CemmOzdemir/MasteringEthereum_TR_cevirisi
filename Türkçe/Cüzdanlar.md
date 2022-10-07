@@ -386,9 +386,8 @@ Basit bir ifadeyle, kendinizi _sızdırılmış zincir kodu riskine maruz bırak
 Belirli bir ana anahtardan birden fazla alt anahtar türetebilmek açıkça istenilen bir şeydir. Bunu yönetmek için bir indeks numarası kullanılır. Her indeksin🍞, _özel alt türetme fonksiyonu kullanılarak_ 👩‍🍳 bir üst anahtarla birleştirildiğinde🧀 , farklı bir alt anahtar🍕 verir. BIP-32 üstten(parent) ---> alta(child) türetme fonksiyonunda kullanılan dizin numarası 32 bitlik bir tamsayıdır. **Normal (sertleştirilmemiş) türetme fonsiyonuyla türetilen anahtarlar ile 
 sertleştirilmiş türetme yoluyla türetilen anahtarları kolayca ayırt etmek için _bu dizin numarası iki aralığa 🔪 bölünür._ 
 
-0 ile 231–1 (0x0 ila 0x7FFFFFFF) arasındaki dizin numaraları yalnızca normal türetme için kullanılır. 231 ve 232–1 (0x80000000 ila 0xFFFFFFFF) arasındaki dizin numaraları yalnızca sertleştirilmiş türetme için kullanılır. Bu nedenle, indeks numarası 231'den küçükse çocuk normaldir, indeks numarası 231'e eşit veya daha büyükse çocuk sertleşir.
+0 ile 2<sup>31</sup>–1 (0x0 ila 0x7FFFFFFF) arasındaki index numaraları yalnızca _normal türetme_ için kullanılır. 2<sup>31</sup> ve 2<sup>32</sup>-1 (0x80000000 ila 0xFFFFFFFF) arasındaki index numaraları yalnızca sertleştirilmiş türetme için kullanılır. Bu nedenle, indeks numarası 231'den küçükse alt anahtarlar normaldir, indeks numarası 2<sup>31</sup> 'e eşit veya daha büyükse alt(child) sertleştirilmiştir.
 
-
-
+2<sup>31</sup>
 
 
