@@ -198,9 +198,9 @@ BIP-39, ⬇️ burada dokuz adımda 9️⃣ açıkladığımız bir _anımsatıc
 
 🅱️--7️⃣'den 9️⃣'a kadar olan adımlar, anımsatıcıdan ----> tohuma bölümünde gösterilir.
 
-## Anımsatıcı kelimeler üretmek
+## Anımsatıcı kelimeler üretmek 🅰️
 
-Anımsatıcı kelimeler, BIP-39'da tanımlanan standartlaştırılmış süreç kullanılarak cüzdan tarafından otomatik olarak oluşturulur. **Cüzdan bir entropi kaynağından başlar, bir sağlama toplamı ekler ve ardından entropiyi bir kelime listesine eşler**: 🅰️
+Anımsatıcı kelimeler, BIP-39'da tanımlanan standartlaştırılmış süreç kullanılarak cüzdan tarafından otomatik olarak oluşturulur. **Cüzdan bir entropi kaynağından başlar, bir sağlama toplamı ekler ve ardından entropiyi bir kelime listesine eşler**: 
 
 1️⃣ 128 ile 256 bitlik kriptografik olarak rastgele bir S dizisi oluşturun.
 
@@ -220,10 +220,31 @@ Entropi oluşturmak ve anımsatıcı sözcükler olarak kodlamak, anımsatıcı 
 
 Tablo 1. Anımsatıcı kodlar: _Entropi ve kelime uzunluğu_
 
-| Entropi     |  |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+| Entropi(bit)| toplam sağlamı(bit) |entropi+toplam sağlamı |Anımsatıcı Kelimesi(sayı olarak) |
+| ----------- | ----------- | ----------| --------|
+|  128     |  4      | 132|12 |
+| 160 | 5        |165 |15 |
+|192|6|198|18|
+|224|7|231|21|
+|256|8|264|24|
+
+🅰️'nın görseli ⬇️
+
+<img title="Entropi oluşturma ve anımsatıcı sözcükler olarak kodlama" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/bip39-part1.png">
+
+
+## Anımsatıcılardan Tohuma 🅱️
+
+Anımsatıcı kelimeler, 128 ile 256 bit uzunluğundaki entropiyi temsil eder. 
+Entropi daha sonra, _PBKDF2_ anahtar uzatma fonksiyonu kullanılarak daha uzun (512 bit) bir tohum elde etmek için kullanılır. 🌱 Üretilen tohum, deterministik bir cüzdan oluşturmak ve anahtarlarını elde etmek için kullanılır.
+
+Anahtar uzatma fonksiyonu **iki parametre alır**-----> 1️⃣Mnemonic ve 2️⃣Salt.
+Anahtar uzatma fonksiyonundaki bir **Salt'ın** amacı, _kaba kuvvet 👊 saldırısına olanak tanıyan bir arama tablosu oluşturmayı zorlaştırmaktır_. BIP-39 standardında Salt'ın başka bir amacı daha vardır: BIP-39'daki İsteğe bağlı parola bölümünde daha ayrıntılı olarak açıklayacağımız gibi, **tohumu koruyan ek bir güvenlik 🛡️faktörü görevi gören bir parolanın girilmesine olanak tanır.**
+
+
+
+
+
 
 
 
