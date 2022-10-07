@@ -241,6 +241,50 @@ Entropi daha sonra, _PBKDF2_ anahtar uzatma fonksiyonu kullanılarak daha uzun (
 Anahtar uzatma fonksiyonu **iki parametre alır**-----> 1️⃣Mnemonic ve 2️⃣Salt.
 Anahtar uzatma fonksiyonundaki bir **Salt'ın** amacı, _kaba kuvvet 👊 saldırısına olanak tanıyan bir arama tablosu oluşturmayı zorlaştırmaktır_. BIP-39 standardında Salt'ın başka bir amacı daha vardır: BIP-39'daki İsteğe bağlı parola bölümünde daha ayrıntılı olarak açıklayacağımız gibi, **tohumu koruyan ek bir güvenlik 🛡️faktörü görevi gören bir parolanın girilmesine olanak tanır.**
 
+7'den 9'a kadar olan adımlarda açıklanan süreç, önceki bölümde açıklanan sürecin devamı niteliğindedir:
+
+7️⃣ _PBKDF2 anahtar uzatma fonksiyonu_ ilk parametresi, 6. adımda üretilen anımsatıcıdır.
+
+8️⃣ PBKDF2 anahtar uzatma işlevinin ikinci parametresi Salt'tır. Salt, kullanıcı tarafından sağlanan isteğe bağlı bir parola ile birleştirilmiş "anımsatıcı" dize sabitinden oluşur.
+
+9️⃣ PBKDF2, HMAC-SHA512 algoritmasıyla 2048 tur hashing(karma) kullanarak anımsatıcı ve salt parametrelerini uzatır(genişletir) ve nihai çıktı olarak 512 bitlik bir değer üretir. **Bu 512 bitlik değer TOHUMDUR** 🌱.
+
+Anımsatıcıdan tohuma, bir tohum oluşturmak için bir anımsatıcının nasıl kullanıldığını gösterir.⬇️
+
+🅱️'nin görseli
+
+<img title="BIP-39Seed" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/bip39-part2.png">
+
+Anahtar uzatma işlevi, 2048 tur karma(hashing) ile, anımsatıcı veya parolaya karşı kaba kuvvet saldırılarına karşı bir şekilde etkili bir korumadır. Birkaç binden fazla parola ve anımsatıcı kombinasyonu denemeyi (hesaplamada) maliyetli hale getirirken, olası türetilmiş tohumların sayısı çok büyük (2^^512(^^ sembolü üstü şeklindedir) veya yaklaşık 10^^154) - görünür evrendeki atomların sayısından (yaklaşık olarak 10^^80) çok daha fazladır.)
+
+tablo-2 
+
+| Entropy input (128 bits)       |0c1e24e5917779d297e14d45f14e1a1a   | 
+|--------------|-----------|
+|Mnemonic (12 words) | army van defense carry jealous true garbage claim echo media make crunch     | 
+| Seed (512 bits)    | 5b56c417303faa3fcba7e57400e120a0ca83ec5a4fc9ffba757fbe63fbd77a89a1a3be4c67196f57c39 a88b76373733891bfaba16ed27a813ceed498804c0570 |
+|Passphrase |(none) |
+
+tablo-3
+
+| Entropy input (128 bits)       |0c1e24e5917779d297e14d45f14e1a1a   | 
+|--------------|-----------|
+|Mnemonic (12 words) | army van defense carry jealous true garbage claim echo media make crunch     | 
+| Seed (512 bits)    | 3b5df16df2157104cfdd22830162a5e170c0161653e3afe6c88defeefb0818c793dbb28ab3ab091897d0 715861dc8a18358f80b79d49acf64142ae57037d1d54 |
+|Passphrase |SuperDuperSecret |
+
+tablo-4
+
+| Entropy input (256 bits)       | 2041546864449caff939d32d574753fe684d3c947c3346713dd8423e74abcf8c  | 
+|--------------|-----------|
+|Mnemonic (24 words) | cake apple borrow silk endorse fitness top denial coil riot stay wolf luggage oxygen faint major edit measure invite love trap field dilemma oblige     | 
+| Seed (512 bits)    | 3269bce2674acbd188d4f120072b13b088a0ecf87c6e4cae41657a0bb78f5315b33b3a04356e53d062e5 5f1e0deaa082df8d487381379df848a6ad7e98798404 |
+|Passphrase |(none)|
+
+-----------
+
+## BIP-39'da İsteğe Bağlı Parola
+
 
 
 
