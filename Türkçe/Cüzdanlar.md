@@ -130,7 +130,7 @@ HD cüzdanların 2️⃣ ikinci avantajı, kullanıcıların **ilgili özel anah
 
 -------------
 
-## Tohumlar ve Anımsatıcı Kodlar/kelimeler (Mnemonic Codes) (BIP-39)  
+## Tohumlar ve Anımsatıcı Kodlar/kelimeler (Mnemonic Codes) (BIP-39) 🔠 
 _Güvenli yedekleme_ 🛡️ ve _gönderim(alma) işlemleri_ 💸 için **özel anahtarı kodlamanın birçok yolu vardır**. Şu anda tercih edilen yöntem, doğru bir sırayla, özel anahtarı benzersiz bir şekilde yeniden oluşturabilen _bir dizi 📰 sözcük kullanmaktır_. Bu genellikle **anımsatıcı olarak bilinir** ve yaklaşım **BIP-39 tarafından standardize edilmiştir.** Bugün, birçok Ethereum cüzdanı (ve diğer kripto para birimleri için cüzdanlar) bu standardı kullanır ve birlikte çalışabilen anımsatıcıları kullanarak _yedekleme ve kurtarma için tohumları içe ve dışa_ aktarabilirler.
 
 Bu yaklaşımın neden popüler💃 hale geldiğini görmek için bir örneğe bakalım ⬇️
@@ -152,23 +152,78 @@ Tohumun bir temsilini yazmaktan bahsediyoruz çünkü bu, HD cüzdanları yönet
 
 Bu yaptığımız tohumun bir temsilini yazmaktan ibarettir.(Yani mnemonic-anımsatıcıları- kelimeleri). Bu HD cüzdanlarını yönetirken iyi bir uygulamadır: veri kaybı durumunda (veri sızıntısı veya ransomware gibi) bir cüzdanı **kurtarmak için tohum gereklidir**, bu nedenle bir **yedekleme yapmak çok gereklidir**. Ancak, tohum son derece **gizli tutulmalıdır**, bu nedenle _dijital yedeklemelerden_ 🔴 dikkatli bir şekilde kaçınılmalıdır; bu nedenle, daha önceki tavsiyelerimizinden kağıta yazarak yedeklemek daha uygundur 🟢 📖 .
 
+Özetle, bir HD cüzdan için tohumun şifrelenmesi için bir kurtarma kelime listesinin kullanılması, güvenli bir şekilde dışa aktarmanın, kopyalamanın, kağıda kaydetmenin,bir _özel anahtar setini_ başka bir cüzdana aktarmanın **en kolay yolunu sağlar**.📶
+
+## Cüzdan En İyi Uygulamaları:
+
+Kripto para cüzdan teknolojisi geliştikçe, cüzdanları geniş çapta birlikte çalışabilir, kullanımı kolay, güvenli ve esnek hale getiren belirli ortak endüstri standartları ortaya çıktı. 
+Bu standartlar ayrıca cüzdanların, **tümü tek bir anımsatıcıdan birden çok farklı kripto para birimi için anahtar türetmesine olanak tanır.** 📖 
+
+⬇️Bu ortak standartlar şunlardır:
+ * BIP-39'a dayalı anımsatıcı kod sözcükleri
+
+ * BIP-32'ye dayalı HD cüzdanlar
+
+ * BIP-43'e dayalı çok amaçlı HD cüzdan yapısı
+
+ * BIP-44'e dayalı çok para birimli ve çok hesaplı cüzdanlar
+
+Bu standartlar gelecekteki gelişmelerle değişebilir(şuanlık değişmiş olabilir) veya eskimiş olabilir, ancak şimdilik çoğu blok zinciri platformu ve kripto para birimleri için **fiili cüzdan standardı haline gelen bir dizi birbirine bağlı bir teknoloji oluşturuyorlar.** ✒️
+
+**Standartlar**, çok çeşitli yazılım ve donanım cüzdanları tarafından benimsenerek tüm bu cüzdanları birlikte çalışabilir hale getirdi. 
+Bir kullanıcı, bu cüzdanlardan birinde oluşturulan bir **anımsatıcıyı dışa aktarabilir ve tüm anahtarları ve adresleri kurtararak başka bir cüzdana aktarabilir.**
+
+Bu standartları destekleyen bazı**yazılım cüzdan** 💻 örnekleri arasında {**Jaxx, MetaMask, MyCrypto ve MyEtherWallet(MEW)**} bulunur. 
+
+Bu standartları destekleyen **donanım cüzdanlarına** 💾 örnek olarak {**Keepkey, Ledger ve Trezor**} verilebilir.
+
+Aşağıdaki bölümlerde bu teknolojilerin her biri ayrıntılı olarak incelenmektedir. ⬇️
+
+🔍 İPUCU Bir Ethereum cüzdanı kullanıyorsanız, açıklandığı gibi _BIP-32, BIP-39, BIP-43 ve BIP-44 standartlarını_ izleyerek yedekleme için anımsatıcı kod olarak şifrelenmiş(kodlanmış) bir tohum ile bir HD cüzdan olarak oluşturulmalıdır. 🔍
+
+## Anımsatıcı Kod Kelimeleri /Mnemonic Code Words  (BIP-39) 🔡#️⃣  
+
+Anımsatıcı kod sözcükleri, **deterministik bir cüzdan türetmek için tohum olarak kullanılan rastgele bir sayıyı kodlayan sözcük dizileridir**. Sözcük dizisi, tohumu yeniden oluşturmak ve oradan, yani cüzdandan türetilmiş tüm anahtarları yeniden oluşturmak için yeterlidir. Anımsatıcı kelimelerle deterministik cüzdanlar uygulayan bir cüzdan uygulaması, _ilk cüzdan oluştururken kullanıcıya 12 ila 24 kelimelik bir dizi_ gösterecektir.Bu sözcük dizisi cüzdanın yedeğidir ve aynı veya herhangi bir uyumlu cüzdan uygulamasındaki tüm anahtarları kurtarmak ve yeniden oluşturmak için kullanılabilir. Daha önce açıkladığımız gibi, anımsatıcı kelime listeleri, kullanıcıların cüzdanlarını yedeklemelerini kolaylaştırır, çünkü bunların **okunması ve doğru şekilde kopyalanması kolaydır**.
 
 
+📝NOT:Anımsatıcı kelimeler(Mnemonic words ) genellikle _"beyin cüzdanları"_ 🧠 ile karıştırılır. Bunlar aynı şeyler değildirler. Birincil fark, bir 🧠 beyin cüzdanının **kullanıcı tarafından seçilen kelimelerden oluşması**, 🔡anımsatıcı kelimelerin ise cüzdan tarafından **rastgele oluşturulup kullanıcıya sunulmasıdır**. Bu önemli fark, anımsatıcı sözcükleri çok daha güvenli hale getirir, çünkü insanlar _çok zayıf rastgelelik kaynaklarıdır_(bilgisayarlara kıyasla). Belki daha da önemlisi, "beyin cüzdanı" terimini kullanmak, **kelimelerin ezberlenmesi gerektiğini gösterir** ki bu korkunç bir fikirdir ve ihtiyaç duyduğunuzda yedeğinizin olmaması Türkiyede araba almak için 💸 500000 TL kredi çekip ömrünün sonuna kadar faizi ödemek için çalışmak gibibidir.🚙 📝  
 
+Anımsatıcı kodlar _BIP-39'da_ tanımlanmıştır. BIP-39'un bir anımsatıcı kod standardının bir uygulaması olduğunu unutmayın. [_Electrum Bitcoin cüzdanı_](https://electrum.org/#home) tarafından kullanılan ve BIP-39'dan önce gelen, farklı bir kelime grubuyla farklı bir standartı vardı. BIP-39, trezor şirketinin desteğiyle Trezor donanım cüzdanıyla önerildi ve  bu cüzdan Electrum'un uygulamasıyla uyumlu değil. Bununla birlikte, _BIP-39 artık yüzlerce birlikte çalışabilen, uygulamada geniş endüstri desteği elde etmiştir ve **fiili endüstri standardı olarak kabul edilmelidir**. Ayrıca, _BIP-39, Ethereum'u destekleyen çok para birimli cüzdanlar üretmek için kullanılabilirken_, Electrum tohumları bunu yapamaz.
 
+-------------------
 
+BIP-39, ⬇️ burada dokuz adımda 9️⃣ açıkladığımız bir _anımsatıcı kod ve tohum_(Mnemonic code 🔡 & seed 🌱) oluşturulmasını tanımlar.Daha iyi bir açıklama yapabilmek için, süreç iki bölüme ayrılmıştır:(aşağıda görsel şekilde açıklanmıştır.) 
 
+🅰️--1️⃣'den 6️⃣'ya kadar olan adımlar, _Anımsatıcı sözcükler oluşturma_ bölümünde gösterilir.
 
+🅱️--7️⃣'den 9️⃣'a kadar olan adımlar, anımsatıcıdan ----> tohuma bölümünde gösterilir.
 
+## Anımsatıcı kelimeler üretmek
 
+Anımsatıcı kelimeler, BIP-39'da tanımlanan standartlaştırılmış süreç kullanılarak cüzdan tarafından otomatik olarak oluşturulur. **Cüzdan bir entropi kaynağından başlar, bir sağlama toplamı ekler ve ardından entropiyi bir kelime listesine eşler**: 🅰️
 
+1️⃣ 128 ile 256 bitlik kriptografik olarak rastgele bir S dizisi oluşturun.
 
+2️⃣ S'nin SHA-256 karma değerinin ilk S uzunluğunu ÷ 32 bitini alarak bir S sağlama toplamı oluşturun.
 
+3️⃣ Sağlama toplamını rastgele S dizisinin sonuna ekleyin.
 
+4️⃣ Sıra ve sağlama toplamı birleştirmeyi 11 bitlik bölümlere ayırın.
 
+5️⃣ Her 11 bitlik değeri önceden tanımlanmış 2048 kelimelik sözlükten bir kelimeye eşleyin.
 
+6️⃣ Sırayı koruyarak, kelime dizisinden anımsatıcı kodu oluşturun.
 
+Entropi oluşturmak ve anımsatıcı sözcükler olarak kodlamak, anımsatıcı sözcükleri oluşturmak için entropinin nasıl kullanıldığını gösterir.
 
+⏬Aşağıda açıklanmıştır.
+
+Tablo 1. Anımsatıcı kodlar: _Entropi ve kelime uzunluğu_
+
+| Entropi     |  |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
 
 
 
