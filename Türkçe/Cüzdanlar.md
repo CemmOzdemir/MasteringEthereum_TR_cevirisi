@@ -360,9 +360,33 @@ Genişletilmiş bir Genel(public) anahtar, **xpub** öneki ile ayırt edilir:
 
 `xpub661MyMwAqRbcEnKbXcCqD2GT1di5zQxVqoHPAgHNe8dv5JP8gWmDproS6kFHJnLZd23tWevhdn...`
 
+HD cüzdanların çok kullanışlı bir özelliği de, **özel anahtarlara sahip olmadan 🔴 Ana genel anahtarlardan(parent public Key) 🔑 alt genel(child public key) anahtarları türetebilme yeteneğidir. Bu bize bir alt Genel(public) anahtarı türetmenin iki yolunu sunar: 
+1️⃣ ya doğrudan alt özel(child private Key) anahtardan 
+2️⃣ya da ana genel (Parent public key) anahtardan.
 
+Bu nedenle, HD cüzdan yapısının  _o dalındaki tüm genel anahtarları (ve yalnızca genel anahtarları) türetmek için genişletilmiş bir genel anahtar kullanılabilir._
+Bu kısayol, bir _sunucunun veya uygulamanın genişletilmiş_ bir genel anahtarın bir kopyasına sahip olduğu ancak hiçbir özel anahtarın olmadığı, çok güvenli yalnızca genel anahtar dağıtımları oluşturmak için kullanılabilir. Bu tür bir dağıtım, sonsuz sayıda genel anahtar ve Ethereum adresi üretebilir, ancak bu adreslere gönderilen **paranın hiçbirini harcayamaz**. Bu arada, daha güvenli başka bir sunucuda, **genişletilmiş özel anahtar**, işlemleri imzalamak ve parayı harcamak için **karşılık gelen tüm özel anahtarları türetebilir.**
 
+Bu yöntemin yaygın bir uygulaması, bir **e-ticaret** uygulamasına hizmet eden bir web sunucusuna **genişletilmiş bir genel anahtar yüklemektir**. Web sunucusu, her işlem için (örneğin, bir müşteri alışveriş sepeti için) yeni bir Ethereum adresi oluşturmak için genel anahtar türetme işlevini kullanabilir ve hırsızlığa karşı, _savunmasız olabilecek herhangi bir özel anahtara sahip olmayacaktır_. HD cüzdanlar olmadan bunu yapmanın tek yolu, ayrı bir güvenli sunucuda **binlerce Ethereum adresi oluşturmak ve ardından bunları e-ticaret sunucusuna önceden yüklemektir**. Bu yaklaşım 🐢 yavaştır. Dahası **sunucunun anahtarlarının bitmemesini sağlamak için sürekli bakım gerektirir**, bu nedenle HD cüzdanlardan genişletilmiş açık(genel) anahtarları kullanma tercihi doğru olacaktır.
 
+Bu çözümün diğer bir yaygın uygulaması, soğuk depolama 🥶 veya donanım cüzdanları 💾 içindir. Bu senaryoda, **genişletilmiş özel anahtar** bir **donanım cüzdanında** depolanabilirken, genişletilmiş **genel anahtar çevrimiçi tutulabilir**. Özel anahtarlar güvenli bir şekilde çevrimdışı olarak saklanırken, kullanıcı istediği zaman "alma(recieve)" adresleri oluşturabilir. Fonları harcamak isteyen kullanıcı, genişletilmiş özel anahtarı çevrimdışı imzalama ile Ethereum istemcisinde kullanabilir veya donanım cüzdan cihazında işlemleri imzalayabilir.✏️
+
+## Sertleştirilmiş(zorlaştırılmış/Hardened) Alt(child) anahtar türetme 💪
+
+ _Genişletilmiş bir genel anahtardan veya xpub'dan bir genel anahtar dalı 🌴 türetme yeteneği çok harikadır🥳, ancak potansiyel bir riskle 👣 birlikte gelir_. Bir xpub'a erişim, _alt özel anahtarlara erişim sağlamaz_ 🔴. Bununla birlikte, **xpub zincir kodunu içerdiğinden** (üst genel anahtardan(Parent Public)-----> alt genel(child public) anahtarları türetmek için kullanılır), **bir alt özel anahtarı 👶 biliniyorsa veya bir şekilde sızdırılmışsa**, diğer **tüm alt özel anahtarları türetmek için zincir koduyla birlikte kullanılabilir**. Tek bir sızdırılmış alt özel anahtarı, bir ana zincir koduyla(parent chain-code) birlikte tüm alttakilerin tüm özel anahtarlarını ortaya çıkarır. _Daha da kötüsü, bir ana zincir koduyla(parent chain-code) birlikte + 👶 alt özel anahtar, 👪 ana özel anahtarı çıkarmak için kullanılabilir_.
+
+⬇️Aşağıdaki görseli size yardımcı olması için bırakıyorum 💙 .Daha fazla bilgi için: [Medium Yazısı](https://medium.com/geekculture/what-is-bitcoin-improvement-proposal-32-bip-32-586a3f36a95c)
+
+<img title="BIP-32 üreticisi sertleştirilmiş" src="https://miro.medium.com/max/640/1*PphduD-J7C19wLA9fWP7Gw.png">
+
+Basit bir ifadeyle, kendinizi _sızdırılmış zincir kodu riskine maruz bırakmadan_ ,genel(public) anahtarların dallarını türetmek için  xpub'ın esnekliğini rahatça kullanmak istiyorsanız, bunu **normal bir Ana(Parent--üst) 🔴 yerine** **sertleştirilmiş bir Ana anahtardan(Hardened Parent key) 🟢 türetmelisiniz**. _En iyi uygulama, ana anahtarların güvenliğinin ihlal edilmesini önlemek için ana anahtarların düzeylerini bir alt öğelerini her zaman sertleştirilmiş türetme ile türetilmesidir._ (Yukarıdaki görseldeki gibi)
+
+## Normal ve Sertleştirilmiş türetme için indeks numaraları #️⃣0️⃣1️⃣
+
+Belirli bir ana anahtardan birden fazla alt anahtar türetebilmek açıkça istenilen bir şeydir. Bunu yönetmek için bir indeks numarası kullanılır. Her indeksin🍞, _özel alt türetme fonksiyonu kullanılarak_ 👩‍🍳 bir üst anahtarla birleştirildiğinde🧀 , farklı bir alt anahtar🍕 verir. BIP-32 üstten(parent) ---> alta(child) türetme fonksiyonunda kullanılan dizin numarası 32 bitlik bir tamsayıdır. **Normal (sertleştirilmemiş) türetme fonsiyonuyla türetilen anahtarlar ile 
+sertleştirilmiş türetme yoluyla türetilen anahtarları kolayca ayırt etmek için _bu dizin numarası iki aralığa 🔪 bölünür._ 
+
+0 ile 231–1 (0x0 ila 0x7FFFFFFF) arasındaki dizin numaraları yalnızca normal türetme için kullanılır. 231 ve 232–1 (0x80000000 ila 0xFFFFFFFF) arasındaki dizin numaraları yalnızca sertleştirilmiş türetme için kullanılır. Bu nedenle, indeks numarası 231'den küçükse çocuk normaldir, indeks numarası 231'e eşit veya daha büyükse çocuk sertleşir.
 
 
 
