@@ -71,7 +71,7 @@ Bununla birlikte, birçok Ethereum istemcisi (geth dahil), ekstra güvenlik içi
             "iv": "d10c6ec5bae81b6cb9144de81037fa15"
         },
         "kdf": "scrypt",
-        "kdfparams": {    //aşşağıda belirttiği gibi .n aşşağıdaki tur(round) sayısını gösteriyor
+        "kdfparams": {    //aşağıda belirttiği gibi .n aşşağıdaki tur(round) sayısını gösteriyor
             "dklen": 32,
             "n": 262144,
             "p": 1,
@@ -91,7 +91,7 @@ Anahtar deposu(key store) 🔑 formatı, ↗️[parola genişletme algoritması(
 
 Basit bir ifadeyle, **özel anahtar doğrudan parola tarafından şifrelenmez**. Bunun yerine, parola art arda hash edilerek uzatılır. hash fonksiyonu(karma işlev), JSON anahtar deposundaki _crypto.kdfparams.n_ parametresi olarak görülebilen _262,144_ tur için tekrarlanır. Parolayı kaba kuvvetle zorlamaya çalışan bir saldırganın, denemeye çalıştığı her parola için 262.144 tur karma(hash) uygulaması gerekir; bu, saldırıyı yeterli karmaşıklık ve uzunlukta parolalar için olanaksız hale getirmek için 🐢 yavaşlatır.
 
-⬇️ aşağıdaki görseli size yarrdımcı olsun diye bırakıyorum.
+⬇️ aşağıdaki görseli size yardımcı olsun diye bırakıyorum.
 
 <img title="KDF" src="https://miro.medium.com/max/640/1*gqoIas2TgHfFn9u_QqnO9A.png">
 
@@ -146,9 +146,7 @@ wolf juice proud gown wool unfair
 wall cliff insect more detail hub
 
 ```
-Uygulamada, Hex cinsinden yazarken bir hata olasılığı aşırı derecede yüksektir. Buna karşılık, bilinen kelimelerin listesinin üstesinden gelmek oldukça kolaydır, çünkü esas olarak kelimelerin (özellikle İngilizce kelimelerin) _yazımında_ daha iyi düzeyde yarar vardır. Eğer **"wolğf"** 🐶 kelimesi kazara kaydedilmiş olsaydı, cüzdan kurtarmaya ihtiyaç duyduğumuzda, _"wolğf_"in geçerli bir İngilizce kelime olmadığını🔴 ve bunun yerine **"wolf**"un 🐺 kullanılması gerektiği çabucak anlardık.
-
-Tohumun bir temsilini yazmaktan bahsediyoruz çünkü bu, HD cüzdanları yönetirken iyi bir uygulamadır: veri kaybı durumunda (kaza veya hırsızlık yoluyla) bir cüzdanı kurtarmak için tohum gereklidir, bu nedenle bir yedekleme tutmak çok ihtiyatlıdır. . Ancak, tohum son derece gizli tutulmalıdır, bu nedenle dijital yedeklemelerden dikkatli bir şekilde kaçınılmalıdır; bu nedenle, kalem ve kağıtla yedeklemek için daha önceki tavsiyeler.
+Uygulamada, Hex cinsinden yazarken bir hata olasılığı aşırı derecede yüksektir. Buna karşılık, bilinen kelimelerin listesinin üstesinden gelmek oldukça kolaydır, çünkü esas olarak kelimelerin (özellikle İngilizce kelimelerin) _yazımında_ daha iyi düzeyde yarar vardır. Eğer **"wolğf"** 🐶 kelimesi kazara yazmış olsaydık, cüzdanı kurtarmaya ihtiyaç duyduğumuzda, _"wolğf_"in geçerli bir İngilizce kelime olmadığını🔴 ve bunun yerine **"wolf**"un 🐺 kullanılması gerektiği çabucak anlardık.
 
 Bu yaptığımız tohumun bir temsilini yazmaktan ibarettir.(Yani mnemonic-anımsatıcıları- kelimeleri). Bu HD cüzdanlarını yönetirken iyi bir uygulamadır: veri kaybı durumunda (veri sızıntısı veya ransomware gibi) bir cüzdanı **kurtarmak için tohum gereklidir**, bu nedenle bir **yedekleme yapmak çok gereklidir**. Ancak, tohum son derece **gizli tutulmalıdır**, bu nedenle _dijital yedeklemelerden_ 🔴 dikkatli bir şekilde kaçınılmalıdır; bu nedenle, daha önceki tavsiyelerimizinden kağıta yazarak yedeklemek daha uygundur 🟢 📖 .
 
@@ -325,7 +323,48 @@ Ayrıca, bağımsız bir web sayfasında (bağımsız bir web sayfası olarak bi
 
 <img title="BIP-39 generator" src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/bip39_web.png">
 
+---------------------
+
 ## Tohumdan bir HD Cüzdan Oluşturma 🌱+💰
+
+HD cüzdanlar, 128-bit, 256-bit veya 512-bit sayı olan rastgele tek bir kök tohumdan oluşturulur. **En yaygın olarak, bu tohum, önceki bölümde de ayrıntılı olarak açıklandığı gibi bir anımsatıcıdan oluşturulur.**
+
+HD cüzdandaki her anahtar deterministik olarak bu **kök tohumdan türetilir**, bu da tüm HD cüzdanın o tohumdan uyumlu herhangi bir HD cüzdanda yeniden oluşturulmasını mümkün kılar. Bu, yalnızca kök tohumun türetildiği anımsatıcıyı aktararak binlerce hatta milyonlarca anahtar içeren **HD cüzdanları dışa aktarmayı, yedeklemeyi, geri yüklemeyi ve içe aktarmayı kolaylaştırır.**
+
+----------
+
+## HD Cüzdanlar (BIP-32) ve Yollar(Paths) (BIP-43/44)
+
+Çoğu HD cüzdan, deterministik anahtar üretimi için pratikte bir endüstri standardı haline gelen BIP-32 standardını takip eder.
+
+Burada BIP-32'nin tüm ayrıntılarını tartışmayacağız, sadece cüzdanlarda nasıl kullanıldığını anlamak için gerekli bileşenleri tartışacağız. Temel önemli husus, HD cüzdanda görebileceğiniz gibi, türetilmiş anahtarların sahip olabileceği ağaç benzeri hiyerarşik ilişkilerdir: ⏫(Yukarıda bahsetmiştik.) 
+Tek bir tohumdan üretilen bir anahtar ağacı.🎄🔑 
+Aşağıdaki bölümlerde açıklanan **genişletilmiş anahtarlar(extended keys) ve zorlaştırılmış(sertleştirilmiş/Hardened) anahtarların** fikirlerini anlamak da önemlidir.
+
+Birçok yazılım Kütüphanesinde 📚 sunulan düzinelerce birlikte çalışabilir BIP-32 uygulaması vardır. Bunlar çoğunlukla **adresleri farklı bir şekilde uygulayan, ancak [Ethereum'un BIP-32 uyumlu olan cüzdanlarla](https://github.com/ConsenSys/eth-lightwallet) aynı anahtar türetme uygulamasını paylaşan Bitcoin cüzdanları için tasarlanmıştır**. _Ethereum için tasarlanmış olanını kullanın_ veya  _bir Ethereum adresini🔵 yazılım kütüphanesine uygularak 🟡 Bitcoin'den uyarlayın_.
+
+Ayrıca, BIP-32 ile test ve denemeler yapmak için çok kullanışlı olan bağımsız bir _web sayfası_ olarak uygulanan bir [BIP-32 oluşturucu](http://bip32.org) da bulunmaktadır.
+
+⚠️UYARI--->Yukarıdaki site(BIP-32 oluşturucu) ⤴️ bir _HTTPS_ sitesi değildir. Bu, size bu aracın kullanımının güvenli olmadığını hatırlatmak içindir. Sadece test amaçlıdır. Bu sitenin ürettiği anahtarlarları gerçek parayla yapılacak işlemlerde kullanmayınız. ⚠️
+
+
+## Genişletilmiş(Uzatılmış/Extended) genel ve özel anahtarlar
+
+BIP-32 terminolojisinde anahtarlar _"genişletilebilir"_. Doğru matematiksel işlemlerle, bu genişletilmiş 👪 **"Ana(Parent)"** anahtarlar, **"alt(child)"** 👶 anahtarları türetmek için kullanılabilir, böylece daha önce açıklanan anahtarlar ve adresler hiyerarşisi oluşturulur._Ana anahtarın ağacın tepesinde olması gerekmez._ ağaç hiyerarşisinin 🎄 _herhangi bir yerinden seçilebilir_.Bir _anahtarın genişletilmesi, anahtarın kendisini almayı ve ona özel bir zincir kodu(chain code) eklemeyi içerir_.Bir **zincir kodu(chain code), alt anahtarları üretmek için her anahtarla karıştırılan 256-bitlik bir ikili(binary) sistemde üretilmiş Metindir.**
+
+Anahtar,Özel(private) bir anahtarsa, **xprv** önekiyle ayırt edilen genişletilmiş bir özel anahtar olur:
+
+`xprv9s21ZrQH143K2JF8RafpqtKiTbsbaxEeUaMnNHsm5o6wCW3z8ySyH4UxFVSfZ8n7ESu7fgir8i....`
+
+Genişletilmiş bir Genel(public) anahtar, **xpub** öneki ile ayırt edilir:
+
+`xpub661MyMwAqRbcEnKbXcCqD2GT1di5zQxVqoHPAgHNe8dv5JP8gWmDproS6kFHJnLZd23tWevhdn...`
+
+
+
+
+
+
 
 
 
