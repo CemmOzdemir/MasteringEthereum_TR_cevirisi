@@ -265,9 +265,11 @@ Bazı uzak istemciler, örneğin mobil (akıllı telefon) cüzdanlar, yalnızca 
 En popüler uzak istemcilerden bazılarına ve sundukları işlevlere göz atalım:
 
 ## Mobil (Akıllı Telefon) Cüzdanlar
-Tüm mobil cüzdanlar uzak istemcilerdir, çünkü akıllı telefonlar tam bir Ethereum istemcisini çalıştırmak için yeterli _kaynağa sahip değildir_. Hafif istemciler(light clients) geliştirme aşamasındadır ve Ethereum için **genel kullanımda değildir**. Parity, hafif istemci "experimental(deneysel)" olarak işaretlenir ve --light seçeneğiyle, Parity çalıştırılarak kullanılabilir.
+Tüm mobil cüzdanlar uzak istemcilerdir, çünkü akıllı telefonlar tam bir Ethereum istemcisini çalıştırmak için yeterli _kaynağa sahip değildir_. Hafif istemciler(light clients) geliştirme aşamasındadır ve Ethereum için **genel kullanımda değildir**.( ⚠️Güncel olrak ne durumda bilmiyorum.)
 
-Popüler mobil cüzdanlar aşağıdakileri içerir: ( ⚠️bunları yalnızca örnek olarak listeliyoruz; bu, bu cüzdanların güvenliğinin veya işlevselliğinin bir onayı veya göstergesi değildir.)
+Parity, hafif istemci "experimental(deneysel)" olarak işaretlenir ve --light seçeneğiyle, Parity çalıştırılarak kullanılabilir.
+
+Popüler mobil cüzdanlar aşağıda gösterilmiştir: ( ⚠️bunları yalnızca örnek olarak listeliyoruz; bu, bu cüzdanların güvenliğinin veya işlevselliğinin bir onayı veya göstergesi değildir.)
 
 * [Jaxx](https://jaxx.io/)
 
