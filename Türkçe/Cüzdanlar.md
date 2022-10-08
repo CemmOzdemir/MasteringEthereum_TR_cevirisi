@@ -317,7 +317,7 @@ Python'da BIP-39'u öneren _SatoshiLabs_ ekibi tarafından standartın uygulamas
 
 3️⃣[npm/bip39](https://www.npmjs.com/package/bip39)
 
-Bitcoin BIP-39'un JavaScript uygulaması: Deterministik anahtarlar oluşturmak için anımsatıcı kod üretme paketi
+Bitcoin BIP-39'un JavaScript uygulaması: Deterministik anahtarlar oluşturmak için anımsatıcı kod üretim paketi
 
 Ayrıca, bağımsız bir web sayfasında (bağımsız bir web sayfası olarak bir BIP-39 oluşturucu) uygulanan bir **BIP-39 oluşturucu** da vardır ve bu, **test ve deneme için son derece kullanışlıdır**. [Anımsatıcı Kod Dönüştürücü(Mnemonic Code Converter)](https://iancoleman.io/bip39/)sayesinde _anımsatıcılar, tohumlar ve genişletilmiş özel anahtarlar_ üretir. Bir tarayıcıda _çevrimdışı olarak kullanılabilir veya çevrimiçi olarak erişilebilir._
 
@@ -413,8 +413,52 @@ Bir anahtarın "soyu-kökü(ancestry)", türetildiği ana anahtara ulaşana kada
 | m/1/0   |  İkinci alt anahtarın ilk alt-soyunun özel anahtarı (m/1)   |
 | M/23/17/0/0   | 24. alt(child) anahtarının 18. alt-soyunun(grandchild) ilk alt-soyunun ilk altsoyunun genel anahtarı    |
 
+------------
 
+## HD cüzdan ağacı yapısında gezinme
 
+HD cüzdan ağacı yapısı son derece esnektir. Bunun yarattığı etkilerden birisi de, **sınırsız karmaşıklığa da izin vermesidir**: her _parent(üst) genişletilmiş anahtarın_  **4 milyar** alt anahtarı olabilir: **2 milyar normal alt(child) + 2 milyar sertleştirilmiş alt anahtar(hardened child key)**. 
+
+Bu alt(child) anahtarlarında her birinin **4 milyar alt-soyu(grand-child) daha olabilir**, vb. ( Bunu anlamanız için şöyle açıklayayım: Angela Merkel'e bu sorunu çözdüğü için ödül dahi verildi.Merkel ise ödülü alıp UZUN bir siyasi molaya çekildi🤪) 
+
+Ağaç, potansiyel olarak sonsuz sayıda nesille istediğiniz kadar uzun olabilir. Tüm bunlardan kaynaklı, bu çok büyük 🎄 ağaçların arasında gezinmek oldukça zor olabilir.
+
+İki BIP(Bitcoin Improvement Proposal) 👨‍💻👩‍💻, HD cüzdan ağaçlarının yapısı için **standartlar oluşturarak bu potansiyel karmaşıklığı yönetmenin bir yolunu sunar**. BIP-43, ağaç yapısının "amacı"nı belirten özel bir tanımlayıcı olarak ilk sertleştirilmiş alt dizinin kullanımını önerir. BIP-43'e dayalı olarak, bir HD cüzdan ağacın yalnızca bir seviye-1 dalını kullanmalı ve index numarası, ağacın geri kalanının yapısını ve ad alanını tanımlayarak cüzdanın amacını tanımlamalıdır. 
+Daha spesifik olarak, yalnızca m/i&#x27;/... dalını kullanan bir HD cüzdanın belirli bir amacı ifade etmesi amaçlanmıştır ve bu amaç i indeks numarası ile tanımlanır.
+
+Bu spesifikasyonu genişleten BIP-44, "propose" indexini 44' olarak ayarlayarak gösterilen çok para birimine sahip,çok hesaplı bir yapı önerir. BIP-44 yapısını takip eden tüm HD cüzdanlar, ağacın yalnızca _bir dalını kullandıkları gerçeğiyle tanımlanır_: m/44'/*.
+
+BIP-44, yapıyı önceden tanımlanmış beş ağaç seviyesinden oluşacak şekilde belirtir:
+
+`m / purpose' / coin_type' / account' / change / address_index`
+
+_İlk seviye_, 1️⃣ propose&#x27;, her zaman 44&#x27; olarak ayarlanır. 2️⃣ _İkinci seviye_, coin_type&#x27;, kripto para cinsini belirtir ve her para biriminin ikinci seviyenin altında kendi alt ağacına sahip olduğu çok para birimlerine izin veren HD cüzdanlara izin verir. SLIP0044 adlı bir standart belgesinde tanımlanmış birkaç para birimi vardır; örneğin, 
++Ethereum m/44&#x27;/60&#x27;  
++Ethereum Classic m/44&#x27;/61&#x27;  
++Bitcoin m/44&#x27;/0&#x27;  
++ Testnet herkes için para birimi m/44&#x27;/1&#x27;
+
+Ağacın _üçüncü seviyesi_, 3️⃣ kullanıcıların cüzdanlarını muhasebe veya organizasyon amaçları için ayrı mantıksal alt hesaplara ayırmalarına olanak tanıyan hesaptır. Örneğin, bir HD cüzdan iki Ethereum "hesabı" içerebilir ----> 🅰️ m/44&#x27;/60&#x27;/0&#x27; ve 🅱️ m/44&#x27;/60&#x27;/1&#x27;. _Her hesap kendi alt ağacının köküdür._
+
+BIP-44 orijinal olarak Bitcoin için oluşturulduğundan, Ethereum dünyası ile ilgisi olmayan bir "gariplik" içerir. Yolun 4️⃣  _dördüncü seviyesinde_, bir HD cüzdanın iki alt ağacı vardır: **biri alıcı adresleri oluşturmak için**, diğeri ise **değiştirme(transfer) adresleri oluşturmak için**. Bitcoin'de olduğu gibi adres değişikliğine gerek olmadığı için Ethereum'da sadece "alma(receive)" yolu kullanılır. Önceki düzeylerde sertleştirilmiş türetme kullanılırken, bu düzey normal türetmeyi kullanır. 
+
+Bu, ağacın hesap düzeyinin, güvenli olmayan bir ortamda kullanım için genişletilmiş genel anahtarları dışa aktarmasına izin vermek içindir. Kullanılabilir adresler, HD cüzdan tarafından dördüncü seviyenin alt anahtarları olarak türetilir ve 5️⃣ağacın beşinci seviyesini _address-index_ yapar. Örneğin, birincil hesaptaki Ethereum ödemeleri için üçüncü alıcı adresi M/44&#x27;/60&#x27;/0&#x27;/0/2 olacaktır. 
+
+tablo-6 📊 BIP-44 HD cüzdan yapısı örnekleri 
+
+ | HD YOLU      |ANAHTARIN AÇIKLAMASI | 
+|--------------|-----------|
+|M/44&#x27;/60&#x27;/0&#x27;/0/2| Birincil Ethereum hesabının üçüncü alıcısı için genel anahtarı    | 
+| M/44&#x27;/0&#x27;/3&#x27;/1/14  | 4. Bitcoin hesabı için 15. adres-değişim(transfer) genel anahtarı    |
+|  m/44&#x27;/2&#x27;/0&#x27;/0/1 |   İşlemleri imzalamak için Litecoin ana hesabındaki ikinci özel anahtar  |
+
+## Sonuç olarak bu bölümde:
+Cüzdanlar, kullanıcıya yönelik herhangi bir blockchain uygulamasının temelidir. Kullanıcıların anahtar ve adres koleksiyonlarını yönetmesine izin verir. Cüzdanlar ayrıca [İşlemler] bölümünde( ▶️gelecek bölüm) göreceğimiz gibi, kullanıcıların _dijital imzalar_ uygulayarak sahibi oldukları ether'i göstermelerine ve yapacak işlemlere izin vermelerine 👍 olanak tanır.
+
+-----------
+Bölüm sonu 🏁
+
+**En zayıf oldugunuz an, bütün herkes tarafından desteklenir gibi göründüğünüz andır. Aslında sizi hiç kimse desteklememektedir; size verilen evet sadece bir bekleyişi dile getirmektedir, ve o evetin ardında daima fırtınalı bir gün yatar.🗣️ Otto Von Bismarck **
 
 
 
