@@ -242,27 +242,27 @@ Uzak istemciler, tam bir(full) istemcinin _işlevlerinin bir alt kümesini sunar
 
 Bu istemciler genellikle aşağıdakilerden birini veya birkaçını yapma olanağı sağlar ⬇️ 
 
-* Bir cüzdanda özel anahtarları ve Ethereum adreslerini yönetin.
+* Bir cüzdanda özel anahtarları ve Ethereum adreslerini yönetme.
 
-* İşlemler oluşturun, imzalayın ve yayınlayın.
+* İşlemler oluşturma, imzalama ve yayınlama.
 
-* Veri yükünü kullanarak akıllı sözleşmelerle etkileşim kurun.
+* Veri yığınını(stack) kullanarak akıllı sözleşmelerle etkileşim kurma.
 
-* DApp'lere göz atın ve etkileşim kurun.
+* DApp'lere göz atma ve etkileşim kurma.
 
-* Blok gezgini(explorer) gibi harici hizmetlere bağlantılar sunun.
+* Blok gezgini(explorer) gibi harici hizmetlere bağlantılar sunma.
 
-* Ehter birimlerini dönüştürün ve harici kaynaklardan döviz kurlarını alın.
+* Ehter birimlerini dönüştürme ve harici kaynaklardan döviz kurlarını alma.
 
-* Web tarayıcısına bir JavaScript nesnesi olarak bir web3 örneği enjekte edin.
+* Web tarayıcısına bir JavaScript nesnesi olarak bir web3 örneği enjekte etme.
 
-* Başka bir istemci tarafından tarayıcıya sağlanan/enjekte edilen bir web3 örneğini kullanın.
+* Başka bir istemci tarafından tarayıcıya sağlanan/enjekte edilen bir web3 örneğini kullanma.
 
-* Yerel veya uzak bir Ethereum düğümünde RPC hizmetlerine erişin.
+* Yerel veya uzak bir Ethereum düğümünde RPC hizmetlerine erişme.
 
 Bazı uzak istemciler, örneğin mobil (akıllı telefon) cüzdanlar, yalnızca **temel cüzdan işlevselliği sunar.** Diğer uzak istemciler, **tam gelişmiş DApp tarayıcılarıdır**. Uzak istemciler, başka bir yerde, örneğin yerel olarak sizin tarafınızdan makinenizde veya bir web sunucusunda çalıştırılan bir **tam düğüme bağlanarak, Ethereum blok zincirinin yerel bir kopyasını senkronize etmeden,** genellikle _tam düğümlü bir Ethereum istemcisinin bazı işlevlerini_ sunar.
 
-En popüler uzak istemcilerden bazılarına ve sundukları işlevlere bakalım.
+En popüler uzak istemcilerden bazılarına ve sundukları işlevlere göz atalım:
 
 ## Mobil (Akıllı Telefon) Cüzdanlar
 Tüm mobil cüzdanlar uzak istemcilerdir, çünkü akıllı telefonlar tam bir Ethereum istemcisini çalıştırmak için yeterli _kaynağa sahip değildir_. Hafif istemciler(light clients) geliştirme aşamasındadır ve Ethereum için **genel kullanımda değildir**. Parity, hafif istemci "experimental(deneysel)" olarak işaretlenir ve --light seçeneğiyle, Parity çalıştırılarak kullanılabilir.
