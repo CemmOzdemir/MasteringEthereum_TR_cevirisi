@@ -116,7 +116,7 @@ Avantajlar: 🟢
 
 * Başka kullanıcı yok,sadece siz varsınız. 🚕
 
-Başka sözleşme yok, yalnızca mevcut bir Ethereum düğümünü devre dışı bırakma seçeneğini **kullanmadığınız** sürece, başlattıktan sonra ağa dağıttığınız sözleşmelerle tek başına çalışır. 
+* Başka sözleşme yok, yalnızca mevcut bir Ethereum düğümünü devre dışı bırakma seçeneğini **kullanmadığınız** sürece, başlattıktan sonra ağa dağıttığınız sözleşmelerle tek başına çalışır. 
 
 ---------
 Dezavantajları: 🔴
@@ -202,10 +202,10 @@ JSON-RPC protokolünün sürümü. Bu tam olarak "2.0" OLMALIDIR.
 * params:
 Yöntemin çağrılması sırasında kullanılacak parametre değerlerini tutan yapılandırılmış bir değer. Bu üye EKLENEBİLİR.
 
-* id
+* id:
 İstemci tarafından oluşturulmuş ve dahil edilmişse; bir dize, Sayı veya NULL değeri içermesi ZORUNLU olan bir tanımlayıcıdır. Sunucu, dahil edilmişse, yanıt nesnesindeki aynı değerle yanıt vermelidir( ZORUNLU.) Bu üye, iki nesne arasındaki bağlamı ilişkilendirmek için kullanılır.
 
-🔍İPUCU :id parametresi, öncelikle tek bir JSON-RPC çağrısında birden çok istekte bulunduğunuzda kullanılır; bu, **toplu işlem(Batching)** adı verilen bir uygulamadır. Her istek için yeni bir HTTP ve TCP bağlantısının **ek yükünü önlemek** için toplu işlem kullanılır. Örneğin, Ethereum bağlamında, tek bir HTTP bağlantısı üzerinden binlerce işlemi almak istiyorsak toplu işleme kullanırdık. Batching oluştururken, **her istek için farklı bir kimlik belirlersiniz** ve ardından bunu JSON-RPC sunucusundan gelen her yanıttaki kimlikle eşleştirirsiniz. Bunu uygulamanın en kolay yolu, bir **sayaç tutmak ve her istek için değeri artırmaktır**.
+🔍İPUCU--->id parametresi, öncelikle tek bir JSON-RPC çağrısında birden çok istekte bulunduğunuzda kullanılır; bu, **toplu işlem(Batching)** adı verilen bir uygulamadır. Her istek için yeni bir HTTP ve TCP bağlantısının **ek yükünü önlemek** için toplu işlem kullanılır. Örneğin, Ethereum bağlamında, tek bir HTTP bağlantısı üzerinden binlerce işlemi almak istiyorsak toplu işleme kullanırdık. Batching oluştururken, **her istek için farklı bir kimlik belirlersiniz** ve ardından bunu JSON-RPC sunucusundan gelen her yanıttaki kimlikle eşleştirirsiniz. Bunu uygulamanın en kolay yolu, bir **sayaç tutmak ve her istek için değeri artırmaktır**.
 
 
 Aldığımız yanıt şu:
