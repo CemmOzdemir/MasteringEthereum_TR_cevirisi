@@ -32,12 +32,13 @@ https://user-images.githubusercontent.com/57351242/194078761-68af22f1-b035-44db-
 + Chapter 2: '[Ethereum Basics](https://github.com/ethereumbook/ethereumbook/blob/develop/02intro.asciidoc)'
 + Bölüm II : '[ETHEREUM TEMELLERİ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_Temelleri.md)' :heart: :headphones: 
 + Chapter 3: '[Ethereum Clients](https://github.com/ethereumbook/ethereumbook/blob/develop/03clients.asciidoc)'
-+ Bölüm III: '[ETHEREUM İSTEMCİLERİ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_istemcileri.md)' ❤️ 
++ Bölüm III: '[ETHEREUM İSTEMCİLERİ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_istemcileri.md)' ❤️ :headphones:
 + Chapter 4: '[Cryptography](https://github.com/ethereumbook/ethereumbook/blob/develop/04keys-addresses.asciidoc)'
 + Bölüm IV : '[KRİPTOGRAFİ/ŞİFRELEME](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Kriptografi.md)' :heart: 
 + Chapter 5: '[Wallets](https://github.com/ethereumbook/ethereumbook/blob/develop/05wallets.asciidoc)'
 + Bölüm  V : '[CÜZDANLAR](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Cüzdanlar.md)' :heart: 
 + Chapter 6: '[Transactions](https://github.com/ethereumbook/ethereumbook/blob/develop/06transactions.asciidoc)'
++ Bölüm VI : '[İŞLEMLER](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/islemler.md)' :heart: 
 + Chapter 7: '[Smart Contracts and Solidity](https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc)'
 + Chapter 8: '[Smart Contracts and Vyper](https://github.com/ethereumbook/ethereumbook/blob/develop/08smart-contracts-vyper.asciidoc)'
 + Chapter 9: '[Smart Contract Security](https://github.com/ethereumbook/ethereumbook/blob/develop/09smart-contracts-security.asciidoc)'
