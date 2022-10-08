@@ -1,6 +1,11 @@
 
 # ETHEREUM İSTEMCİLERİ(Clients) 🔌
 
+🎧Bu bölümü dinlemek isterseniz: ⏲️ **29 dk**
+
+📌 [Google Drive](https://drive.google.com/file/d/11ipGvghytHnHPbs9L1Hi9idBUOEE6rHg/view?usp=sharing) üzerinden bu bölümünü dinleyebilir 🎧 veya indirebilirsiniz.🔽
+
+
 Ethereum istemcisi, _Ethereum spesifikasyonunu uygulayan ve eşler arası ağ üzerinden diğer Ethereum istemcileriyle iletişim kuran bir yazılım uygulamasıdır._ Farklı Ethereum istemcileri, referans belirtimine ve standartlaştırılmış iletişim protokollerine **uyuyorlarsa birlikte çalışırlar.** Bu farklı istemciler farklı ekipler tarafından ve _farklı programlama dillerinde uygulanırken_, hepsi aynı **protokolü "konuşur" ve aynı kuralları takip eder.** Bu nedenle, hepsi aynı Ethereum ağıyla çalışmak ve etkileşim kurmak için kullanılabilir.
 
 Ethereum _açık kaynaklı_ bir projedir ve tüm büyük istemciler için kaynak kodu, açık kaynak lisansları (örneğin, LGPL v3.0) altında mevcuttur.İndirmek ve herhangi bir amaç için kullanmak ücretsizdir. Açık kaynak kullanımı, ücretsiz olmaktan çok daha fazlasını ifade eder. Ayrıca Ethereum'un gönüllüler topluluğu(foundation) tarafından geliştirildiği ve herkes tarafından değiştirilebileceği anlamına gelir. _Daha fazla bakış açısı, daha güvenilir kod anlamına gelir._ 🛡️
