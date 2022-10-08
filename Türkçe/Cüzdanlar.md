@@ -458,7 +458,7 @@ Cüzdanlar, kullanıcıya yönelik herhangi bir blockchain uygulamasının temel
 -----------
 Bölüm sonu 🏁
 
-**En zayıf oldugunuz an, bütün herkes tarafından desteklenir gibi göründüğünüz andır. Aslında sizi hiç kimse desteklememektedir; size verilen evet sadece bir bekleyişi dile getirmektedir, ve o evetin ardında daima fırtınalı bir gün yatar.🗣️ Otto Von Bismarck **
+**En zayıf oldugunuz an, bütün herkes tarafından desteklenir gibi göründüğünüz andır. Aslında sizi hiç kimse desteklememektedir; size verilen evet sadece bir bekleyişi dile getirmektedir, ve o evetin ardında daima fırtınalı bir gün yatar.🗣️ Otto Von Bismarck**
 
 
 
