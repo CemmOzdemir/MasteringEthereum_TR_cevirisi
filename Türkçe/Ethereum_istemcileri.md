@@ -102,7 +102,7 @@ Dezavantajları: 🔴
 ------------
 * Bir test ağında **gerçek** parayı kullanamazsınız; test etherinde çalışır. Sonuç olarak, tehlikede hiçbir şey olmadığı için güvenliği gerçek hackerlara karşı test edemezsiniz.
 
-* Bir test ağında _gerçekçi bir şekilde test edemeyeceğiniz_ bir genel blok zincirinin bazı yönleri vardır. Örneğin, **işlem ücretleri, işlem göndermek için gerekli olmasına rağmen, gaz ücretsiz olduğu için bir test ağında dikkate alınmaz.** Ayrıca, test ağları, genel ana ağın bazen yaptığı gibi ağ tıkanıklığı yaşamaz.
+* Bir test ağında _gerçekçi bir şekilde test edemeyeceğiniz_ bir genel blok zincirinin bazı yönleri vardır. Örneğin, **işlem ücretleri, işlem göndermek için gerekli olmasına rağmen, gaz ücretsiz olduğu için bir test ağında dikkate alınmaz.** Ayrıca, test ağları, genel ana ağın; bazen yaşadığı gibi ağ tıkanıklığını yaşamazlar.
 
 ## LOCAL Blok Zinciri Simülasyonu Avantajları ve Dezavantajları: 🍬
 Birçok test amacı için en iyi seçenek, **tek örnekli bir özel blok zinciri başlatmaktır**. _Ganache (eski adıyla testrpc),_ başka hiçbir katılımcı olmadan etkileşime girebileceğiniz en popüler _Local blok zinciri simülasyonlarından biridir._ Genel test ağının birçok avantaj ve dezavantajını paylaşır, ancak bazı farklılıkları da vardır.
