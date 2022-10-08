@@ -154,7 +154,7 @@ Geleneksel olarak, bir Ethereum blok zincirini senkronize ederken, istemciniz en
 
 Blok zincirini bu şekilde **tam olarak senkronize etmek mümkün olsa da,** bu tür senkronizasyon **çok uzun zaman alacak** ve **yüksek kaynak gereksinimlerine sahip olacaktır.** (çok daha fazla RAM'e ihtiyaç duyacaktır ve eğer hızlı bir donanımınız yoksa gerçekten çok uzun zaman alacaktır). 
 
-Birçok Ethereum tabanlı blok zinciri, 2016'nın sonunda DoS saldırılarının kurbanı oldu. Etkilenen blok zincirleri, tam bir senkronizasyon yaparken yavaş yavaş senkronize olma durumnda olacaktırlar.
+Birçok Ethereum tabanlı blok zinciri, 2016'nın sonunda DoS saldırılarının kurbanı oldu.🔫
 
 Örneğin, Ethereum'da yeni bir müşteri 2.283.397 bloğa ulaşana kadar hızlı ilerleme kaydedecektir. Bu blok 18 Eylül 2016'da çıkarıldı ve DoS saldırılarının başlangıcını işaret ediyor. Bu bloktan 2.700.031 bloğa (26 Kasım 2016), işlemlerin doğrulanması son derece yavaş, bellek yoğun ve I/O yoğun hale geliyor. Bu, blok başına 1 dakikayı aşan doğrulama süreleriyle sonuçlanır. Ethereum, DoS saldırılarında kullanılan **temel güvenlik açıklarını gidermek için hard fork🍴 kullanarak bir dizi yükseltme gerçekleştirdi**. Bu yükseltmeler, spam işlemleri tarafından oluşturulan yaklaşık 20 milyon boş hesabı kaldırarak blok zincirini de temizledi.
 
