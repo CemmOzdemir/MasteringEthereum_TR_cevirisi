@@ -312,11 +312,11 @@ Bir önceki bölümde mobil cüzdan olarak tanıtılan Jaxx, Chrome ve Firefox e
 -------------
 MyEtherWallet, aşağıdakileri sunan tarayıcı tabanlı bir JavaScript uzaktan(remote) istemcisidir:
 
- * Trezor ve Ledger gibi popüler donanım cüzdanlarına bir köprü hizmeti sunar
- * Başka bir istemci tarafından enjekte edilen bir web3 örneğine bağlanabilen bir web3 arayüzüdür (ör. MetaMask)
- * Bir Ethereum tam istemcisine bağlanabilen bir RPC istemcisidir
- * Bir sözleşmenin adresi ve uygulama ikili arayüzü (ABI) verildiğinde akıllı sözleşmelerle etkileşime girebilen temel bir arayüz sunar
- * Bir donanım cüzdanına benzer şekilde, birinin uyumlu bir Android veya iOS cihazı kullanmasını sağlayan bir mobil uygulama olan MEWConnect.
+ * Trezor ve Ledger gibi popüler donanım cüzdanlarına bir köprü hizmeti sunar.
+ * Başka bir istemci tarafından enjekte edilen bir web3 örneğine bağlanabilen bir web3 arayüzüdür. (ör. MetaMask)
+ * Bir Ethereum tam istemcisine bağlanabilen bir RPC istemcisidir.
+ * Bir sözleşmenin adresi ve uygulama ikili arayüzü (ABI) verildiğinde akıllı sözleşmelerle etkileşime girebilen temel bir arayüz sunar.
+ * Bir donanım cüzdanına benzer şekilde, birinin uyumlu bir Android veya iOS cihazı kullanmasını sağlayan bir mobil uygulama olan _MEWConnect_'i içerir.
  * JavaScript'te çalışan bir yazılım cüzdanıdır.
 
 ⚠️UYARI: MyEtherWallet ve diğer tarayıcı tabanlı JavaScript cüzdanlarına erişirken çok dikkatli olmalısınız, çünkü bunlar kimlik avı için sık hedeflerdir. Doğru web URL'sine erişmek için her zaman bir _arama motoru veya bağlantı_ değil,🔴 bir yer imi(favoriler-sık kullanılanlar gibi) 🟢 kullanın.📌
