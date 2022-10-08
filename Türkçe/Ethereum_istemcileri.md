@@ -187,7 +187,7 @@ http://localhost:8545
 {"jsonrpc":"2.0","id":1,
 "result":"Geth/v1.9.11-unstable-0b284f6c-20200123/linux-amd64/go1.13.4"}`
 
-Bu örnekte, http://localhost:8545 adresine bir HTTP bağlantısı kurmak için _curl_ kullanıyoruz. 8545 numaralı bağlantı noktasında bir HTTP hizmeti olarak JSON-RPC API'sini sunan geth'i zaten çalıştırıyoruz. CURL'a HTTP POST komutunu kullanması ve içeriği application/json türü olarak tanımlaması talimatını veriyoruz. Son olarak, HTTP isteğimizin veri bileşeni olarak JSON kodlu bir istek iletiyoruz. Komut satırımızın çoğunu, HTTP bağlantısını doğru yapmak için Curl tarafından ayarlıyor. dikkat  çeken kısım, yayınladığımız gerçek JSON-RPC komutudur:
+Bu örnekte, http://localhost:8545 adresine bir HTTP bağlantısı kurmak için _curl_ kullanıyoruz. 8545 numaralı bağlantı noktasında bir HTTP hizmeti olarak JSON-RPC API'sini sunan geth'i zaten çalıştırıyoruz. CURL'a HTTP POST komutunu kullanması ve içeriği application/json türü olarak tanımlaması talimatını veriyoruz. Son olarak, HTTP isteğimizin veri bileşeni olarak JSON kodlu bir istek iletiyoruz. Komut satırımızın çoğunu, HTTP bağlantısını doğru yapmak için Curl tarafından ayarlanıyor. dikkat  çeken kısım, yayınladığımız gerçek JSON-RPC komutudur:
 
 `{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}`
 
