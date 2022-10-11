@@ -9,7 +9,7 @@ Bu bölümde işlemleri inceleyeceğiz, nasıl çalıştıklarını göstereceğ
 --------------
 
 ## Bir İşlemin Yapısı
-Öncelikle, Ethereum ağında [seri hale](https://en.wikipedia.org/wiki/Serialization)[kısaca serileştirme işleminin Yönteminde:veriyi bir yere depolama kullanılır.] getirilip iletildiği için, bir işlemin temel yapısına bir göz atalım. Serileştirilmiş bir işlem alan her istemci ve uygulama, kendi **dahili veri yapısını kullanarak**, belki de ağ serileştirme işleminde mevcut olmayan meta verilerle birlite bunu bellekte saklayacaktır. **Ağ serileştirmesi, bir _işlemin tek standart biçimidir_**.
+Öncelikle, Ethereum ağında [seri hale](https://en.wikipedia.org/wiki/Serialization)[kısaca serileştirme işleminin Yönteminde:veriyi bir yere depolama/kaydetme vardır.] getirilip iletildiği için, bir işlemin temel yapısına bir göz atalım. Serileştirilmiş bir işlem alan her istemci ve uygulama, kendi **dahili veri yapısını kullanarak**, belki de ağ serileştirme işleminde mevcut olmayan meta verilerle birlite bunu bellekte saklayacaktır. **Ağ serileştirmesi, bir _işlemin tek standart biçimidir_**.
 
 İşlem, **aşağıdaki verileri içeren** _serileştirilmiş bir ikili-sistemde(binary0️⃣1️⃣) mesajdır_ ⏬
 
@@ -94,34 +94,73 @@ Gerçekten satın almak istediğiniz bir laptop 💻 olsun laptop  için ether i
 ⭐Özetle, Bitcoin protokolünün “Harcanmamış İşlem Çıktısı” (UTXO) mekanizmasının aksine, hesap-tabanlı(account-based) bir protokol için nonce kullanımının gerçekten hayati olduğunu belirtmek önemlidir.
 
 
+## Nonce'ları Takip Etme
+
+Uygulama açısıdan nonce, bir hesaptan kaynaklanan onaylanmış (yani [On-chain](https://www.icrypex.com/tr/blog/on-chain-ve-off-chain-nedir-calisma-prensibi-nasildir)) **işlemlerin sayısının güncel bir sayısıdır.** Nonce'ın ne olduğunu bulmak için, örneğin web3 arayüzü aracılığıyla blok zincirini sorgulayabilirsiniz. Ropsten testnet'te ve Geth'te (veya tercih ettiğiniz web3 arayüzünde) bir JavaScript konsolu açın, ardından şunu yazın:
+
+`web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f")`
+
+`40`
+
+🔍İPUCU :Nonce, sıfır tabanlı bir sayaçtır, yani ilk işlemin nonce değeri 0'dır. Bu örnekte, **40'lık bir işlem sayımız var**, yani 0'dan 39'a kadar nonces görüldü. Bir sonraki işlemin nonce'sinin 40 olması gerekecek.Bir Programlama diline hakimseniz anlamış olmalısnız.Anlamadıysanız benden size gelsin:[TIKLAYINIZ](https://www.bilgigunlugum.net/prog/cprog/2c_dizi)🔍 
+
+Cüzdanınız, önettiği her adres için nonce'ların kaydını tutacaktır. _İşlemleri yalnızca tek bir noktadan başlattığınız sürece bunu yapmak oldukça basittir_. Diyelim ki kendi cüzdan yazılımınızı veya işlemleri başlatan başka bir uygulamayı yazıyorsunuz. Nonces'i nasıl takip edersiniz?🧐
+
+**Yeni bir işlem oluşturduğunuzda, sıradakini bir sonraki nonce'a atarsınız.Ancak ONAYLAYANA kadar getTransactionCount toplamına dahil edilmeyecektir.
+Programcı dostlarımızın anlıyacağı yoldan nonce++; ☣️ Ama Onaylamadan önce yapma**
+
+⚠️ 
+UYARI :Bekleyen işlemleri saymak için getTransactionCount() işlevini kullanırken dikkatli olun, çünkü arka arkaya birkaç işlem gönderirseniz bazı sorunlarla karşılaşabilirsiniz.⚠️
+
+Aşağıdaki örnek koda birlikte bakalım: 
+
+```
+> web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f", \
+"pending")
+40
+> web3.eth.sendTransaction({from: web3.eth.accounts[0], to: \
+"0xB0920c523d582040f2BCB1bD7FB1c7C1ECEbdB34", value: web3.utils.toWei(0.01, "ether")});
+> web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f", \
+"pending")
+41
+> web3.eth.sendTransaction({from: web3.eth.accounts[0], to: \
+"0xB0920c523d582040f2BCB1bD7FB1c7C1ECEbdB34", value: web3.utils.toWei(0.01, "ether")});
+> web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f", \
+"pending")
+41
+> web3.eth.sendTransaction({from: web3.eth.accounts[0], to: \
+"0xB0920c523d582040f2BCB1bD7FB1c7C1ECEbdB34", value: web3.utils.toWei(0.01, "ether")});
+> web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f", \
+"pending")
+41
+
+```
+🔍İPUCU :Bu kod örneklerini _Geth'in javascript konsolunda yeniden oluşturmaya çalışıyorsanız_, _web3.utils.toWei() yerine web3.toWei()_ kullanmalısınız. Bunun nedeni Geth'in web3 kütüphanesinin daha eski bir sürümünü kullanmasıdır.🔍(Şuan ne durumda bilmiyorum)
 
 
+Gördüğünüz gibi, gönderdiğimiz ilk işlem, işlem sayısını 41'e çıkardı ve bekleyen işlemi gösterdi. Ancak art arda üç işlem daha gönderdiğimizde, `getTransactionCount` çağrısı onları saymadı. Mempool'da bekleyen üç tane olmasını bekleseniz bile, yalnızca 1️⃣ bir tane sayılır. Ağ iletişiminin yerleşmesine izin vermek için birkaç saniye beklersek, `getTransactionCount` çağrısı beklenen sayıyı döndürür. Ama arada sırada bekleyen birden fazla işlem varken bize faydası olmayabilir.
 
 
+İşlemler oluşturan bir uygulama oluşturduğunuzda, bekleyen işlemler için `getTransactionCount`'a _güvenemez_. Yalnızca bekleyen ve onaylanan sayılar eşit olduğunda (tüm bekleyen işlemler onaylanırsa), nonce sayacınızı başlatmak için `getTransactionCount` çıktısına güvenebilirsiniz. Bundan sonra, her işlem onaylanana kadar işleminizdeki nonce'ı takip edin.
 
+_Parity'nin JSON RPC arabirimi_, bir işlemde kullanılması gereken sonraki nonce değerini döndüren `parity_nextNonce `fonksiyonunu sunar. parity_nextNonce fonksiyonunu, birkaç işlemi onaylamadan hızlı bir şekilde art arda oluştursanız bile, nonce'ları doğru şekilde sayar:
 
+```
+$ curl --data '{"method":"parity_nextNonce", \
+  "params":["0x9e713963a92c02317a681b9bb3065a8249de124f"],\
+  "id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST \
+  localhost:8545
 
+{"jsonrpc":"2.0","result":"0x32","id":1}
 
+```
+📝 NOT: Parity, JSON RPC arayüzüne erişmek için bir web konsoluna sahiptir, ancak burada ona erişmek için bir komut satırı HTTP istemcisi kullanıyoruz. 📝 
 
+## Nonce'daki *Aralık/Fark*, *Tekrarlama* ve *Onaylama*
 
+İşlemleri programlı olarak oluşturuyorsanız, özellikle aynı anda birden fazla bağımsız işlemden yapıyorsanız, nonce'leri takip etmek önemlidir.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Ethereum ağı, işlemleri nonce'ye dayalı olarak sırayla işler. Bu, bir işlemi 0 olmayan ile iletir ve ardışık bir işlem  olmayan 2 ile (indeks[2] gibi düşünün)  iletirseniz, ikinci işlemin hiçbir bloğa dahil edilmeyeceği görürsünüz. Ethereum ağı eksik nonce'nin görünmesini beklerken(yani indeks[1] gibi düşünün), **mempool'da saklanacaktır.** _Tüm düğümler, eksik nonce'ın basitçe ertelendiğini ve nonce 2 ile yapılan işlemin sıranın dışından alındığını varsayacaktır_.
 
 
 
