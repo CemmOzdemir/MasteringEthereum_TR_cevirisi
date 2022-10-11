@@ -60,3 +60,72 @@ Bu iletilen gerçek **işlem yapısı olsa da**, çoğu dahili temsil ve kullan�
 -------------
 
 ## İşlemde Nonce
+
+Nonce, bir işlemin en önemli ve en az anlaşılan bileşenlerinden biridir. Sarı Kağıttaki tanımı ise şöyledir: 
+
+|
+▶️nonce: Bir adresten gönderilen _işlem sayısına_ veya ilişkili koda sahip hesaplarda bu hesap tarafından yapılan _sözleşme oluşturma sayısına_ **eşit** bir skaler değerdir. 
+|
+
+Kesin bir ifadeyle, **nonce, kaynak adresin bir özelliğidir(attribute); yani, yalnızca gönderen adres bağlamında bir anlamı vardır**. Ancak nonce, bir hesabın blok zincirindeki durumunun bir parçası olarak **açıkça saklanmaz**. Bunun yerine, bir adresten kaynaklanan **onaylanmış işlemlerin sayısı sayılarak dinamik olarak hesaplanır.**
+
+İşlem sayma nonce'sinin varlığının önemli olduğu _iki senaryo vardır_: 1️⃣ işlemlerin kullanılabilirlik özelliğini yaratma sırasına dahil edilmesi ve 2️⃣ işlem çoğaltma durumuna karşı Koruma 🛡️ sağlayan hayati özelliğidir. 
+Bunların her biri için örnek bir senaryoya bakalım:⌨️
+
+_1.senaryo_:
+
+İki işlem yapmak istediğinizi düşünün. _6 etherlik_ önemli bir ödemeniz ve ayrıca _8 etherlik_ bir ödemeniz daha var. Önce 6 ether işlemini imzalar ve yayınlarsınız, çünkü bu daha _önemlidir_ ve ardından ikinci, 8 ether işlemini imzalar ve yayınlarsınız. Ne yazık ki, hesabınızın yalnızca _10 ether_ içerdiği gerçeğini gözden kaçırdınız, bu nedenle ağ her iki işlemi de kabul edemez: bunlardan biri başarısız 🔴 olur. Önce daha önemli olan 6 ether olanı gönderdiğiniz için, anlaşılır bir şekilde bunun geçmesini ve 8 etherin reddedilmesini beklersiniz. 
+
+Ancak, Ethereum gibi merkezi olmayan bir sistemde düğümler(nodes), işlemleri her iki sırayla da alabilir; _belirli bir düğümde bir işlemin diğerinden önce kendisine yayılacağının garantisi yoktur_. Bu nedenle, bazı düğümlerin önce 6 ether işlemini, diğerlerinin ise önce 8 ether işlemini alması neredeyse **kesin olacaktır**. **Nonce olmadan,** hangisinin kabul edilip hangilerinin reddedileceği **rastgele olurdu**. 
+
+Ancak, nonce dahil edildiğinde, gönderdiğiniz **ilk işlemin nonce değeri 3 diyelim,** 
+8-ether işlemi sonraki nonce değerine sahip olacaktır (**yani 4**).
+Bu nedenle, ilk alınsa(8 etherlik işlem) bile 0'dan 3'e kadar olmayan işlemler işlenene kadar bu işlem yok sayılır.Wow ucuz atlattık😸
+
+----------------
+_2.senaryo_ :
+
+Şimdi 100 eterli bir hesabınız olduğunu hayal edin. Hoş değil mi! 🤑 
+
+Gerçekten satın almak istediğiniz bir laptop 💻 olsun laptop  için ether ile ödeme kabul edecek birini çevrimiçi bulduğunuzu hayal edin. O kişiye 2 ether gönderirsiniz ve size yeni Laptopunuzu gönderirler.Hoooş🥳 . Bu 2-ether ödemesini yapmak için, hesabınızdan -----> hesabına(ether göndereceğimiz kişi) 2 ether gönderen bir işlem imzaladınız ve ardından doğrulanması ve blok zincirine dahil edilmesi için Ethereum ağına yayınladınız.🟢 
+
+Şimdiii, **işlemde nonce değeri olmadan**, aynı adrese ikinci kez 2 ether gönderen ikinci bir işlem, _ilk işlemle tamamen aynı görünecektir_. Bu, Ethereum ağında işleminizi gören herkesin (yani alıcı veya hackerlar dahil herkes anlamına gelir), **orijinal işleminizi kopyalayıp yapıştırarak tüm etheriniz bitene kadar işlemi tekrar tekrar yaparak sömürmesi  anlamına gelir**. Ağa yeniden gönderiyor ve bununla birlikte, işlem verilerinde bulunan nonce değeri ile, aynı miktarda etheri aynı alıcı adresine birden çok kez gönderirken bile, her bir işlem aynı olmuyor.Kısaca benzersizdir(unique). Bu nedenle, işlemin bir parçası olarak artan ➕  **nonce'a sahip olduğunuzda, hiç kimsenin yaptığınız bir ödemeyi "kopyalaması" mümkün değildir.**
+
+⭐Özetle, Bitcoin protokolünün “Harcanmamış İşlem Çıktısı” (UTXO) mekanizmasının aksine, hesap-tabanlı(account-based) bir protokol için nonce kullanımının gerçekten hayati olduğunu belirtmek önemlidir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
