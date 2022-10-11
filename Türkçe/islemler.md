@@ -156,11 +156,26 @@ $ curl --data '{"method":"parity_nextNonce", \
 ```
 📝 NOT: Parity, JSON RPC arayüzüne erişmek için bir web konsoluna sahiptir, ancak burada ona erişmek için bir komut satırı HTTP istemcisi kullanıyoruz. 📝 
 
-## Nonce'daki *Aralık/Fark*, *Tekrarlama* ve *Onaylama*
+## Nonce'daki *Boşluk*, *Tekrarlama* ve *Onaylama*
 
 İşlemleri programlı olarak oluşturuyorsanız, özellikle aynı anda birden fazla bağımsız işlemden yapıyorsanız, nonce'leri takip etmek önemlidir.
 
 Ethereum ağı, işlemleri nonce'ye dayalı olarak sırayla işler. Bu, bir işlemi 0 olmayan ile iletir ve ardışık bir işlem  olmayan 2 ile (indeks[2] gibi düşünün)  iletirseniz, ikinci işlemin hiçbir bloğa dahil edilmeyeceği görürsünüz. Ethereum ağı eksik nonce'nin görünmesini beklerken(yani indeks[1] gibi düşünün), **mempool'da saklanacaktır.** _Tüm düğümler, eksik nonce'ın basitçe ertelendiğini ve nonce 2 ile yapılan işlemin sıranın dışından alındığını varsayacaktır_.
+
+Daha sonra 1 no'lu eksik bir işlem iletirseniz, her iki işlem de (1 ve 2 no'lu) işlenir ve dahil edilir.(Tabii geçerliyse). 
+Boşluğu doldurduğunuzda: **Ağ, mempool'da tuttuğu sıranın dışındaki işlemin madenciliğini  yapabilir**.
+
+Bunun anlamı, sırayla birkaç işlem oluşturursanız ve _bunlardan biri resmi olarak herhangi bir bloğa dahil edilmezse_, sonraki tüm işlemler **"sıkışıp(stuck)" eksik nonce'yi bekler**. Bir işlem, geçersiz olduğundan veya yetersiz gaza sahip olduğundan, nonce dizisinde yanlışlıkla bir "_boşluk(gap)_" oluşturabilir. Tekrar harekete geçirmek için, **eksik nonce ile geçerli bir işlem iletmeniz gerekir**. "_Eksik(missing)_" nonce'a sahip bir işlem ağ tarafından doğrulandığında, **sonraki nonce'lara sahip tüm yayınlanmış işlemlerinin aşamalı olarak geçerli hale geleceğine dikkat etmelisiniz; bir işlemi "Tekrar Çağırmak 🔴" mümkün değildir !**
+
+Öte yandan, örneğin **aynı nonce'ye sahip** ancak **farklı alıcılara veya değerlere sahip** iki işlemi ileterek bir nonce'yi yanlışlıkla çoğaltırsanız, bunlardan biri onaylanır 🟢 ve biri reddedilir🔴. Hangisinin onaylanacağı, onları alan ilk doğrulama düğümüne 🎛️ ulaşma sırasına göre belirlenecektir - yani, oldukça rastgele- olacaktır.
+
+Gördüğünüz gibi, _nonce'ları takip etmek gereklidir ve uygulamanız bu süreci doğru yönetmezse sorunlarla karşılaşırsınız_. Ne yazık ki 🥶 , bir sonraki bölümde göreceğimiz gibi, bunu eş zamanlı yapmaya çalışıyorsak işler daha da zorlaşıyor. [Yine [Taxi Driver-1976](https://www.imdb.com/title/tt0075314/) Travis'in uyku problemi çökecek gibi üzerimize 😄⏬]
+
+<img title="Taxi Driver-1976"  src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/02/Travis-in-Taxi-Driver-3.jpg?q=50&fit=contain&w=1500&h=&dpr=1.5">
+
+
+
+## Eşzamanlılık, İşlem Başlangıcı ve Nonces
 
 
 
