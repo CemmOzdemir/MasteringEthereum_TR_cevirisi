@@ -17,27 +17,27 @@ Bu bölümde işlemleri inceleyeceğiz, nasıl çalıştıklarını göstereceğ
 
 Mesajın tekrarını önlemek için kullanılan 🔄 ,EOA tarafından kaynaklanan,bir sıra numarasıdır
 
-* Gaz fiyatı (price) ⛽
+* Gaz fiyatı (price): ⛽
 
 Oluşturucunun her bir gaz birimi için ödemeye hazır olduğu ether miktarı (wei cinsinden)
 
-* Gaz sınırı (limit) 🚗
+* Gaz sınırı (limit): 🚗
 
 Oluşturucunun bu işlem için satın almak istediği maksimum gaz miktarı
 
-* alıcı (recepient) 👱‍♂️👱‍♀️
+* alıcı (Recipient): 👱‍♂️👱‍♀️
 
 Hedef Ethereum adresi
 
-* Değer (value) 💰
+* Değer (value): 💰
 
 Hedefe gönderilecek ether miktarı (wei cinsinden)
 
-* Veri(data) 💻
+* Veri(data): 💻
 
 Değişken-uzunluklu binary veri yükü
 
-* v,r,s ✒️
+* v,r,s :✒️
 
 EOA'dan Kaynaklanan bir ECDSA dijital imzasının üç bileşenidir.
 
@@ -58,3 +58,5 @@ Bu iletilen gerçek **işlem yapısı olsa da**, çoğu dahili temsil ve kullan�
 **"Kimden/from"** alanını **gösteren** bir işlem gördüğünüzde, bu, işlemi görselleştirmek için kullanılan **yazılım tarafından eklenmiştir**. İstemci yazılımı tarafından işleme sıklıkla eklenen diğer meta veriler, blok numarasını (bir kez çıkarıldıktan ve blok zincirine dahil edildikten sonra) ve bir işlem kimliğini (hesaplanan hash) içerir. Yine, bu veriler işlemden türetilir ve işlem mesajının kendisinin bir parçasını oluşturmaz.
 
 -------------
+
+## İşlemde Nonce
