@@ -177,7 +177,31 @@ Gördüğünüz gibi, _nonce'ları takip etmek gereklidir ve uygulamanız bu sü
 
 Eşzamanlılık, bilgisayar biliminin karmaşık  yönlerinden biridir ve özellikle Ethereum gibi merkezi olmayan ve dağıtılmış gerçek zamanlı sistemlerde bazen beklenmedik bir şekilde ortaya çıkar.
 
-Basit bir ifadeyle, eşzamanlılık: _Birden fazla bağımsız sistem tarafından eşzamanlı hesaplamaya sahip olduğunuz zamandır_. Bunlar aynı programda (örneğin çoklu kullanım), aynı CPU'da (örneğin çoklu işlem) veya farklı bilgisayarlarda (örneğin dağıtılmış sistemler) olabilir. Ethereum, tanımı gereği, işlemlerin (düğümler, istemciler, DApp'ler) eşzamanlılığına izin veren ancak fikir birliği(consensus) yoluyla tek bir durumu dayatan bir sistemdir.
+Basit bir ifadeyle, eşzamanlılık: _Birden fazla bağımsız sistem tarafından eşzamanlı hesaplamaya sahip olduğunuz zamandır_. Bunlar aynı programda (örneğin çoklu kullanım), aynı CPU'da (örneğin çoklu işlem) veya farklı bilgisayarlarda (örneğin dağıtılmış sistemler) olabilir. Ethereum, tanımı gereği, işlemlerin (örneğin düğümler, istemciler, DApp'ler) eşzamanlılığına izin veren ancak fikir birliği(consensus) yoluyla tek bir durumu dayatan bir sistemdir.
+
+Şimdiii, _aynı adres veya adreslerden_ işlem üreten birden fazla _bağımsız cüzdan uygulamanız_ olduğunu hayal edin.
+
+Böyle bir duruma bir örnek, borsanın 🔥sıcak cüzdanından (anahtarları çevrimiçi olarak saklayan bir cüzdan) **para çekme işlemleri** olabilir. 
+
+İdeal olarak, bir darboğaz veya tek bir başarısızlık noktası haline gelmemesi için _birden fazla bilgisayarla, para çekme işlemine(withdraw()) sahip olmak istersiniz._ Bununla birlikte, para çekme üreten birden fazla bilgisayara sahip olmak, en azından nonce'ların seçimi olmak üzere bazı zorlu eşzamanlılık sorunlarına yol açacağından, bu hızla sorunlu🙀 bir hal alır. Aynı sıcak cüzdan hesabından işlem oluşturan, ❓imzalayan ve yayınlayan birden fazla bilgisayar nasıl koordine(sekron) olur? 
+
+İşlemleri imzalayan bilgisayarlara ilk gelen-alır(first-come first-served) esasına göre nonce atamak için tek bir bilgisayar kullanabilirsiniz. Ancak, bu bilgisayar artık _tek bir başarısızlık noktasıdır._ Daha da kötüsü, 🙀 birden fazla nonce atanırsa ve bunlardan biri **hiç kullanılmazsa** (yani bilgisayarın o nonce ile işlemi işlemesinde bir hata olması nedeniyle), sonraki tüm işlemler takılıp(sıkışır/stuck) kalır.
+
+
+Başka bir yaklaşım: işlemleri oluşturmak, onlara bir nonce atamakla mümkün (ve bu nedenle onları imzasız bırakmak  *⭐ ⚠️nonce'nin işlem verilerinin ayrılmaz bir parçası olduğunu ve bu nedenle işlemi doğrulayan **dijital imzaya dahil edilmesi gerektiğini** unutmayın*) olacaktır. . Daha sonra bunları imzalayan ve aynı zamanda nonce'ların kaydını tutan **tek bir düğümde sıralayabilirsiniz**. Yine de, bu süreçte bir **tıkanıklık noktası** olacaktır: nonces'ların imzalanması ve izlenmesi, işleminizin veri yığını altında sıkışık(stuck) hale gelmesi muhtemel olan kısmıdır, oysa imzasız işlemin oluşturulması, gerçekten yapmadığınız kısımdır..Biraz eşzamanlı olurdu, ancak sürecin kritik bir bölümünde eksiklik olurdu.
+
+Sonuç olarak, bu eşzamanlılık sorunları, bağımsız süreçlerde hesap bakiyelerini ve işlem onaylarını **takip etmenin zorluğuna ek olarak**, çoğu uygulamayı eşzamanlılıktan kaçınmaya ve bir borsadaki tüm para çekme işlemlerini **tek bir işlemle işlemek** veya birden fazla işlem kurmak gibi **darboğazlar yaratmaya** ya da para çekme işlemleri için tamamen bağımsız çalışabilen ve yalnızca aralıklı olarak yeniden dengelenmesi gereken birden fazla sıcak cüzdan kurmaya zorlar.🤯
+
+----------
+
+## İşlemde Gaz ⛽💸
+
+
+
+
+
+
+
 
 
 
