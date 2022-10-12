@@ -218,7 +218,7 @@ Web3 arayüzü, birkaç blokta bir ortalama fiyat hesaplayarak bir gasPrice öne
 > null BigNumber { s: 1, e: 10, c: [ 10000000000 ] }
 ```
 
-Gazla ilgili ikinci önemli alan `gasLimit` 'tir. Basit bir ifadeyle, _gasLimit, işlemi yapanın işlemi tamamlamak için satın almak istediği maksimum gaz birimi sayısını verir_. Basit ödemeler için, yani bir EOA'dan başka bir EOA'ya ether aktaran işlemler için, gereken gaz miktarı **21.000 gaz birimi** olarak sabitlenmiştir. Bunun ne kadar ethere mal olacağını hesaplamak için, ödemeye hazır olduğunuz `gasPrice` ile 21.000'i çarparsınız(✖️).Daha fazla detay için [bakınız](https://ethereum.org/en/developers/docs/gas/#what-is-gas-limit) 
+Gazla ilgili ikinci önemli alan `gasLimit` 'tir. Basit bir ifadeyle, _gasLimit, işlemi yapanın işlemi tamamlamak için satın almak istediği maksimum gaz birimi sayısını verir_. Basit ödemeler için, yani bir EOA'dan başka bir EOA'ya ether aktaran işlemler için, gereken gaz miktarı **21.000 (wei) gaz birimi** olarak sabitlenmiştir. Bunun ne kadar ethere mal olacağını hesaplamak için, ödemeye hazır olduğunuz `gasPrice` ile 21.000'i çarparsınız(✖️).Daha fazla detay için [bakınız](https://ethereum.org/en/developers/docs/gas/#what-is-gas-limit) 
 
 Örneğin:
 
@@ -226,6 +226,37 @@ Gazla ilgili ikinci önemli alan `gasLimit` 'tir. Basit bir ifadeyle, _gasLimit,
 > web3.eth.getGasPrice(function(err, res) {console.log(res*21000)} )
 > 210000000000000
 ```
+
+İşleminizin gönderim(alıcı) yeri sözleşme adresi(address account) ise, ihtiyaç duyulan gaz miktarı _tahmin edilebilir_ ancak _kesin olarak belirlenemez_.Bunun nedeni, bir sözleşmenin, farklı toplam gaz maliyetleriyle, farklı yürütme yollarına yol açan **farklı koşulları değerlendirebilmesidir**. Sözleşme, kontrolünüz dışındaki ve tahmin edilemeyen koşullara bağlı olarak yalnızca basit bir hesaplama veya daha karmaşık bir hesaplama yürütebilir. Bunu göstermek için bir örneğe bakalım:⬇️ 
+
+Her çağrıldığında bir sayacı artıran (++) ve çağrı sayısına eşit sayıda belirli bir döngüyü yürüten bir akıllı sözleşme yazabiliriz. Belki 100. çağrımda piyango🐦 gibi özel bir ödül veren bir sözleşme olsun🤑, ancak ödülü hesaplamak için **ek hesaplama yapması gerekir**. Sözleşmeyi 99 kez çağrırsanız **bir şey olur**, ancak 100. çağrıda **çok FARKLI bir şey olur**. Bunun için _ödeyeceğiniz gaz miktarı, işleminiz bir bloğa dahil edilmeden önce bu işlevi kaç işlemin çağırdığına bağlıdır_. Belki de tahmininiz 9️⃣9️⃣. işlem olmasına dayanıyor, ancak işleminiz onaylanmadan hemen önce başkası 99. kez işlemi çağrıyor. Artık çağrıyı yapan 1️⃣0️⃣0️⃣.işlemin sahibsiniz ve hesaplama gücünüz(ve gaz maliyeti) çok daha yüksek bir orana geldi.
+
+Ethereum'da kullanılan yaygın bir benzetmeyi kullanarak daha rahat anlayabiliriz: 
+
+`gasLimit`'i arabanızdaki _yakıt deposunun kapasitesi_ 🧴(60 litre olsun) olarak düşünebilirsiniz.Arabayı _işlem_ olarak düşünün🚙. Depoyu yolculuk için ihtiyaç duyacağını düşündüğünüz kadar gazla doldurursunuz.⛽(Bu da işleminizi doğrulamak için _gereken hesaplamayı temsil eder_).
+
+Miktarı bir dereceye kadar _tahmin edebilirsiniz_, ancak yolculuğunuzda yakıt tüketimini artıran bir yönlendirme (daha karmaşık bir yürütme yolu)🛣️ gibi beklenmeyen değişiklikler olabilir.
+
+Bununla birlikte, bir _yakıt deposuna benzetme_ biraz yanıltıcıdır☹️. 
+
+Aslında,  ne kadar **gaz kullandığınıza bağlı olarak**, _yolculuk TAMAMLANDIKTAN SONRA_ gazı aldığınız bir Benzinilik şirketinin hesabına  ödemek gibidir.(Opet kartınız 💳 ile depoyu doldurdunuz ama ödeme yapmadınız.Gittiğiniz yere Ulaştıktan sonra ne kadar yaktıysanız şirkete ödediğiniz miktar gibi düşünün.Belki trafikte kalcaksınız 🚥 belkide çok hızlı bir şekilde motorcu 🏍️ dostlarımız gibi hızlıca ulaşım sağlayacaksınız.)
+
+İşleminizi ilettiğinizde, ilk doğrulama adımlarından biri, kaynaklandığı hesabın `gasPrice * gasLimit`'i ödemek için _yeterli ethere sahip olup olmadığını kontrol etmektir_ . Ancak, _işlem tamamlanana kadar tutar hesabınızdan gerçekten düşülmez._ Yalnızca işleminiz tarafından tüketilen gaz için _faturalandırılırsınız_ 📑, ancak işleminizi göndermeden önce ödemek istediğiniz **maksimum miktar** için yeterli bakiyeniz olmalıdır.
+
+## İşlemde Alıcı(recipient) 👳‍♂️
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
