@@ -309,7 +309,7 @@ Cüzdanımız, Parity cüzdanında gösterildiği gibi sıfır değeri ve veri y
 
 <img title="Herikisideyok"  src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/parity_txdemo_novalue_nodata.png">
 
-## Sözleşmeler ve EOA'larda Değer Aktarımı 💸
+## Sözleşmelere ve EOA'lara Değer Aktarımı 💸
 
 
 
