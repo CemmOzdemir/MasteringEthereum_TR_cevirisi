@@ -256,13 +256,60 @@ Bir işlemin yanlış adrese gönderilmesi muhtemelen gönderilen etheri yakacak
 
 Aslında, ether yakmak 🔥 için bir takım geçerli nedenler vardır : Örneğin, ödeme kanallarında ve diğer akıllı sözleşmelerde hile yapılmasını caydırıcı hale getirme gibi.
 
+## İşlem Değeri & Verisi (Value & Data) :
+Bir işlemin ana "[payload(yük)](https://tr.wikipedia.org/wiki/Payload_(bilgisayar))" iki alanda bulunur: Değer ve Veri. 
 
+İşlemler: 
+* hem değere hem de veriye 
+* yalnızca değere, 
+* yalnızca veriye 
+* veya ne değere ne de veriye sahip olabilir. 
 
+Dört kombinasyonun tümü geçerlidir.✔️
 
+Yalnızca **değeri olan bir işlem bir ödemedir**. Yalnızca **veri içeren bir işlem bir çağrıdır**. Hem değeri hem de verisi olan bir işlem hem bir ödeme hem de bir çağrıdır. Ne değeri ne de verisi olan bir işlem ise  muhtemelen sadece bir _gaz israfıdır_! Ama yine de mümkün.
 
+0️⃣Bu kombinasyonların hepsini deneyelim. Denememizin(Demo) daha kolay okunmasını sağlamak için öncelikle cüzdanımızdan kaynak(gönderen) ve hedef(alıcı) adresleri ayarlayacağız:
 
+```
+src = web3.eth.accounts[0];
+dst = web3.eth.accounts[1];
+```
 
+1️⃣ İlk işlemimiz yalnızca bir değer (ödeme) içerir ve veri yükü içermez:
 
+```
+web3.eth.sendTransaction({from: src, to: dst, \
+  value: web3.utils.toWei(0.01, "ether"), data: ""}); // data kısmı bakınız boş
+```
+
+Cüzdanımız, değeri olan ancak veri içermeyen bir işlemi gösteren Parity cüzdanında gösterildiği gibi gönderilecek değeri belirten bir onay ekranı gösterir.
+
+<img title="sadeceDeger"  src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/parity_txdemo_value_nodata.png">
+
+2️⃣ Sonraki örnek hem bir değeri hem de bir veri yükünü belirtir:
+
+```
+web3.eth.sendTransaction({from: src, to: dst, \
+  value: web3.utils.toWei(0.01, "ether"), data: "0x1234"});
+```
+<img title="hemDegerHemVeri"  src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/parity_txdemo_value_data.png">
+
+3️⃣ Sadece Veriyi içeren örneğimiz ise(ayrıca değer 0) :
+
+`web3.eth.sendTransaction({from: src, to: dst, value: 0, data: "0x1234"});`
+
+Cüzdanımız, Parity cüzdanında gösterildiği gibi sıfır değeri ve veri yükünü gösteren bir onay ekranı gösterir, değeri olmayan bir işlemi gösterir, sadece veriyi gösterir.
+
+<img title="sadeceVeri"  src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/parity_txdemo_novalue_data.png">
+
+4️⃣ Son olarak işlem ne gönderilecek bir değer ne de bir veri yükü içerir:
+
+`web3.eth.sendTransaction({from: src, to: dst, value: 0, data: ""}));`
+
+<img title="Herikisideyok"  src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/parity_txdemo_novalue_nodata.png">
+
+## Sözleşmeler ve EOA'larda Değer Aktarımı 💸
 
 
 
