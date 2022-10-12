@@ -239,17 +239,22 @@ Miktarı bir dereceye kadar _tahmin edebilirsiniz_, ancak yolculuğunuzda yakıt
 
 Bununla birlikte, bir _yakıt deposuna benzetme_ biraz yanıltıcıdır☹️. 
 
-Aslında,  ne kadar **gaz kullandığınıza bağlı olarak**, _yolculuk TAMAMLANDIKTAN SONRA_ gazı aldığınız bir Benzinilik şirketinin hesabına  ödemek gibidir.(Opet kartınız 💳 ile depoyu doldurdunuz ama ödeme yapmadınız.Gittiğiniz yere Ulaştıktan sonra ne kadar yaktıysanız şirkete ödediğiniz miktar gibi düşünün.Belki trafikte kalcaksınız 🚥 belkide çok hızlı bir şekilde motorcu 🏍️ dostlarımız gibi hızlıca ulaşım sağlayacaksınız.)
+Aslında,  ne kadar **gaz kullandığınıza bağlı olarak**, _yolculuk TAMAMLANDIKTAN SONRA_ gazı aldığınız bir Benzinilik şirketinin hesabına  ödemek gibidir.(Opet kartınız 💳 ile depoyu doldurdunuz ama ödeme yapmadınız.Gittiğiniz yere Ulaştıktan sonra ne kadar yaktıysanız şirkete ödediğiniz miktar gibi düşünün.Belki trafikte kalacaksınız, 🚥 belkide çok hızlı bir şekilde motorcu 🏍️ dostlarımız gibi hızlıca ulaşım sağlayacaksınız.)
 
 İşleminizi ilettiğinizde, ilk doğrulama adımlarından biri, kaynaklandığı hesabın `gasPrice * gasLimit`'i ödemek için _yeterli ethere sahip olup olmadığını kontrol etmektir_ . Ancak, _işlem tamamlanana kadar tutar hesabınızdan gerçekten düşülmez._ Yalnızca işleminiz tarafından tüketilen gaz için _faturalandırılırsınız_ 📑, ancak işleminizi göndermeden önce ödemek istediğiniz **maksimum miktar** için yeterli bakiyeniz olmalıdır.
 
 ## İşlemde Alıcı(recipient) 👳‍♂️
 
+Bir işlemin alıcısı, alıcı alanında belirtilir. Bu, **20 baytlık bir Ethereum adresi içerir**. Adres, bir _EOA_ veya bir _sözleşme adresi_ olabilir.
 
+Ethereum bu alanın daha fazla doğrulamasını yapmaz. _Herhangi bir 20 baytlık değer geçerli kabul edilir_. 20 baytlık değer, karşılık gelen bir özel anahtarı _olmayan_ 🔴 veya karşılık gelen bir sözleşme _olmayan_ bir adrese 🔴 karşılık Geliyorsa, **İŞLEM HALA GEÇERLİDİR 🟢**. 
+⭐Ethereum'un bir adresin var olan bir genel anahtardan (ve dolayısıyla özel bir anahtardan) doğru bir şekilde türetilmiş olup olmadığını bilmesinin bir yolu yoktur.
 
+⚠️UYARII--->Ethereum protokolü, işlemlerde alıcı adreslerini doğrulamaz. Karşılık gelen özel anahtarı veya sözleşmesi olmayan bir adrese gönderebilir, böylece etheri "yakarak" sonsuza kadar harcanamaz hale getirebilirsiniz. Doğrulama, kullanıcı arayüzü seviyesinde yapılmalıdır.⚠️
 
+Bir işlemin yanlış adrese gönderilmesi muhtemelen gönderilen etheri yakacak ve onu sonsuza kadar erişilemez (harcanamaz) hale getirecektir, çünkü çoğu adresin bilinen bir özel anahtarı yoktur ve bu nedenle onu harcamak için hiçbir imza üretilemez. _Adres doğrulamasının kullanıcı arayüzü seviyesinde gerçekleştiği varsayılır_ (bkz. Bu linki size ben bırakıyorum EIP'lere buradan bakabilirsiniz ▶️ [EIP55](https://eips.ethereum.org/EIPS/eip-55). 
 
-
+Aslında, ether yakmak 🔥 için bir takım geçerli nedenler vardır : Örneğin, ödeme kanallarında ve diğer akıllı sözleşmelerde hile yapılmasını caydırıcı hale getirme gibi.
 
 
 
