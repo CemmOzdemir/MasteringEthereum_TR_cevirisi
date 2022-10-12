@@ -188,7 +188,7 @@ Böyle bir duruma bir örnek, borsanın 🔥sıcak cüzdanından (anahtarları �
 İşlemleri imzalayan bilgisayarlara ilk gelen-alır(first-come first-served) esasına göre nonce atamak için tek bir bilgisayar kullanabilirsiniz. Ancak, bu bilgisayar artık _tek bir başarısızlık noktasıdır._ Daha da kötüsü, 🙀 birden fazla nonce atanırsa ve bunlardan biri **hiç kullanılmazsa** (yani bilgisayarın o nonce ile işlemi işlemesinde bir hata olması nedeniyle), sonraki tüm işlemler takılıp(sıkışır/stuck) kalır.
 
 
-Başka bir yaklaşım: işlemleri oluşturmak, onlara bir nonce atamakla mümkün (ve bu nedenle onları imzasız bırakmak  *⭐ ⚠️nonce'nin işlem verilerinin ayrılmaz bir parçası olduğunu ve bu nedenle işlemi doğrulayan **dijital imzaya dahil edilmesi gerektiğini** unutmayın*) olacaktır. . Daha sonra bunları imzalayan ve aynı zamanda nonce'ların kaydını tutan **tek bir düğümde sıralayabilirsiniz**. Yine de, bu süreçte bir **tıkanıklık noktası** olacaktır: nonces'ların imzalanması ve izlenmesi, işleminizin veri yığını altında sıkışık(stuck) hale gelmesi muhtemel olan kısmıdır, oysa imzasız işlemin oluşturulması, gerçekten yapmadığınız kısımdır..Biraz eşzamanlı olurdu, ancak sürecin kritik bir bölümünde eksiklik olurdu.
+Başka bir yaklaşım: işlemleri oluşturmak, onlara bir nonce atamakla mümkün (ve bu nedenle onları imzasız bırakmak  *⭐ ⚠️nonce'nin işlem verilerinin ayrılmaz bir parçası olduğunu ve bu nedenle işlemi doğrulayan **dijital imzaya dahil edilmesi gerektiğini** unutmayın*) olacaktır. Daha sonra bunları imzalayan ve aynı zamanda nonce'ların kaydını tutan **tek bir düğümde sıralayabilirsiniz**. Yine de, bu süreçte bir **tıkanıklık noktası** olacaktır: nonces'ların imzalanması ve izlenmesi, işleminizin veri yığını altında sıkışık(stuck) hale gelmesi muhtemel olan kısmıdır, oysa imzasız işlemin oluşturulması, gerçekten yapmadığınız kısımdır..Biraz eşzamanlı olurdu, ancak sürecin kritik bir bölümünde eksiklik olurdu.
 
 Sonuç olarak, bu eşzamanlılık sorunları, bağımsız süreçlerde hesap bakiyelerini ve işlem onaylarını **takip etmenin zorluğuna ek olarak**, çoğu uygulamayı eşzamanlılıktan kaçınmaya ve bir borsadaki tüm para çekme işlemlerini **tek bir işlemle işlemek** veya birden fazla işlem kurmak gibi **darboğazlar yaratmaya** ya da para çekme işlemleri için tamamen bağımsız çalışabilen ve yalnızca aralıklı olarak yeniden dengelenmesi gereken birden fazla sıcak cüzdan kurmaya zorlar.🤯
 
@@ -196,11 +196,36 @@ Sonuç olarak, bu eşzamanlılık sorunları, bağımsız süreçlerde hesap bak
 
 ## İşlemde Gaz ⛽💸
 
+Daha önceki bölümlerde gaz hakkında biraz konuşmuştuk ve şimdi bu bölümünde daha ayrıntılı olarak tartışıyoruz. Ancak, bir işlemin `gasPrice`  ve `gasLimit` bileşenlerinin rolüyle ilgili bazı temel bilgileri ele alalım.
 
+Gaz, Ethereum'un yakıtıdır.⛽ Gaz ether demek değildir - _Ethere karşı kendi döviz kuruna sahip ayrı bir sanal para birimidir_. 
+Ethereum, **bir işlemin kullanabileceği kaynak miktarını kontrol etmek için gaz kullanır**, çünkü dünya çapında binlerce bilgisayarda işlenecektir. Açık uçlu (Turing-complete) hesaplama modeli, DoS saldırılarından veya yanlışlıkla kaynak tüketen işlemlerden kaçınmak için bir tür ölçüm gerektirir.Bu yüzden gaz kullanırız.
 
+Bu, ether değerindeki hızlı değişimlerle birlikte ortaya çıkabilecek dengesizliği korumak ve ayrıca gazın ödediği çeşitli kaynakların maliyetleri arasındaki önemli ve hassas oranları yönetmenin bir yolu olarak _etherden ayrıdır_. (yani, hesaplama, bellek ve depolama).
 
+Bir işlemdeki `gasPrice` alanı, **işlemi oluşturanın gaz karşılığında ödemeye hazır oldukları fiyatı belirlemesine olanak tanır**. Fiyat, gaz birimi başına _wei_ cinsinden ölçülür.(Geçmiş bölümlerde bunu görmüştük.)
 
+🔍İPUCU---> Popüler olan [ETH Gas Station](https://ethgasstation.info/) web sitesi,size Ethereum ana ağı için mevcut gaz fiyatları ve diğer ilgili gaz ölçümleri hakkında bilgi sağlar. 🤓 Benden sizlere küçük bir ipucu daha artık yazmış olduğunuz akıllı sözleşmelerde ne kadar gas tükettiğini bizzat yazmış olduğunuz özelliklerin yanında görüyorsunuz. 
 
+Cüzdanlar, işlemlerin daha hızlı onaylanmasını sağlamak için oluşturdukları işlemlerde _gasPrice'ı ayarlayabilir_. gasPrice ne kadar ⬆️yüksek olursa, işlemin onaylanması o kadar hızlı olur🦅.Tersine, daha düşük öncelikli işlemler daha düşük bir fiyat taşıyabilir ve bu da daha _yavaş onaya_ neden olabilir. gasPrice'ın ayarlanabileceği minimum değer **sıfırdır**, bu da ücretsiz bir işlem anlamına gelir.🤥 Bir blokta yer talebinin düşük olduğu dönemlerde, bu tür işlemler çok iyi madenciliğe maruz kalabilir.
+
+📝 NOT----> Kabul edilebilir minimum gasPrice sıfırdır. Bu, cüzdanların tamamen ücretsiz işlemler oluşturabileceği anlamına gelir. Kapasiteye bağlı olarak, bunlar hiçbir zaman onaylanmayabilir, ancak protokolde ücretsiz işlemleri yasaklayan hiçbir şey yoktur. Ethereum blok zincirine başarıyla dahil edilen bu tür işlemlerin birkaç örneğini bulabilirsiniz. 📝
+
+Web3 arayüzü, birkaç blokta bir ortalama fiyat hesaplayarak bir gasPrice önerisi sunar (bunu yapmak için truffle konsolunu veya herhangi bir JavaScript web3 konsolunu kullanabiliriz):
+
+```
+> web3.eth.getGasPrice(console.log)
+> null BigNumber { s: 1, e: 10, c: [ 10000000000 ] }
+```
+
+Gazla ilgili ikinci önemli alan `gasLimit` 'tir. Basit bir ifadeyle, _gasLimit, işlemi yapanın işlemi tamamlamak için satın almak istediği maksimum gaz birimi sayısını verir_. Basit ödemeler için, yani bir EOA'dan başka bir EOA'ya ether aktaran işlemler için, gereken gaz miktarı **21.000 gaz birimi** olarak sabitlenmiştir. Bunun ne kadar ethere mal olacağını hesaplamak için, ödemeye hazır olduğunuz `gasPrice` ile 21.000'i çarparsınız(✖️).Daha fazla detay için [bakınız](https://ethereum.org/en/developers/docs/gas/#what-is-gas-limit) 
+
+Örneğin:
+
+```
+> web3.eth.getGasPrice(function(err, res) {console.log(res*21000)} )
+> 210000000000000
+```
 
 
 
