@@ -311,5 +311,36 @@ Cüzdanımız, Parity cüzdanında gösterildiği gibi sıfır değeri ve veri y
 
 ## Sözleşmelere ve EOA'lara Değer Aktarımı 💸
 
+Bir değer içeren bir Ethereum işlemi oluşturduğunuzda, bu bir ödemeye eşdeğerdir. Bu tür işlemler, varış adresinin bir sözleşme olup olmamasına bağlı olarak farklı davranır.
+
+EOA adresleri için veya daha doğrusu blok zincirinde bir sözleşme olarak işaretlenmemiş herhangi bir adres için, Ethereum, gönderdiğiniz değeri adresin bakiyesine ekleyerek bir durum değişikliği kaydedecektir. Adres daha önce görülmediyse, istemcinin durumunun içine eklenir ve bakiyesi, ödemenizin değerine göre başlatılır.
+
+Hedef adres (to)-----> bir sözleşme ise, EVM sözleşmeyi çalıştıracak ve işleminizin veri yükünde belirtilen fonksiyonu çağırmaya çalışacaktır. İşleminizde veri yoksa, EVM bir **fallback fonksiyonu** çağıracak ve bu fonksiyon ödenebilirse, daha sonra ne yapılacağını belirlemek için bunu çalışıracaktır.fallback funct'da _kod yoksa, işlemin durumu_, tıpkı bir cüzdana yapılan ödeme gibi, **sözleşmenin bakiyesini artırmak olacaktır**. fallback fonsiyonu veya non-payable fallback fonksiyonu yoksa, işlem geri alınır.
+
+Bir sözleşme, bir fonksiyon çağrıldığında veya bir fonksiyonda kodlanmış koşullar tarafından belirlendiği şekilde hemen bir (istisna döndürerek) gelen ödemeleri reddedebilir.🔴 
+
+fonksyion başarılı bir şekilde sona ererse (istisnasız,hepsinde geçerli), sözleşmenin durumu, sözleşmenin ether bakiyesindeki bir artışı yansıtacak şekilde güncellenir. 📈
+
+
+## Bir EOA veya Sözleşmeye Veri Yükü(payload) Aktarma ➡️
+
+İşleminiz veri içerdiğinde, _büyük olasılıkla bir sözleşme adresine yönlendirilir_. Bu, bir EOA'ya veri yükü _gönderemeyeceğiniz anlamına gelmez_.Bu, Ethereum protokolünde tamamen geçerlidir. Ancak bu durumda, verilerin yorumlanması **EOA'ya erişmek için kullandığınız cüzdana bağlıdır**. 
+
+Ethereum protokolü tarafından görmezden gelinir ve **Çoğu cüzdan, kontrol ettikleri bir EOA'ya yapılan bir işlemde alınan verileri de yok sayar**. Gelecekte, cüzdanların verileri sözleşmeler gibi yorumlamasına izin veren ve böylece işlemlerin kullanıcı cüzdanlarında çalışan işlevleri başlatmasına izin veren standartların ortaya çıkması olasıdır. _Kritik fark, bir EOA tarafından veri yükünün herhangi bir yorumunun, bir sözleşme yürütmesinin aksine Ethereum'un fikir birliği(consensus) kurallarına tabi olmamasıdır._
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
