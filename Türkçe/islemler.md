@@ -322,25 +322,51 @@ Bir sözleşme, bir fonksiyon çağrıldığında veya bir fonksiyonda kodlanmı
 fonksyion başarılı bir şekilde sona ererse (istisnasız,hepsinde geçerli), sözleşmenin durumu, sözleşmenin ether bakiyesindeki bir artışı yansıtacak şekilde güncellenir. 📈
 
 
-## Bir EOA veya Sözleşmeye Veri Yükü(payload) Aktarma ➡️
+## EOA veya Sözleşmeye Veri Yükü(payload) Aktarma ➡️
 
 İşleminiz veri içerdiğinde, _büyük olasılıkla bir sözleşme adresine yönlendirilir_. Bu, bir EOA'ya veri yükü _gönderemeyeceğiniz anlamına gelmez_.Bu, Ethereum protokolünde tamamen geçerlidir. Ancak bu durumda, verilerin yorumlanması **EOA'ya erişmek için kullandığınız cüzdana bağlıdır**. 
 
 Ethereum protokolü tarafından görmezden gelinir ve **Çoğu cüzdan, kontrol ettikleri bir EOA'ya yapılan bir işlemde alınan verileri de yok sayar**. Gelecekte, cüzdanların verileri sözleşmeler gibi yorumlamasına izin veren ve böylece işlemlerin kullanıcı cüzdanlarında çalışan işlevleri başlatmasına izin veren standartların ortaya çıkması olasıdır. _Kritik fark, bir EOA tarafından veri yükünün herhangi bir yorumunun, bir sözleşme yürütmesinin aksine Ethereum'un fikir birliği(consensus) kurallarına tabi olmamasıdır._
 
+Şimdilik, işleminizin bir sözleşme adresine veri teslim ettiğini varsayalım. 👍 Bu durumda, veriler **EVM tarafından bir sözleşme çağrısı** olarak yorumlanacaktır. Çoğu sözleşme, bu verileri daha spesifik olarak bir fonksiyon çağrısı olarak kullanır, adlandırılmış fonksiyonlar çağırır ve kodlanmış argümanları fonksiyona iletir.
 
+ABI uyumlu bir sözleşmeye gönderilen _veri yükü_ (tüm sözleşmelerin öyle olduğunu varsayabilirsiniz), aşağıdakilerin hexadecimal şekilde serileştirilmiş haliyle kodlamasıdır:
 
+* A function selector(Bir Fonksiyon Seçicisi)
 
+Fonksiyonun prototipinin Keccak-256 hash fonksiyonun ilk 4 baytını temsil eder. Bu, sözleşmenin hangi işlevi çağırmak istediğinizi açık bir şekilde tanımlamasını sağlar.
 
+* The function arguments(Fonksiyonun argümanları)
 
+ABI belirtiminde tanımlanan, çeşitli temel türlerin kurallarına göre kodlanmış fonksiyonun bağımsız değişkenlerini ifade eder.
 
+💳 Geçmiş bölümlerdeki faucet(musluk) sözleşmemizdeki withdraw() fonksiyonunu nasıl tanımladığımızı hatırlayalım:
 
+`function withdraw(uint withdraw_amount) public {`
 
+**Bir fonksiyonun prototipi, parantez içine alınmış ve virgülle ayrılmış olarak, fonksiyonun adını, ardından argümanlarının her birinin veri türlerini içeren dize olarak tanımlanır**. Buradaki fonksiyon adı withdraw'dur ve bir uint olan (uint256 için kısa gösterimidir) _tek bir argüman alır_, bu nedenle withdraw()'un prototipi şöyle olur:
 
+`withdraw(uint256)`
 
+Bu dizenin Keccak-256 hash değerini (karmasını) hesaplayalım:
 
+```
+> web3.utils.sha3("withdraw(uint256)");
+'0x2e1a7d4d13322e7b96f9a57413e1525c250fb7a9021cf91d1540d5b69f16a49f'
+```
+Hash'ın ilk 4 baytı _0x2e1a7d4d_'dir. Bu, sözleşmeye hangi işlevi çağırmak istediğimizi söyleyen "fonksiyon seçici(selector)" değerimizdir.
 
+Ardından, `withdraw_amaount `argümanı olarak iletilecek bir değer hesaplayalım. 0.01 eter çekmek istiyoruz. Bunu, wei cinsinden onaltılık seri hale getirilmiş big-endian uint256-bit tamsayıyla kodlayalım:
 
+```
+> withdraw_amount = web3.utils.toWei(0.01, "ether");
+'10000000000000000'
+> withdraw_amount_hex = web3.utils.toHex(withdraw_amount);
+'0x2386f26fc10000'
+```
+Şimdi, fonksiyon seçiciyi miktara ekliyoruz :
+
+`2e1a7d4d000000000000000000000000000000000000000000000000002386f26fc10000`
 
 
 
