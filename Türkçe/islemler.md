@@ -537,11 +537,37 @@ Doğrulama, eliptik eğri üzerinde bir nokta olan bir Q değerini (imza oluştu
 
 1️⃣ Tüm  girdilerin doğru şekilde oluşturulduğunu kontrol edin.
 
-2️⃣ `w = s<sup>-1</sup> (mod p)` hesaplanır.  
+2️⃣ w = s<sup>-1</sup> (mod p) hesaplanır.  
 
-3️⃣ `u<sub>1</sub> = Keccak256(m) * w mod p` hesaplanır.                    
+3️⃣ u<sub>1</sub> = Keccak256(m) * w (mod p) hesaplanır.                    
 
-4️⃣ `u<sub>2</sub> = r * w mod p` hesaplanır.
+4️⃣ u<sub>2</sub> = r * w (mod p) hesaplanır.
 
-5️⃣  Son olarakta Eliptik eğrideki noktayı hesaplarız:  `Q ≡ u<sub>1</sub> * G + u<sub>2</sub> * K  (mod p)`
+5️⃣  Son olarakta Eliptik eğrideki noktayı hesaplarız:  Q ≡ u<sub>1</sub> * G + u<sub>2</sub> * K  (mod p)
 
+  Yani burada da:
+  * r ve s➡️ imza değerleridir.
+
+  * K,➡️ imzalayanın (EOA sahibinin) genel anahtarıdır.
+
+  * m, ➡️imzalanan işlem verileridir.
+
+  * G,➡️ eliptik eğri oluşturucu noktasıdır.
+  
+  * p,➡️ eliptik eğrinin asal mertebesidir.
+  
+  
+Hesaplanan `Q noktasının x koordinatı r'ye **eşitse**`, doğrulayıcı imzanın geçerli olduğu sonucuna varabilir.
+**İmzayı doğrularken özel anahtarın ne bilindiğini ne de ifşa edildiğini unutmayın*.  
+  
+   
+📝NOT---> ECDSA, zorunlu olarak oldukça karmaşık bir matematik parçasıdır; tam bir açıklama bu kitabın kapsamı dışındadır. Çevrimiçi olarak bir dizi harika kılavuz size adım adım yol gösterir: 🕳️[ECDSA zıkkımının daha derinine inmek için tıklayınız](https://www.instructables.com/Understanding-how-ECDSA-protects-your-data/) Yalnız şunu söylemeden edemeyeceğim.Bu konu üzerinde geçirdiğiniz her _1dk dünyada 7 yıla_ eşit oluyor.🌽🚀 
+O kadar replik söyledik. O zaman  🍿 [Interstellar](https://www.imdb.com/title/tt0816692/) filmini önermiş olalım. 
+  
+<img title="Abime_O_gezegeniVERMEYEYİM"  src="https://i.redd.it/gevxp9dvk7b11.jpg">
+
+  
+  
+  
+  
+  
