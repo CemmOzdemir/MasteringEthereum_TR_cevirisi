@@ -530,12 +530,18 @@ Buradan, algoritma imzanın `s` değerini şu şekilde hesaplar:
   * r ➡️geçici genel anahtarın x koordinatıdır.
   * k ➡️imzalayan (EOA sahibinin) özel anahtarıdır.
   * m ➡️işlem verileridir.
-  * p ➡️eliptik eğrinin asal mertebesidir.
+  * p ➡️eliptik eğrinin asal mertebesidir.(Egeye sor???)
 
 
+Doğrulama, eliptik eğri üzerinde bir nokta olan bir Q değerini (imza oluşturmada kullanılan geçici genel anahtar) hesaplamak için r ve s değerlerini ve gönderenin genel anahtarını kullananarak imza oluşturma işlevinin tersidir. Adımlar aşağıdaki gibidir:
 
+1️⃣ Tüm  girdilerin doğru şekilde oluşturulduğunu kontrol edin.
 
+2️⃣ `w = s<sup>-1</sup> (mod p)` hesaplanır.  
 
+3️⃣ `u<sub>1</sub> = Keccak256(m) * w mod p` hesaplanır.                    
 
+4️⃣ `u<sub>2</sub> = r * w mod p` hesaplanır.
 
+5️⃣  Son olarakta Eliptik eğrideki noktayı hesaplarız:  `Q ≡ u<sub>1</sub> * G + u<sub>2</sub> * K  (mod p)`
 
