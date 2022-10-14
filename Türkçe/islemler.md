@@ -386,11 +386,16 @@ Ancak, kasıtlı bir ether yakma işlemi yapmak istiyorsanız, niyetinizi ağa b
 
 ⚠️UYARI---> Belirlenen yanma adresine gönderilen herhangi bir ether harcanamaz hale gelecek ve sonsuza kadar kaybolacaktır.
 
+Bir sözleşme oluşturma işleminin yalnızca, _sözleşmeyi oluşturacak derlenmiş bayt kodunu(compiled bytecode)_ içeren bir _veri yükü_ içermesi gerekir. Bu işlemin tek etkisi sözleşmeyi oluşturmaktır. Yeni sözleşmeyi, bir başlangıç bakiyesi ile ayarlamak istiyorsanız, _değer alanına bir eter tutarı ekleyebilirsiniz, ancak bu tamamen isteğe bağlıdır_. Sözleşme oluşturma adresine **veri yükü olmadan  bir değer (ether) gönderirseniz**, etkisi bir yanma adresine göndermeyle aynı sonuçaları doğurur.🙀 
 
+Örnek olarak Giriş bölümünde  kullanılan **Faucet.sol** sözleşmesini data payload'undaki sözleşme ile sıfır adresine manuel olarak bir işlem oluşturabiliriz. Sözleşmenin bir  _derlenmiş baytkodu_ ile temsil edilmesi gerekir. Bu, _Solidity derleyicisi_ ile yapılabilir:
 
+```
+$ solc --bin Faucet.sol
 
-
-
+Binary:
+6060604052341561000f57600080fd5b60e58061001d6000396000f30060606040526004361060...
+```
 
 
 
