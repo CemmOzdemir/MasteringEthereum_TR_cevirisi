@@ -466,8 +466,10 @@ Bir süre sonra, para gönderme ve alma işlemlerinin gösterimi(her iki işlem 
 # Dijital imzalar 🖥️🖋️
 Şimdiye kadar, dijital imzalar hakkında herhangi bir ayrıntıya girmedik. Bu bölümde, dijital imzaların nasıl çalıştığına ve özel anahtarı açıklamadan(yani ifşa etmeden) bir özel anahtarın sahipliğinin kanıtını ⚖️ sunmak için nasıl kullanılabileceğine bakacağız.
 
-## Eliptik Eğri Dijital İmza Algoritması
-Ethereum'da kullanılan dijital imza algoritması, Eliptik Eğri Dijital İmza Algoritmasıdır (ECDSA). [Kriptografi](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Kriptografi.md#eliptik-eğri-kriptografisinin-açıklaması) bölümünde açıklandığı gibi, eliptik eğri özel-genel anahtar çiftlerine dayanır.
+## Eliptik Eğri Dijital İmza Algoritması (ECDSA)
+Ethereum'da kullanılan dijital imza algoritması, Eliptik Eğri Dijital İmza Algoritmasıdır(ECDSA). 
+
+📌[Kriptografi](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Kriptografi.md#eliptik-eğri-kriptografisinin-açıklaması) bölümünde açıklandığı gibi, eliptik eğri özel-genel anahtar çiftlerine dayanır.
 
 Dijital imza, Ethereum'da üç amaca hizmet eder: 
 
@@ -499,6 +501,40 @@ S i g = F sig ( F keccak256 ( m ) , k ) ---> Buradaki ifadeler şunlardır :
 F<sub>sig</sub> fonksiyonu, genellikle **r** ve **s** olarak adlandırılan iki değerden oluşan bir Sig imzası üretir:
 
 `S i g = ( r , s )`
+
+## İmzanın Doğrulanması ✔️
+
+İmzayı doğrulamak için imza (`r ve s`), serileştirilmiş işlem ve imzayı oluşturmak için kullanılan özel anahtara karşılık gelen genel(public) bir anahtar olmalıdır. Esasen, bir imzanın doğrulanması "yalnızca bu genel(public) anahtarı oluşturan özel anahtarın sahibinin bu işlemde bu imzayı üretmiş olabileceği" anlamına gelir.
+
+İmza doğrulama algoritması mesajı, (yani, işlemin bir karmasını(hash değerini)) imzalayanın genel(public) anahtarını ve imzayı (r ve s değerlerini) alır ve imza bu mesaj ve genel anahtar için geçerliyse `True`🟢 değerini döndürür.
+
+## ECDSA Matematik 🤓
+Daha önce bahsedildiği gibi, imzalar, r ve s olmak üzere iki değerden oluşan bir imza üreten F<sub>sig</sub> matematiksel işlevi tarafından oluşturulur. Bu bölümde F<sub>sig</sub> fonksiyonuna daha detaylı bakacağız.
+
+İmza algoritması önce kriptografik olarak güvenli bir şekilde kısa ömürlü **(geçici) bir özel anahtar üretir**. Bu geçici anahtar, gönderenin gerçek özel anahtarının Ethereum ağındaki imzalı işlemleri izleyen saldırganlar tarafından **hesaplanmamasını** sağlamak için r ve s değerlerinin hesaplanmasında kullanılır.
+
+Kriptoloji bölümünden de bildiğimiz gibi, geçici özel anahtar, karşılık gelen (geçici) genel anahtarı türetmek için kullanılır, bu nedenle:
+
++ Geçici özel anahtar olarak kullanılan, kriptografik olarak güvenli bir rastgele sayı `q` dur
+
++ `q` ve eliptik eğri oluşturucu noktası `G`'den oluşturularak ona  karşılık gelen geçici ortak anahtar `Q`dur
+
+📝NOT----> Dijital imzanın `r` değeri daha sonra geçici genel anahtar `Q`'nun **x koordinatıdır.**
+
+
+Buradan, algoritma imzanın `s` değerini şu şekilde hesaplar:
+
+**s ≡ q-1 (Keccak256(m) + r * k)  (mod p)** Burada:
+  
+  * q ➡️ geçici özel anahtardır.
+  * r ➡️geçici genel anahtarın x koordinatıdır.
+  * k ➡️imzalayan (EOA sahibinin) özel anahtarıdır.
+  * m ➡️işlem verileridir.
+  * p ➡️eliptik eğrinin asal mertebesidir.
+
+
+
+
 
 
 
