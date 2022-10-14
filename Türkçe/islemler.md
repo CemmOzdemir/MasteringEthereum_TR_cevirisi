@@ -257,7 +257,7 @@ Bir işlemin yanlış adrese gönderilmesi muhtemelen gönderilen etheri yakacak
 Aslında, ether yakmak 🔥 için bir takım geçerli nedenler vardır : Örneğin, ödeme kanallarında ve diğer akıllı sözleşmelerde hile yapılmasını caydırıcı hale getirme gibi.
 
 ## İşlem Değeri & Verisi (Value & Data) :
-Bir işlemin ana "[payload(yük)](https://tr.wikipedia.org/wiki/Payload_(bilgisayar))" iki alanda bulunur: Değer ve Veri. 
+Bir işlemin ana "[payload(yük)](https://tr.wikipedia.org/wiki/Payload_(bilgisayar))" iki alanda bulunur: **1️⃣ DEĞER(VALUE) ve 2️⃣VERİ(DATA)**. 
 
 İşlemler: 
 * hem değere hem de veriye 
@@ -396,6 +396,110 @@ $ solc --bin Faucet.sol
 Binary:
 6060604052341561000f57600080fd5b60e58061001d6000396000f30060606040526004361060...
 ```
+Aynı bilgiler Remix çevrimiçi derleyicisinden de elde edilebilir.
+
+Şimdi işlemi oluşturabiliriz:
+
+```
+> src = web3.eth.accounts[0];
+> faucet_code = \
+  "0x6060604052341561000f57600080fd5b60e58061001d6000396000f300606...f0029";
+> web3.eth.sendTransaction({from: src, to: 0, data: faucet_code, \
+  gas: 113558, gasPrice: 200000000000});
+
+"0x7bcc327ae5d369f75b98c0d59037eec41d44dfae75447fd753d9f2db9439124b"
+```
+Sıfır adresli sözleşme oluşturma durumunda bile her zaman bir (to)🚩 parametresi belirtmek _iyi_ bir uygulamadır, çünkü ether'inizi yanlışlıkla 0x0'a göndermenin ve sonsuza kadar kaybetmenin maliyeti çok yüksektir. Ayrıca bir _gasPrice ve gasLimit_ belirtmelisiniz.
+
+Sözleşmeyi mining ettikten sonra, sözleşmenin başarıyla çıkarıldığını gösteren Etherscan blok gezgininde görebiliriz. ⤵️
+
+
+<img title="0x0adressEtherscan"  src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/contract_published.png">
+
+Sözleşme hakkında bilgi almak için işlemin **makbuzuna(receipt)**📋 bakabiliriz** ⏬
+
+```
+> web3.eth.getTransactionReceipt( \
+  "0x7bcc327ae5d369f75b98c0d59037eec41d44dfae75447fd753d9f2db9439124b");
+
+{
+  blockHash: "0x6fa7d8bf982490de6246875deb2c21e5f3665b4422089c060138fc3907a95bb2",
+  blockNumber: 3105256,
+  contractAddress: "0xb226270965b43373e98ffc6e2c7693c17e2cf40b",
+  cumulativeGasUsed: 113558,
+  from: "0x2a966a87db5913c1b22a59b0d8a11cc51c167a89",
+  gasUsed: 113558,
+  logs: [],
+  logsBloom: \
+    "0x00000000000000000000000000000000000000000000000000...00000",
+  status: "0x1",
+  to: null,
+  transactionHash: \
+    "0x7bcc327ae5d369f75b98c0d59037eec41d44dfae75447fd753d9f2db9439124b",
+  transactionIndex: 0
+}
+
+
+```
+
+Bu, önceki bölümde gösterildiği gibi, sözleşmeye para göndermek ve sözleşmeden para almak için kullanabileceğimiz sözleşmenin adresini içerir:
+
+```
+> contract_address = "0xb226270965b43373e98ffc6e2c7693c17e2cf40b"
+> web3.eth.sendTransaction({from: src, to: contract_address, \
+  value: web3.utils.toWei(0.1, "ether"), data: ""});
+
+"0x6ebf2e1fe95cc9c1fe2e1a0dc45678ccd127d374fdf145c5c8e6cd4ea2e6ca9f"
+
+> web3.eth.sendTransaction({from: src, to: contract_address, value: 0, data: \
+  "0x2e1a7d4d000000000000000000000000000000000000000000000000002386f26fc10000"});
+
+"0x59836029e7ce43e92daf84313816ca31420a76a9a571b69e31ec4bf4b37cd16e"
+
+```
+Bir süre sonra, para gönderme ve alma işlemlerinin gösterimi(her iki işlem de) Etherscan'da görünür.
+
+<img title="etherscan_confirmed"  src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/published_contract_transactions.png">
+
+---------------------------------------------------
+
+# Dijital imzalar 🖥️🖋️
+Şimdiye kadar, dijital imzalar hakkında herhangi bir ayrıntıya girmedik. Bu bölümde, dijital imzaların nasıl çalıştığına ve özel anahtarı açıklamadan(yani ifşa etmeden) bir özel anahtarın sahipliğinin kanıtını ⚖️ sunmak için nasıl kullanılabileceğine bakacağız.
+
+## Eliptik Eğri Dijital İmza Algoritması
+Ethereum'da kullanılan dijital imza algoritması, Eliptik Eğri Dijital İmza Algoritmasıdır (ECDSA). [Kriptografi](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Kriptografi.md#eliptik-eğri-kriptografisinin-açıklaması) bölümünde açıklandığı gibi, eliptik eğri özel-genel anahtar çiftlerine dayanır.
+
+Dijital imza, Ethereum'da üç amaca hizmet eder: 
+
+1️⃣.---> Dijital imza, bir Ethereum hesabının sahibi olan _özel anahtarın sahibinin_, ether harcamasına veya bir sözleşmenin çalıştırılmasına izin verdiğini kanıtlar.
+
+2️⃣.---> İnkar-edilememezliği garanti eder: Yetkinin kanıtı su götürmez bir gerçektir. 
+
+3️⃣.---> Dijital imza, işlem verilerinin işlem imzalandıktan sonra hiç kimse tarafından değiştirilmediğini ve değiştirilemeyeceğini kanıtlar.
+
+**Wikipedia'nın Dijital İmza Tanımı**:
+
+Dijital imza; dijital mesajların veya belgelerin gerçekliğini sunmak için _matematiksel bir şemadır_. Geçerli bir dijital imza, alıcıya mesajın bilinen bir gönderici tarafından yaratıldığına **(kimlik doğrulama)** 🗃️ , gönderenin mesajı gönderdiğini inkar edemeyeceğine **(reddedemezlik👴)** ve mesajın aktarım sırasında değiştirilmediğine **(bütünlük)** inanması için neden verir.[Wikiyi sizin için buraya bırakıyorum.](https://en.wikipedia.org/wiki/Digital_signature)
+
+
+## Dijital İmzalar Nasıl Çalışır?
+Dijital imza, **iki bölümden** oluşan matematiksel bir şemadır. 1️⃣ _İlk kısım_, bir **mesajdan (bizim durumumuzda _işlem_ yani) özel(private) bir anahtar(imza anahtarı 🔑) kullanarak** bir imza oluşturmak için bir algoritmadır. 2️⃣_İkinci kısım_, herkesin imzayı, **yalnızca mesaj ve bir genel(public) 🔐 anahtar kullanarak** doğrulamasını sağlayan bir algoritmadır.
+
+## Dijital imza oluşturma
+Ethereum'un ECDSA uygulamasında, **imzalanan "mesaj"---->işlemdir** veya daha doğrusu işlemden _RLP kodlu verilerin Keccak-256 hash değeridir_. **İmza anahtarı, EOA'nın özel anahtarıdır**.----> Sonuç imzadır:
+
+S i g = F sig ( F keccak256 ( m ) , k ) ---> Buradaki ifadeler şunlardır :
+  
+  * k ➡️ özel anahtarı yani imza anahtarını temsil eder.
+  * m ➡️ RLP kodlu işlemdir.
+  * F<sub>keccak256</sub> ➡️ Keccak-256 karma işlevidir.
+  * F<sub>sig</sub> ➡️ imzalama algoritmasıdır.
+  * Sig ➡️ ,elde edilen imzadır.
+  
+F<sub>sig</sub> fonksiyonu, genellikle **r** ve **s** olarak adlandırılan iki değerden oluşan bir Sig imzası üretir:
+
+`S i g = ( r , s )`
+
 
 
 
