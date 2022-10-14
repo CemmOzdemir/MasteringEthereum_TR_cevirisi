@@ -354,9 +354,9 @@ Bu dizenin Keccak-256 hash değerini (karmasını) hesaplayalım:
 > web3.utils.sha3("withdraw(uint256)");
 '0x2e1a7d4d13322e7b96f9a57413e1525c250fb7a9021cf91d1540d5b69f16a49f'
 ```
-Hash'ın ilk 4 baytı _0x2e1a7d4d_'dir. Bu, sözleşmeye hangi işlevi çağırmak istediğimizi söyleyen "fonksiyon seçici(selector)" değerimizdir.
+Hash'ın ilk 4 baytı `0x2e1a7d4d`'dir. Bu, sözleşmeye hangi işlevi çağırmak istediğimizi söyleyen "fonksiyon seçici(selector)" değerimizdir.
 
-Ardından, `withdraw_amaount `argümanı olarak iletilecek bir değer hesaplayalım. 0.01 eter çekmek istiyoruz. Bunu, wei cinsinden onaltılık seri hale getirilmiş big-endian uint256-bit tamsayıyla kodlayalım:
+Ardından, `withdraw_amaount `argümanı olarak iletilecek bir değer hesaplayalım. 0.01 ether çekmek istiyoruz. Bunu, wei cinsinden onaltılık seri hale getirilmiş big-endian uint256-bit tamsayıyla kodlayalım:
 
 ```
 > withdraw_amount = web3.utils.toWei(0.01, "ether");
@@ -367,6 +367,30 @@ Ardından, `withdraw_amaount `argümanı olarak iletilecek bir değer hesaplayal
 Şimdi, fonksiyon seçiciyi miktara ekliyoruz :
 
 `2e1a7d4d000000000000000000000000000000000000000000000000002386f26fc10000`
+
+Bu, işlemimizin _veri yüküdür(data payload)_, `withdraw`'u çağırır ve `withdraw_amaount` olarak 0,01 ether talep eder.
+
+
+## Özel İşlem: Sözleşme Oluşturma 📋🖋️
+
+Bahsetmemiz gereken özel bir durum, blok zinciri üzerinde _yeni bir sözleşme oluşturan ve onu gelecekte kullanmak üzere dağıtan bir işlemdir_. Sözleşme oluşturma işlemleri,**0️⃣sıfır adres adı verilen özel bir varış(alıcı) adresine gönderilir**; bir _sözleşme kayıt işlemindeki alıcı(to) alanı_ **0x0** adresini içerir. Bu adres ne bir EOA'yı 🔴(karşılık gelen özel-genel anahtar çifti yoktur ✖️) ne de bir sözleşmeyi temsil🔴 eder. Asla _ether harcayamaz veya bir işlem başlatamaz_. Yalnızca "bu sözleşmeyi oluştur" özel anlamı ile bir varış noktası olarak kullanılır.
+
+Sıfır adres sadece sözleşme oluşturmaya yönelik olsa da bazen çeşitli adreslerden ödemeler alır. Bunun iki açıklaması vardır: 1️⃣ ya kaza eseridir ve bu eter kaybına neden olur. 💸 
+2️⃣ ya da kasıtlı bir ether 🔥 yakma işlemidir.(eter'i asla harcanamayacak bir adrese göndererek kasıtlı olarak yok etme durumudur. Aklınıza kim geldi? Tabiiki de büyük adam [JOKER](https://www.youtube.com/watch?v=JVL3Kz_x2MA) 🤡).
+
+<img title="HLedger_abim_enİyisiydi"  src="https://twinfinite.net/wp-content/uploads/2016/01/burningmoney.jpg">
+
+Ancak, kasıtlı bir ether yakma işlemi yapmak istiyorsanız, niyetinizi ağa belirtip , bunun yerine özel olarak tasarlanmış yakma 🔥 adresini kullanmalısınız:
+
+`0x000000000000000000000000000000000000dEaD`
+
+⚠️UYARI---> Belirlenen yanma adresine gönderilen herhangi bir ether harcanamaz hale gelecek ve sonsuza kadar kaybolacaktır.
+
+
+
+
+
+
 
 
 
