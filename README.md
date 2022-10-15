@@ -40,6 +40,7 @@ https://user-images.githubusercontent.com/57351242/194078761-68af22f1-b035-44db-
 + Chapter 6: '[Transactions](https://github.com/ethereumbook/ethereumbook/blob/develop/06transactions.asciidoc)'
 + Bölüm VI : '[İŞLEMLER](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/islemler.md)' :heart: 
 + Chapter 7: '[Smart Contracts and Solidity](https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc)'
++ Bölüm VII: '[Akıllı Sözleşmeler ve Solidity](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/AkilliSozlesmeler_ve_Solidity)' :heart:
 + Chapter 8: '[Smart Contracts and Vyper](https://github.com/ethereumbook/ethereumbook/blob/develop/08smart-contracts-vyper.asciidoc)'
 + Chapter 9: '[Smart Contract Security](https://github.com/ethereumbook/ethereumbook/blob/develop/09smart-contracts-security.asciidoc)'
 + Chapter 10: '[Tokens](https://github.com/ethereumbook/ethereumbook/blob/develop/10tokens.asciidoc)'
