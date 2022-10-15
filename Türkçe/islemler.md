@@ -9,7 +9,7 @@ Bu bölümde işlemleri inceleyeceğiz, nasıl çalıştıklarını göstereceğ
 --------------
 
 ## Bir İşlemin Yapısı
-Öncelikle, Ethereum ağında [seri hale](https://en.wikipedia.org/wiki/Serialization)[kısaca serileştirme işleminin Yönteminde:veriyi bir yere depolama/kaydetme vardır.] getirilip iletildiği için, bir işlemin temel yapısına bir göz atalım. Serileştirilmiş bir işlem alan her istemci ve uygulama, kendi **dahili veri yapısını kullanarak**, belki de ağ serileştirme işleminde mevcut olmayan meta verilerle birlite bunu bellekte saklayacaktır. **Ağ serileştirmesi, bir _işlemin tek standart biçimidir_**.
+Öncelikle, Ethereum ağında [seri hale](https://en.wikipedia.org/wiki/Serialization)[kısaca serileştirme işlemi Yönteminde:veriyi bir yere istediğimiz formatta depolama/kaydetme vardır.] getirilip iletildiği için, bir işlemin temel yapısına bir göz atalım. Serileştirilmiş bir işlem alan her istemci ve uygulama, kendi **dahili veri yapısını kullanarak**, belki de ağ serileştirme işleminde mevcut olmayan meta verilerle birlite bunu bellekte saklayacaktır. **Ağ serileştirmesi, bir _işlemin tek standart biçimidir_**.
 
 İşlem, **aşağıdaki verileri içeren** _serileştirilmiş bir ikili-sistemde(binary0️⃣1️⃣) mesajdır_ ⏬
 
@@ -721,7 +721,7 @@ Air-gapped bir sistemde _ağ bağlantısı hiç yoktur; bilgisayar çevrimiçi o
 
 İşlemleri imzalamak için bunları, veri depolama ortamı veya  bir web kamerası ve QR kodu kullanarak(bu daha iyi) Air-gapped bir bilgisayara aktarırsınız. Elbette bu, imzalanmasını istediğiniz her işlemi _manuel olarak_ 🚜 aktarmanız gerektiği anlamına gelir ve bu _ölçeklenmez_.
 
-Pek çok ortam tamamen Air-Gapped bir sistem kullanamazken, küçük bir izolasyon seviyesi bile önemli güvenlik avantajlarına sahiptir. Örneğin, yalnızca bir `message-quene` protokolüne izin veren bir güvenlik duvarına sahip korunmuş bir alt ağ, çevrimiçi sistemde oturum açmaktan çok daha düşük bir saldırı oranı 📉 ve çok daha yüksek 📈 güvenlik 🛡️sağlayabilir.
+Pek çok ortam tamamen Air-Gapped bir sistem kullanamazken, küçük bir izolasyon seviyesi bile önemli güvenlik avantajlarına sahiptir. Örneğin, yalnızca bir `message-queue(ileti sırası)` protokolüne izin veren bir güvenlik duvarına sahip korunmuş bir alt ağ, çevrimiçi sistemde oturum açmaktan çok daha düşük bir saldırı oranı 📉 ve çok daha yüksek 📈 güvenlik 🛡️sağlayabilir. ➕
 
 📝BENDEN SİZLERE📝
 Şimdi anlatacak olduğum konuda size `QUEUE` 'yu biraz anlatmam gerekecek.Bu bilgiyi biliyorsanız geçin.Zaten Data Structure dersini seviyorum 🖕 birde burada okuyayım derseniz Geçmeyin😄 🟠[Patika.dev](https://app.patika.dev/paths) üzerinden almış olduğum Veri Yapıları kursundan yararlanarak güzel ve kısa bir şekilde anlatmam gerekirse; Queue bir veri yapısıdır. FIFO(First in First out) yani ilk giren ilk çıkar prensibiyle hareket eder.Bunu şöyle düşünün:Bir 🚌otobüs kuyruğunda en erken gelmiş ve durakta duran bireyin otobüse binmesi gibi düşünebilirsiniz. Türkçesini 🔈 "Sıra"  olarak çevirebiliriz. Daha fazla bilgi için 🖱️[Tıklayınız(Youtube)](https://www.youtube.com/watch?v=G6LCgUlgE8I)💯    
@@ -735,5 +735,47 @@ Bu görsel anlamanıza yardımcı olacaktır. ⤵️
 <img title="Queue(sıra)"  src="https://upload.wikimedia.org/wikipedia/commons/5/52/Data_Queue.svg">
 
 ➕ Birçok şirket bu amaçla [ZeroMQ (0MQ)](https://zeromq.org) gibi bir protokol kullanır. Böyle bir sistemle **işlemler serileştirilir** ve imza için sıraya(queue) alınır. Sıra protokolü, **serileştirilmiş mesajı** bir TCP soketine benzer şekilde imzayı bilgisayarına iletir. _İmzalayan bilgisayar_, serileştirilmiş işlemleri sıradan dikkatlice okur, **uygun anahtarla bir imza uygular ve bunları giden bir başka sıraya(queue) yerleştirir.** Giden Sıra, imzalanmış işlemleri, onları sıraya alan ve ileten bir **Ethereum istemcisine sahip bir bilgisayara** iletir.
+
+## İşlem Yayılımı (Transaction Propagation)
+
+Ethereum ağı bir **"Flood-routing"** protokolü kullanır. Her Ethereum istemcisi, (ideal olarak) bir ağ oluşturan eşler arası (P2P) ağda bir düğüm görevi görür🎛️. Hiçbir ağ düğümü _özel değildir_: hepsi aynı eşler gibi davranır. P2P ağına bağlı ve buna katılan bir Ethereum istemcisine atıfta bulunmak için **"düğüm(Node)"** ⚫ terimini kullanacağız.
+
+İşlem yayılımı, **kaynak Ethereum düğümünün** imzalı bir işlem oluşturması (veya çevrimdışı olarak alması) ile başlar. İşlem doğrulanır ✔️ ve ardından doğrudan _kaynak düğüme bağlı olan diğer tüm Ethereum düğümlerine iletilir._ Ortalamaya göre her Ethereum düğümü, _komşuları_ 🤗 olarak adlandırılan en az 13 diğer düğümle bağlantı kurar.
+ **Her komşu düğüm, işlemi alır almaz doğrular**. _Geçerli olduğunu kabul ederlerse, bir kopyasını saklarlar_ ve (geldiği node hariç) tüm komşularına yayarlar_. Sonuç olarak, işlem, ağdaki tüm düğümler işlemin bir kopyasına sahip olana kadar, kaynak düğümden dışarı doğru yayılır ve ağ boyunca devam eder. _Düğümler, yaydıkları mesajları filtreleyebilirler, ancak varsayılan(default) olarak ayarlı kaldıklarında, aldıkları tüm geçerli işlem mesajlarını yaymaktadırlar._
+
+Sadece birkaç saniye içinde, bir Ethereum işlemi dünyadaki tüm Ethereum düğümlerine yayılır. Her düğümün bakış açısından, **işlemin kaynağını ayırt etmek mümkün değildir**. _Onu düğüme gönderen komşu işlemin yaratıcısı olabilir veya işlemi komşularından birinden almış olabilir_ 🐵 . Bir saldırganın işlemlerin kökenini takip edebilmek veya yayılıma müdahale edebilmesi için tüm düğümlerin önemli bir yüzdesini kontrol etmesi gerekir. Bu, özellikle blok zinciri ağlarına uygulandığında, P2P ağlarının güvenlik ve gizlilik tasarımının bir parçasıdır.🛡️
+
+--------------
+
+## Blok Zinciri üzerinde Kayıt Alma ⛓️📖
+ 
+Ethereum'daki tüm düğümler eşit eşler olsa da, bazıları madenciler tarafından işletiliyor ve yüksek performanslı grafik işleme birimlerine(GPU'lar) sahip bilgisayarlar ile madencilik çiftliklerine işlemler ve bloklar yapıyorlar.(Ethereum'un Eylül 2022 de artık PoS geçtiğini unutmayın.Artık GPU fiyatlarının düşeceğini söyleyebiliriz.Çünkü ETHEREUM büyük bir değişikliğe gitti PoW---->PoS geçti 🐼)
+Madencilik bilgisayarları, sıradaki bloğa işlemler ekler ve sıradaki bloğu geçerli kılan bir çalışma kanıtı(PoW) bulmaya çalışır. Bunu Consensus♟️ bölümünde daha ayrıntılı olarak tartışacağız.
+
+Çok fazla ayrıntıya girmeden, **geçerli işlemler sonunda bir işlem bloğuna dahil edilecek** ve böylece Ethereum blok zincirine kaydedilecektir. Bir bloğa işlendiğinde, işlemler aynı zamanda bir hesabın bakiyesini değiştirerek (basit bir ödeme durumu gibi) veya dahili durumlarını değiştiren sözleşmeleri başlatarak Ethereum Tekil durmunu(singleton) da değiştirir. Bu değişiklikler, bir işlem makbuzu/fişi 🔖 biçiminde, işlemin yanında kaydedilir. Bütün bunları _EVM_ 🎰 bölümünde çok daha detaylı inceleyeceğiz.
+
+----------
+
+## Çoklu İmza (MultiSig) İşlemleri
+
+Bitcoin'in komut dosyası oluşturmayı biliyorsanız, yalnızca birden fazla taraf işlemi imzaladığında para harcayabilen bir Bitcoin çoklu imza hesabı oluşturmanın mümkün olduğunu bilirsiniz. (örneğin, 2'de 2 veya 4 imzadan 3'ü).
+Ethereum'un _temel EOA değeri_ işlemlerinde çoklu imzalar için bir karşılık yoktur; bununla birlikte, ether ve token transferini işlemek için aklınıza gelebilecek herhangi bir koşulla akıllı sözleşmeler tarafından _keyfi imzalama kısıtlamaları_ uygulanabilir.
+
+Bu avantajdan yararlanmak için ether, çoklu imza gereksinimleri veya harcama limitleri gibi istenen harcama kurallarıyla programlanmış bir **"cüzdan sözleşmesine"** aktarılmalıdır. 🔄
+
+**Cüzdan sözleşmesi**, Fon şartlarını karşıladıktan sonra yetkili bir EOA tarafından istendiğinde fonları gönderir. Örneğin, **etherinizi çok imzalı bir koşulda korumak için, etherinizi çok imzalı bir sözleşmeye aktarın**. Başka bir hesaba para göndermek istediğinizde, gerekli tüm kullanıcıların normal bir cüzdan uygulaması kullanarak sözleşmeye işlem göndermesi gerekecek ve sözleşmeyi son işlemi gerçekleştirmek için etkin bir şekilde yetkilendirecektir.👮
+
+Çoklu İmza cüzdanı, birden fazla özel anahtarla güvence altına alınan bir kripto cüzdanıdır.Normal bir cüzdanı yedeklemek ve kurtarmak için genellikle yalnızca bir tohum yeterlidir.(Cüzdanlar bölümünde anlatmıştık.) Bunun yerine, **çok imzalı bir cüzdanı yedeklemek ve kurtarmak için birden çok anahtar gerekir**.
+
+Çoklu imza işlemlerini **akıllı bir sözleşme** olarak uygulama yeteneği, Ethereum'un esnekliğini🦋 gösterir. Bununla birlikte, ekstra esneklik, çoklu-imza yapılarının güvenliğini baltalayan hatalara yol açabileceğinden, iki ucu keskin bir kılıçtır. ⚔️(Güncel olarak ne durumda bilmiyorum Lütfen araştırın)
+
+sizler için benden bazı kaynaklar:
+
+
+
+
+
+
+
 
 
