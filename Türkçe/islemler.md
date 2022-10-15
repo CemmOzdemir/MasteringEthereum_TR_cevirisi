@@ -463,7 +463,7 @@ Bir süre sonra, para gönderme ve alma işlemlerinin gösterimi(her iki işlem 
 
 ---------------------------------------------------
 
-# Dijital imzalar 🖥️🖋️
+# Dijital imzalar 🔏
 Şimdiye kadar, dijital imzalar hakkında herhangi bir ayrıntıya girmedik. Bu bölümde, dijital imzaların nasıl çalıştığına ve özel anahtarı açıklamadan(yani ifşa etmeden) bir özel anahtarın sahipliğinin kanıtını ⚖️ sunmak için nasıl kullanılabileceğine bakacağız.
 
 ## Eliptik Eğri Dijital İmza Algoritması (ECDSA)
@@ -675,7 +675,58 @@ Muhtemelen iki genel anahtar şunlardır ve sonrası:
 
 Burada anlatılmak istenen şey:
 
-*
+* K<sub>1</sub> ve K<sub>2</sub>, imzalayanın genel anahtarı için iki olasılıktır.
+
+* r<sup>-1</sup>, imzanın r değerinin çarpımsal tersidir.
+
+* s, imzanın değeridir.
+
+* R ve R', geçici üretilmiş genel anahtarın Q için iki olasılığıdır.
+
+* z, mesaj hashindeki(karmasındaki ) n'nin en düşük bitidir.
+
+* G, eliptik eğri oluşturucu noktasıdır.
+
+
+Bu durumu daha verimli hale getirmek için, **işlemin imzası , bize iki olası R değerinden hangisinin geçici ortak anahtar olduğunu söyleyen bir önek değeri** içerir.
+**v çift ise, R doğru değerdir. Eğer v tek ise, o zaman R' dir**. Bu şekilde, R için yalnızca bir değer ve K için yalnızca bir değer hesaplamamız gerekir.
+
+-------------------------
+
+## İmzanın ve İletimin  Ayrılması(Çevrim-dışı imzalama)
+
+Bir işlem imzalandıktan sonra Ethereum ağına iletilmeye hazırdır.📖Bir işlemin 1️⃣ oluşturulması(creation), 2️⃣imzalanması(singing) ve 3️⃣yayınlanmasının(broadcasting) üç adımı normalde tek bir işlem olarak gerçekleşir, örneğin `web3.eth.sendTransaction ` kullanımı gibi. 
+
+Ancak (Raw) İşlem Oluşturma ve İmzalama bölümünde gördüğünüz gibi işlemi 🏋️ iki ayrı adımda oluşturup imzalayabilirsiniz. **İmzalanmış bir işleminiz olduğunda, bunu hex- kodlu- imzalı bir işlem alan ve Ethereum ağında ileten** ` web3.eth.sendSignedTransaction `kullanarak iletebilirsiniz.
+
+İşlemlerin _imzalanmasını ✏️ ve  📮 iletilmesini_ neden ayırmak istiyoruz? En yaygın neden **güvenliktir**. Bir işlemi imzalayan bilgisayarın, memory(hafızaya) yüklenmiş ve kilidi açılmış özel anahtarlara sahip olması gerekir. İletimi yapan bilgisayar ❣️ internete bağlı olmalıdır.(Unutmadan bir ethereum istemciside çalışıyor olmak durumunda 🎛️)
+
+Bu iki işlev bir bilgisayardaysa 💻, çevrimiçi bir sistemde **özel anahtarlarınız** vardır ve bu oldukça tehlikelidir. İmzalama ve iletme işlevlerinin ayrılması ve farklı makinelerde (sırasıyla _çevrimdışı ve _çevrimiçi_ bir cihazda) gerçekleştirilmesi **çevrimdışı imzalama olarak adlandırılır** ve yaygın bir güvenlik uygulamasıdır 🛡️.
+
+💠Ethereum işlemlerinin **çevrimdışı imzalanması(offline)** süreci şöyledir:
+
+1️⃣ Çevrimiçi bilgisayarda hesabın mevcut durumunun, özellikle de mevcut nonce ve mevcut fonların alınabileceği(işlem yapılabileceği) imzaya ihtiyaç duymayan bir işlem oluşturun.
+
+2️⃣İmzasız işlemi, işlem imzalaması için, örneğin bir QR code veya USB flash aracılığıyla "[Air-gapped](https://en.wikipedia.org/wiki/Air_gap_(networking)) ( 📝 Buna değinmiştik,yine söyleyelim bir Ağ güvenliğini sağlayan bir sistem)" olan çevrimdışı bir cihaza aktarın.
+
+3️⃣İmzalanmış işlemi, Ethereum blok zincirinde yayınlamak için, örneğin QR code veya USB flash aracılığıyla çevrimiçi olan bir cihaza iletin.
+
+
+<img title="OfflineSigning"  src="https://github.com/ethereumbook/ethereumbook/blob/develop/images/offline_signing.png">
+
+Yukarıdaki görselde de göreceğimiz gibi; ⤴️
+ihtiyacınız olan güvenlik düzeyine bağlı olarak, "çevrimdışı imzalama" bilgisayarınız, izole edilmiş ve güvenlik duvarı 🛡️ ile korunan bir alt ağdan (çevrimiçi ancak hepsinden ayrı) air-gapped sistem olarakta bilinen, _tamamen çevrimdışı bir sisteme_ kadar değişen farklı seviyelere, çevrimiçi bilgisayardan farklı seviyelerde ayrılabilir. 
+
+Air-gapped bir sistemde _ağ bağlantısı hiç yoktur; bilgisayar çevrimiçi ortamdan_ tabiri caizse bir "**hava boşluğu**(adını oradan alıyor)" ile ayrılır.
+
+İşlemleri imzalamak için bunları, veri depolama ortamı veya  bir web kamerası ve QR kodu kullanarak(bu daha iyi) Air-gapped bir bilgisayara aktarırsınız. Elbette bu, imzalanmasını istediğiniz her işlemi _manuel olarak_ 🚜 aktarmanız gerektiği anlamına gelir ve bu _ölçeklenmez_.
+
+Pek çok ortam tamamen Air-Gapped bir sistem kullanamazken, küçük bir izolasyon seviyesi bile önemli güvenlik avantajlarına sahiptir. Örneğin, yalnızca bir `message-quene` protokolüne izin veren bir güvenlik duvarına sahip korunmuş bir alt ağ, çevrimiçi sistemde oturum açmaktan çok daha düşük bir saldırı oranı 📉 ve çok daha yüksek 📈 güvenlik 🛡️sağlayabilir.
+
+
+
+
+
 
 
 
