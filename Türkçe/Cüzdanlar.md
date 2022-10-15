@@ -284,24 +284,24 @@ tablo-4 📊
 ## BIP-39'da İsteğe Bağlı Parola
 
 BIP-39 standardı, tohumun türetilmesinde isteğe bağlı bir parola kullanılmasına izin verir. 
-Parola kullanılmazsa, anımsatıcı, "mnemonic" sabit dizesinden oluşan bir Salt'la genişletilir ve herhangi bir anımsatıcıdan belirli bir 512 bitlik tohum üretilir. Bir parola kullanılırsa, germe işlevi aynı anımsatıcıdan farklı bir tohum üretir. 🌱 Aslında, tek bir anımsatıcı verildiğinde, olası her parola farklı bir tohuma yol açar. Esasen, **"yanlış" bir parola yoktur. Tüm parolalar geçerlidir ve hepsi farklı tohumlara yol açarak çok sayıda başlatılmamış cüzdan kümesi oluşturur.** Muhtemel cüzdanlar grubu o kadar büyüktür (2^^512) ki, parola yeterli karmaşıklığa ve uzunluğa sahip olduğu sürece, kullanımda olanı kaba zorlama veya rastgele tahmin etme olasılığı yoktur.
+Parola kullanılmazsa, anımsatıcı, "mnemonic" sabit dizesinden oluşan bir Salt'la genişletilir ve herhangi bir anımsatıcıdan belirli bir 512 bitlik tohum üretilir. **Bir parola kullanılırsa, uzatma Fonksiyonu aynı anımsatıcıdan farklı bir tohum üretir**. 🌱 Aslında, tek bir anımsatıcı verildiğinde, olası her parola farklı bir tohuma yol açar. Esasen, **"yanlış" bir parola yoktur. Tüm parolalar geçerlidir ve hepsi farklı tohumlara yol açarak çok sayıda başlatılmamış cüzdan kümesi oluşturur.** Muhtemel cüzdanlar grubu o kadar büyüktür (2<sup>512</sup>) ki, parola yeterli karmaşıklığa ve uzunluğa sahip olduğu sürece, uygulamada bunu, kaba kuvvet(Brute force) veya rastgele tahmin etme olasılığı yoktur.
 
 🔍İPUCU : BIP-39'da "yanlış" parola yoktur. Her parola, daha önce kullanılmadığı sürece boş olacak bir cüzdana yol açar.🔍
 
-İsteğe bağlı parola iki önemli özellik oluşturur:
+İsteğe bağlı parola iki önemli özellik oluşturur 🟢 
 
- + Bir anımsatıcıyı kendi başına işe yaramaz hale getiren ve anımsatıcı yedekleri bir hırsız(hacker) tarafından tehlikeye atılmaya karşı koruyan ikincil bir faktör(ezberlenmiş bir şeyi hırsız tahmin edemez).
+ + Bir **anımsatıcıyı(Mnemonic words) kendi başına işe yaramaz hale getiren ve anımsatıcı yedekleri bir hırsız(hacker) tarafından tehlikeye atılmaya karşı koruyan** ikincil bir faktör(ezberlenmiş bir şeyi hırsız tahmin edemez).
  
  + makul bir reddedilebilirlik(Hacker veya hırsız açısından) 
 
-Ancak, bir parola kullanmanın aynı zamanda bazı kayıplarıda beraberinde getirdiğine dikkat etmemiz gerekir:
+Ancak, bir parola kullanmanın aynı zamanda bazı kayıplarıda beraberinde getirdiğine dikkat etmemiz gerekir 🔴
  
- + Cüzdan sahibi komada veya ölmüşse ve başka kimse parolayı bilmiyorsa, tohum işe yaramaz ve cüzdanda depolanan tüm fonlar sonsuza kadar kaybolur. 💸
+ + Cüzdan sahibi komada veya ölmüşse ve başka kimse parolayı bilmiyorsa, **tohum tek başına işe yaramaz** ve cüzdanda depolanan tüm fonlar sonsuza kadar kaybolur. 💸
  
- +  Tersine, sahibi parolayı tohumla aynı yerde yedeklerse, ikinci bir faktörün amacını bozar.
+ +  Tersine, sahibi parolayı _tohumla aynı yerde yedeklerse_, ikincil bir faktörün amacını bozar.
 
 
-Parolalar çok kullanışlı olsa da, varislerin hayatta kalanların kripto para birimini geri kazanabilme olasılığı göz önünde bulundurularak, yalnızca yedekleme ve kurtarma için dikkatlice planlanmış bir süreçle birlikte kullanılmalıdır.
+* Parolalar çok kullanışlı olsa da, varislerin hayatta kalanların kripto para birimini geri kazanabilme olasılığı göz önünde bulundurularak, yalnızca yedekleme ve kurtarma için dikkatlice planlanmış bir süreçle birlikte kullanılmalıdır.
 
 ## Anımsatıcı kodlarla çalışma(Working with mnemonic codes)
 
