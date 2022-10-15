@@ -769,13 +769,25 @@ Bu avantajdan yararlanmak için ether, çoklu imza gereksinimleri veya harcama l
 
 Çoklu imza işlemlerini **akıllı bir sözleşme** olarak uygulama yeteneği, Ethereum'un esnekliğini🦋 gösterir. Bununla birlikte, ekstra esneklik, çoklu-imza yapılarının güvenliğini baltalayan hatalara yol açabileceğinden, iki ucu keskin bir kılıçtır. ⚔️(Güncel olarak ne durumda bilmiyorum Lütfen araştırın)
 
-sizler için benden bazı kaynaklar:
+sizlere benden bazı kaynaklar 📚
 
+* [GNOSIS varlık yönetim cüzdanı ](https://gnosis-safe.io)
 
+* [Linen Cüzdan yapısı](https://linen.app/assets/best-multisig-wallet-for-ethereum-polygon/)
 
+* 🐱 [BitGo Github](https://github.com/BitGo/eth-multisig-v4)
 
+* 📘[Blog Yazısı/Inominds](https://www.innominds.com/blog/securing-ethereum-wallet-with-multisig)
 
+---------------------------
+## Sonuç olarak bu Bölümde:
 
+İşlemler, Ethereum sistemindeki her hareketin başlangıç 🏳️ noktasıdır. İşlemler, Ethereum Sanal Makinesinin sözleşmeleri değerlendirmesine, bakiyeleri güncellemesine ve daha genel olarak Ethereum blok zincirinin durumunu değiştirmesine neden olan **"girdiler(inputs)"** dir. Ardından, akıllı sözleşmelerle çok daha detaylı şekilde bakacağız 📜 ve Solidity💻 programlama dilinde nasıl kodlama yapılır, öğreneceğiz.
 
+--------------------
 
+_Bölüm Sonu_ 🏁
 
+--------------------
+
+**"Tutkularınızı küçümseyen insanlardan uzak durun.Küçük insanlar bunu her zaman yaparlar,ama hakikaten büyük olanlar sizinde harika olabileceğinizi kendinize hisettirirler. 🗣️ Mark Twain"**
