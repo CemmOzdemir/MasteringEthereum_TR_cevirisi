@@ -561,12 +561,16 @@ Hesaplanan `Q noktasının x koordinatı r'ye **eşitse**`, doğrulayıcı imzan
 **İmzayı doğrularken özel anahtarın ne bilindiğini ne de ifşa edildiğini unutmayın*.  
   
    
-📝NOT---> ECDSA, zorunlu olarak oldukça karmaşık bir matematik parçasıdır; tam bir açıklama bu kitabın kapsamı dışındadır. Çevrimiçi olarak bir dizi harika kılavuz size adım adım yol gösterir: 🕳️[ECDSA zıkkımının daha derinine inmek için tıklayınız](https://www.instructables.com/Understanding-how-ECDSA-protects-your-data/) Yalnız şunu söylemeden edemeyeceğim.Bu konu üzerinde geçirdiğiniz her _1dk dünyada 7 yıla_ eşit oluyor.🌽🚀 
+📝NOT---> ECDSA, zorunlu olarak oldukça karmaşık bir matematik parçasıdır; Derin bir açıklama bu kitabın kapsamı dışındadır. Burada belittiğimiz link ➡️ size yol gösterecektir: 🕳️[ECDSA zıkkımının daha derinine inmek için tıklayınız](https://www.instructables.com/Understanding-how-ECDSA-protects-your-data/). 
+
+Yalnız şunu söylemeden edemeyeceğim.Bu konu üzerinde geçirdiğiniz her _1 saat, dünyada 7 yıla_ eşit oluyor.🌽🚀 
+
 Anlamayan dostlarımıza özel: 🍿 [Interstellar](https://www.imdb.com/title/tt0816692/) 
   
 <img title="Abime_O_gezegeni_VERMEYEYİM"  src="https://i.redd.it/gevxp9dvk7b11.jpg">
 
-  
+😠"Ulan Film önerisi alacak olsam Onedio,Mubi gibi paltformlara giderdim,sen bana İşlemleri anlat!" diyen değerli okuyucu, çok haklısın.🤕   
+
 ## Uygulamada İşlemi İmzalama  
   
   
