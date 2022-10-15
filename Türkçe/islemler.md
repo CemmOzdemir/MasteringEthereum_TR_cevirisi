@@ -723,10 +723,10 @@ Air-gapped bir sistemde _ağ bağlantısı hiç yoktur; bilgisayar çevrimiçi o
 
 Pek çok ortam tamamen Air-Gapped bir sistem kullanamazken, küçük bir izolasyon seviyesi bile önemli güvenlik avantajlarına sahiptir. Örneğin, yalnızca bir `message-quene` protokolüne izin veren bir güvenlik duvarına sahip korunmuş bir alt ağ, çevrimiçi sistemde oturum açmaktan çok daha düşük bir saldırı oranı 📉 ve çok daha yüksek 📈 güvenlik 🛡️sağlayabilir.
 
+Şimdi anlatacak olduğum konuda size `QUEUE` 'yu biraz anlatmam gerekecek.Bu bilgiyi biliyorsanız geçin.Zaten Data Structure dersini seviyorum 🖕 birde burada okuyayım derseniz Geçmeyin😄 🟠[Patika.dev](https://app.patika.dev/paths) üzerinden almış olduğum Veri Yapıları kursundan yararlanarak güzel ve kısa bir şekilde anlatmam gerekirse; Queue bir veri yapısıdır. FIFO(First in First out) yani ilk giren ilk çıkar prensibiyle hareket eder.Türkçesini tam olarak çevirmekte    
 
 
 
-
-
+https://upload.wikimedia.org/wikipedia/commons/5/52/Data_Queue.svg
 
 
