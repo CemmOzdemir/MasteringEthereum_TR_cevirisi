@@ -571,7 +571,78 @@ Anlamayan dostlarımıza özel: 🍿 [Interstellar](https://www.imdb.com/title/t
 
 😠"Ulan Film önerisi alacak olsam Onedio,Mubi gibi paltformlara giderdim,sen bana İşlemleri anlat!" diyen değerli okuyucu, çok haklısın.🤕   
 
+--------------
+
 ## Uygulamada İşlemi İmzalama  
   
+Geçerli bir işlem üretmek için, _gönderen_, Eliptik Eğri Dijital İmza Algoritmasını(ECDSA) kullanarak **mesajı dijital olarak imzalamalıdır**. 
+
+"İşlemi imzala"🔏 dediğimizde aslında **"RPP serileştirilmiş işlem verilerinin Keccak-256 hash'ini imzala"** demek istiyoruz. _İmza, işlemin kendisine değil🔴, işlem verilerinin karma(hash) değerine 🟢 uygulanır_.
+
+Ethereum'da bir işlemi imzalamak için, gönderici şunları yapmalıdır:
+
+* Dokuz alan içeren bir işlem veri yapısı oluşturun: _nonce, gasPrice, gasLimit, to, value, data, chainID, 0, 0_.
+
+* İşlem veri yapısının RLP-şifrelenmiş serileştirilmiş bir mesajını üretin.
+
+* Bu serileştirilmiş mesajın Keccak-256 karmasını(hash) hesaplayın.
+
+* ECDSA imzasını hesaplayın, hash'i kaynak EOA'nın özel anahtarıyla imzalayın.
+
+* ECDSA imzasının hesaplanan v, r ve s değerlerini işleme ekleyin.
+
+Özel imza değişkeni **v** iki şeyi belirtir: 1️⃣ zincir kimliği ve 2️⃣ECDSare_cover fonksiyonunun imzayı denetlemesine yardımcı olacak _kurtarma Tanımlayıcısı(recovery identifier)_. 
+Daha fazla bilgi için ⬇️
+
+EIP-155 ile Saf İşlem Oluşturma(Raw Transaction Creation) bölümünde ele alacağız. 
+
+🛡️Kurtarma tanımlayıcısı (_"eski tarz"_ imzalarda 27-28  veya tam `Spurious Dragon` tarzı işlemlerde 35-36), public anahtarın _y bileşeninin_ 🔑Parity'e belirtmek için kullanılır.Daha fazla Bilgi için bakınız: [EIP-155](https://eips.ethereum.org/EIPS/eip-155) 
+
+
+📝NOT----> #2.675.000 numaralı blokta Ethereum, diğer değişikliklerin yanı sıra işlem tekrarından korumayı içeren (bir ağ için yapılan işlemlerin, diğerlerinde tekrar çalışmasını engelleyen) yeni bir _imzalama şeması_ sunan 🐉"Spurious Dragon" hard fork'u uyguladı. Bu yeni imzalama şeması **EIP-155'te belirtilmiştir**. Bu değişiklik, _işlemin biçimini ve imzasını etkiler_, bu nedenle, **iki biçimden birini alan ve hashing uygulanmakta olan işlem mesajında yer alan veri alanlarını gösteren üç imza değişkeninden ilkine (yani v) 🔍 dikkat edilmelidir**. 
+
+## Ham(Raw?) İşlem Oluşturma ve İmzalama
+
+Bu bölümde npm ile kurulabilen _ethereumjs-tx kütüphanesini_ kullanarak ham/saf(raw) bir işlem oluşturup imzalayacağız. Bu, normalde bir cüzdanda veya bir kullanıcı adına işlemleri imzalayan bir uygulamada kullanılacak fonksiyonları gösterir. Bu örneğin kaynak kodu, [kitabın GitHub reposundaki](https://github.com/ethereumbook/ethereumbook/blob/develop/code/web3js/raw_tx/raw_tx_demo.js) ⬅️ _raw_tx_demo.js_ dosyasındadır:
+
+`link:code/web3js/raw_tx/raw_tx_demo.js[]`
+
+Örnek kodu çalıştırırsak aşağıdaki sonuçları verir:
   
+```
+$ node raw_tx_demo.js
+RLP-Encoded Tx: 0xe6808609184e72a0008303000094b0920c523d582040f2bcb1bd7fb1c7c1...
+Tx Hash: 0xaa7f03f9f4e52fcf69f836a6d2bbc7706580adce0a068ff6525ba337218e6992
+Signed Raw Transaction: 0xf866808609184e72a0008303000094b0920c523d582040f2bcb1...
+
+```  
+
+## EIP-155 ile Ham İşlem Oluşturma
+
+EIP-155 _"Basit Tekrarlama Saldırısı Koruması"_ standardı, **imzalamadan önce işlem verilerinin içinde bir zincir tanımlayıcı içeren tekrar oynatmaya karşı korumalı bir işlem kodlamasını belirtir**. Bu, bir blok zinciri (örneğin, Ethereum ana-ağı) için oluşturulan işlemlerin 🟢 başka bir blok zincirinde (örneğin, Ethereum Classic veya Ropsten test ağı) geçersiz 🔴 olmasını sağlar. 
+
+🎯**Bu nedenle, bir ağda yayınlanan işlemler başka bir ağda tekrarlanamaz**, Kısaca budur.
   
+EIP-155, _işlem veri yapısının_ **ana altı6️⃣ Unsuruna** , (+)üç unsur daha ekler-----> 7️⃣zincir tanımlayıcısı(chain Identifier ⛓️) , 8️⃣0 ve 9️⃣0 
+  
+Bu üç alan, işlem _verilerine kodlanmadan ve hash edilmeden önce eklenir_. Bu nedenle, **imzanın daha sonra uygulanacağı işlemin karmasını değiştirirler**. Zincir tanımlayıcısını _imzalanan verilere dahil edereriz_. 
+Zincir tanımlayıcı değiştirilirse imza geçersiz kılınacağından _işlem imzası herhangi bir değişikliği önler_. 
+
+Bu nedenle EIP-155, **imzanın geçerliliği zincir tanımlayıcıya bağlı olduğundan**, bu bir işlemin başka bir zincirde tekrar çalışmasını imkansız hale getirir.😎
+
+ Zincir tanımlayıcıları belirtildiği gibi, işlemin amaçlandığı ağa göre bir değer alır.
+
+Tablo1(zincir Tanımlayıcıları) 📊
+
+|Zincir Adı |Zincir ID|
+----------------------
+|Ethereum mainnet |1 |
+|Morden (obsolete), Expanse | 2|
+|Ropsten | 3|
+|Rinkeby(Şuan artık işlem görmüyor) |4 |
+|Rootstock mainnet | 30|
+|Rootstock testnet |31 |
+|Kovan |2 |
+|Ethereum Classic mainnet | 61|
+| Ethereum Classic testnet| 62|
+|Geth private testnets | 1337|
