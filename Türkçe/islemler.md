@@ -723,10 +723,17 @@ Air-gapped bir sistemde _ağ bağlantısı hiç yoktur; bilgisayar çevrimiçi o
 
 Pek çok ortam tamamen Air-Gapped bir sistem kullanamazken, küçük bir izolasyon seviyesi bile önemli güvenlik avantajlarına sahiptir. Örneğin, yalnızca bir `message-quene` protokolüne izin veren bir güvenlik duvarına sahip korunmuş bir alt ağ, çevrimiçi sistemde oturum açmaktan çok daha düşük bir saldırı oranı 📉 ve çok daha yüksek 📈 güvenlik 🛡️sağlayabilir.
 
-Şimdi anlatacak olduğum konuda size `QUEUE` 'yu biraz anlatmam gerekecek.Bu bilgiyi biliyorsanız geçin.Zaten Data Structure dersini seviyorum 🖕 birde burada okuyayım derseniz Geçmeyin😄 🟠[Patika.dev](https://app.patika.dev/paths) üzerinden almış olduğum Veri Yapıları kursundan yararlanarak güzel ve kısa bir şekilde anlatmam gerekirse; Queue bir veri yapısıdır. FIFO(First in First out) yani ilk giren ilk çıkar prensibiyle hareket eder.Türkçesini tam olarak çevirmekte    
+📝BENDEN SİZLERE📝
+Şimdi anlatacak olduğum konuda size `QUEUE` 'yu biraz anlatmam gerekecek.Bu bilgiyi biliyorsanız geçin.Zaten Data Structure dersini seviyorum 🖕 birde burada okuyayım derseniz Geçmeyin😄 🟠[Patika.dev](https://app.patika.dev/paths) üzerinden almış olduğum Veri Yapıları kursundan yararlanarak güzel ve kısa bir şekilde anlatmam gerekirse; Queue bir veri yapısıdır. FIFO(First in First out) yani ilk giren ilk çıkar prensibiyle hareket eder.Bunu şöyle düşünün:Bir 🚌otobüs kuyruğunda en erken gelmiş ve durakta duran bireyin otobüse binmesi gibi düşünebilirsiniz. Türkçesini 🔈 "Sıra"  olarak çevirebiliriz. Daha fazla bilgi için 🖱️[Tıklayınız(Youtube)](https://www.youtube.com/watch?v=G6LCgUlgE8I)💯    
 
+* Enquene--------> Yeni elemanı Sıra'ya eklenmesi demektir.
 
+* Dequeue--------> Elemanın Sıradan çıkarılması demektir.
 
-https://upload.wikimedia.org/wikipedia/commons/5/52/Data_Queue.svg
+Bu görsel anlamanıza yardımcı olacaktır. ⤵️
+
+<img title="Queue(sıra)"  src="https://upload.wikimedia.org/wikipedia/commons/5/52/Data_Queue.svg">
+
+➕ Birçok şirket bu amaçla [ZeroMQ (0MQ)](https://zeromq.org) gibi bir protokol kullanır. Böyle bir sistemle **işlemler serileştirilir** ve imza için sıraya(queue) alınır. Sıra protokolü, **serileştirilmiş mesajı** bir TCP soketine benzer şekilde imzayı bilgisayarına iletir. _İmzalayan bilgisayar_, serileştirilmiş işlemleri sıradan dikkatlice okur, **uygun anahtarla bir imza uygular ve bunları giden bir başka sıraya(queue) yerleştirir.** Giden Sıra, imzalanmış işlemleri, onları sıraya alan ve ileten bir **Ethereum istemcisine sahip bir bilgisayara** iletir.
 
 
