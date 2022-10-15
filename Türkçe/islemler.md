@@ -508,7 +508,7 @@ F<sub>sig</sub> fonksiyonu, genellikle **r** ve **s** olarak adlandırılan iki 
 
 İmza doğrulama algoritması mesajı, (yani, işlemin bir karmasını(hash değerini)) imzalayanın genel(public) anahtarını ve imzayı (r ve s değerlerini) alır ve imza bu mesaj ve genel anahtar için geçerliyse `True`🟢 değerini döndürür.
 
-## ECDSA Matematik 🤓
+## ECDSA Matematiği 🤓
 Daha önce bahsedildiği gibi, imzalar, r ve s olmak üzere iki değerden oluşan bir imza üreten F<sub>sig</sub> matematiksel işlevi tarafından oluşturulur. Bu bölümde F<sub>sig</sub> fonksiyonuna daha detaylı bakacağız.
 
 İmza algoritması önce kriptografik olarak güvenli bir şekilde kısa ömürlü **(geçici) bir özel anahtar üretir**. Bu geçici anahtar, gönderenin gerçek özel anahtarının Ethereum ağındaki imzalı işlemleri izleyen saldırganlar tarafından **hesaplanmamasını** sağlamak için r ve s değerlerinin hesaplanmasında kullanılır.
@@ -635,7 +635,7 @@ Bu nedenle EIP-155, **imzanın geçerliliği zincir tanımlayıcıya bağlı old
 Tablo1(zincir Tanımlayıcıları) 📊
 
 |Zincir Adı |Zincir ID|
-----------------------
+------------|----------|
 |Ethereum mainnet |1 |
 |Morden (obsolete), Expanse | 2|
 |Ropsten | 3|
@@ -646,3 +646,36 @@ Tablo1(zincir Tanımlayıcıları) 📊
 |Ethereum Classic mainnet | 61|
 | Ethereum Classic testnet| 62|
 |Geth private testnets | 1337|
+
+Ortaya çıkan işlem yapısı RLP kodlu, karma#️⃣ ve imzalıdır. İmza algoritması, **zincir tanımlayıcıyı**  ve  **v** önekinde de şifreleme için biraz değiştirilir.
+
+🐱 Daha fazla bilgi için [EIP-155 Github reposuna](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md) bakınız.
+
+-----------
+## İmza Öneki Değeri (v) ve Genel Anahtarı Kurtarma
+
+[Bir İşlemin Yapısı](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/edit/develop/Türkçe/islemler.md#bir-i̇şlemin-yapısı) kısmında ⤴️ belirtildiği gibi, işlem mesajı bir "gönderen(from)" alanı içermez. **Bunun nedeni, yaratıcının genel anahtarının doğrudan ECDSA imzasından hesaplanabilmesidir**. Genel anahtara sahip olduğunuzda, adresi kolayca hesaplayabilirsiniz.
+
+
+[ECDSA Matematiği kısmında](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/edit/develop/Türkçe/islemler.md#ecdsa-matematiği-) hesaplanan r ve s değerleri göz önüne alındığında, iki muhtemel genel anahtarı hesaplayabiliriz.
+
+İlk olarak, imzadaki x koordinat r değerinden iki eliptik eğri noktası, R ve R' hesaplıyoruz. İki nokta vardır, çünkü eliptik eğri x ekseni boyunca simetriktir, böylece herhangi bir x değeri için eğriye uyan iki olası değer vardır, x ekseninin her iki tarafında birer tane bulunur.
+
+r'den r'nin tersi olan r<sup>-1</sup>'i de hesaplarız.
+
+Son olarak, mesaj hash'inin en düşük _n_ bit'i olan z'yi hesaplıyoruz, burada n, eliptik eğrinin sırasıdır.
+
+Muhtemelen iki genel anahtar şunlardır ve sonrası:
+
+* K<sub>1</sub> = r<sup>-1</sup>(sR – zG) 
+ 
+ VE
+ 
+* K<sub>2</sub> = r<sup>-1</sup>(sR' – zG)
+
+Burada anlatılmak istenen şey:
+
+*
+
+
+
