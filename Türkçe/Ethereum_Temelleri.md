@@ -4,7 +4,7 @@
 
 📌
 
-Bu bölümde Ethereum'u keşfetmeye başlayacağız, cüzdanların nasıl kullanılacağını, işlemlerin nasıl oluşturulduğunu ve ayrıca temel bir akıllı sözleşmenin nasıl yürütüleceğini öğreneceğiz.
+Bu bölümde Ethereum'u keşfetmeye başlayacağız, cüzdanların nasıl kullanılacağını, işlemlerin nasıl oluşturulduğunu ve ayrıca temel bir akıllı sözleşmenin nasıl ÇALIŞTIRILACAĞINI öğreneceğiz.
 
 ## Ether Para Birimleri
 
@@ -144,6 +144,8 @@ birden fazla Ethereum ağı arasından seçim yapabilirsiniz.
 
 ## Ana Ethereum Ağı
 Halka açık ana Ethereum blok zinciri. Gerçek ETH, gerçek değer ve gerçek sonuçlar verir.
+
+📝NOT : AŞŞAĞIDAKİ AĞLAR ARTIK METAMASK CÜZDANINDA TEST AĞI OLARAK KULLANILMIYOR.❎ ANCAK BİMEKTE FAYDA VAR MI BİLMİYORUM :)))) GÜNÜMÜZDE KULLANILAN 🔵**GOERLI TEST AĞI** VE **SEPOLIA TEST AĞI** 🟣 MEVCUTTUR. 
 
 ## Ropsten Test Ağı
 Ethereum genel test blok zinciri ve ağı. Bu ağdaki ETH'nin değeri yok.
