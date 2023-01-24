@@ -7,11 +7,6 @@ Mastering Ethereum is a book for developers, offering a guide to the operation a
 :tr: :heart: 
 Mastering Ethereum, *geliştiriciler* için bir kitaptır ve Ethereum, Ethereum Classic, RootStock (RSK) ve diğer uyumlu EVM tabanlı açık blokzincirlerinin çalışması ve kullanımı için bir kılavuzluk(yol göstericilik) sunar. 
 
-:headphones:
-
-https://user-images.githubusercontent.com/57351242/194078761-68af22f1-b035-44db-bdc8-7f8f267fb1b9.mp4
-
-
 
 
 ## Kitabın bütün içeriğine ve lisans haklarına buradan ulaşabilirsiniz: :bookmark:  
@@ -20,19 +15,18 @@ https://user-images.githubusercontent.com/57351242/194078761-68af22f1-b035-44db-
 
 :heart: -----> Kırmızı kalp,Türkçe yazılmış dosyayı temsil eder.
 
-:headphones: -----> Kulaklık ise dosyayı okumak yerine dinleyebileceğinizi yani seslendirilmiş olduğunu anlamına geliyor.
-:warning:(Bence okumak çok daha iyi olacaktır.Çünkü kodları veya görselleri görme şansınız var.)
+
 
 
 ## Chapter :gb: & :tr: Bölümler :pushpin:
 + Preface: '[Preface](https://github.com/ethereumbook/ethereumbook/blob/develop/preface.asciidoc)'
-+ Önsöz :  '[ÖNSÖZ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Önsöz1.md)' ♥️ :headphones:(!Mutlaka Bakın!)
++ Önsöz :  '[ÖNSÖZ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Önsöz1.md)' ♥️ (!Mutlaka Bakın!)
 + Chapter 1: '[What Is Ethereum](https://github.com/ethereumbook/ethereumbook/blob/develop/01what-is.asciidoc)'
-+ Bölüm I  : '[ETHEREUM NEDİR?](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_Nedir%3F.md)' :heart: :headphones:
++ Bölüm I  : '[ETHEREUM NEDİR?](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_Nedir%3F.md)' :heart: 
 + Chapter 2: '[Ethereum Basics](https://github.com/ethereumbook/ethereumbook/blob/develop/02intro.asciidoc)'
-+ Bölüm II : '[ETHEREUM TEMELLERİ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_Temelleri.md)' :heart: :headphones: 
++ Bölüm II : '[ETHEREUM TEMELLERİ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_Temelleri.md)' :heart:  
 + Chapter 3: '[Ethereum Clients](https://github.com/ethereumbook/ethereumbook/blob/develop/03clients.asciidoc)'
-+ Bölüm III: '[ETHEREUM İSTEMCİLERİ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_istemcileri.md)' ❤️ :headphones:
++ Bölüm III: '[ETHEREUM İSTEMCİLERİ](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Ethereum_istemcileri.md)' ❤️ 
 + Chapter 4: '[Cryptography](https://github.com/ethereumbook/ethereumbook/blob/develop/04keys-addresses.asciidoc)'
 + Bölüm IV : '[KRİPTOGRAFİ/ŞİFRELEME](https://github.com/CemmOzdemir/MasteringEthereum_TR_cevirisi/blob/develop/Türkçe/Kriptografi.md)' :heart: 
 + Chapter 5: '[Wallets](https://github.com/ethereumbook/ethereumbook/blob/develop/05wallets.asciidoc)'
