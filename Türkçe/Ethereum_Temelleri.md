@@ -142,10 +142,12 @@ birden fazla Ethereum ağı arasından seçim yapabilirsiniz.
 *Varsayılan olarak, MetaMask ana ağa(main net) bağlanmaya çalışacaktır.* Diğer seçenekler, _genel test ağları, seçtiğiniz herhangi bir Ethereum düğümü_ veya kendi bilgisayarınızda (localhost) özel blok zincirleri çalıştıran düğümlerdir: ( ⚠️**Merge sonrası bazı test ağları kapanacak.Rinkeby gibi**)
 
 
-## Ana Ethereum Ağı
+## Ana(MAIN) Ethereum Ağı
 Halka açık ana Ethereum blok zinciri. Gerçek ETH, gerçek değer ve gerçek sonuçlar verir.
 
-📝NOT : AŞŞAĞIDAKİ AĞLAR ARTIK METAMASK CÜZDANINDA TEST AĞI OLARAK KULLANILMIYOR.❎ ANCAK BİMEKTE FAYDA VAR MI BİLMİYORUM :)))) GÜNÜMÜZDE KULLANILAN 🔵**GOERLI TEST AĞI** VE **SEPOLIA TEST AĞI** 🟣 MEVCUTTUR. 
+## 📝NOT : AŞŞAĞIDAKİ AĞLAR ARTIK METAMASK CÜZDANINDA TEST AĞI OLARAK KULLANILMIYOR.❎ ANCAK BİMEKTE FAYDA VAR MI BİLMİYORUM :)))) GÜNÜMÜZDE KULLANILAN 🔵**GOERLI TEST AĞI** VE **SEPOLIA TEST AĞI** 🟣 MEVCUTTUR. 
+
+------------------------------
 
 ## Ropsten Test Ağı
 Ethereum genel test blok zinciri ve ağı. Bu ağdaki ETH'nin değeri yok.
