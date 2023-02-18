@@ -1,8 +1,6 @@
 # Ethereum Nedir? 🔵 💙
 
-🎧Bu bölümü dinlemek isterseniz: ⏲️ **38dk** 
-
-📌 [Google Drive](https://drive.google.com/file/d/1ptq8qVM4wHPnpPdvViGseYwxycx_TKtC/view?usp=sharing) üzerinden bu bölümünü dinleyebilir 🎧 veya indirebilirsiniz.🔽
+⏲️ **38dk** 
 
 
 Ethereum genellikle "dünya bilgisayarı" olarak tanımlanır. Ama bu ne anlama geliyor? Bilgisayar
