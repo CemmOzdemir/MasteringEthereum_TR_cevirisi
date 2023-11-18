@@ -30,7 +30,7 @@ Ethereum hakkında yaygın olan bir **yanılgı** ise, **Ethereum cüzdanların�
 
 Uygulamada, bir hesabın cüzdanına ihtiyaç duymadan bakiyesini kontrol etmenin bağımsız bir yolu vardır.(etherscan'a girip herhangi bir işlemin üzerine tıklayıp _from-to_ kısmına bakmanız yeterli) Ayrıca, kullanmaya başladığınız cüzdan uygulamasını beğenmezseniz, bakiyenizi mevcut cüzdanınızdan farklı bir cüzdana taşıyabilirsiniz.
 
-📝NOT:Ethereum cüzdanları, ether veya token değil, anahtar içerir. Cüzdanlar, özel ve genel anahtar çiftleri içeren anahtarlık gibidir. Kullanıcılar özel anahtarlarla işlemleri imzalayarak ethere sahip olduklarını kanıtlarlar. Ether blokzincirde depolanır.📝
+📝NOT:Ethereum cüzdanları, ether veya token değil, anahtar içerir. Cüzdanlar, özel ve açık anahtar çiftleri içeren anahtarlık gibidir. Kullanıcılar özel anahtarlarla işlemleri imzalayarak ethere sahip olduklarını kanıtlarlar. Ether blokzincirde depolanır.📝
 
 İçerdikleri anahtarların birbiriyle ilişkili olup olmamasına göre ayırt edilen _iki temel cüzdan türü vardır._ ⬇️
 
@@ -99,7 +99,7 @@ Basit bir ifadeyle, **özel anahtar doğrudan parola tarafından şifrelenmez**.
 JavaScript kitaplığında [keythereum](https://github.com/ethereumjs/keythereum) gibi anahtar deposu biçimini okuyabilen ve yazmamıza olanak sağlayan bir dizi yazılım kitaplığı vardır.
 
 🔍İPUCU----> Basit testler dışındaki herhangi bir şey için deterministik olmayan cüzdanların kullanılması **önerilmez**. En temel durumlar dışında herhangi bir şey için yedeklemek ve kullanmak için çok yavaştırlar. Bunun yerine, **yedekleme** için **anımsatıcı bir tohum içeren( mnemonic seed) endüstri standardı tabanlı** bir [HD cüzdan](https://www.investopedia.com/terms/h/hd-wallet-hierarchical-deterministic-wallet.asp) kullanın. 
-(HD cüzdan yazısı uzun geldiyse kısacak sizin için😽---> Hiyerarşik deterministik (HD) cüzdan, Bitcoin ve Ethereum gibi kripto para birimleri sahipleri için dijital anahtarları depolamak için yaygın olarak kullanılan bir dijital cüzdandır. Hem genel(public) hem de parola benzeri özel(private) anahtarın bir kopyasına sahip olan herkes, hesaptaki bakiyeyi kontrol edebilir.Aşağıda daha detaylı açıklanacaktır⬇️)
+(HD cüzdan yazısı uzun geldiyse kısacak sizin için😽---> Hiyerarşik deterministik (HD) cüzdan, Bitcoin ve Ethereum gibi kripto para birimleri sahipleri için dijital anahtarları depolamak için yaygın olarak kullanılan bir dijital cüzdandır. Hem açık(public) hem de parola benzeri özel(private) anahtarın bir kopyasına sahip olan herkes, hesaptaki bakiyeyi kontrol edebilir.Aşağıda daha detaylı açıklanacaktır⬇️)
 
 -------------
 
@@ -348,7 +348,7 @@ Ayrıca, BIP-32 ile test ve denemeler yapmak için çok kullanışlı olan bağ�
 ⚠️UYARI--->Yukarıdaki site(BIP-32 oluşturucu) ⤴️ bir _HTTPS_ sitesi değildir. Bu, size bu aracın kullanımının güvenli olmadığını hatırlatmak içindir. Sadece test amaçlıdır. Bu sitenin ürettiği anahtarlarları gerçek parayla yapılacak işlemlerde kullanmayınız. ⚠️
 
 
-## Genişletilmiş(Uzatılmış/Extended) genel ve özel anahtarlar
+## Genişletilmiş(Uzatılmış/Extended) Açık ve özel anahtarlar
 
 BIP-32 terminolojisinde anahtarlar _"genişletilebilir"_. Doğru matematiksel işlemlerle, bu genişletilmiş 👪 **"Ana(Parent)"** anahtarlar, **"alt(child)"** 👶 anahtarları türetmek için kullanılabilir, böylece daha önce açıklanan anahtarlar ve adresler hiyerarşisi oluşturulur._Ana anahtarın ağacın tepesinde olması gerekmez._ ağaç hiyerarşisinin 🎄 _herhangi bir yerinden seçilebilir_.Bir _anahtarın genişletilmesi, anahtarın kendisini almayı ve ona özel bir zincir kodu(chain code) eklemeyi içerir_.Bir **zincir kodu(chain code), alt anahtarları üretmek için her anahtarla karıştırılan 256-bitlik bir ikili(binary) sistemde üretilmiş Metindir.**
 
@@ -356,30 +356,30 @@ Anahtar,Özel(private) bir anahtarsa, **xprv** önekiyle ayırt edilen genişlet
 
 `xprv9s21ZrQH143K2JF8RafpqtKiTbsbaxEeUaMnNHsm5o6wCW3z8ySyH4UxFVSfZ8n7ESu7fgir8i....`
 
-Genişletilmiş bir Genel(public) anahtar, **xpub** öneki ile ayırt edilir:
+Genişletilmiş bir açık(public) anahtar, **xpub** öneki ile ayırt edilir:
 
 `xpub661MyMwAqRbcEnKbXcCqD2GT1di5zQxVqoHPAgHNe8dv5JP8gWmDproS6kFHJnLZd23tWevhdn...`
 
-HD cüzdanların çok kullanışlı bir özelliği de, **özel anahtarlara sahip olmadan 🔴 Ana genel anahtarlardan(parent public Key) 🔑 alt genel(child public key) anahtarları türetebilme yeteneğidir. Bu bize bir alt Genel(public) anahtarı türetmenin iki yolunu sunar: 
-1️⃣ ya doğrudan alt özel(child private Key) anahtardan 
-2️⃣ya da ana genel (Parent public key) anahtardan.
+HD cüzdanların çok kullanışlı bir özelliği de, **özel anahtarlara sahip olmadan 🔴 Ana açık anahtarlardan(parent public Key) 🔑 alt genel(child public key) anahtarları türetebilme yeteneğidir. Bu bize bir alt açık(public) anahtarı türetmenin iki yolunu sunar: 
+1️⃣ Ya doğrudan alt özel(child private Key) anahtardan 
+2️⃣ya da ana açık (Parent public key) anahtardan.
 
-Bu nedenle, HD cüzdan yapısının  _o dalındaki tüm genel anahtarları (ve yalnızca genel anahtarları) türetmek için genişletilmiş bir genel anahtar kullanılabilir._
-Bu kısayol, bir _sunucunun veya uygulamanın genişletilmiş_ bir genel anahtarın bir kopyasına sahip olduğu ancak hiçbir özel anahtarın olmadığı, çok güvenli yalnızca genel anahtar dağıtımları oluşturmak için kullanılabilir. Bu tür bir dağıtım, sonsuz sayıda genel anahtar ve Ethereum adresi üretebilir, ancak bu adreslere gönderilen **paranın hiçbirini harcayamaz**. Bu arada, daha güvenli başka bir sunucuda, **genişletilmiş özel anahtar**, işlemleri imzalamak ve parayı harcamak için **karşılık gelen tüm özel anahtarları türetebilir.**
+Bu nedenle, HD cüzdan yapısının  _o dalındaki tüm açık anahtarları (ve yalnızca açık anahtarları) türetmek için genişletilmiş bir açık anahtar kullanılabilir._
+Bu kısayol, bir _sunucunun veya uygulamanın genişletilmiş_ bir açık anahtarın bir kopyasına sahip olduğu ancak hiçbir özel anahtarın olmadığı, çok güvenli yalnızca açık anahtar dağıtımları oluşturmak için kullanılabilir. Bu tür bir dağıtım, sonsuz sayıda açık anahtar ve Ethereum adresi üretebilir, ancak bu adreslere gönderilen **paranın hiçbirini harcayamaz**. Bu arada, daha güvenli başka bir sunucuda, **genişletilmiş özel anahtar**, işlemleri imzalamak ve parayı harcamak için **karşılık gelen tüm özel anahtarları türetebilir.**
 
-Bu yöntemin yaygın bir uygulaması, bir **e-ticaret** uygulamasına hizmet eden bir web sunucusuna **genişletilmiş bir genel anahtar yüklemektir**. Web sunucusu, her işlem için (örneğin, bir müşteri alışveriş sepeti için) yeni bir Ethereum adresi oluşturmak için genel anahtar türetme işlevini kullanabilir ve hırsızlığa karşı, _savunmasız olabilecek herhangi bir özel anahtara sahip olmayacaktır_. HD cüzdanlar olmadan bunu yapmanın tek yolu, ayrı bir güvenli sunucuda **binlerce Ethereum adresi oluşturmak ve ardından bunları e-ticaret sunucusuna önceden yüklemektir**. Bu yaklaşım 🐢 yavaştır. Dahası **sunucunun anahtarlarının bitmemesini sağlamak için sürekli bakım gerektirir**, bu nedenle HD cüzdanlardan genişletilmiş açık(genel) anahtarları kullanma tercihi doğru olacaktır.
+Bu yöntemin yaygın bir uygulaması, bir **e-ticaret** uygulamasına hizmet eden bir web sunucusuna **genişletilmiş bir açık anahtar yüklemektir**. Web sunucusu, her işlem için (örneğin, bir müşteri alışveriş sepeti için) yeni bir Ethereum adresi oluşturmak için açık anahtar türetme işlevini kullanabilir ve hırsızlığa karşı, _savunmasız olabilecek herhangi bir özel anahtara sahip olmayacaktır_. HD cüzdanlar olmadan bunu yapmanın tek yolu, ayrı bir güvenli sunucuda **binlerce Ethereum adresi oluşturmak ve ardından bunları e-ticaret sunucusuna önceden yüklemektir**. Bu yaklaşım 🐢 yavaştır. Dahası **sunucunun anahtarlarının bitmemesini sağlamak için sürekli bakım gerektirir**, bu nedenle HD cüzdanlardan genişletilmiş açık(genel) anahtarları kullanma tercihi doğru olacaktır.
 
 Bu çözümün diğer bir yaygın uygulaması, soğuk depolama 🥶 veya donanım cüzdanları 💾 içindir. Bu senaryoda, **genişletilmiş özel anahtar** bir **donanım cüzdanında** depolanabilirken, genişletilmiş **genel anahtar çevrimiçi tutulabilir**. Özel anahtarlar güvenli bir şekilde çevrimdışı olarak saklanırken, kullanıcı istediği zaman "alma(recieve)" adresleri oluşturabilir. Fonları harcamak isteyen kullanıcı, genişletilmiş özel anahtarı çevrimdışı imzalama ile Ethereum istemcisinde kullanabilir veya donanım cüzdan cihazında işlemleri imzalayabilir.✏️
 
 ## Sertleştirilmiş(zorlaştırılmış/Hardened) Alt(child) anahtar türetme 💪
 
- _Genişletilmiş bir genel anahtardan veya xpub'dan bir genel anahtar dalı 🌴 türetme yeteneği çok harikadır🥳, ancak potansiyel bir riskle 👣 birlikte gelir_. Bir xpub'a erişim, _alt özel anahtarlara erişim sağlamaz_ 🔴. Bununla birlikte, **xpub zincir kodunu içerdiğinden** (üst genel anahtardan(Parent Public)-----> alt genel(child public) anahtarları türetmek için kullanılır), **bir alt özel anahtarı 👶 biliniyorsa veya bir şekilde sızdırılmışsa**, diğer **tüm alt özel anahtarları türetmek için zincir koduyla birlikte kullanılabilir**. Tek bir sızdırılmış alt özel anahtarı, bir ana zincir koduyla(parent chain-code) birlikte tüm alttakilerin tüm özel anahtarlarını ortaya çıkarır. _Daha da kötüsü, bir ana zincir koduyla(parent chain-code) birlikte + 👶 alt özel anahtar, 👪 ana özel anahtarı çıkarmak için kullanılabilir_.
+ _Genişletilmiş bir genel anahtardan veya xpub'dan bir genel anahtar dalı 🌴 türetme yeteneği muazzam bir olaydır🥳, ancak potansiyel bir riskle 👣 birlikte gelir_. Bir xpub'a erişim, _alt özel anahtarlara erişim sağlamaz_ 🔴. Bununla birlikte, **xpub zincir kodunu içerdiğinden** (üst açık anahtardan(Parent Public)-----> alt genel(child public) anahtarları türetmek için kullanılır), **bir alt özel anahtarı 👶 biliniyorsa veya bir şekilde sızdırılmışsa**, diğer **tüm alt özel anahtarları türetmek için zincir koduyla birlikte kullanılabilir**. Tek bir sızdırılmış alt özel anahtarı, bir ana zincir koduyla(parent chain-code) birlikte tüm alttakilerin tüm özel anahtarlarını ortaya çıkarır. _Daha da kötüsü, bir ana zincir koduyla(parent chain-code) birlikte + 👶 alt özel anahtar, 👪 ana özel anahtarı çıkarmak için kullanılabilir_.
 
 ⬇️Aşağıdaki görseli size yardımcı olması için bırakıyorum 💙 .Daha fazla bilgi için: [Medium Yazısı](https://medium.com/geekculture/what-is-bitcoin-improvement-proposal-32-bip-32-586a3f36a95c)
 
 <img title="BIP-32 üreticisi sertleştirilmiş" src="https://miro.medium.com/max/640/1*PphduD-J7C19wLA9fWP7Gw.png">
 
-Basit bir ifadeyle, kendinizi _sızdırılmış zincir kodu riskine maruz bırakmadan_ ,genel(public) anahtarların dallarını türetmek için  xpub'ın esnekliğini rahatça kullanmak istiyorsanız, bunu **normal bir Ana(Parent--üst) 🔴 yerine** **sertleştirilmiş bir Ana anahtardan(Hardened Parent key) 🟢 türetmelisiniz**. _En iyi uygulama, ana anahtarların güvenliğinin ihlal edilmesini önlemek için ana anahtarların düzeylerini bir alt öğelerini her zaman sertleştirilmiş türetme ile türetilmesidir._ (Yukarıdaki görseldeki gibi)
+Basit bir ifadeyle, kendinizi _sızdırılmış zincir kodu riskine maruz bırakmadan_ ,açık(public) anahtarların dallarını türetmek için  xpub'ın esnekliğini rahatça kullanmak istiyorsanız, bunu **normal bir Ana(Parent--üst) 🔴 yerine** **sertleştirilmiş bir Ana anahtardan(Hardened Parent key) 🟢 türetmelisiniz**. _En iyi uygulama, ana anahtarların güvenliğinin ihlal edilmesini önlemek için ana anahtarların düzeylerini bir alt öğelerini her zaman sertleştirilmiş türetme ile türetilmesidir._ (Yukarıdaki görseldeki gibi)
 
 ## Normal ve Sertleştirilmiş türetme için indeks numaraları #️⃣0️⃣1️⃣
 
@@ -398,7 +398,7 @@ Bir HD cüzdan indeksi i&#x27; gördüğünüzde, bu 2<sup>31</sup> + i anlamın
 
 ## HD cüzdanı Anahtar Tanımlayıcısı (yol/Path)🚦
 
-Bir HD cüzdandaki anahtarlar, bir "yol" adlandırma kuralı kullanılarak tanımlanır ve ağacın her seviyesi bir eğik çizgi (/) karakteriyle ayrılır (Aşagıdaki tabloda daha net bir şekilde açıklanmıştır⏬tablo-5). **Ana özel anahtardan türetilen özel anahtarlar** ----> **m** ile başlar. Ana genel anahtardan türetilen genel anahtarlar **M** ile başlar. Bu nedenle, ana özel anahtarın ilk alt özel anahtarı **m/0'dır**. İlk alt genel anahtar **M/0'dır**. Birinci alt(child)'ın ikinci alt'ı(grandchild) m/0/1, vb.
+Bir HD cüzdandaki anahtarlar, bir "yol" adlandırma kuralı kullanılarak tanımlanır ve ağacın her seviyesi bir eğik çizgi (/) karakteriyle ayrılır (Aşagıdaki tabloda daha net bir şekilde açıklanmıştır⏬tablo-5). **Ana özel anahtardan türetilen özel anahtarlar** ----> **m** ile başlar. Ana açık anahtardan türetilen, açık anahtarlar **M** ile başlar. Bu nedenle, ana özel anahtarın ilk alt özel anahtarı **m/0'dır**. İlk alt açık anahtar **M/0'dır**. Birinci alt(child)'ın ikinci alt'ı(grandchild) m/0/1, vb.
 
 
 Bir anahtarın "soyu-kökü(ancestry)", türetildiği ana anahtara ulaşana kadar **sağdan sola** okunur. Örneğin, m/x/y/z tanımlayıcısı, m/x/y anahtarının Z-inci çocuğu(alt soyu) olan anahtarı tanımlar; bu, m/x anahtarının y-inci çocuğu(alt soyu) tanımlar.
